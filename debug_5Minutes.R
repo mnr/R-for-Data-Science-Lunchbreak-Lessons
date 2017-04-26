@@ -5,21 +5,22 @@
 # source and library statements
 
 # function definitions
-GreatDivide <- function(grt.numerator,grt.denominator) {
+GreatDivide <- function(grt.numerator, grt.denominator) {
   better.denominator <- CheckDenominator(grt.denominator)
   # divides grt.numerator by grt.denominator
-  return(grt.numerator/better.denominator)
+  return(grt.numerator / better.denominator)
 }
 
 CheckDenominator <- function(check.this.denominator) {
-  return(
-    if (check.this.denominator != 0) {
-      check.this.denominator
-      } else { "error"
-      }
-    )
+  return(if (check.this.denominator != 0) {
+    check.this.denominator
+  } else {
+    "OOPS! returned a string instead of something useful"
+    # r style guide says this should be stop("divide by zero")
+  })
 }
 
+# ?debug
 # browser() # simplest of calls. Use "stop" or Q to exit
 # options(error = recover)
 # debug(GreatDivide)
