@@ -2,9 +2,10 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # Description: Example file for debug: five minutes of R
 
-# source and library statements
+# here are a bunch of examples on debugging. 
+# Uncomment these lines and try them out
 
-# function definitions
+# function definitions to be used in the following examples
 GreatDivide <- function(grt.numerator, grt.denominator) {
   better.denominator <- CheckDenominator(grt.denominator)
   # divides grt.numerator by grt.denominator
@@ -17,25 +18,36 @@ CheckDenominator <- function(check.this.denominator) {
   } else {
     "OOPS! returned a string instead of something useful"
     # r style guide says this should be stop("divide by zero")
+    # browser() # uncomment this line to drop into browser in an error
   })
 }
 
-# ?debug
-# browser() # simplest of calls. Use "stop" or Q to exit
+# Here's what an error looks like. Uncomment this line and run it.
+GreatDivide(2,0)
+
+browser() # simplest of debuggers Use "stop button" or Q to exit
+# uncomment the line in CheckDemoninator to see how this works
+
+# recomment browser() in CheckDemnominator, then run the following line
+debug(GreatDivide)
+# then this...
+GreatDivide(2,0)
+# see how it goes into the debugger?
+
+# undebug will turn off the debugger on CheckDenominator
+undebug(GreatDivide)
+
+# debugonce is the same as debug()
+debugonce(GreatDivide)
+GreatDivide(2,0)
+GreatDivide(2,0)
 # options(error = recover)
-# debug(GreatDivide)
-# undebug(GreatDivide)
-# debug(CheckDenominator)
-# isdebugged(CheckDenominator)
-# undebug(CheckDenominator)
-# showing debugonce
-# showing undebug
 
-
+?debug # Pulls up the documentation for debug. Look at "debug {base}"
 
 # isdebugged() will show if a function is debugged
-# all.functions <- lsf.str() # list functions into all.functions
-# 
+all.functions <- lsf.str() # list functions into all.functions
+ 
 listNameOfDebugged <- function(function.name) {
   # a simple function that shows debugged state of a function
   if(isdebugged(function.name)) {
@@ -45,17 +57,16 @@ listNameOfDebugged <- function(function.name) {
     return(paste(function.name," is not debugged"))
   }
 }
-# 
-# for (function.name in all.functions) {
-#   # a simple program that uses listNameOfDebugged
-#   listNameOfDebugged(function.name)
-# }
-# 
+
+for (function.name in all.functions) {
+  # a simple program that uses listNameOfDebugged
+  listNameOfDebugged(function.name)
+}
+
 # # another way to use listNameOfDebugged
-# sapply(all.functions,listNameOfDebugged)  
+sapply(all.functions,listNameOfDebugged)  
 
 
-
-# debug package
-# install.packages("debug")
-# ?debug
+# debug package- more advanced debug functions
+install.packages("debug")
+?'debug-package'
