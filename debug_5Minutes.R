@@ -30,5 +30,32 @@ CheckDenominator <- function(check.this.denominator) {
 # undebug(CheckDenominator)
 # showing debugonce
 # showing undebug
-# showing isdebugged
-# showing debuggingState
+
+
+
+# isdebugged() will show if a function is debugged
+# all.functions <- lsf.str() # list functions into all.functions
+# 
+listNameOfDebugged <- function(function.name) {
+  # a simple function that shows debugged state of a function
+  if(isdebugged(function.name)) {
+    # undebug(function.name) # this would turn off debugging on all functions
+    return(paste(function.name," is debugged"))
+  } else {
+    return(paste(function.name," is not debugged"))
+  }
+}
+# 
+# for (function.name in all.functions) {
+#   # a simple program that uses listNameOfDebugged
+#   listNameOfDebugged(function.name)
+# }
+# 
+# # another way to use listNameOfDebugged
+# sapply(all.functions,listNameOfDebugged)  
+
+
+
+# debug package
+# install.packages("debug")
+# ?debug
