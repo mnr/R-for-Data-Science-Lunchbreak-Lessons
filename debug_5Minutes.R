@@ -2,8 +2,7 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # Description: Example file for debug: five minutes of R
 
-# here are a bunch of examples on debugging. 
-# Uncomment these lines and try them out
+# This is examples on debugging. 
 
 # function definitions to be used in the following examples
 GreatDivide <- function(grt.numerator, grt.denominator) {
@@ -22,13 +21,18 @@ CheckDenominator <- function(check.this.denominator) {
   })
 }
 
-# Here's what an error looks like. Uncomment this line and run it.
+# Here's what an error looks like. Run this line.
 GreatDivide(2,0)
 
-browser() # simplest of debuggers Use "stop button" or Q to exit
-# uncomment the line in CheckDemoninator to see how this works
+# browser() # simplest of debuggers Use "stop button" or Q to exit
+# To see how this works...
+# 1) uncomment the line in CheckDemoninator 
+# 2) reload CheckDenominator
+# 3) The run GreatDivide with a denominator = 0
+GreatDivide(2,0)
 
-# recomment browser() in CheckDemnominator, then run the following line
+# recomment browser() in CheckDemnominator, 
+# reload the function, then run the following line
 debug(GreatDivide)
 # then this...
 GreatDivide(2,0)
@@ -41,7 +45,6 @@ undebug(GreatDivide)
 debugonce(GreatDivide)
 GreatDivide(2,0)
 GreatDivide(2,0)
-# options(error = recover)
 
 ?debug # Pulls up the documentation for debug. Look at "debug {base}"
 
@@ -60,7 +63,7 @@ listNameOfDebugged <- function(function.name) {
 
 for (function.name in all.functions) {
   # a simple program that uses listNameOfDebugged
-  listNameOfDebugged(function.name)
+  print(listNameOfDebugged(function.name))
 }
 
 # # another way to use listNameOfDebugged
@@ -70,3 +73,7 @@ sapply(all.functions,listNameOfDebugged)
 # debug package- more advanced debug functions
 install.packages("debug")
 ?'debug-package'
+
+# Check out options(error=recover) for some advanced techniques
+?options
+
