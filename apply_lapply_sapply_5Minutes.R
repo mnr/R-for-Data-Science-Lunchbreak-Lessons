@@ -8,6 +8,7 @@ View(WorldPhones)
 typeof(WorldPhones)
 dim(WorldPhones)
 
+# Examples of using "for" loops to calculate a row or column value
 # calculate mean for each country (countries in columns)
 for (aColumn in 1:ncol(WorldPhones)) {
   print(colnames(WorldPhones)[aColumn])
@@ -20,6 +21,7 @@ for (aRow in 1:nrow(WorldPhones)) {
   print(mean((WorldPhones)[aRow,]))
 }
 
+# instead of "for", use "apply"
 # apply: Returns a vector or array or list of values obtained by applying a
 # function to margins of an array or matrix.
 # 1 = Row, 2 = Columns
@@ -28,10 +30,12 @@ apply(WorldPhones,2,mean)
 
 # lapply: returns a list resulting from applying 
 # a function to each element of original list
-lapply(WorldPhones,function(x) {x>10000}) # asks: Is this value greater than 10,000?
+# asks: for each value in WorldPhones, Is this value greater than 10,000?
+lapply(WorldPhones,function(x) {x>10000}) 
 
 # sapply: returns a vector, matrix or array by applying simplify2array(). 
-sapply(WorldPhones,function(x) {x>10000}) # asks: Is this value greater than 10,000?
+# in other words, this is a cleaner response
+sapply(WorldPhones,function(x) {x>10000}) 
 
 # Extra Credit: look up the following:
 rowMeans(WorldPhones)
