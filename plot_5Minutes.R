@@ -41,3 +41,13 @@ some.values <- function() {
   return(seq(from=1, to=100,length.out = length(my.X)))
   }
 plot(my.X,some.values())
+
+# other chart types:
+hist(my.X)
+boxplot(my.X)
+qqnorm(my.X)
+
+# ggplot2 is a very popular package from the tidyverse
+# https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
+
+# related to ggplot2, look at qplot
