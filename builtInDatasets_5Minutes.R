@@ -9,10 +9,10 @@ library(help="datasets")
 ?data
 data() # list all data sets
 data(mtcars) # load a data set
-help(mtcars)
-head(mtcars)
+help(mtcars) # learn about the data set
+head(mtcars) # lines from start of data set
 
-# use them to demonstrate and play with functions
+# use datasets to demonstrate and play with functions
 plot(mtcars$hp,mtcars$mpg)
 
 # Other datasets
