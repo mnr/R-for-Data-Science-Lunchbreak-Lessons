@@ -23,7 +23,7 @@ plot(my.X,my.Y,
      xlab="my.X is a simple vector",
      ylab="my.Y is a sequence")
 
-# adding extra elements to a plot
+# adding another line to a plot
 plot(my.X,my.Y,
      type = "b",
      main = "Plot for 5 minutes of R",
@@ -32,13 +32,15 @@ plot(my.X,my.Y,
      ylab="my.Y is a sequence")
 lines(c(1,10),c(1,20))
 
+?lines # hint: this will tell you more about how to do lines
+
 # another example of plot & line
 plot(my.X,my.Y)
 lines(c(1,10),c(1,20), type="o", pch=22, lty=2, col="red")
 
 # You can also use functions as x and y arguments
 some.values <- function() { 
-  return(seq(from=1, to=100,length.out = length(my.X)))
+  return(seq(from=1, to=100,length.out = length(my.X))^2)
   }
 plot(my.X,some.values())
 
