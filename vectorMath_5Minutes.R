@@ -4,7 +4,9 @@
 
 # how would you multiply each item in an array by two?
 # first create an array
-an.array = c(1,2,3,4,5,6,7,8,9)
+an.array <- c(1,2,3,4,5,6,7,8,9)
+# btw...
+an.array <- c(1:9)
 
 # Most languages would do something like this
 for (aNumber in an.array) {

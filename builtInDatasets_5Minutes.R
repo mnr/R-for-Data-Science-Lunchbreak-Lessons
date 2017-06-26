@@ -15,6 +15,13 @@ head(mtcars) # lines from start of data set
 # use datasets to demonstrate and play with functions
 plot(mtcars$hp,mtcars$mpg)
 
+# built-in constants
+LETTERS
+letters
+month.abb
+month.name
+pi
+
 # Other datasets
 https://www.kaggle.com
 http://data.gov  

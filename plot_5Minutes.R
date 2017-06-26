@@ -11,6 +11,11 @@ my.Y <- seq(from=1, to=100,length.out = length(my.X))
 
 # the simplest of all plots
 plot(my.X,my.Y)
+hist(my.X)
+boxplot(my.X)
+qqnorm(my.X)
+dotchart(my.X,labels=month.abb[1:10])
+pie(my.X,labels=month.abb[1:10])
 
 # change the appearance of the plotted points
 plot(my.X,my.Y,type = "b")
@@ -43,11 +48,6 @@ some.values <- function() {
   return(seq(from=1, to=100,length.out = length(my.X))^2)
   }
 plot(my.X,some.values())
-
-# other chart types:
-hist(my.X)
-boxplot(my.X)
-qqnorm(my.X)
 
 # ggplot2 is a very popular package from the tidyverse
 # https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
