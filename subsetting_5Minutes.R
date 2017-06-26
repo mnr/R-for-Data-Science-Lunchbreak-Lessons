@@ -6,7 +6,7 @@
 ?subset
 
 # subsetting a simple vector
-LETTERS[3] # LETTERS is a built-in R constant. The upper-case alphabet.
+LETTERS[3] # LETTERS is a built-in R constant containing the upper-case alphabet.
 LETTERS[3:5]
 LETTERS[c(3,20:23)]
 LETTERS[c(10,7,3)]
@@ -14,7 +14,10 @@ LETTERS[c(10,7,3)]
 # Exclude
 LETTERS[-c(3:5)]
 LETTERS[c(-3,-5)]
-LETTERS[c(TRUE,FALSE)]
+
+# repeat "TRUE","FALSE" x 13, then apply to LETTERS. 
+# TRUE means select the letter. FALSE means omit the letter
+LETTERS[rep(c(TRUE,FALSE),13)] 
 
 # two-dimension data can also be subsetted
 lots.of.letters <- data.frame(LETTERS,letters,position=1:length(letters))
