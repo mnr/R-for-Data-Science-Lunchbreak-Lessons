@@ -10,9 +10,12 @@ I.am.a.vector <- 1
 I.am.a.vector <- c(1,2,3)
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")
 
-# but different. They have members.
+# ...but different. They have members (which must be the same type).
 length(I.am.a.vector) == 6 # length is number of members, not length of string
 sum(nchar(I.am.a.vector)) == 29 # length of complete "string"
+
+# mixing types is not a vector (it's a list):
+Everything.converts.to.a.string <- c(1,"a string",TRUE) 
 
 # Vectors are not strings. Seriously.
 I.am.also.a.vector <- c("did","gyre","and","gimble","in","the","wabes")
