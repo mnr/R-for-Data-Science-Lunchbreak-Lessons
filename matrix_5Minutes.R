@@ -2,7 +2,7 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # Description: Example file for Matrix: five minutes of R
 
-# matrix is a vector or list with dimensions
+# matrix is a vector or list with 2 dimensions
 # (Matrix is a 2-dimension Array. Array is like stacked matrices)
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")
 
