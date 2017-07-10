@@ -3,6 +3,7 @@
 # Description: Example file for Matrix: five minutes of R
 
 # matrix is a vector or list with dimensions
+# (Matrix is a 2-dimension Array. Array is like stacked matrices)
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")
 
 I.am.a.matrix <- matrix(I.am.a.vector,nrow=2,ncol=3)
