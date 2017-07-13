@@ -18,11 +18,11 @@ I.am.a.failure <- data.frame(I.am.a.vector,I.am.a.short.vector) #oops - differen
 I.am.a.dataframe[2,3] # col 3 is a factor (used to be a string)
 
 str(I.am.a.dataframe) # structure of the dataframe
-nrow(I.am.a.dataframe) # Number of Rows
-ncol(I.am.a.dataframe) # Number of Columns
+nrow(I.am.a.dataframe) # Number of Rows (observations)
+ncol(I.am.a.dataframe) # Number of Columns (variables)
 head(I.am.a.dataframe) # first rows of dataframe
 tail(I.am.a.dataframe) # last rows of dataframe
-
+names(I.am.a.dataframe) # Header names (aka variable names)
 
 # row.names ---------------------------------------------------------------
 I.am.a.dataframe <- data.frame(I.am.a.vector,many.months,row.names = I.am.also.a.vector)
@@ -36,5 +36,4 @@ I.am.a.dataframe <- data.frame(I.am.a.vector,I(many.months),row.names = I.am.als
 str(I.am.a.dataframe)
 I.am.a.dataframe["slithey","many.months"]
 
-# Next, we'll discuss using cbind and rbind to add rows and columns
 
