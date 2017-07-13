@@ -2,8 +2,7 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # Description: Example file for factors: five minutes of R
 
-# Factors are unique lists
-# Stored as integer values
+# Factors are lists of unique values, Stored as integers
 I.am.a.vector <- c("blue","black","green","white","black","blue","blue") # color of cars passing my window
 I.am.a.factor <- factor(I.am.a.vector)
 
