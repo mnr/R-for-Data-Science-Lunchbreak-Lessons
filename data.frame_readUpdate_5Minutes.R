@@ -32,4 +32,5 @@ I.am.a.dataframe$I.am.a.vector <- ifelse(I.am.a.dataframe$I.am.a.vector > 3,
                                          c("Smaller"))
 
 # You may have heard of attach() as a way of making dataframe references easier. DON'T DO IT!
-
+# instead, use with()
+I.am.a.dataframe$I.am.a.vector <- with(I.am.a.dataframe, ifelse(I.am.a.vector > 3,c("Larger"),c("Smaller")))
