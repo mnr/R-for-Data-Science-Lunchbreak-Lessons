@@ -1,6 +1,9 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for lists: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for lists
 
 # lists are special types of vectors, but allow for mixed types:
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")
@@ -31,3 +34,6 @@ I.am.a.list["bob"]
 I.am.a.list[["bob"]][2]
 I.am.a.list$bob
 I.am.a.list$bob[1]
+
+# see also
+# https://cran.r-project.org/doc/manuals/r-release/R-lang.html#List-objects
