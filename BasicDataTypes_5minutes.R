@@ -1,6 +1,8 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for R Data Types:Basic Types: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# Description: Example file for R Data Types:Basic Types
 
 # Numeric -----------------------------------------------------------------
 # identical to double and real
