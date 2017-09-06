@@ -2,6 +2,7 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
+# https://www.linkedin.com/learning/search?entityType=COURSE&keywords=mark%20niemann-ross?trk=insiders_215756_learning
 # Description: Example file for R Data Types:Basic Types
 
 # Numeric -----------------------------------------------------------------
