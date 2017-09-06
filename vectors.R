@@ -1,6 +1,9 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for Vectors: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for Vectors
 
 # vectors are the simplest data storage in R
 # They are like standard variables
@@ -17,7 +20,7 @@ sum(nchar(I.am.a.vector)) == 29 # length of complete "string"
 # mixing types is not a vector (it's a list):
 Everything.converts.to.a.string <- c(1,"a string",TRUE) 
 
-# Vectors are not strings. Seriously.
+# Vectors are not strings. 
 I.am.also.a.vector <- c("did","gyre","and","gimble","in","the","wabes")
 paste(I.am.a.vector,I.am.also.a.vector) # maybe not what you expected
 c(I.am.a.vector,I.am.also.a.vector) # end for end combination.
