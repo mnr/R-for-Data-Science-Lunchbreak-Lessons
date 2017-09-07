@@ -1,13 +1,16 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for factors: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for factors
 
 # Factors are lists of unique values, Stored as integers
 I.am.a.vector <- c("blue","black","green","white","black","blue","blue") # color of cars passing my window
 I.am.a.factor <- factor(I.am.a.vector)
 
 I.am.a.vector # notice the repeat of blue and black
-levels(I.am.a.factor) # no repeat!
+levels(I.am.a.factor) # no repeat! Efficient storage.
 levels(I.am.a.factor) <- c("negro","azul","verde","blanco")
 I.am.a.factor # now in spanish
 
