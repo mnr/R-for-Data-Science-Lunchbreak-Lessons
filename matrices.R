@@ -1,6 +1,11 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Matrix: five minutes of R
+
+# Matrices are vectors with the attribute dim and optionally dimnames attached to the vector. 
 
 # matrix is a vector or list with 2 dimensions
 # (Matrix is a 2-dimension Array. Array is like stacked matrices)
