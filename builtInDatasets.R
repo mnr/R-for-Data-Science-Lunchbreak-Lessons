@@ -26,9 +26,9 @@ month.name
 pi
 
 # Other datasets
-https://www.kaggle.com
-http://data.gov  
-http://www.census.gov
-http://data.gov.uk
-http://open.canada.ca/en
-
+# https://www.kaggle.com
+# http://data.gov  
+# http://www.census.gov
+# http://data.gov.uk
+# http://open.canada.ca/en
+# https://ropensci.org
