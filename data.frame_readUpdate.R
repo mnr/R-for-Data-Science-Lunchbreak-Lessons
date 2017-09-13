@@ -1,6 +1,9 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for data frame read and update: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for data frame read and update
 
 # create a data.frame
 I.am.a.vector <- c(1,2,3,4,5,6)
@@ -27,10 +30,9 @@ I.am.a.dataframe$numberwocky <- paste(I.am.a.dataframe$I.am.a.vector,I.am.a.data
 I.am.a.dataframe$CAPITAL.LETTERS <- NULL
 
 # Change Value of Variables -----------------------------------------------
-I.am.a.dataframe$I.am.a.vector <- ifelse(I.am.a.dataframe$I.am.a.vector > 3,
-                                         c("Larger"),
-                                         c("Smaller"))
+I.am.a.dataframe$I.am.a.vector <- ifelse(I.am.a.dataframe$I.am.a.vector > 3,"Larger","Smaller")
 
 # You may have heard of attach() as a way of making dataframe references easier. DON'T DO IT!
 # instead, use with()
-I.am.a.dataframe$I.am.a.vector <- with(I.am.a.dataframe, ifelse(I.am.a.vector > 3,c("Larger"),c("Smaller")))
+I.am.a.dataframe <- data.frame(I.am.a.vector,I.am.also.a.vector,many.months) # rebuild data.frame
+I.am.a.dataframe$I.am.a.vector <- with(I.am.a.dataframe, ifelse(I.am.a.vector > 3,"Larger","Smaller"))
