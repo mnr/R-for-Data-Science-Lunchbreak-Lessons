@@ -2,10 +2,11 @@
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
-# Description: Example file for apply, lapply, sapply: five minutes of R
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for apply, lapply, sapply
 
 data("WorldPhones")
-View(WorldPhones)
+head(WorldPhones)
 
 typeof(WorldPhones)
 dim(WorldPhones)
@@ -52,7 +53,7 @@ sapply(this.is.a.list,mean)
 range(this.is.a.list[1])
 lapply(this.is.a.list,range)
 sapply(this.is.a.list,range)
-vapply(this.is.a.list,range,c("minimum"=0,"maximum"=0))
+vapply(this.is.a.list,range,c("minimum"=0,"maximum"=0)) # minimum and maximum are a templat for vapply return
 
 
 # Extra Credit: look up the following:
