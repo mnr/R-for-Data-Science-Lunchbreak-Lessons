@@ -1,14 +1,18 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for mapply: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for mapply
 
-# a simple function that takes two arguments
+# mapply is similar to apply except it handles multiple arguments in functions
+# also-note function and object are reversed in argument order from apply
+
+# to illustrate, first create a simple function that takes two arguments
 mvFunction <- function(x,y) {
   return(paste(x,y,SEP=" "))
 }
 
-# mapply is similar to apply except it handles multiple arguments in functions
-# also-note function and object are reversed in argument order
 mapply(mvFunction,c(1:4),letters[1:4])
 mapply(mvFunction,c(1:4),letters[1:5])
 mapply(mvFunction,c(1:4),letters[1:8])
