@@ -12,7 +12,6 @@ data(mtcars)
 
 # the simplest of all plots
 plot(mtcars$mpg,mtcars$hp)
-hist(mtcars$mpg)
 
 # change the appearance of the plotted points
 plot(mtcars$mpg,type = "b")
@@ -59,6 +58,8 @@ plotThis(c(5,30),c(15,30))
 plotThis(c(15,30),c(15,40))
 
 # Other types of charts
+hist(mtcars$mpg)
+
 boxplot(mtcars$mpg)
 fivenum(mtcars$mpg) # the numbers used to create the boxplot
 
