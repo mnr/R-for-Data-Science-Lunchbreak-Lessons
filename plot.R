@@ -8,9 +8,6 @@
 # documentation of plot()
 ?plot
 
-# set up an x and y variable
-my.X <- c(1:10)
-my.Y <- seq(from=1, to=100,length.out = length(my.X))
 data(mtcars)
 
 # the simplest of all plots
