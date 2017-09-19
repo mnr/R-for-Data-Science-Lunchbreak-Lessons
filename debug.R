@@ -1,6 +1,10 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Description: Example file for debug: five minutes of R
+# LinkedIn: https://www.linkedin.com/in/markniemannross/
+# Github: https://github.com/mnr
+# More Learning: http://niemannross.com/link/mnratlil
+# Description: Example file for Debugging
+
 
 # This is examples on debugging. 
 
