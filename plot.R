@@ -17,12 +17,6 @@ data(mtcars)
 plot(mtcars$mpg,mtcars$hp)
 hist(mtcars$mpg)
 
-boxplot(mtcars$mpg)
-fivenum(mtcars$mpg)
-
-pie(table(mtcars$cyl))
-pie(table(mtcars$cyl),labels=c("Economy","Average","Muscle"))
-
 # change the appearance of the plotted points
 plot(mtcars$mpg,type = "b")
 
@@ -55,11 +49,6 @@ some.values <- function(my.something) {
   }
 plot(mtcars$mpg,some.values(mtcars$mpg))
 
-# ggplot2 is a very popular package from the tidyverse
-# https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
-
-# related to ggplot2, look at qplot
-
 # clever trick - put a plot in a function
 plotThis <- function(lineX,lineY) {plot(mtcars$mpg,
      type = "b",
@@ -71,3 +60,15 @@ lines(lineX,lineY)
 }
 plotThis(c(5,30),c(15,30))
 plotThis(c(15,30),c(15,40))
+
+# Other types of charts
+boxplot(mtcars$mpg)
+fivenum(mtcars$mpg) # the numbers used to create the boxplot
+
+pie(table(mtcars$cyl))
+pie(table(mtcars$cyl),labels=c("Economy","Average","Muscle"))
+
+# ggplot2 is a very popular package from the tidyverse
+# https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
+
+# related to ggplot2, look at qplot
