@@ -5,3 +5,15 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: order, merge, rbind, and cbind
 
+# data.frames:order -------------------------------------------------------
+
+
+# data.frames:merge -------------------------------------------------------
+
+
+# data.frames:rbind -------------------------------------------------------
+
+
+# data.frames:bind --------------------------------------------------------
+
+
