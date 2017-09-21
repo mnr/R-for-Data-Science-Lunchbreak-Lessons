@@ -65,4 +65,4 @@ as.raw(40) # prints 28. 28 = as.hexmode(40)
 charToRaw("hello") # produces string of hexadecimal bytes
 
 # See Also ---------------------------------------------------------------
-https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects
+browseURL("https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects")
