@@ -25,8 +25,8 @@ month.abb
 month.name
 pi
 
-# more from LinkedIn Learning
-browseURL(https://www.linkedin.com/learning/r-statistics-essential-training/using-built-in-datasets-in-r?trk=insiders_215756_learning)
+# more from LinkedIn Learning - video from Barton Poulson's "R Statistics Essential Training"
+browseURL("https://www.linkedin.com/learning/r-statistics-essential-training/using-built-in-datasets-in-r?trk=insiders_215756_learning")
 
 # Other datasets
 # https://www.kaggle.com
