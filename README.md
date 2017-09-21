@@ -9,3 +9,5 @@ Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 [My Github account](https://github.com/mnr)
 
 [More of my courses at LinkedIn Learning](https://www.linkedin.com/learning/search?entityType=COURSE&keywords=mark%20niemann-ross?trk=insiders_215756_learning)
+
+[niemannross.com](http://www.niemannross.com)
