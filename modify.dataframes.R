@@ -16,7 +16,13 @@ ChickWeight[196,] #lists the observation with the smallest weight
 ChickWeight[order(ChickWeight$weight),] # comma because [ row - comma - column ]
 
 # data.frames:merge -------------------------------------------------------
+# first, create two data.frames
+median.chick <- median(ChickWeight$weight) # split the df along median weight
+little.chicks <- ChickWeight[ChickWeight$weight < median.chick,]
+big.chicks <- ChickWeight[ChickWeight$weight > median.chick,]
 
+# second, put them back together
+all.chicks <- merge(little.chicks,big.chicks) # nope. Doesn't work
 
 # data.frames:rbind -------------------------------------------------------
 
