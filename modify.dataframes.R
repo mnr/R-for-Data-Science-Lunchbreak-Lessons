@@ -5,8 +5,15 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: order, merge, rbind, and cbind
 
-# data.frames:order -------------------------------------------------------
+# Need a dataframe to play with
+data("ChickWeight") # a built-in dataset
 
+# data.frames:order -------------------------------------------------------
+ChickWeight$weight # produces unsorted list of "weight" values
+sort(ChickWeight$weight) # sorts a vector
+order(ChickWeight$weight) # What is this? answer: sorted row numbers - not values
+ChickWeight[196,] #lists the observation with the smallest weight
+ChickWeight[order(ChickWeight$weight),] # comma because [ row - comma - column ]
 
 # data.frames:merge -------------------------------------------------------
 
