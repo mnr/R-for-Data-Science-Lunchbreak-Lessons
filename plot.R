@@ -61,6 +61,9 @@ plotThis(c(15,30),c(15,40))
 hist(mtcars$mpg)
 
 boxplot(mtcars$mpg)
+boxplot(mpg ~ cyl, data=mtcars, col="lightgray", varwidth=TRUE, 
+        main="mpg vs cylinders",
+        ylab="mpg",xlab="cylinders")
 fivenum(mtcars$mpg) # the numbers used to create the boxplot
 
 pie(table(mtcars$cyl))
