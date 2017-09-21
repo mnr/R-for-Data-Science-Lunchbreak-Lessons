@@ -29,9 +29,5 @@ pi
 browseURL("https://www.linkedin.com/learning/r-statistics-essential-training/using-built-in-datasets-in-r?trk=insiders_215756_learning")
 
 # Other datasets
-# https://www.kaggle.com
-# http://data.gov  
-# http://www.census.gov
-# http://data.gov.uk
-# http://open.canada.ca/en
-# https://ropensci.org
+other.datasets <- c("https://www.kaggle.com", "http://data.gov", "http://www.census.gov", "http://data.gov.uk", "http://open.canada.ca/en", "https://ropensci.org")
+browseURL(select.list(other.datasets,graphics=TRUE, title="other datasets"))
