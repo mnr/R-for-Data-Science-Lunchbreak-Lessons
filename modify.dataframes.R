@@ -17,12 +17,12 @@ ChickWeight[order(ChickWeight$weight),] # comma because [ row - comma - column ]
 
 # data.frames:merge -------------------------------------------------------
 # first, create two data.frames
-median.chick <- median(ChickWeight$weight) # split the df along median weight
-little.chicks <- ChickWeight[ChickWeight$weight < median.chick,]
-big.chicks <- ChickWeight[ChickWeight$weight > median.chick,]
+chick.one <- ChickWeight[ChickWeight$Chick == 1,]
+chick.two <- ChickWeight[ChickWeight$Chick == 2,]
 
-# second, put them back together
-all.chicks <- merge(little.chicks,big.chicks) # nope. Doesn't work
+# merge is like an SQL inner join - think horizontal combination
+# let's compare the weight gain of chick one vs chick two
+match.time.obs <- merge(chick.one,chick.two,by="Time")
 
 # data.frames:rbind -------------------------------------------------------
 
