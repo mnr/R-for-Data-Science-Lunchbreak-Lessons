@@ -24,6 +24,10 @@ chick.two <- ChickWeight[ChickWeight$Chick == 2,]
 # let's compare the weight gain of chick one vs chick two
 match.time.obs <- merge(chick.one,chick.two,by="Time")
 
+# another example. Add names to the chicks
+source("chicknames.R") # builds a data.frame with ranked names
+chicks_names <- merge(ChickWeight,chicknames,by.x="Chick",by.y = "rank")
+
 # data.frames:rbind -------------------------------------------------------
 
 
