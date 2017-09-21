@@ -20,7 +20,7 @@ ChickWeight[order(ChickWeight$weight),] # comma because [ row - comma - column ]
 chick.one <- ChickWeight[ChickWeight$Chick == 1,]
 chick.two <- ChickWeight[ChickWeight$Chick == 2,]
 
-# merge is like an SQL inner join - think horizontal combination
+# merge is like an SQL join - think horizontal combination
 # let's compare the weight gain of chick one vs chick two
 match.time.obs <- merge(chick.one,chick.two,by="Time")
 
