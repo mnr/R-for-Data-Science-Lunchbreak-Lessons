@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: rbind and cbind
 
+# Main Idea: how to add rows and columns to data.frames
+
 # Need some data to play with
 data("ChickWeight") # a built-in dataset
 chick.one <- ChickWeight[ChickWeight$Chick == 1,]
