@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for subsetting
 
+# main idea: R is designed to slice data with subsetting
+
 # help
 ?subset
 
