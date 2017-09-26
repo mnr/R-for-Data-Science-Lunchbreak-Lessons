@@ -40,4 +40,5 @@ lots.of.letters[LETTERS=="R","letters"]
 lots.of.letters[LETTERS=="R" | LETTERS=="T","letters"] # | means "or". & means "and"
 
 # also look at...
-http://adv-r.had.co.nz/Subsetting.html
+browseURL("http://adv-r.had.co.nz/Subsetting.html")
+?substr # use substring for character vector
