@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for datasets
 
+# main idea: datasets are a convenient way to explore R language
+
 # documentation of datasets
 library(help="datasets")
 
