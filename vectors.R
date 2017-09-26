@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Vectors
 
+# Data Structures are * VECTOR * Lists * Matrices * Arrays * Data Frame * factors
+
 # vectors are the simplest data storage in R
 # They are like standard variables
 I.am.a.vector <- 1

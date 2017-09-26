@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for lists
 
+# Data Structures are * Vectors * LISTS * Matrices * Arrays * Data Frames * factors
+
 # lists are special types of vectors, but allow for mixed types:
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")
 I.am.a.list <- list(1,TRUE,"gyre")

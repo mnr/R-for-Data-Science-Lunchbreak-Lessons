@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Array
 
+# Data Structures are * Vectors * Lists * Matrices * ARRAY * Data Frame * factors
+
 # array is a vector or list with 2+ dimensions
 # (Matrix is a 2-dimension Array. Array is like stacked matrices)
 I.am.a.vector <- c("twas","brillig","and","the","slithey","toves")

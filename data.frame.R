@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for data frame
 
+# Data Structures are * Vectors * Lists * Matrices * Arrays * DATA FRAME * factors
+
 # data frame is like a spreadsheet
 # Columns (aka: variables) are vectors
 # Rows (aka: observations) are lists and must contain an equal number of columns

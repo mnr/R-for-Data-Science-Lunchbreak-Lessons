@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for factors
 
+# Data Structures are * Vectors * Lists * Matrices * Arrays * Data frame * FACTORS
+
 # Factors are lists of unique values, Stored as integers
 I.am.a.vector <- c("blue","black","green","white","black","blue","blue") # color of cars passing my window
 I.am.a.factor <- factor(I.am.a.vector)
