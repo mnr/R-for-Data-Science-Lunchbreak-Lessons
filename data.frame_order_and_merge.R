@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: order and merge
 
+# main idea: sorting and merging data.frames
+
 # Need a dataframe to play with
 data("ChickWeight") # a built-in dataset
 
