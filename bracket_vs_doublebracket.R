@@ -5,9 +5,22 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for [] vs [[]]
 
-ChickWeight["Chick"]
-ChickWeight["Chick"][3] # fails. returns object
-ChickWeight[["Chick"]][3] # succeeds. returns contents of object
+# Main idea: [] returns object. [[]] returns contents
+
+# load some sample data
+data("ChickWeight")
+
+ChickWeight # 578 observations of 4 variables
+ChickWeight["Chick"] # one of the variables
+typeof(ChickWeight["Chick"]) # this is a list
+length(ChickWeight["Chick"]) # this is a list of one element
+ChickWeight["Chick"][3] # fails. 
+
+ChickWeight[["Chick"]] # this is different than []
+typeof(ChickWeight[["Chick"]]) # This is an integer instead of a list
+length(ChickWeight[["Chick"]]) # this has 578 ints
+ChickWeight[["Chick"]][3] # succeeds. returns 3rd element of collection
+
 
 # another example
 lotsaletters <- list(CAPS=LETTERS[1:10], lc=letters[1:10])
