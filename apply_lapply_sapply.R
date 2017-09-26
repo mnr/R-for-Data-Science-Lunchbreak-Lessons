@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for apply, lapply, sapply
 
+# main idea: don't use for loops if you can apply
+
 data("WorldPhones")
 head(WorldPhones)
 
