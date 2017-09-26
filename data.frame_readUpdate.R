@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for data frame read and update
 
+# Main idea: Navigating data.frames
+
 # create a data.frame
 I.am.a.vector <- c(1,2,3,4,5,6)
 I.am.also.a.vector <- c("twas","brillig","and","the","slithey","toves")
