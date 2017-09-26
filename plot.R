@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for plot
 
+# main idea: a quick overview of plotting in R
+
 # documentation of plot()
 ?plot
 
