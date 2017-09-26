@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Vector Math
 
+# main idea: math works differently in R
+
 # how would you multiply each item in an array by two?
 # first create an array (actually, this is an "R" vector)
 many.numbers <- c(1,2,3,4,5,6,7,8,9)
