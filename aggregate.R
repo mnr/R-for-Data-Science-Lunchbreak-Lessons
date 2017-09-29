@@ -20,7 +20,7 @@ aggregate(weight ~ Chick, data=ChickWeight, median)
 # list() behaves differently than "~". median needs numeric data
 aggregate(weight ~ Chick + Diet, data=ChickWeight, median) # this works
 
-# this doesn't. But it should. Factors not being passed correctly.
+# this doesn't. But it should. Factors don't work with median.
 aggregate(x=ChickWeight, 
           by=list(ChickID = ChickWeight$Chick, Dietary=ChickWeight$Diet), 
           median)
