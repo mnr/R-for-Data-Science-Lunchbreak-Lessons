@@ -3,7 +3,7 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: Example file for apply, lapply, sapply
+# Description: Example file for apply
 
 # main idea: don't use FOR loops if you can APPLY
 
@@ -17,7 +17,7 @@ apply(WorldPhones,1,mean)
 apply(WorldPhones,2,mean)
 
 # Here's how to pass additional arguments to the function
-apply(WorldPhones,1,mean,trim=2)
+apply(WorldPhones,1,mean,trim=.2)
 
 # lapply: returns a list resulting from applying 
 # a function to each element of original list

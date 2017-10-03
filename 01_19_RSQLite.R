@@ -5,15 +5,12 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for RSQLite
 
-# main idea: Use SQLite to store/buffer data
-
+# main idea: Use SQLite to store/buffer data. it's persistent and uses SQL
 
 # Set up SQLIte -----------------------------------------------------------
 
 # import necessary libraries
-list.of.packages <- c("readxl","DBI","RSQLite")
-new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages)
+install.packages(c("DBI","RSQLite"))
 
 # SQLite support
 library(DBI)
@@ -32,7 +29,6 @@ dbWriteTable(conn=mySQLiteDB,name="SQLChickWeight",value=data.frame(ChickWeight)
 # Use SQL with the database ---------------------------------------------
 doThisSQL <- "select Chick, weight from SQLChickWeight where weight > 100"
 dbGetQuery(mySQLiteDB,doThisSQL)
-
 
 # All datasets are loaded with RSQLite ------------------------------------
 sqldatasets <- RSQLite::datasetsDb()

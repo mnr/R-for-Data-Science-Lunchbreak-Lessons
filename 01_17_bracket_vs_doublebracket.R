@@ -10,16 +10,13 @@
 # load some sample data
 data("ChickWeight")
 
-View(ChickWeight) # 578 observations of 4 variables
-length(ChickWeight["Chick"]) # Not 578. This is a list of one element
 ChickWeight["Chick"][3] # fails. 
-
-ChickWeight[["Chick"]] # this is different than []
-typeof(ChickWeight["Chick"])
-typeof(ChickWeight[["Chick"]]) # This is an integer instead of a list
-length(ChickWeight[["Chick"]]) # this has 578 ints
 ChickWeight[["Chick"]][3] # succeeds. returns 3rd element of collection
 
+length(ChickWeight["Chick"]) # this has one element
+length(ChickWeight[["Chick"]]) # this has 578 elements
+
+ChickWeight$Chick[3] #equivalent of ChickWeight[["Chick"]][3]
 
 # another example
 lotsaletters <- list(CAPS=LETTERS[1:10], lc=letters[1:10])

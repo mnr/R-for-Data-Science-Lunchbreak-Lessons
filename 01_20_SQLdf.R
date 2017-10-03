@@ -7,6 +7,9 @@
 
 # main idea: crossover between R data.frames and SQL
 
+# get some data to play with
+data("ChickWeight")
+
 
 # Set up SQLdf -----------------------------------------------------------
 
@@ -14,9 +17,6 @@
 install.packages("sqldf")
 
 library(sqldf)
-
-# get some data to play with
-data("ChickWeight")
 
 # let's say:
 # I wanted the median weight of all chicks

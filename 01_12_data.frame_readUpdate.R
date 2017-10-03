@@ -8,17 +8,7 @@
 # Main idea: Navigating data.frames
 
 # Need some data to play with
-source("chicknames.R") # builds a data.frame with ranked names
-
-# address variables, rows and cells ------------------------------------------
-# values of variables (columns)
-ChickWeight$weight # contents of a variable (column)
-ChickWeight[1]
-
-# values of observations (rows)
-ChickWeight[2,] # notice the comma
-ChickWeight[2,3] # 2nd row, 3rd column
-ChickWeight[1:3,2] # 1st, 2nd, 3rd row - 2nd column
+data("ChickWeight")
 
 # Create Variables --------------------------------------------------------
 ChickWeight$someNumbers <- c(1:nrow(ChickWeight)) # number of rows must be equal
