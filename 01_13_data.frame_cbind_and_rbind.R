@@ -8,9 +8,6 @@
 # Main Idea: how to add rows and columns to data.frames (or matrices)
 
 # Need some data to play with
-data("ChickWeight") # a built-in dataset
-chick.one <- ChickWeight[ChickWeight$Chick == 1,]
-chick.two <- ChickWeight[ChickWeight$Chick == 2,]
 source("chicknames.R") # builds a data.frame with ranked names
 
 # data.frames: rbind -------------------------------------------------------
