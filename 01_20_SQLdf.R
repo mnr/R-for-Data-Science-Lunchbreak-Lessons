@@ -11,21 +11,22 @@
 # Set up SQLdf -----------------------------------------------------------
 
 # import necessary libraries
-list.of.packages <- c("sqldf")
-new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages)
+install.packages("sqldf")
 
 library(sqldf)
 
 # get some data to play with
 data("ChickWeight")
 
-# run an SQL call against a data.frame subset
-sqldf("Select Chick, median(weight) from ChickWeight group by Chick order by cast(Chick as int)")
+# let's say:
+# I wanted the median weight of all chicks
+# ... AND I know SQL
 
-# using standard R syntax, this would be written as...
-chick_median_weight <- aggregate(weight ~ Chick,ChickWeight,median)
-chick_median_weight[order(as.numeric(levels(chick_median_weight$Chick))),]
+# sqldf allows us to run an SQL call against a data.frame 
+sqldf("Select Chick, median(weight) 
+      from ChickWeight 
+      group by Chick 
+      order by cast(Chick as int)")
 
 # documentation -----------------------------------------------------------
 browseURL("https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf")

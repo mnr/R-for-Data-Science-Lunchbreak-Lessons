@@ -7,39 +7,35 @@
 
 # main idea: a quick overview of plotting in R
 
-# documentation of plot()
-?plot
-
-data(mtcars)
+source("chicknames.R")
 
 # the simplest of all plots
-plot(mtcars$mpg,mtcars$hp)
+plot(ChickWeight$Time,ChickWeight$weight)
 
 # change the appearance of the plotted points
-plot(mtcars$mpg,type = "b")
+plot(ChickWeight$Time,ChickWeight$weight,type = "l")
 
 # setting the titles and labels
-plot(mtcars$mpg,
-     type = "b",
+plot(ChickWeight$Time,ChickWeight$weight,
+     type = "l",
      main = "Plot for R Example",
      sub = "We are learning a little at a time",
-     xlab="mpg is Miles Per Gallon",
-     ylab="Look at the pretty bumps")
+     xlab="number of days since birth",
+     ylab="grams of body weight")
 
 # adding another line to a plot
-plot(mtcars$mpg,
-     type = "b",
+plot(ChickWeight$Time,ChickWeight$weight,
+     type = "l",
      main = "Plot for R Example",
      sub = "We are learning a little at a time",
-     xlab="mpg is Miles Per Gallon",
-     ylab="Look at the pretty bumps")
-lines(c(5,30),c(15,30))
-        
-?lines # hint: this will tell you more about how to do lines
+     xlab="number of days since birth",
+     ylab="grams of body weight")
+lines(c(1,20),c(350,50)) # lines(c(x1-value,x2-value),c(y1-value,y2-value))
 
-# another example of plot & line
-plot(mtcars$mpg)
-lines(c(5,30),c(15,30), type="o", pch=22, lty=2, col="red")
+# change the appearance of the graph
+?lines
+?par
+lines(c(1,20),c(350,50), type="o", pch=22, lty=2, col="red")
 
 # You can also use functions as x and y arguments
 some.values <- function(my.something) { 

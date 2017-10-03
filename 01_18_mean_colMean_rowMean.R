@@ -7,12 +7,6 @@
 
 # main idea: specialty functions vs apply - why?
 
-# need some data to play with
-data("UCBAdmissions")
-UCBAdmissions
-str(UCBAdmissions) # how is this data structured?
-ftable(UCBAdmissions) # what does this look like? (numbers are counts of each cell)
-
 I.am.a.matrix <- matrix(1:30) # need some data
 dim(I.am.a.matrix) <- c(6,5)
 I.am.a.matrix # what does this look like?

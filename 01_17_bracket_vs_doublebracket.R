@@ -10,13 +10,12 @@
 # load some sample data
 data("ChickWeight")
 
-ChickWeight # 578 observations of 4 variables
-ChickWeight["Chick"] # one of the variables
-typeof(ChickWeight["Chick"]) # this is a list
-length(ChickWeight["Chick"]) # this is a list of one element
+View(ChickWeight) # 578 observations of 4 variables
+length(ChickWeight["Chick"]) # Not 578. This is a list of one element
 ChickWeight["Chick"][3] # fails. 
 
 ChickWeight[["Chick"]] # this is different than []
+typeof(ChickWeight["Chick"])
 typeof(ChickWeight[["Chick"]]) # This is an integer instead of a list
 length(ChickWeight[["Chick"]]) # this has 578 ints
 ChickWeight[["Chick"]][3] # succeeds. returns 3rd element of collection

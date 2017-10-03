@@ -10,8 +10,10 @@
 # grab some data to work with
 data("ChickWeight")
 
+# let's say I want the median weight of each chick
 # basic format
 aggregate(ChickWeight$weight,  by=list(chkID = ChickWeight$Chick), FUN=median)
+# notice it isn't sorted
 
 # use ~ notation
 # ~ is for modeling. Left of ~ is "y". Right is model. so y ~ model
@@ -27,7 +29,7 @@ aggregate(x=ChickWeight,
 
 # convert factors to numeric
 str(fixedChickWeight)
-fixedChickWeight <- ChickWeight
+fixedChickWeight <- ChickWeight # make a copy of ChickWeight
 fixedChickWeight$Chick <- as.numeric(levels(ChickWeight$Chick)[ChickWeight$Chick])
 fixedChickWeight$Diet <- as.numeric(levels(ChickWeight$Diet)[ChickWeight$Diet])
 str(fixedChickWeight)
