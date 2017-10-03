@@ -10,3 +10,7 @@ structure(list(rank = 1:50, name = c("Sophia", "Emma", "Olivia",
 "Aaliyah", "Gabriella", "Camila", "Aria", "Kaylee", "Scarlett", 
 "Hailey", "Arianna", "Riley", "Alexis", "Nevaeh", "Sarah", "Claire", 
 "Sadie")), .Names = c("rank", "name"), row.names = c(NA, 50L), class = "data.frame")
+
+data("ChickWeight") # a built-in dataset
+chick.one <- ChickWeight[ChickWeight$Chick == 1,]
+chick.two <- ChickWeight[ChickWeight$Chick == 2,]
