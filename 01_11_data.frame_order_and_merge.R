@@ -27,6 +27,6 @@ chick.two <- ChickWeight[ChickWeight$Chick == 2,]
 match.time.obs <- merge(chick.one,chick.two,by="Time")
 
 # another example. Add names to the chicks using "by"
-source("chicknames.R") # builds a data.frame with ranked names
-chicks_names <- merge(ChickWeight,chicknames) # oops! merge is confused, so does an sql join all
-chicks_names <- merge(ChickWeight,chicknames,by.x="Chick",by.y = "rank")
+source("popularNames.R") # builds a data.frame with ranked names
+chicks_names <- merge(ChickWeight,popularNames) # oops! merge is confused, so does an sql join all
+chicks_names <- merge(ChickWeight,popularNames,by.x="Chick",by.y = "rank")
