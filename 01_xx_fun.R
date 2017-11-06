@@ -29,3 +29,9 @@ library(fun)
 mine_sweeper()
 gomoku()
 
+
+# praise ------------------------------------------------------------------
+install.packages("praise")
+library(praise)
+praise("${Exclamation}! ${rpackage}, ${adjective}")
+
