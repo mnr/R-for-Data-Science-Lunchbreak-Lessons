@@ -17,8 +17,11 @@ library(magrittr)
 # forward pipe 
 myvar <- fivenum(1:23)
 plot(myvar,1:5)
-1:23 %>% fivenum() %>% plot(1:5)
-
+#...or...
+1:23 %>% 
+  fivenum %>% 
+  plot(1:5)
+# notice the missing () in fivenum. If a function only has one argument, %>% allows for omission of ()
 
 # %T>% --------------------------------------------------------------------
 # tee 
@@ -37,3 +40,14 @@ source("popularNames.R")
 popularNames %>% fivenum() # doesn't work because variable not specified
 popularNames %>% fivenum(rank) # doesn't work because variable name not available
 popularNames %$% fivenum(rank) # works
+
+
+# dot ------------------------------------------------------------------
+# a dot can be used to direct pipe data to a specific argument
+1:23 %>%
+  fivenum %>%
+  LETTERS[]
+# ... instead, do this ...
+1:26 %>%
+  fivenum %>%
+  LETTERS[.]
