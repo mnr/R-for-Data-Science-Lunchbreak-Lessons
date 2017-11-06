@@ -34,4 +34,5 @@ gomoku()
 install.packages("praise")
 library(praise)
 praise("${Exclamation}! ${rpackage}, ${adjective}")
+?praise_parts #lists the template words
 
