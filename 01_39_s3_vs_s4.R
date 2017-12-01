@@ -26,10 +26,10 @@ setClass("one_temperature", representation(temp = "numeric", scale = "character"
          validity = check_scale,
          prototype(temp = NA_integer_ , scale = "Farenheit") )
 
-
 s4_airTemp <- new("one_temperature", temp = 32, scale = "farenheit")
 s4_airTemp <- new("one_temperature", temp = 32)
 
+str(s4_airTemp) # shows the structure of the object
 
 s4_airTemp <- new("one_temperature", temp = 32, scale = "bob") # invalid value for "scale"
 s4_airTemp <- new("one_temperature", temp = "thirty-two", scale = 27)  # invalid class
