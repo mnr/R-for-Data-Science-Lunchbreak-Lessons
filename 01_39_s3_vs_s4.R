@@ -28,7 +28,7 @@ setClass("one_temperature",
          prototype(temperature = NA_integer_ , scale = "Farenheit")
          )
 
-# use setGeneric followed by setMethod to create a method for the object
+# use setGeneric followed by setMethod to create a method for the class
 setGeneric("isWaterFreezing",
            function(object) {
              standardGeneric("isWaterFreezing")
