@@ -41,8 +41,8 @@ lots.of.letters[LETTERS=="R" | LETTERS=="T","letters"] # | means "or". & means "
 # INTERESTING
 # The above code produces a successful subset - but for the wrong reasons.
 # It should be...
-lots.of.letters["LETTERS==R","letters"]
-# ...where the quotes are around the entire "LETTERS == R" instead of LETTERS == "R"
+lots.of.letters[lots.of.letters$LETTERS=="R","letters"]
+# ...the name of the dataset is included instead of LETTERS == "R"
 # It works because LETTERS == "R" returns a logical vector of 26 results. Try it...
 LETTERS == "R"
 # The result of LETTERS == "R" is then applied to the rows of lots.of.letters
