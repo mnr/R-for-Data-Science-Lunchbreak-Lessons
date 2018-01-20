@@ -47,6 +47,7 @@ lots.of.letters[lots.of.letters$LETTERS=="R","letters"]
 LETTERS == "R"
 # The result of LETTERS == "R" is then applied to the rows of lots.of.letters
 # which returns the 18th row - which corresponds to "R"
+# More discussion at https://www.linkedin.com/feed/update/urn:li:linkedInArticle:6359807726591320064/
 
 
 # also look at...
