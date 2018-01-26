@@ -38,6 +38,18 @@ lots.of.letters[lots.of.letters$position > 10,"letters"]
 lots.of.letters[LETTERS=="R","letters"]
 lots.of.letters[LETTERS=="R" | LETTERS=="T","letters"] # | means "or". & means "and"
 
+# INTERESTING
+# The above code produces a successful subset - but for the wrong reasons.
+# It should be...
+lots.of.letters[lots.of.letters$LETTERS=="R","letters"]
+# ...the name of the dataset is included instead of LETTERS == "R"
+# It works because LETTERS == "R" returns a logical vector of 26 results. Try it...
+LETTERS == "R"
+# The result of LETTERS == "R" is then applied to the rows of lots.of.letters
+# which returns the 18th row - which corresponds to "R"
+# More discussion at https://www.linkedin.com/feed/update/urn:li:linkedInArticle:6359807726591320064/
+
+
 # also look at...
 browseURL("http://adv-r.had.co.nz/Subsetting.html")
 ?substr # use substring for character vector
