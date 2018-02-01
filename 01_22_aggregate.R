@@ -17,6 +17,7 @@ aggregate(ChickWeight$weight,  by=list(chkID = ChickWeight$Chick), FUN=median)
 
 # use ~ notation
 # ~ is for modeling. Left of ~ is "y". Right is model. so y ~ model
+# in other words, left of ~ is the result. right of ~ are selectors
 aggregate(weight ~ Chick, data=ChickWeight, median)
 
 # list() behaves differently than "~". median needs numeric data
