@@ -8,7 +8,7 @@
 # Main Idea: how to add rows and columns to data.frames (or matrices)
 
 # Need some data to play with
-source("popularNames.R") # builds a data.frame with ranked names
+source("makeChickWeight.R") # builds a data.frame with ranked names
 
 # data.frames: rbind -------------------------------------------------------
 # row bind. Combine columns by rows
