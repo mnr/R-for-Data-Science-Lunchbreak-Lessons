@@ -25,12 +25,12 @@ apply(WorldPhones,2,mean)
 # Here's how to pass additional arguments to the function
 apply(WorldPhones,1,mean,trim=.2)
 
+# there are many more apply-type functions
+apropos(".apply")
+
 # lapply: returns a list resulting from applying 
 # a function to each element of original list
 # lapply works best on lists
 # asks: for each value in WorldPhones, Is this value greater than 10,000?
 world.phone.list <- list(WorldPhones)
 lapply(world.phone.list,function(x) {x>10000})
-
-# there are many more apply-type functions
-apropos(".apply")
