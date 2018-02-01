@@ -9,6 +9,12 @@
 
 data("WorldPhones") # The number of telephones in various regions of the world (in thousands).
 
+# example for loop
+for(aCountry in 1:ncol(WorldPhones)) {
+  print(mean(WorldPhones[aCountry, ]))
+}
+
+
 # instead of "for" loops, use "apply"
 # apply: Returns a vector or array or list of values obtained by applying a
 # function to margins of an array or matrix.
