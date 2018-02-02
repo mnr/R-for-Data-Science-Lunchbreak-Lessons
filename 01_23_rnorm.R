@@ -22,7 +22,7 @@ runif(10,1,100) # 10 values between 1 (min) and 100 (max)
 chicknames[runif(3,1,nrow(chicknames)),]
 
 # Random Sample of Known Values -------------------------------------------
-sample(1:100,2000,replace=TRUE) # sample(x, size, replace = FALSE, prob = NULL)
-# x assumes one digit is actuall 1:x (sometimes)
+sample(1:100,10,replace=TRUE) # sample(x, size, replace = FALSE, prob = NULL)
+# x assumes a single digit (instead of a range) is actually 1:x (sometimes)
 # replace=false == cannot take a sample larger than the population
 sample(chicknames$name,3) # assumes replace=FALSE
