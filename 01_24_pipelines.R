@@ -36,10 +36,10 @@ myvar %<>% fivenum()
 
 # %$% ---------------------------------------------------------------------
 # exposition. expose the names from left hand data to right hand function
-source("popularNames.R") 
-popularNames %>% fivenum() # doesn't work because variable not specified
-popularNames %>% fivenum(rank) # doesn't work because variable name not available
-popularNames %$% fivenum(rank) # works
+source("makeChickWeight.R") 
+chicknames %>% fivenum() # doesn't work because variable not specified
+chicknames %>% fivenum(rank) # doesn't work because variable name not available
+chicknames %$% fivenum(rank) # works
 
 
 # dot ------------------------------------------------------------------
