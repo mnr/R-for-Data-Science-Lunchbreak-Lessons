@@ -1,8 +1,9 @@
-# Copyright Mark Niemann-Ross, 2017
+# Example file for http://niemannross.com/link/rlunchlessons
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
+# Copyright Mark Niemann-Ross, 2017
 # Description: Example file for datasets
 
 # main idea: datasets are a convenient way to explore R language
