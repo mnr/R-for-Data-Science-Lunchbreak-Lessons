@@ -5,7 +5,12 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: askYesNo
 
-R5.0
-New askYesNo() function and "askYesNo" option to ask the user
-binary response questions in a customizable but consistent way.
-(Suggestion of PR#17242.)
+# new in 5.0
+
+askYesNo("Do you like brussels sprouts?", default = TRUE)
+
+askYesNo("Do you like brussels sprouts?", prompts = "Y/N/C")
+
+askYesNo("Do you like brussels sprouts?", prompts = "Yes/No/Cancel")
+
+
