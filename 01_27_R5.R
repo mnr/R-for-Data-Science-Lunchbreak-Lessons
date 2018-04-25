@@ -7,22 +7,13 @@
 
 # main idea: upgrade your version of R to 5.0
 
-# Note to MNR: # Later this year Andrea and I intend to merge the updateR package into installr
-  # so that the updateR function will work seamlessly in both Windows and Mac.
-  
-
-# Macintosh -------------------------------------------------------
-install.packages("devtools")
-devtools::install_github("AndreaCirilloAC/updateR") 
-library(updateR)
-updateR(admin_password = "123") # Where "PASSWORD" stands for your system password
-
-
-# Windows -----------------------------------------------------------------
-
-# Open this file in Rgui
-install.packages("installr")
+install.packages("installr") # Macintosh users. If you see "Warning in install.packages" look below
 library(installr)
 updateR()
 
+# Macintosh (in case of "Warning in install.packages") -------------------------------------------------------
+install.packages("devtools")
+devtools::install_github("AndreaCirilloAC/updateR") 
+library(updateR)
+updateR(admin_password = "PASSWORD") # Where "PASSWORD" stands for your system password
 
