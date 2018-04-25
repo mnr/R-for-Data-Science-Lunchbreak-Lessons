@@ -7,10 +7,12 @@
 
 # new in 5.0
 
-askYesNo("Do you like brussels sprouts?", default = TRUE)
+askYesNo("Do you like brussels sprouts?")
 
 askYesNo("Do you like brussels sprouts?", prompts = "Y/N/C")
 
-askYesNo("Do you like brussels sprouts?", prompts = "Yes/No/Cancel")
+askYesNo("Do you like brussels sprouts?", prompts = "Y/N/C", default = FALSE)
+
+askYesNo("Which is your favorite?", prompts = "Carrots/Brussels Sprouts/Onions")
 
 
