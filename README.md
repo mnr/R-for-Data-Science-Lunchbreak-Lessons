@@ -8,6 +8,8 @@ The five minutes you spend each week will provide you with a building block you 
 Copyright Mark Niemann-Ross, 2017
 Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 
+[join the discussion](https://groups.google.com/d/forum/r-for-data-science-lunchbreak-lessons)
+
 [My LinkedIn Profile](https://www.linkedin.com/in/markniemannross/)
 
 [My Github account](https://github.com/mnr)
