@@ -12,7 +12,7 @@ args=(commandArgs(TRUE))
 
 
 # hello world - just to demonstrate this program is alive
-print("Hello")
+print("Hello") 
 
 # Here's how to read from stdin. 
 # Rscript thisprog.r < sampletext.txt
