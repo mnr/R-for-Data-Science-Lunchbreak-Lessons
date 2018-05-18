@@ -7,6 +7,8 @@
 
 # new in 5.0
 
+R.Version()
+
 askYesNo("Do you like brussels sprouts?")
 
 askYesNo("Do you like brussels sprouts?", prompts = "Y/N/C")
