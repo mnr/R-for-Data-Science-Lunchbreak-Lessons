@@ -1,3 +1,9 @@
+# builds some data to experiment with
+
+data("ChickWeight") # a built-in dataset
+chick.one <- ChickWeight[ChickWeight$Chick == 1, ]
+chick.two <- ChickWeight[ChickWeight$Chick == 2, ]
+
 # creates a data.frame with ranked names
 # used by data.frame merge example
 chicknames <-
@@ -61,7 +67,3 @@ chicknames <-
     row.names = c(NA, 50L),
     class = "data.frame"
   )
-
-data("ChickWeight") # a built-in dataset
-chick.one <- ChickWeight[ChickWeight$Chick == 1, ]
-chick.two <- ChickWeight[ChickWeight$Chick == 2, ]
