@@ -12,6 +12,7 @@
 install.packages("fortunes")
 library(fortunes)
 fortune()
+allFortunes <- read.fortunes()
 
 
 # cowsay ------------------------------------------------------------------
@@ -20,6 +21,8 @@ library(cowsay)
 say("Why so serious?", by="cow")
 names(animals)
 say("futurama",by=sample(names(animals),1))
+say("dexter",by=sample(names(animals),1))
+# other wildcards: "arresteddevelopment", "doctorwho", "dexter", "futurama", "holygrail", "simpsons", "starwars", "loremipsum"
 
 
 # fun ---------------------------------------------------------------------
@@ -33,6 +36,6 @@ gomoku()
 # praise ------------------------------------------------------------------
 install.packages("praise")
 library(praise)
-praise("${Exclamation}! ${rpackage}, ${adjective}")
+praise("${Exclamation}! You are ${adjective}")
 ?praise_parts #lists the template words
 
