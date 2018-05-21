@@ -9,26 +9,15 @@
 
 # Main Idea: how to add rows to data.frames (or matrices)
 
-barplot()
-cdplot()
 coplot()
 dotchart()
 fourfoldplot()
+hist(mtcars$mpg)
 matplot()
 mosaicplot()
-pie()
 spineplot()
 stem()
 stripchart()
 sunflowerplot()
 
-# Other types of charts
-hist(mtcars$mpg)
 
-pie(table(mtcars$cyl))
-pie(table(mtcars$cyl),labels=c("Economy","Average","Muscle"))
-
-# ggplot2 is a very popular package from the tidyverse
-# https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
-
-# related to ggplot2, look at qplot
