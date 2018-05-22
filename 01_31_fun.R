@@ -14,17 +14,6 @@ library(fortunes)
 fortune()
 allFortunes <- read.fortunes()
 
-
-# cowsay ------------------------------------------------------------------
-install.packages("cowsay")
-library(cowsay)
-say("Why so serious?", by="cow")
-names(animals)
-say("futurama",by=sample(names(animals),1))
-say("dexter",by=sample(names(animals),1))
-# other wildcards: "arresteddevelopment", "doctorwho", "dexter", "futurama", "holygrail", "simpsons", "starwars", "loremipsum"
-
-
 # fun ---------------------------------------------------------------------
 # some games. Not well maintained.
 install.packages("fun")
