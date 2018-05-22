@@ -9,4 +9,6 @@ hist(ChickWeight$weight)
 
 hist(ChickWeight$weight, density = 30)
 
+hist(ChickWeight$weight, density = 30, breaks = c(0,100,200,max(ChickWeight$weight)))
+
 hist(ChickWeight$weight, breaks = fivenum(ChickWeight$weight))
