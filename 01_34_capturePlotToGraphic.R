@@ -3,14 +3,11 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: askYesNo
+# Description: capturing plots to an image file
 
-# new in 5.0
+# JPG, PNG, WMF, PDF
 
-askYesNo("Do you like brussels sprouts?", default = TRUE)
-
-askYesNo("Do you like brussels sprouts?", prompts = "Y/N/C")
-
-askYesNo("Do you like brussels sprouts?", prompts = "Yes/No/Cancel")
-
+pdf('~/Documents/plots/rplot.pdf')
+hist(ChickWeight$weight)
+dev.off()
 
