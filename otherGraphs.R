@@ -7,12 +7,9 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: rbind
 
-# Main Idea: how to add rows to data.frames (or matrices)
 
-coplot()
 dotchart()
 fourfoldplot()
-hist(mtcars$mpg)
 matplot()
 mosaicplot()
 spineplot()
