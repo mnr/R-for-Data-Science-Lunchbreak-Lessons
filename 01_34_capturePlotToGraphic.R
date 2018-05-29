@@ -11,3 +11,11 @@ pdf('~/Documents/plots/rplot.pdf')
 hist(ChickWeight$weight)
 dev.off()
 
+# note that the title of the pdf appears in document properties
+# but not as part of the plot
+pdf('~/Documents/plots/rplot.pdf', 
+    title = "Chick Weights",
+    paper = "letter")
+hist(ChickWeight$weight, main = "Chick Weights")
+dev.off()
+
