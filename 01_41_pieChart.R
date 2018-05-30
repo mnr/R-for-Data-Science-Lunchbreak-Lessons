@@ -7,14 +7,11 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: base graphics - pie charts
 
-# create some data to work with
-source("makeChickWeight.R")
+pie(table(ChickWeight$Diet))
 
-pie(table(chicks_names$Diet))
+pie(table(ChickWeight$Diet),labels = c("horsebean","linseed","soybean", "sunflower"))
 
-pie(table(chicks_names$Diet),labels = c("horsebean","linseed","soybean", "sunflower"))
-
-pie(table(chicks_names$Diet),
+pie(table(ChickWeight$Diet),
     labels = c("horsebean","linseed","soybean", "sunflower"),
     density = 10*1:3,
     angle = 100*1:3)
