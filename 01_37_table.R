@@ -7,8 +7,8 @@
 
 table(ChickWeight$Diet)
 
+table(ChickWeight$Diet,  dnn = "Observations per diet")
+
 with(ChickWeight, table(weight, Diet,
-      deparse.level = 2
-      )
+                        dnn = c("cweight", "cDiet"))
 )
-# dnn = c("horsebean","linseed","soybean", "sunflower")
