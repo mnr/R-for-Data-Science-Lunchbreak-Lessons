@@ -7,9 +7,6 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: base::barplot
 
-# create some data to work with
-source("makeChickWeight.R")
-
 fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
 
 barplot(fiveValues) # the simplest of bar plots
