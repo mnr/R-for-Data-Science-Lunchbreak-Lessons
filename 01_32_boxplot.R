@@ -5,16 +5,11 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: Example file for Dataframes: rbind
+# Description: base graphics: boxplot
 
-
-dotchart()
-fourfoldplot()
-matplot()
-mosaicplot()
-spineplot()
-stem()
-stripchart()
-sunflowerplot()
-
+boxplot(mtcars$mpg)
+boxplot(mpg ~ cyl, data = mtcars, col = "lightgray", varwidth = TRUE, 
+        main = "mpg vs cylinders",
+        ylab = "mpg",xlab = "cylinders")
+fivenum(mtcars$mpg) # the numbers used to create the boxplot
 

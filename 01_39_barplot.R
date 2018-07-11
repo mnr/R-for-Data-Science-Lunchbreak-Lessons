@@ -5,16 +5,16 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: Example file for Dataframes: rbind
+# Description: base::barplot
 
+fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
 
-dotchart()
-fourfoldplot()
-matplot()
-mosaicplot()
-spineplot()
-stem()
-stripchart()
-sunflowerplot()
+barplot(fiveValues) # the simplest of bar plots
 
+barplot(height = fiveValues,
+        names.arg = fivenum(ChickWeight$weight),
+        horiz = TRUE,
+        col = fiveValues,
+        main = "Range for Chick Weights"
+        )
 

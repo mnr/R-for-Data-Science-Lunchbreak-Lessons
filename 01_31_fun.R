@@ -12,15 +12,7 @@
 install.packages("fortunes")
 library(fortunes)
 fortune()
-
-
-# cowsay ------------------------------------------------------------------
-install.packages("cowsay")
-library(cowsay)
-say("Why so serious?", by="cow")
-names(animals)
-say("futurama",by=sample(names(animals),1))
-
+allFortunes <- read.fortunes()
 
 # fun ---------------------------------------------------------------------
 # some games. Not well maintained.
@@ -33,6 +25,6 @@ gomoku()
 # praise ------------------------------------------------------------------
 install.packages("praise")
 library(praise)
-praise("${Exclamation}! ${rpackage}, ${adjective}")
+praise("${Exclamation}! You are ${adjective}")
 ?praise_parts #lists the template words
 

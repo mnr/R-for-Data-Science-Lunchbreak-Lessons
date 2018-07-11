@@ -5,16 +5,14 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: Example file for Dataframes: rbind
+# Description: base graphics - pie charts
 
+pie(table(ChickWeight$Diet))
 
-dotchart()
-fourfoldplot()
-matplot()
-mosaicplot()
-spineplot()
-stem()
-stripchart()
-sunflowerplot()
+pie(table(ChickWeight$Diet),labels = c("horsebean","linseed","soybean", "sunflower"))
 
+pie(table(ChickWeight$Diet),
+    labels = c("horsebean","linseed","soybean", "sunflower"),
+    density = 10*1:3,
+    angle = 100*1:3)
 
