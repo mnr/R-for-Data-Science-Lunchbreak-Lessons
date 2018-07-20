@@ -5,7 +5,13 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: with...
 
+data("ChickWeight")
+
 # original equation
+
+ChickWeight["quartile"] <- ChickWeight$weight, by = list(ChikDiet = ChickWeight$Diet), FUN = mean)
+
+tableOne <- within(tableOne, quartile <- as.integer(cut(salesPrice, quantile(salesPrice, probs=0:4/4), include.lowest=TRUE)))
 
 # using with()
 
