@@ -9,12 +9,13 @@ data("ChickWeight")
 
 # original equation
 
-ChickWeight["quartile"] <- ChickWeight$weight, by = list(ChikDiet = ChickWeight$Diet), FUN = mean)
-
-tableOne <- within(tableOne, quartile <- as.integer(cut(salesPrice, quantile(salesPrice, probs=0:4/4), include.lowest=TRUE)))
+# tableOne <- within(tableOne, quartile <- as.integer(cut(salesPrice, quantile(salesPrice, probs=0:4/4), include.lowest=TRUE)))
+#as.integer(
+cut(ChickWeight$weight, quantile(as.integer(ChickWeight$Diet), probs=0:4/4), include.lowest=TRUE) 
 
 # using with()
 
 # using within()
+# tableOne <- within(tableOne, quartile <- as.integer(cut(salesPrice, quantile(salesPrice, probs=0:4/4), include.lowest=TRUE)))
 
 # using pipes
