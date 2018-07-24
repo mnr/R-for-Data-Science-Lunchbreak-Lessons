@@ -16,6 +16,6 @@
 # Get the URL for your local CRAN mirror. i.e. http://cran.case.edu/
 
 # edit .rprofile in your home directory
-# add
-# options(repos=structure(c(CRAN="http://cran.case.edu/")))
+# add...
+#    options(repos=structure(c(CRAN="http://cran.case.edu/")))
 
