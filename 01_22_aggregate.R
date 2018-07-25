@@ -13,6 +13,7 @@ data("ChickWeight")
 # let's say I want the median weight of each chick
 # basic format
 aggregate(ChickWeight$weight,  by=list(chkID = ChickWeight$Chick), FUN=median)
+aggregate(ChickWeight$weight,  by=list(chkID = ChickWeight$Diet), FUN=median)
 # notice it isn't sorted
 
 # use ~ notation
