@@ -22,7 +22,6 @@ I.am.an.array[2,3,2]
 I.am.an.array[2,3,2] <- "a new value"
 I.am.an.array[2,,2] # omission returns the entire range. Here - all columns of row 2, table 2
 
-PAUSE!!!!!
 
 # dimnames
 my.row.names <- c("up","down")
