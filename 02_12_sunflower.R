@@ -5,21 +5,14 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: sunflower plot
 
-sample1 <- c(1:10, 1:10, 1:10)
-sample2 <- c(1:10, 1:10, 1:10)
+xpos <- c(1,2,3,1,2,3,1,2,3,4,5,6) # 12 xy points
+ypos <- c(1,1,1,1,1,1,1,1,1,1,1,1)
 
-# note that only 10 points are plotted
-plot(x = 1:10, y = 1:10) 
-plot(x = sample1, y = sample2) 
+# but only 6 points are plotted
+plot(xpos, ypos)
 
-length(sample1) # ... but there are 30 x/y coordinates
 
 # use xyTable to calculate overlapping points
-xyTbl <- xyTable(sample1, sample2)
+xyTbl <- xyTable(xpos, ypos)
 # then use sunflowerplot to show the overlap at each point
-sunflowerplot(xyTbl)
-
-# more realistic example
-sample3 <- sample(1:5, 30, replace = TRUE)
-xyTbl <- xyTable(sample1, sample3)
 sunflowerplot(xyTbl)
