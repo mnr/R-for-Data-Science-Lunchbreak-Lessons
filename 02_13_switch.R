@@ -50,8 +50,9 @@ factorsToTest <- factor(c("apple", "banana", "mango", "banana"))
 
 unclass(factorsToTest) # switch against numeric values - not names
 
-switch (factorsToTest[1],
+switch (factorsToTest[4],
   "black",
   "white",
   "red"
 )
+# factorsToTest[4] == "banana" which is level 2 of factor. Confusing, no?
