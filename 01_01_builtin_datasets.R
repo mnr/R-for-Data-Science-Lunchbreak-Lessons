@@ -1,10 +1,4 @@
-# Example file for http://niemannross.com/link/rlunchlessons
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Video on LinkedIn / Lynda: https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/r-built-in-data-sets?trk=insiders_215756_learning
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
-# Copyright Mark Niemann-Ross, 2017
+# example file for https://linkedin-learning.pxf.io/rwkly_dataSets
 # Description: Example file for datasets
 
 # main idea: datasets are a convenient way to explore R language
