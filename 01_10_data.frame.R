@@ -1,8 +1,4 @@
-# Copyright Mark Niemann-Ross, 2017
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
+# example file for LinkedIn Learning at https://linkedin-learning.pxf.io/rweekly_dataframe
 # Description: Example file for data frame
 
 # Data Structures are * Vectors * Lists * Matrices * Arrays * DATA FRAME * factors
