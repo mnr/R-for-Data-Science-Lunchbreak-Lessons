@@ -1,8 +1,4 @@
-# Copyright Mark Niemann-Ross, 2017
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
+# link to LinkedIn Learning course at https://linkedin-learning.pxf.io/rweekly_vectormath
 # Description: Example file for Vector Math
 
 # main idea: math works differently in R
