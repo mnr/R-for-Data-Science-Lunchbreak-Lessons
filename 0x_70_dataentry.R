@@ -5,18 +5,37 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: editing data in place
 
-Chickens <- ChickWeight # need some data
+# There are four ways to edit R objects
+# edit
+# fix
+# dataentry
+# data.entry
 
-editedChick <- dataentry(data = list(Chickens$weight, Chickens$Time), 
-          modes = list("numeric", "numeric"))
 
-data.entry(editedChick) # re-edit
+# edit() ----general purpose. Good for editing existing object-------------
+
+newChickens <- edit()
+
+Chickens <- edit(ChickWeight)
+
+listOfChickens <- edit(as.list(ChickWeight))
+
+
+# fix() -----edits an object in place--------------------------------------
+
+fix(listOfChickens) 
+
+# dataentry() -----Create a new list from scratch-----------------------
+
+editedChick <- dataentry(data = list(ChickWeight$weight, ChickWeight$Time), 
+                         modes = list("numeric", "numeric"))
+
+# data.entry() ----Create from scratch with more control-------------------
 
 data.entry(Chickens) # error. Must be numeric or character vectors
 
-data.entry(Chickens$weight, Chickens$Time) # change Chickens$weight. Reflected in environment
-
-# watch what happens to Chickens$weight if you re-run line 12
+data.entry(Chickens$weight, Chickens$Time,
+           Names = c("theWeight", "theTime")) # change Chickens$weight.
 
 # data.entry doesn't like factors
 data.entry(Chickens$weight, Chickens$Time, Chickens$Chick)
