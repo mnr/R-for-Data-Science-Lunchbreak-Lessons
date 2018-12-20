@@ -1,8 +1,4 @@
-# Copyright Mark Niemann-Ross, 2017
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
+# link to LinkedIn Lesson: https://linkedin-learning.pxf.io/rweekly_sqldf
 # Description: Example file for SQLdf
 
 # main idea: crossover between R data.frames and SQL
