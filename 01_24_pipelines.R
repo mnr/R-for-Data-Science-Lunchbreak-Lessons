@@ -1,8 +1,4 @@
-# Copyright Mark Niemann-Ross, 2017
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
+# Example file for LinkedIn Learning linkedin-learning.pxf.io/rweekly_pipeline
 # Description: Example file for pipelines
 
 # main idea: piping data and results from one function to another
