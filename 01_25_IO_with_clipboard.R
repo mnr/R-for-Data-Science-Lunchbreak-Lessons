@@ -1,8 +1,4 @@
-# Copyright Mark Niemann-Ross, 2018
-# Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# LinkedIn: https://www.linkedin.com/in/markniemannross/
-# Github: https://github.com/mnr
-# More Learning: http://niemannross.com/link/mnratlil
+# Exercise file for linkedin learning at https://linkedin-learning.pxf.io/rweekly_clipboard
 # Description: I/O with the clipboard
 
 # main idea: retrieving and stashing to the clipboard from R
