@@ -24,3 +24,5 @@ c(firstVar, secondVar) %<-% myFunction()
 # unlist a list
 mylist <- list(bob = "red", bill = "blue", june = list("orange", "maroon"))
 c(ThingOne, ThingTwo, ThingThree) %<-% mylist
+
+# plus much more. Reference ?`zeallot-package`
