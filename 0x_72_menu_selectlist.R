@@ -31,5 +31,7 @@ switch(menu(myChoices),
 select.list(myChoices,
             preselect = myChoices[2],
             multiple = TRUE,
-            graphics = getOption("menu.graphics")
+            graphics = TRUE
             )
+
+# non-mac systems can use... graphics = getOption("menu.graphics")
