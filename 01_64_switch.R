@@ -9,11 +9,12 @@
 
 # Consider if...then...else
 
-if (3 == 3) {
+testme <- 3
+if (testme == 3) {
   print("Action #1")
-} else if (3 == 5) {
+} else if (testme == 5) {
   print("Action #2")
-} else if (3 == 7) {
+} else if (testme == 7) {
   print("Action #3")
 }
 
