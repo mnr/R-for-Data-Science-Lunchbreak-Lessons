@@ -16,7 +16,7 @@ any(allFALSE) # FALSE
 any(allTRUE) # TRUE
 any(someTRUE) # TRUE
 
-anyDuplicated(someTRUE) # 3
+anyDuplicated(someTRUE) # 3. Returns position of first duplicated value
 anyDuplicated(allTRUE) #2
 anyNA(someTRUE) # FALSE
 anyNA(c(someTRUE, NA)) # TRUE
