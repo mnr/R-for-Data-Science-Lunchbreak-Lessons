@@ -15,18 +15,18 @@
 Sys.getenv("R_ZIPCMD") 
 
 # make sure current directory is exercise files
-zip("aZipFile.zip", "01_01_builtin_datasets.R")
+zip("aZipFile.zip", "01_01_builtin.R") # one file
 
-unzip("sample.zip") # this works on windows because of a zip file included in R
-unzip("sample.zip", list = TRUE) # lists contents of zip file
+unzip("aZipFile.zip") # this works on windows because of a zip file included in R
+unzip("aZipFile.zip", list = TRUE) # lists contents of zip file
 
 
 # tar ---------------------------------------------------------------------
 
 # R has an internal implementation of tar so this will always work
-# otherwise works like zip and unzip
-tar("aTarFile.tar", "01_01_builtin_datasets.R")
+# tar is happiest when compressing an entire directory
+tar("aTarFile.tar")
 
-untar("sample.tar", list = TRUE)
+untar("aTarFile.tar", list = TRUE)
 
 
