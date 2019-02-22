@@ -9,7 +9,7 @@
 # microbenchmark indicates this is significantly slower than the normal operator
 # what are bitwise operators?
 
-intToBits(8) # = 00 00 00 01
+intToBits(8) # = 00 00 00 01 - but in 32 bytes
 intToBits(1) # = 01 00 00 00
 
 # normal binary notation for eight would be 00 00 10 00. 
@@ -20,7 +20,6 @@ intToBits(1) # = 01 00 00 00
 
 bitwAnd(8,1) # = 00 00 00 00 = 0
 bitwOr(8,1)  # = 01 00 00 01 = 9
-bitwXor(8,1) # = 01 00 00 01 = 9
 
 intToBits(8) # = 00 00 00 01
 intToBits(15)# = 01 01 01 01
