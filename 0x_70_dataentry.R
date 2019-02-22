@@ -16,7 +16,7 @@
 
 newChickens <- edit()
 
-Chickens <- edit(ChickWeight)
+Chickens <- edit(ChickWeight) #X11 library is missing: install XQuartz from xquartz.macosforge.org
 
 listOfChickens <- edit(as.list(ChickWeight))
 
