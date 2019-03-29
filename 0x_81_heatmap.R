@@ -9,7 +9,7 @@
 
 mySimpleData <- matrix(c(sample(1:10, 40, replace=TRUE)), nrow = 10)
 mySimpleData[15] <- 100 # YIKES! an outlier!
-mySimpleData[23] <- 750 # YIKES! an outlier!
+mySimpleData[23] <- 75 # YIKES! an outlier!
 mySimpleColNames <- c("Wheat", "Rye", "Quinoa", "Rice" )
 dimnames(mySimpleData) <- list(c(month.name[2:11]), mySimpleColNames)
 
@@ -32,11 +32,11 @@ heatmap(mySimpleData, Rowv = NA, Colv = NA, revC = TRUE, scale = "column")
 # change the colors
 heatmap(mySimpleData, 
         Rowv = NA, Colv = NA, revC = TRUE,
-        scale = "column",
+        scale = "none",
         col=terrain.colors(max(mySimpleData))
         ) 
 
 heatmap(mySimpleData, 
-        scale = "column",
+        scale = "none",
         col=terrain.colors(max(mySimpleData))
 ) 
