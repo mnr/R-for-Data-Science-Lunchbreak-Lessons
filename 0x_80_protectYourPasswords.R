@@ -21,3 +21,5 @@ Sys.getenv("R_myPassword") # retrieve it
 # Warning: this will show up in a list of environmental variables
 source("mysecrets.r")
 
+# more sophisticated: secrets package at https://github.com/gaborcsardi/secret
+
