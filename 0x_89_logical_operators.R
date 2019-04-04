@@ -9,15 +9,25 @@
 
 # ! is "not"
 !TRUE # equals false
-!"apple" # must be a logical value
+!"apple" # oops ... must be a logical value
+!2 # numbers > 0 are TRUE
+!0
 
 # & is "and"
 TRUE & TRUE # equals true
 TRUE & FALSE # equals false
 
+firstVectorFalse <- c(FALSE, TRUE)
+firstVectorTrue <- c(TRUE, FALSE)
+
+firstVectorFalse & firstVectorFalse
+firstVectorFalse & firstVectorTrue
+
 # | is "or"
 TRUE | TRUE # equals true
 TRUE | FALSE # equals true
+
+firstVectorFalse | firstVectorTrue
 
 # xor is exclusive or
 xor(TRUE, FALSE ) # true 
@@ -31,8 +41,6 @@ setsValue <- function() {
   b <<- 9
 }
 
-firstVectorFalse <- c(FALSE, TRUE)
-firstVectorTrue <- c(TRUE, FALSE)
 
 # note that b never gets set because && evaluates first value of 
 if(firstVectorFalse && setsValue() ) { print("doesn't matter") }
