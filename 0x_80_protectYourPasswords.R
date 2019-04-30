@@ -13,6 +13,19 @@ file.edit(file.path("~", ".Renviron"))
 
 Sys.getenv("R_myPassword") # retrieve it
 
+# or...if you're using RStudio
+# askForSecret - keychain on MacOS, credential store on windows
+# linux requires libsecret library
+library(rstudioapi)
+
+install.packages("keyring")
+library(keyring)
+
+askForSecret("mySecretValue") # click on keyring checkbox
+# subsequent askForSecret will autofill the answer
+# unclick the keyring checkbox to remove it
+
+
 # or...Store your passwords on an encrypted disk or removable drive
 # create a file on external drive
 # or on cloud storage such as onedrive, google drive or dropbox
