@@ -13,13 +13,18 @@ file.edit(file.path("~", ".Renviron"))
 
 Sys.getenv("R_myPassword") # retrieve it
 
-# or...if you're using RStudio
+# or ... keyring
 # askForSecret - keychain on MacOS, credential store on windows
 # linux requires libsecret library
-library(rstudioapi)
 
 install.packages("keyring")
 library(keyring)
+
+key_set("SecretRecipie")
+key_get("SecretRecipie")
+
+# or...if you're using RStudio
+library(rstudioapi)
 
 askForSecret("mySecretValue") # click on keyring checkbox
 # subsequent askForSecret will autofill the answer
