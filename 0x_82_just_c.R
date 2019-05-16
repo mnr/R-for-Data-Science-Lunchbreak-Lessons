@@ -20,10 +20,9 @@ characterThing <- c("a", "b", "c")
 
 # what happens when combining different types?
 # "highest type of component" NULL < raw < logical < integer < double < complex < character < list < expression
+mixedThing <- c(characterThing, intThing)
 mixedThing <- c(intThing, factorThing)
-str(mixedThing)
 mixedThing <- c(factorThing, intThing)
-str(mixedThing)
 mixedThing <- c(factorThing, factorThing)
 mixedThing <- c(intThing, floatThing)
 mixedThing <- c(intThing, dfThing) # returns a list
