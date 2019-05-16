@@ -15,6 +15,7 @@ dfThing <- data.frame(numbers = 1:26, alpha = letters, ALPHA = LETTERS, stringsA
 arrayThing <- array(c(1:26,letters,LETTERS), 
                     dim = c(2,13,3), 
                     dimnames = list(c("odd","even"),NULL,c("numbers","alpha","ALPHA")))
+characterThing <- c("a", "b", "c")
 
 
 # what happens when combining different types?
@@ -26,15 +27,4 @@ str(mixedThing)
 mixedThing <- c(factorThing, factorThing)
 mixedThing <- c(intThing, floatThing)
 mixedThing <- c(intThing, dfThing) # returns a list
-
-# using c( ) to remove attributes
-vectorThing <- c(arrayThing) # removes attributes
-str(vectorThing)
-vectorThing <- c(dfThing) # simplifies to list
-
-# recursive simplifies to vector, retaining names
-vectorThing <- c(dfThing, recursive = TRUE) 
-vectorThing
-vectorThing["alpha13"]
-
 
