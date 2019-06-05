@@ -1,0 +1,2 @@
+mySecretPassword <- "Waldorf salad"
+
