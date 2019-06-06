@@ -3,15 +3,20 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: 
-
-# attributes
-
-mydate <- as.POSIXct("2001-03-04 12:31:02")
-attributes(mydate)
-# returns class and tzone
-attributes(c(mydate)) # c strips attributes - therefore tzone is lost
-
-# class, comment, dim, dimnames, row.names, names, tsp, levels
+# Description: roxygen
 
 
+#' Title
+#'
+#' @param x 
+#' @param y 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+myFunction <- function(x,y) {
+  print(x+y)
+}
+
+myFunction(2,3)
