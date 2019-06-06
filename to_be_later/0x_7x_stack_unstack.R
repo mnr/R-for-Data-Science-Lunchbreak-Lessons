@@ -3,28 +3,14 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: using any and all
+# Description: 
 
-allFALSE <- c(FALSE, is.na("notNA"), 3 == 4)
-allTRUE <- c(TRUE, is.na(NA), 3 == 3)
-someTRUE <- c(TRUE, FALSE, FALSE)
+talldata <- data.frame(deca = 1:10, 
+                       alpha = letters[1:10],
+                       month = factor(month.abb[1:10]),
+                       stringsAsFactors = FALSE
+)
 
-  
-# any ----
-# are any of these true?
-any(allFALSE) # FALSE
-any(allTRUE) # TRUE
-any(someTRUE) # TRUE
-
-anyDuplicated(someTRUE) # 3
-anyDuplicated(allTRUE) #2
-anyNA(someTRUE) # FALSE
-anyNA(c(someTRUE, NA)) # TRUE
-
-# all ----
-all(allFALSE) # FALSE
-all(allTRUE) # TRUE
-all(someTRUE) # FALSE
-
-all.equal(3, 2+1, as.integer(pi)) # TRUE
-
+stack(talldata)
+stack(talldata, select = c(deca,alpha))
+stack(talldata, form = deca + alpha ~ month )

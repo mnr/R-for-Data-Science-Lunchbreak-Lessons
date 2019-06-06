@@ -5,4 +5,10 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
 
-#compare expand.grid vs combn
+# shell access
+# echo > test.txt
+# ls -al test.txt
+# chmod test.txt a+rw
+
+file.access(".RData")
+file.access(".RData", mode = 4)
