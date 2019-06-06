@@ -27,4 +27,7 @@ photos.combn <- t(photos.combn)
 photos.expand.grid <- expand.grid(c("Bride", "Bride's Parents", "Bride's Siblings"),
                                 c("Groom", "Groom's Parents", "Groom's Siblings"))
 
+photos.expand.grid <- expand.grid(c("Bride", "Groom"),
+                                  c("Bride's Parents", "Groom's Parents"),
+                                  c("Bride's Siblings", "Groom's Siblings"))
 
