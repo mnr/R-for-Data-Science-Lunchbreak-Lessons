@@ -20,4 +20,4 @@ isCat[ ,48]
 # how many combinations are possible?
 choose(length(rep(rawcats,3)), 3)
 
-# also: look at expand.grid and permn for other approaches to this
+# also: look at expand.grid for other approaches to this
