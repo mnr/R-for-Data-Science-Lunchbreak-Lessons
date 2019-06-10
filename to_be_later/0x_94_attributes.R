@@ -5,7 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
 
-# attributes
+# R uses attributes to save meta data
+
 # lists
 mylist <- list(alpha = letters[1:5], numbers = 1:5)
 attributes(mylist)
