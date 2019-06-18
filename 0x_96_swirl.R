@@ -1,5 +1,6 @@
 # setup and use of swirl
 # complete documentation at swirlstats.com
+# source for the swirl project at https://github.com/mnr/swirl_lil.git
 
 # 1) create a project
 
@@ -11,8 +12,9 @@ library(swirlify)
 # create a new lesson
 # lesson name: Use R with Excel
 # Course name: High Variety Data 
-# URL: https://linkedin-learning.pxf.io/r_excel_swirl
+
 swirlify("Use R with Excel", "High Variety Data")
+
 # which creates a directory and necessary files or ... opens existing lesson
 
 # edit lesson.yaml: author and organization
