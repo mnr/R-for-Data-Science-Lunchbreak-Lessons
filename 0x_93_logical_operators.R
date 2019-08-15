@@ -10,7 +10,7 @@
 # ! is "not"
 !TRUE # equals false
 !"apple" # oops ... must be a logical value
-!2 # numbers > 0 are TRUE
+!2 # abs(numbers) > 0 are TRUE
 !0
 
 # & is "and"
@@ -29,7 +29,7 @@ TRUE | FALSE # equals true
 
 firstVectorFalse | firstVectorTrue
 
-# xor is exclusive or
+# xor is "exclusive or" - EITHER this OR this
 xor(TRUE, FALSE ) # true 
 xor(FALSE, TRUE ) # true
 xor(TRUE, TRUE ) # false
@@ -37,12 +37,13 @@ xor(FALSE, FALSE ) # false
 
 # && is "and", but evaluates left to right. use for flow control
 # || is "or", but evaluates left to right. use for flow control
-setsValue <- function() {
-  b <<- 9
+someFunction <- function() {
+  print("this function ran")
+  return(TRUE)
 }
 
 
-# note that b never gets set because && evaluates first value of 
-if(firstVectorFalse && setsValue() ) { print("doesn't matter") }
-if(firstVectorTrue && setsValue() ) { print("doesn't matter") }
+# what happens depends on each value tested
+if(FALSE && someFunction() ) { print("I printed") }
+if(TRUE && someFunction() ) { print("I printed") }
 
