@@ -6,6 +6,7 @@
 
 install.packages(c("swirl", "swirlify"))
 library(swirlify)
+library(swirl)
 
 # directories are important - be careful about changing working directory!
 
