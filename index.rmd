@@ -1,0 +1,18 @@
+---
+title: "Index to LinkedIn Learning R topics"
+output: github_document:
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+linkto <- function(courseURL, videoURL, linkText) {
+  # returns a deeplink, including affiliate tag when available
+  paste0("[", linkText, "](https://www.linkedin.com/learning/", courseURL, "/", videoURL, ")")
+}
+```
+
+# test
+`r linkto("r-programming-in-data-science-high-variety-data", "jumping-over-the-high-variety-hurdle", "welcome to high variety")` that should be a link
+
+
