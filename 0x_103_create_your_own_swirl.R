@@ -2,11 +2,15 @@
 # complete documentation at swirlstats.com
 # source for the swirl project at https://github.com/mnr/swirl_lil.git
 
-# 1) create a project
-
-install.packages(c("swirl", "swirlify"))
-library(swirlify)
+install.packages("swirl")
 library(swirl)
+
+swirl()
+
+# create your own swirl
+
+install.packages("swirlify")
+library(swirlify)
 
 # directories are important - be careful about changing working directory!
 

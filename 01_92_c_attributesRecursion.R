@@ -1,3 +1,5 @@
+# use c() to simplify
+
 arrayThing <- array(c(1:300), dim = c(10,10,3))
 dfThing <- data.frame(letters = letters[1:10], numbers = 1:10, stringsAsFactors = FALSE )
 
@@ -12,4 +14,4 @@ vectorThing <- c(dfThing) # simplifies to list
 # recursive simplifies to vector, retaining names
 vectorThing <- c(dfThing, recursive = TRUE) 
 vectorThing
-vectorThing["letters9"]
+vectorThing["letters3"]

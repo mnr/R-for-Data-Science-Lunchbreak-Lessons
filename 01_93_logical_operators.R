@@ -34,16 +34,3 @@ xor(TRUE, FALSE ) # true
 xor(FALSE, TRUE ) # true
 xor(TRUE, TRUE ) # false
 xor(FALSE, FALSE ) # false
-
-# && is "and", but evaluates left to right. use for flow control
-# || is "or", but evaluates left to right. use for flow control
-someFunction <- function() {
-  print("this function ran")
-  return(TRUE)
-}
-
-
-# what happens depends on each value tested
-if(FALSE && someFunction() ) { print("I printed") }
-if(TRUE && someFunction() ) { print("I printed") }
-
