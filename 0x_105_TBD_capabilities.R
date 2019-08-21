@@ -4,11 +4,3 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
-
-# shell access
-# echo > test.txt
-# ls -al test.txt
-# chmod test.txt a+rw
-
-file.access(".RData")
-file.access(".RData", mode = 4)
