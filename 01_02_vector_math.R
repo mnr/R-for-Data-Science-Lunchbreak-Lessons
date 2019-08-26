@@ -1,6 +1,10 @@
 # link to LinkedIn Learning course at https://linkedin-learning.pxf.io/rweekly_vectormath
 # Description: Example file for Vector Math
 
+affiliate <- "https://linkedin-learning.pxf.io/rweekly_vectormath"
+video <- "rweekly_vectormath"
+topics <- "Vector Math"
+
 # main idea: math works differently in R
 
 # how would you multiply each item in an array by two?

@@ -1,4 +1,9 @@
 # example file for https://linkedin-learning.pxf.io/rwkly_dataSets
+
+affiliate <- "https://linkedin-learning.pxf.io/rwkly_dataSets"
+video <- "r-built-in-data-sets"
+topics <- "data()"
+
 # Description: Example file for datasets
 
 # main idea: datasets are a convenient way to explore R language
