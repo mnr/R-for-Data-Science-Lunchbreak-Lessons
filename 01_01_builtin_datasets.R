@@ -3,6 +3,7 @@
 affiliate <- "https://linkedin-learning.pxf.io/rwkly_dataSets"
 video <- "r-built-in-data-sets"
 topics <- "data()"
+index_build(affiliate, video, topics)
 
 # Description: Example file for datasets
 
