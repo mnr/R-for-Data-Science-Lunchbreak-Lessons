@@ -1,4 +1,11 @@
 # Copyright Mark Niemann-Ross, 2019
+
+idx_affiliate <- ""
+idx_video <- ""
+idx_task <- "files"
+idx_topics <- c("dput()", "dget()", "save()", "write.csv()")
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
