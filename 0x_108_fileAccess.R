@@ -37,4 +37,6 @@ file.access(".RData", mode = 1) # Nope. can't execute this
 # remember bitwXor from the session on bitwise?
 file.access(".RData", mode = bitwXor(2,4))
 
+# one final note: be careful with this on multi-tasking, multi-user systems.
+# file status can change between running file.access and actual file use
 
