@@ -4,3 +4,14 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
+
+delayedAssign("mydelayedx", 31^123)
+substitute(mydelayedx)
+
+while(runif(1) < .9999) {
+    if (runif(1) < .1 ) {
+      myval <- mydelayedX
+    } else {
+      print ("nope")
+    }
+}
