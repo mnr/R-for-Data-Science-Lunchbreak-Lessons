@@ -1,9 +1,11 @@
 # link to LinkedIn Learning course at https://linkedin-learning.pxf.io/rweekly_vectormath
 # Description: Example file for Vector Math
 
-affiliate <- "https://linkedin-learning.pxf.io/rweekly_vectormath"
-video <- "rweekly_vectormath"
-topics <- "Vector Math"
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_vectormath"
+idx_video <- "rweekly_vectormath"
+idx_task <- "math"
+idx_topics <- "vector math"
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # main idea: math works differently in R
 

@@ -1,9 +1,10 @@
 # example file for https://linkedin-learning.pxf.io/rwkly_dataSets
 
-affiliate <- "https://linkedin-learning.pxf.io/rwkly_dataSets"
-video <- "r-built-in-data-sets"
-topics <- "data()"
-index_build(affiliate, video, topics)
+idx_affiliate <- "https://linkedin-learning.pxf.io/rwkly_dataSets"
+idx_video <- "r-built-in-data-sets"
+idx_task <- ""
+idx_topics <- "data()"
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # Description: Example file for datasets
 

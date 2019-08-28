@@ -1,6 +1,13 @@
 # Example file for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_subset
 # Description: Example file for subsetting
 
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_subset"
+idx_video <- "subsetting"
+idx_task <- ""
+idx_topics <- "vector subsetting"
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # main idea: R is designed to slice data with subsetting
 
 # subsetting a simple vector

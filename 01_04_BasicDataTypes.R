@@ -1,5 +1,11 @@
-# example file for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_atomics
+
 # Description: Example file for R Data Types:Basic Types
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_atomics"
+idx_video <- "r-data-types-basic-types"
+idx_task <- "Data Types"
+idx_topics <- c("logical", "integer", "real", "complex", "string", "character", "raw")
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # R has six atomic types: logical, integer, real, complex, string (or character) and raw
 
