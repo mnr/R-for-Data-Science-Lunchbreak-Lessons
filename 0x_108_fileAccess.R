@@ -7,7 +7,7 @@
 
 idx_affiliate <- ""
 idx_video <- ""
-idx_task <- ""
+idx_task <- "files"
 idx_topics <- c("file.access()", "bitwXor()")
 idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
