@@ -5,6 +5,12 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
 
+idx_affiliate <- ""
+idx_video <- ""
+idx_task <- ""
+idx_topics <- c("file.access()", "bitwXor()")
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 
 file.access(".RData1") 
 # NOTE: 0 if true, -1 if false
