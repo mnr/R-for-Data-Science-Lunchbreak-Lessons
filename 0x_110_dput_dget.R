@@ -12,7 +12,7 @@ idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
 
-# dput will write an R language version of an R object to disk
+# dput will write an R language version of an object to disk
 dput(ChickWeight, file = "chickweight_dput.R")
 # includes meta data
 
