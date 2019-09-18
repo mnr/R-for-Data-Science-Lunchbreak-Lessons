@@ -1,6 +1,12 @@
 # example file for https://linkedin-learning.pxf.io/rwkly_vector
 # Description: Example file for Vectors
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rwkly_vector"
+idx_video <- "r-data-types-vector"
+idx_task <- ""
+idx_topics <- "vectors"
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # Data Structures are * VECTOR * Lists * Matrices * Arrays * Data Frame * factors
 
 # vectors are the simplest data storage in R
