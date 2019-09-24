@@ -1,5 +1,10 @@
-# Example files for https://linkedin-learning.pxf.io/rweekly_lists
 # Description: Example file for lists
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_lists"
+idx_video <- ""
+idx_task <- "Data Structures"
+idx_topics <- c("list", "str()")
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # Data Structures are * Vectors * LISTS * Matrices * Arrays * Data Frames * factors
 

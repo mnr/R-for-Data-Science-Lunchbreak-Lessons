@@ -3,7 +3,7 @@
 
 idx_affiliate <- "https://linkedin-learning.pxf.io/rwkly_vector"
 idx_video <- "r-data-types-vector"
-idx_task <- ""
+idx_task <- "Data Structures"
 idx_topics <- "vectors"
 idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
