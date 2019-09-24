@@ -1,5 +1,10 @@
-# example files for https://linkedin-learning.pxf.io/rweekly_factor
 # Description: Example file for factors
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_factor" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "Data Structures" # optional: This video beongs to this group
+idx_topics <- c("factor", "table()", "nlevels()", "barplot()", "levels()", "ordered()", "sum()") # Text for this link. Optional vector - c()
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # Data Structures are * Vectors * Lists * Matrices * Arrays * Data frame * FACTORS
 
