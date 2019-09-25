@@ -1,6 +1,11 @@
-# example file for https://linkedin-learning.pxf.io/rweekly_array
-
 # Data Structures are * Vectors * Lists * Matrices * ARRAY * Data Frame * factors
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_array" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "Data Structures" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("array", "dimnames") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # array is a vector or list with 2+ dimensions
 # (Matrix is a 2-dimension Array. Array is like stacked matrices)

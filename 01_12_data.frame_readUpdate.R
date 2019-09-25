@@ -5,6 +5,13 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for data frame read and update
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/data.frame_read_update" # affiliate link to the video
+idx_video <- "data-frames-read-and-update" # just the name of the video - used for lookup to the URL
+idx_task <- "data.frame" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("create variable", "delete variable", "change variable") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # Main idea: Navigating data.frames
 
 # Need some data to play with

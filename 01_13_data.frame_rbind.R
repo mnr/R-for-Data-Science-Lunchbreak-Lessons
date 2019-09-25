@@ -7,6 +7,13 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for Dataframes: rbind
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rbind" # affiliate link to the video
+idx_video <- "data-frames-rbind" # just the name of the video - used for lookup to the URL
+idx_task <- "data.frame" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "rbind" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # Main Idea: how to add rows to data.frames (or matrices)
 
 # Need some data to play with

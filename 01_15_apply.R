@@ -5,6 +5,13 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for apply
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/apply" # affiliate link to the video
+idx_video <- "apply-and-lapply" # just the name of the video - used for lookup to the URL
+idx_task <- "apply" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("apply", "lapply", "apropos") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # main idea: don't use FOR loops if you can APPLY
 
 data("WorldPhones") # The number of telephones in various regions of the world (in thousands).

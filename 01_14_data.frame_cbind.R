@@ -1,5 +1,12 @@
-# Exercise files for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_cbind
+# Exercise files for LinkedIn Learning: 
 # Description: Example file for Dataframes: cbind
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_cbind" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "data.frame" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "cbind" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # Main Idea: how to add columns to data.frames (or matrices)
 

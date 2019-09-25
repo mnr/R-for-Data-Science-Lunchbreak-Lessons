@@ -1,5 +1,12 @@
-# exercise files for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_sortmerge
 # Description: Example file for Dataframes: order and merge
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_sortmerge" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "data.frame" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("order", "merge", "sort") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 
 # main idea: sorting and merging data.frames
 

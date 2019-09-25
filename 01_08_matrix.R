@@ -1,5 +1,11 @@
-# example file for https://linkedin-learning.pxf.io/rweekly_matrix
 # Description: Example file for Matrix: five minutes of R
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_matrix" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "Data Structures" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("matrix","t()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # Data Structures are * Vectors * Lists * MATRICE * Arrays * Data Frame * factors
 
