@@ -1,5 +1,12 @@
 # example file for LinkedIn Learning video https://linkedin-learning.pxf.io/rwkly_leftrightjoin
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rwkly_leftrightjoin" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("left join","right join", "merge()", "names()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # Description: Example file for joins
 
 # Need some data to play with

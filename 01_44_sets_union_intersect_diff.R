@@ -1,6 +1,13 @@
 # example code for https://linkedin-learning.pxf.io/Rweekly_setsUnionInterDiff
 # Description: Example file for sets
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/Rweekly_setsUnionInterDiff" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("union()","intersect()","setdiff()", "setequal()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # create two vectors to demonstrate
 vectA <- c(1:10)
 vectB <- c(10:15)

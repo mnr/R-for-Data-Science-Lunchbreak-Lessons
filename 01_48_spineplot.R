@@ -1,6 +1,13 @@
 # example files for LinkedIn Learning course: https://linkedin-learning.pxf.io/rweekly_spineplot
 # Description: Example file for spineplot
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_spineplot" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "spineplot()" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # main idea: creating spineplots
 # width of bars = frequency of X
 # height of bars = frequency of y

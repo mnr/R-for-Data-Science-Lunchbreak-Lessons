@@ -1,6 +1,13 @@
 # link to LinkedIn Learning Video: linkedin-learning.pxf.io/rweekly_aggregate
 # Description: Example file for aggregate
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_aggregate" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "aggregate()" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # main idea: aggregate is R for SQL "group by"
 
 # grab some data to work with

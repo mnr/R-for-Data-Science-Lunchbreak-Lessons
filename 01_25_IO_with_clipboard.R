@@ -1,6 +1,13 @@
 # Exercise file for linkedin learning at https://linkedin-learning.pxf.io/rweekly_clipboard
 # Description: I/O with the clipboard
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_clipboard" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("clipboard", "clipr", "read_clip()", "write_clip()", "readClipboard()", "writeClipboard()", "psych", "read.clipboard()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # main idea: retrieving and stashing to the clipboard from R
 
 # Use the clipr package ---------------------------------------------------

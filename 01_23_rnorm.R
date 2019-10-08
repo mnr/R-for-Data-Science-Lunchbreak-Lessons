@@ -1,5 +1,12 @@
-# Link to LinkedIn Learning Video: linkedin-learning.pxf.io/rweekly_random
+# Link to LinkedIn Learning Video: https://linkedin-learning.pxf.io/rweekly_random
 # Description: Example file for rnorm
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_random" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("rnorm()", "runif()", "sample()" )
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # main idea: random number generators
 # draw three random names for three chickens. Must be unique.

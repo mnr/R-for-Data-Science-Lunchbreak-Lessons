@@ -1,6 +1,13 @@
 # example code for LinkedIn Learning Course: https://linkedin-learning.pxf.io/rweekly_ifelse
 # Description: Example file for ifelse
 
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_ifelse" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "ifelse()" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
 # for example
 if (TRUE) {
   print("Leghorn")

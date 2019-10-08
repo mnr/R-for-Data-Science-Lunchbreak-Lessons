@@ -1,10 +1,17 @@
 # Copyright Mark Niemann-Ross, 2017
 # Author: Mark Niemann-Ross. mark.niemannross@gmail.com
-# Video on LinkedIn / Lynda: https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/plot?trk=insiders_215756_learning
+# Video on LinkedIn / Lynda: https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/plot
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for plot
+
+idx_affiliate <- "" # affiliate link to the video
+idx_video <- "plot" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("plot()","lines()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
 
 # main idea: a quick overview of plotting in R
 
