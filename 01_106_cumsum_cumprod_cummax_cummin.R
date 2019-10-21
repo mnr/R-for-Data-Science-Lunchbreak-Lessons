@@ -23,7 +23,7 @@ cummin(1:3)
 cummax(1:3)
 
 cummax(c(1:3,2))
-cummax(c(1:3,NA)) # NA is a killer
+cummax(c(1:3,NA)) # NA prohibits further evaluation
 
 # A plot to see the relationship
 myVector <- 1:20
