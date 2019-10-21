@@ -7,7 +7,6 @@
 
 
 # && is "and", but evaluates left to right. use for flow control
-# || is "or", but evaluates left to right. use for flow control
 someFunction <- function() {
   print("this function ran")
   return(TRUE)
@@ -17,4 +16,14 @@ someFunction <- function() {
 # what happens depends on each value tested
 if(FALSE && someFunction() ) { print("I printed") }
 if(TRUE && someFunction() ) { print("I printed") }
+
+# || is a bit trickier to understand
+someFunction <- function() {
+  print("this function ran")
+  return(FALSE)
+}
+
+# test a boolean value "oror" against a function that returns FALSE
+if (FALSE || someFunction()) {print("I printed")}
+if (TRUE || someFunction()) {print("I printed")}
 
