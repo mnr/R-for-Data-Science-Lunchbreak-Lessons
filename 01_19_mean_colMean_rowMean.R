@@ -1,7 +1,7 @@
 # Example file for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_colmeans
 # Description: Example file for mean, colMean, & rowMean
 
-idx_affiliate <- "" # affiliate link to the video
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_colmeans" # affiliate link to the video
 idx_video <- "rweekly_colmeans" # just the name of the video - used for lookup to the URL
 idx_task <- "" # optional: This video beongs to this group
 # Text for this link. Optional vector - c("main topic", "additional topic", "etc")
