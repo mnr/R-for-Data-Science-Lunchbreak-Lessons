@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Example file for fun R packages
+# affiliate: https://linkedin-learning.pxf.io/rweekly_fun
 
 # main idea: Why so serious?
 

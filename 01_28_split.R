@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: split vs cut to set intervals
+# affiliate: https://linkedin-learning.pxf.io/rweekly_split
 
 # cut is for numeric vectors
 # split is for data frames

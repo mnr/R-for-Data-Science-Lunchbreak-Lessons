@@ -1,5 +1,6 @@
 # Example file for https://linkedin-learning.pxf.io/rweekly_cut
 # Description: cut to set intervals
+# https://linkedin-learning.pxf.io/rweekly_cut
 
 numericVector <- runif(100, min = 1, max = 256 )
 

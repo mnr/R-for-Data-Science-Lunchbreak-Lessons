@@ -5,6 +5,8 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: R language style guides
 
+# affiliate link: https://linkedin-learning.pxf.io/rweekly_styleguides
+
 # main idea: Writing readable R code
 
 # google's stye guide: https://google.github.io/styleguide/Rguide.xml

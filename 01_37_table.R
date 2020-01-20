@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Tabulation
+# affiliate: https://linkedin-learning.pxf.io/rweekly_table
 
 table(ChickWeight$Diet)
 

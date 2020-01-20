@@ -6,6 +6,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: base graphics - pie charts
+# affiliate: linkedin-learning.pxf.io/rweekly_piechart
 
 # simple example of a pie chart
 pie(table(ChickWeight$Diet))

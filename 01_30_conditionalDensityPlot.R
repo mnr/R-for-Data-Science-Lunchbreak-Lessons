@@ -6,6 +6,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: conditional density plot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_cdplot
 
 # create some data to work with
 data("ChickWeight")

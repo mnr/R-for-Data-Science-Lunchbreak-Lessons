@@ -6,6 +6,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: base::barplot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_barplot
 
 fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
 

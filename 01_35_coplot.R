@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Conditional Plots
+# affililate: https://linkedin-learning.pxf.io/rweekly_coplot
 
 coplot(ChickWeight$weight ~ ChickWeight$Time | ChickWeight$Diet)
 

@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: Histograms
+# affiliate: linkedin-learning.pxf.io/rweekly_histogram
 
 hist(ChickWeight$weight)
 

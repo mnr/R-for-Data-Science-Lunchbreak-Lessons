@@ -6,6 +6,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: base graphics: boxplot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_boxplot
 
 boxplot(mtcars$mpg)
 boxplot(mpg ~ cyl, data = mtcars, col = "lightgray", varwidth = TRUE, 
