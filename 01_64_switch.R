@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: switch
+# affiliate: https://linkedin-learning.pxf.io/rweekly_switch
 
 # Switch is a way to create multiple actions to decisions
 
