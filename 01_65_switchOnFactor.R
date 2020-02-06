@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: switch
+# affiliate: linkedin-learning.pxf.io/rweekly_switchfactors
 
 # switching against factors is a bit odd
 # EXPR is factor POSITION, not name

@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: find all possible combinations
+# affiliate: https://linkedin-learning.pxf.io/rweekly_combn
 
 # look at Code Clinic: R problem titled 8 queens.
 

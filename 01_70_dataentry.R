@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: editing data in place
+# affiliate: https://linkedin-learning.pxf.io/rweekly_editfix
 
 # There are four ways to edit R objects
 # edit

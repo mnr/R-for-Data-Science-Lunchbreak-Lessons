@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: provide a selection menu
+# affiliate: https://linkedin-learning.pxf.io/rweekly_menu
 
 # Select from a list of options
 # Don't use this in a batch or non-interactive session
