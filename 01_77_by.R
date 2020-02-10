@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: by instead of tapply
+# affiliate: https://linkedin-learning.pxf.io/rweekly_by
 
 # by is like...
 # tapply

@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: weighted.mean
+# affiliate: linkedin-learning.pxf.io/rweekly_weightedmean
 
 # which fruit basket is better?
 # what I like

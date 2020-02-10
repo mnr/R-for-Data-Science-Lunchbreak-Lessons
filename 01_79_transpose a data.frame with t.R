@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: transpose a data frame
+# affiliate: https://linkedin-learning.pxf.io/rweekly_transpose
 
 # convert wide to tall
 talldata <- data.frame(deca = 1:10, 

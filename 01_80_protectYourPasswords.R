@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: don't include your password in R
+# affiliate: https://linkedin-learning.pxf.io/rweekly_password
 
 # Store unencrypted password
 file.edit(file.path("~", ".Renviron"))
