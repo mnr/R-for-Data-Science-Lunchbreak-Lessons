@@ -1,7 +1,7 @@
 # regexpr and regexec
 
 
-someText <- c("Twas brillig and the blithey toves .", "I bought 15 apples to the market.")
+someText <- c("Twas brillig and the blithey toves .", "I brought 15 apples to the market.")
 
 # regexpr identifies a match with regular expression
 # b\\w+ finds words starting with b
@@ -24,7 +24,8 @@ hereIsTheMatch # now it's a list. Each list element corresponds to element in ve
 # depending on how well you understand regular expressions, regexec lists groups
 # each element of the list shows position of the match
 # ...then position of sub matches
-# t([ho].) means... find "t" followed by "h" or "o" and include any one letter following the match
+# t([ho].) means... find "t" followed by "h" or "o" and 
+# include any one letter following the match
 hereIsTheMatch <- regexec("t([ho].)", someText)
 
 hereIsTheMatch
