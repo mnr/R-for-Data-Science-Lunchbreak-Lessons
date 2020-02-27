@@ -8,7 +8,7 @@
 saveRDS(aVector, file = "sample_saveRDS")
 remove(aVector)
 
-readRDS("sampleSave")
+readRDS("sample_saveRDS")
 
 # load and save keep the object name 
 # and load the object into the current environment.

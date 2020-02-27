@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: mosaicplot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_mosaicplot
 
 # build an array for demonstration
 sample1 <- as.integer(runif(10, min = 1, max = 30))

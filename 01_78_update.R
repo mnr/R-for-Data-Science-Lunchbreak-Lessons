@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: update your copy of R
+# affiliate: https://linkedin-learning.pxf.io/rweekly_update
 
 # best to do this from R - NOT RStudio
 

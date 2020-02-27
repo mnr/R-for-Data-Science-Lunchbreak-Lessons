@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: storing personal information
+# affiliate: https://linkedin-learning.pxf.io/rweekly_person
 
 mnr <- person(given = "Mark",
               family = "Niemann-Ross",

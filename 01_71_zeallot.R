@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: %<-% tuples via zeallot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_zeallot
 
 install.packages("zeallot")
 library(zeallot)

@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: bitwise operators
+# affiliate: https://linkedin-learning.pxf.io/rweekly_bitwise
 
 # bitwise operators are included in R, but mostly for compatibility with other languages.
 # microbenchmark indicates this is significantly slower than the normal operator

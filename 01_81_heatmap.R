@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: heatmap
+# affiliate: https://linkedin-learning.pxf.io/rweekly_heatmap
 
 # first concern about heatmap - data must be a numeric matrix
 

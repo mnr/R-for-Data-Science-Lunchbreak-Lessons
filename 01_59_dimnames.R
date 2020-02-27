@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: dimnames for use with array and matrix
+# affiliate: https://linkedin-learning.pxf.io/rweekly_dimnames
 
 # build an array for demonstration
 sample1 <- as.integer(runif(10, min = 1, max = 30))

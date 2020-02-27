@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: stem plots
+# affiliate: https://linkedin-learning.pxf.io/rweekly_stemplot
 
 sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
 

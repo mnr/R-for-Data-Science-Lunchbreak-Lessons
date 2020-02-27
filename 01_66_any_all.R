@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: using any and all
+# affiliate: https://linkedin-learning.pxf.io/Rweekly_anyall
 
 allFALSE <- c(FALSE, is.na("notNA"), 3 == 4)
 allTRUE <- c(TRUE, is.na(NA), 3 == 3)

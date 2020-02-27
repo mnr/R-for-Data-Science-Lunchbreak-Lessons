@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: stopifnot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_stopifnot
 
 # stopifnot is good for testing multiple expressions for true or false
 

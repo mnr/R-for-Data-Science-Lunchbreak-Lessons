@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: sunflower plot
+# affiliate: https://linkedin-learning.pxf.io/rweekly_sunflower
 
 xpos <- c(1,2,3,3,1,2,3,1,2,3,4,5,6) # 13 xy points
 ypos <- c(1,1,1,1,1,1,1,1,1,1,1,1,1)

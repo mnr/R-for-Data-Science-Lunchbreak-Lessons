@@ -1,6 +1,6 @@
 # Copyright Mark Niemann-Ross, 2019
 
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_chartr"
 idx_video <- "chartr"
 idx_task <- "strings"
 idx_topics <- "chartr()" 
