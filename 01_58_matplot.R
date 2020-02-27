@@ -3,6 +3,7 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
+# affiliate: https://linkedin-learning.pxf.io/rweek_matplot
 # Description: matplot - plot columns of matrices
 
 # first create some sample matrix

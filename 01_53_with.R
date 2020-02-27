@@ -1,4 +1,5 @@
-# Example file for LinkedIn Learning, R for Data Science, lunchbreak learning - https://linkedin-learning.pxf.io/rweekly_with
+# Example file for LinkedIn Learning, R for Data Science, 
+# lunchbreak learning - https://linkedin-learning.pxf.io/rweekly_with
 # Description: with...
 
 data("ChickWeight")

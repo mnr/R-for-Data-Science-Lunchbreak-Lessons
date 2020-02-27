@@ -1,5 +1,6 @@
 # example files for LinkedIn Learning: https://linkedin-learning.pxf.io/rweekly_debugonce
 # Description: Example file for debugonce
+# affiliate link: https://linkedin-learning.pxf.io/rweekly_debugonce
 
 # main idea: Using the R debugger
 
