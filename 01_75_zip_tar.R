@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: zip, unzip, tar, untar
+# affiliate: https://linkedin-learning.pxf.io/rweekly_ziptar
 
 
 # zip ---------------------------------------------------------------------

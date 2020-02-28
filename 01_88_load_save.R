@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: save and load a data structure
+# affiliate: https://linkedin-learning.pxf.io/rweekly_loadsave
 
 # scenario: 
 # Sue runs a network of weather stations

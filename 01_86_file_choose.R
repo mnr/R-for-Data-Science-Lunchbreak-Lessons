@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: file.choose, choose.files, list.files
+# affiliate: https://linkedin-learning.pxf.io/rweekly_filechoose
 
 # file access commands
 # some are only for windows

@@ -1,4 +1,5 @@
 # round, ceiling, trunc
+# affiliate: https://linkedin-learning.pxf.io/rweekly_round
 
 # NOTE: needs explaining...
 

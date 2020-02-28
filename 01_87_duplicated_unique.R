@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: duplicated and unique
+# affiliate: https://linkedin-learning.pxf.io/rweekly_dup_uniq
 
 # refer back to the session on any_all for anyDuplicated()
 
