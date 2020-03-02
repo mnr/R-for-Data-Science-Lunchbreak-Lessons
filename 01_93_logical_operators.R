@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: logical operators
+# affiliate: https://linkedin-learning.pxf.io/rweekly_logOps
 
 # common to a lot of languages, but worth reviewing
 
