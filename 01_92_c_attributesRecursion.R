@@ -1,5 +1,7 @@
 # use c() to simplify
 
+# affiliate: https://linkedin-learning.pxf.io/rweekly_csimplify
+
 arrayThing <- array(c(1:300), dim = c(10,10,3))
 dfThing <- data.frame(letters = letters[1:10], numbers = 1:10, stringsAsFactors = FALSE )
 
