@@ -1,4 +1,5 @@
 # use c() to simplify
+# affiliate: https://linkedin-learning.pxf.io/rweekly_csimplify
 
 # affiliate: https://linkedin-learning.pxf.io/rweekly_csimplify
 

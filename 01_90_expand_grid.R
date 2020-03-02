@@ -3,7 +3,7 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: https://linkedin-learning.pxf.io/rweekly_expandgrid
+# affiliate: https://linkedin-learning.pxf.io/rweekly_expandGrid
 
 #compare expand.grid vs combn
 
