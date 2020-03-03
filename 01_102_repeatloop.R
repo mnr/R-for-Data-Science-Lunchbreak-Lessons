@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: repeat loop 
+# affiliate: https://linkedin-learning.pxf.io/rweekly_repeatloop
 
 # repeat is one of many flow controls. (i.e. While, for.., if...then)
 

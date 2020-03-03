@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: logical operators and their effect on flow control
+# affiliate: https://linkedin-learning.pxf.io/rweekly_logicops
 
 
 # && is "and", but evaluates left to right. use for flow control
