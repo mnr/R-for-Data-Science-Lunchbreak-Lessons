@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: for loop 
+# affiliate: https://linkedin-learning.pxf.io/rweekly_forloop
 
 # R vectors are faster - but sometimes you need a for loop
 

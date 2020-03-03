@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: trycatch to catch errors
+# affiliate: https://linkedin-learning.pxf.io/rweekly_trycatch
 
 # Use trycatch when doing something that might fail, but you can fix
 # Error trapping is polite code

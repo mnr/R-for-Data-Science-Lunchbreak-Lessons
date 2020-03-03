@@ -3,7 +3,7 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: 
+# affiliate: https://linkedin-learning.pxf.io/rweekly_completecases
 
 # complete.cases finds lines with missing data
 load("nasa.rds")

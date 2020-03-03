@@ -3,7 +3,8 @@
 # LinkedIn: https://www.linkedin.com/in/markniemannross/
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
-# Description: for loop 
+# Description: while loop 
+# affiliate: https://linkedin-learning.pxf.io/rweekly_while
 
 # R vectors are faster - but sometimes you need a while loop
 # be careful not to get in an endless loop. The Condition needs to eventually change

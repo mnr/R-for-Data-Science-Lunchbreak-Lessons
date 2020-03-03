@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: why use double colons?
+# affiliate: https://linkedin-learning.pxf.io/rweekly_dblcolons
 
 # you've seen package::function. What is it for? 
 
