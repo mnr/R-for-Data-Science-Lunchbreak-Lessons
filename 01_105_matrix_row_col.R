@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: finding elements in a matrix
+# affiliate: https://linkedin-learning.pxf.io/rweekly_matrixRowColumn
 
 # Yash: Hi Mark
 # Yash: I'm going to Europe and have a special deal on car rental. 

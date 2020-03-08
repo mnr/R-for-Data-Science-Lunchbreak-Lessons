@@ -4,6 +4,7 @@
 # Github: https://github.com/mnr
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: cumulative operators
+# affiliate: https://linkedin-learning.pxf.io/rweekly_CUMminmaxprodsum
 
 # cumulative summation
 cumsum(1:3) # 1 + 2 + 3 = 6
