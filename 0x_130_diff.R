@@ -20,6 +20,7 @@ diff(vector1, lag = 2)
 # vector1[7] - vector1[5] ==  9 - 5 = 4
 # vector1[8] - vector1[6] ==  18 - 10 = 8
 
+# the "difference" argument is how many recursions to perform
 diff(vector1, lag = 2, difference = 2)
 # using x[(1+lag):n] - x[1:(n-lag)]
 # which results in the above, and produces 1, 2, 2, 4, 4, 8
