@@ -1,6 +1,6 @@
 # Copyright Mark Niemann-Ross, 2019
 
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_fileinfo"
 idx_video <- ""
 idx_task <- "files"
 idx_topics <- c("file.info()", "file.mode()", "file.mtime()", "file.size()")

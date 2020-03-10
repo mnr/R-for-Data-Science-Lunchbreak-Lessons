@@ -1,6 +1,6 @@
 # Copyright Mark Niemann-Ross, 2019
 
-affiliate <- ""
+affiliate <- "https://linkedin-learning.pxf.io/rweekly_issymetric"
 video <- ""
 topics <- "issymetric(), matrix"
 index_build(affiliate, video, topics)

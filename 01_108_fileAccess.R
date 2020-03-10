@@ -5,7 +5,7 @@
 # More Learning: http://niemannross.com/link/mnratlil
 # Description: 
 
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_fileaccess"
 idx_video <- ""
 idx_task <- "files"
 idx_topics <- c("file.access()", "bitwXor()")

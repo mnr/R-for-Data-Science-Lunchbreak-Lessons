@@ -1,4 +1,4 @@
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_sortDataframe2columns"
 idx_video <- ""
 idx_task <- "sorting"
 idx_topics <- "order()"
