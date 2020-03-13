@@ -1,4 +1,4 @@
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweeklydiag"
 idx_video <- ""
 idx_task <- ""
 idx_topics <- "diag()"
