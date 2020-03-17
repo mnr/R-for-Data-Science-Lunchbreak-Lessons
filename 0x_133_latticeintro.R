@@ -7,7 +7,11 @@
 #            stripchart, sunflowerplot
 # 2) ggplot: an external package for grammar of graphics. VERY popular
 # 3) lattice: included with R. Faster than ggplot, 
-#             better awareness of output device
+#             better awareness of output device. 
+#             includes: barchart, bwplot, densityplot, dotplot,
+#             histogram, qqmath, stripplot, qq, xyplot
+#             levelplot, contourplot, cloud, wireframe, splom,
+#             parallel, rfs, tmd
 
 # ...but in the end, it may be subjective and personal preference.
 
@@ -30,9 +34,28 @@ plot(cw_mean$Time, cw_mean$weight,
 # how to do it in lattice
 
 library(lattice)
-xyplot( weight ~ Time, 
+xyplot( weight ~ Time , 
         data = cw_mean,
         type = "l")
 
 
 # note the use of formula instead of "x =" and "y="
+
+# conditioning part of formula allows for grid
+xyplot( weight ~ Time  , 
+        data = ChickWeight, 
+        type = "l")
+
+xyplot( weight ~ Time | Diet , 
+        data = ChickWeight, 
+        type = "l")
+
+xyplot( weight ~ Time | Diet == 2 , 
+        data = ChickWeight, 
+        type = "l")
+
+# data subsetting works
+xyplot( weight ~ Time | Diet , 
+        data = ChickWeight[ ChickWeight$Time > 12, ], 
+        type = "l")
+
