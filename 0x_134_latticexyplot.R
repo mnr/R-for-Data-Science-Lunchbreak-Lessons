@@ -24,4 +24,18 @@ xyplot(Chick ~ Time + weight, data = ChickWeight)
 xyplot(Chick ~ I(Time + weight), data = ChickWeight)
 
 
+# lots of options for creating keys/legends
+xyplot(weight ~ Time | Diet, 
+       data = ChickWeight,
+       type = "a", # lines = average
+       groups = Diet, # necessary for auto.key,
+       auto.key = list(columns = 2, 
+                       points = FALSE,
+                       rectangles = TRUE,
+                       space = "bottom"))
+
+
+
+
+
 
