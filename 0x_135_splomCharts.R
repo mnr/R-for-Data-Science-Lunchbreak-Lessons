@@ -31,11 +31,13 @@ splom(~ChickWeight[1:2],
 
 someColors <- colorRampPalette(c("yellow","blue"))
 
+# create a function to be used with panels
 myPanelFunc <- function(x,y,..){
   panel.smoothScatter(x,y, lwd = 1, colramp = someColors)
   panel.loess(x,y, lwd = 2, col = "red")
 }
 
+#...then set panel = to the panel plotting function
 splom(~ChickWeight[1:2], 
       groups = Diet, 
       data = ChickWeight,
