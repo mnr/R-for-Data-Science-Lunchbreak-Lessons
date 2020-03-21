@@ -1,5 +1,7 @@
 # lattice xyplot
 
+library(lattice)
+
 # xyplot is an important place to start - all attributes are defined in this help file.
 
 # so easy to set up plots once you understand formulas

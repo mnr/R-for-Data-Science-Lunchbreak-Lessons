@@ -34,6 +34,7 @@ plot(cw_mean$Time, cw_mean$weight,
 # how to do it in lattice
 
 library(lattice)
+
 xyplot( weight ~ Time , 
         data = cw_mean,
         type = "l")

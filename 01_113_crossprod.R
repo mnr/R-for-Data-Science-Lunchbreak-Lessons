@@ -1,4 +1,4 @@
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweeklyCrossprod"
 idx_video <- ""
 idx_task <- "matrix"
 idx_topics <- c("%*%", "crossprod()", "tcrossprod()")

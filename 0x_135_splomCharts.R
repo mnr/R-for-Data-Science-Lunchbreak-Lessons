@@ -2,6 +2,8 @@
 
 # SPLOM == Scatter PLot Matrices
 
+library(lattice)
+
 str(ChickWeight) # so we can see what the formula is doing
 
 splom(~ChickWeight)
