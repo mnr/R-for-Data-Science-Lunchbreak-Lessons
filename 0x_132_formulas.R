@@ -46,12 +46,21 @@ xyplot(x = blerbs ~ dords - sinwave, data = myData)
 xyplot(x = blerbs ~ dords - sinwave | fruit, data = myData)
 xyplot(x = blerbs ~ fivenum(dords) | animals, data = myData)
 
-# formulas allow for selection
+# formulas allow for subset
 xyplot(x = blerbs ~ dords | animals == "ant" , data = myData)
 
 xyplot(x = blerbs ~ dords | animals , 
        data = myData[myData$sinwave > .5, ])
 
+# ... or use the subset parameter ...
+xyplot(x = blerbs ~ dords | animals , data = myData, subset = dords < 10)
+xyplot(x = blerbs ~ dords | animals , data = myData, subset = dords > 10)
+
+
+# formulas can have equations
+xyplot(x = cut(blerbs, breaks = 4) ~ dords, data = myData)
+xyplot(x = blerbs ~ cut(dords, breaks = 4), data = myData)
+xyplot(x = I(blerbs * 2) ~ dords, data = myData) # I() is for identity - escape special meanings
 
 # there are more operators
 

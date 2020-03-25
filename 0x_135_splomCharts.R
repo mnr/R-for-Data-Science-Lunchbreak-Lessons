@@ -1,4 +1,5 @@
 # lattice SPLOM
+# splom(˜data.frame)
 
 # SPLOM == Scatter PLot Matrices
 

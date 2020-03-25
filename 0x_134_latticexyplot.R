@@ -1,4 +1,5 @@
 # lattice xyplot
+# formula: xyplot(numeric1 ˜ numeric2)
 
 library(lattice)
 

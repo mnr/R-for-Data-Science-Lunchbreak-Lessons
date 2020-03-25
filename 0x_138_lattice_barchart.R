@@ -1,9 +1,35 @@
-# lattice barcharts
+# lattice barcharts & bw plot
+# formula: bwplot(factor ˜ numeric)
+# formula: barchart(character ˜ numeric)
 
-box.ratio	
-Applicable to barchart and bwplot. Specifies the ratio of the width of the rectangles to the inter-rectangle space. See also the box.width argument in the respective default panel functions.
+library(lattice)
 
-horizontal	
-Logical flag applicable to bwplot, dotplot, barchart, and stripplot. Determines which of x and y is to be a factor or shingle (y if TRUE, x otherwise). Defaults to FALSE if x is a factor or shingle, TRUE otherwise. This argument is used to process the arguments to these high-level functions, but more importantly, it is passed as an argument to the panel function, which is expected to use it as appropriate.
+# using standard formula setup
 
-A potentially useful component of scales in this case may be abbreviate = TRUE, in which case long labels which would usually overlap will be abbreviated. scales could also contain a minlength argument in this case, which would be passed to the abbreviate function.
+barchart( weight ~ Time + Diet, data = ChickWeight)
+
+barchart( Diet ~ weight, data = ChickWeight) # these plots make more sense with a factor 
+
+bwplot( Diet ~ Time, data = ChickWeight)
+
+# With barchart options
+?barchart # refers to xyplot
+?panel.barchart # provides barchart specific options
+barchart( weight ~ Time + Diet, data = ChickWeight)
+barchart( weight ~ Time + Diet, data = ChickWeight, box.ratio = 10)
+barchart( weight ~ Time + Diet, data = ChickWeight, horizontal = TRUE) # note the axis stay the same
+
+# with bwplot options
+? panel.bwplot
+bwplot( Diet ~ Time, data = ChickWeight, box.ratio = 10)
+bwplot( Diet ~ Time, data = ChickWeight,
+        notch = TRUE, varwidth = TRUE
+)
+
+# changing axis label
+levels(ChickWeight$Diet) <- c("Apples","Bananas","Steak","Potatoes")
+bwplot( Diet ~ Time, data = ChickWeight)
+
+
+
+

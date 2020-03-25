@@ -1,4 +1,6 @@
 # lattice levelplot & contourplot
+# contourplot(numeric1 ˜ numeric2 * numeric3)
+# levelplot(numeric1 ˜ numeric2 * numeric3)
 
 library(lattice)
 

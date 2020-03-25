@@ -1,4 +1,5 @@
 #lattice vs base graphics - introduction
+# reference: trellis user guide - http://www.stat.purdue.edu/~lshu/documents/R_helps/trellis.manual.pdf
 
 # R has three graphics environments:
 # 1) base R: i.e. plot, barplot, boxplot, cdplot, coplot, 
@@ -60,3 +61,10 @@ xyplot( weight ~ Time | Diet ,
         data = ChickWeight[ ChickWeight$Time > 12, ], 
         type = "l")
 
+# use lattice to control appearance
+show.settings() # graphic of all settings for current output device
+trellis.par.get() # list of all parameters
+trellis.par.get("fontsize") # normal = 12
+trellis.par.set("fontsize", value = list("text" = 14) ) # now it's 14
+
+                

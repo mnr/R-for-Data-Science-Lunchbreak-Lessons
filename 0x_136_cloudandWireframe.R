@@ -3,6 +3,8 @@
 library(lattice)
 
 # clouds and wireframes are essentially the same, but different panel plotting methods
+# wireframe(numeric1 ˜ numeric2 * numeric3)
+# cloud(numeric1 ˜ numeric2 * numeric3)
 
 names(ChickWeight) # review names of columns
 
