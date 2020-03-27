@@ -1,4 +1,4 @@
-idx_affiliate <- ""
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweeklyUpperLowerTri"
 idx_video <- ""
 idx_task <- "matrix"
 idx_topics <- c("upper.tri()", "lower.tri()", "diag()")
