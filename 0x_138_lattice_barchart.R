@@ -4,20 +4,25 @@
 
 library(lattice)
 
-# using standard formula setup
+
+# barchart ----------------------------------------------------------------
+# barchart using standard formula setup
 
 barchart( weight ~ Time + Diet, data = ChickWeight)
 
 barchart( Diet ~ weight, data = ChickWeight) # these plots make more sense with a factor 
-
-bwplot( Diet ~ Time, data = ChickWeight)
-
 # With barchart options
 ?barchart # refers to xyplot
 ?panel.barchart # provides barchart specific options
 barchart( weight ~ Time + Diet, data = ChickWeight)
 barchart( weight ~ Time + Diet, data = ChickWeight, box.ratio = 10)
 barchart( weight ~ Time + Diet, data = ChickWeight, horizontal = TRUE) # note the axis stay the same
+
+
+# bwplot ------------------------------------------------------------------
+
+bwplot( Diet ~ Time, data = ChickWeight)
+
 
 # with bwplot options
 ? panel.bwplot

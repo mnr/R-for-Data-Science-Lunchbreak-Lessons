@@ -10,21 +10,13 @@ xyplot(weight ~ Time, data = ChickWeight)
 xyplot(weight*3 ~ Time, data = ChickWeight)
 xyplot(weight ~ Time | Diet, data = ChickWeight)
 
-xyplot(Time + weight ~ Chick, data = ChickWeight)
-# which is equivalent to
-xyplot(Time ~ Chick, data = ChickWeight)
-#...and...
-xyplot(weight ~ Chick, data = ChickWeight)
-# but in the same panel
-# what if you want the two LHS in separate plots
-xyplot(Time + weight ~ Chick, data = ChickWeight, outer = TRUE)
-
-
 # what if you want to add two variables instead of combine graphs?
+ChickWeight$anotherVar <- 1:nrow(ChickWeight) # add a variable
+
 # not what we want
-xyplot(Chick ~ Time + weight, data = ChickWeight)
-# use I() to get desired result
-xyplot(Chick ~ I(Time + weight), data = ChickWeight)
+xyplot(weight ~ Time + anotherVar, type = "l", data = ChickWeight)
+# use I() (inhibit interpretation) to get desired result
+xyplot(weight ~ I(Time + anotherVar), type = "l", data = ChickWeight)
 
 
 # lots of options for creating keys/legends
@@ -37,7 +29,12 @@ xyplot(weight ~ Time | Diet,
                        rectangles = TRUE,
                        space = "bottom"))
 
-
+# or just use autokey
+xyplot( weight ~ Time, 
+        groups = Diet,
+        data = ChickWeight, 
+        type = "l",
+        auto.key = TRUE)
 
 
 

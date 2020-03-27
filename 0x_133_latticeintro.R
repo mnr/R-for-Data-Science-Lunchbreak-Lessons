@@ -1,5 +1,7 @@
 #lattice vs base graphics - introduction
 # reference: trellis user guide - http://www.stat.purdue.edu/~lshu/documents/R_helps/trellis.manual.pdf
+# gallery: http://lmdvr.r-forge.r-project.org/figures/figures.html
+# another explanation: https://www.stat.auckland.ac.nz/~ihaka/787/lectures-trellis.pdf
 
 # R has three graphics environments:
 # 1) base R: i.e. plot, barplot, boxplot, cdplot, coplot, 
@@ -21,13 +23,13 @@
 
 head(ChickWeight, 15) # let's use Chickweight data set as an example
 # question: what is average weight for each day?
-cw_mean <- aggregate(ChickWeight, by = list(ChickWeight$Time), mean)
-# warnings are from NA
-
 
 # how to do it in base R
+cw_mean <- aggregate(ChickWeight$weight, 
+                     by = list(ChickWeight$Time), 
+                     FUN = mean)
 
-plot(cw_mean$Time, cw_mean$weight,
+plot(cw_mean$Group.1, cw_mean$x,
      ylab = "Weight", xlab = "Days",
      type = "l")
 
@@ -37,34 +39,32 @@ plot(cw_mean$Time, cw_mean$weight,
 library(lattice)
 
 xyplot( weight ~ Time , 
-        data = cw_mean,
-        type = "l")
-
+        data = ChickWeight,
+        type = "a")
 
 # note the use of formula instead of "x =" and "y="
 
 # conditioning part of formula allows for grid
-xyplot( weight ~ Time  , 
-        data = ChickWeight, 
-        type = "l")
+# Conditioning must be factors
 
 xyplot( weight ~ Time | Diet , 
         data = ChickWeight, 
-        type = "l")
-
-xyplot( weight ~ Time | Diet == 2 , 
-        data = ChickWeight, 
-        type = "l")
+        type = "a")
 
 # data subsetting works
 xyplot( weight ~ Time | Diet , 
         data = ChickWeight[ ChickWeight$Time > 12, ], 
-        type = "l")
+        type = "a")
 
-# use lattice to control appearance
+# use trellis to control appearance
 show.settings() # graphic of all settings for current output device
 trellis.par.get() # list of all parameters
 trellis.par.get("fontsize") # normal = 12
-trellis.par.set("fontsize", value = list("text" = 14) ) # now it's 14
+trellis.par.set("fontsize", value = list("text" = 20) ) # now it's 14
+
+xyplot( weight ~ Time | Diet , 
+        data = ChickWeight[ ChickWeight$Time > 12, ], 
+        type = "a")
+
 
                 

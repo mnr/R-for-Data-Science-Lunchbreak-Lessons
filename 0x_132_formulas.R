@@ -8,6 +8,7 @@ class(x ~ y) # returns "formula"
 # "response ~ terms" as used by lm()
 
 # pronounce x ~ y as "x is a function of y"
+# or, in the case of lattic "x is graphed against y"
 
 myformula <- "x ~ y" # stored as string
 myformula <- as.formula("x ~ y") # stored as formula
@@ -30,6 +31,7 @@ plot(x = myData$dords, y = myData$blerbs)
 
 library(lattice) # using lattice system for formula support
 
+## Bonus Material
 # ~ ... y ~ x ... y is a function of column x
 xyplot(x = blerbs ~ dords, data = myData)
 
