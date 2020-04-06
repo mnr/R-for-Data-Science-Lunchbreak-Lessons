@@ -1,4 +1,5 @@
-# This is a convenience function that sets the names on an object and returns the object
+# This is a convenience function that sets the names on an object and returns
+# the object
 
 thisVector <- c("bibbity", "bobbity", "boo")
 

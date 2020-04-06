@@ -7,11 +7,12 @@ aLongString <- c("Twas Brillig and the slithey toves",
                  "All mimsy were the borogoves",
                  "and the mome wraiths outgrabe")
 
-# comparison of message, cat, and print
+# first - what does print() do?
+print(aLongString)
+
+# then...what does cat() do?
 
 cat(aLongString)
-print(aLongString)
-message(aLongString)
 
 # cat also...
 cat(aLongString, file = "outputFile.txt") # write to a file
@@ -24,8 +25,9 @@ paste(aLongString, collapse = "!!!")
 paste0(aLongString, collapse = "!!!")
 cat(aLongString, sep = "!!!") # separator between vectors
 
+# finally, message does this...
+message(aLongString)
 
-# message also...
-# sends to stderr
+# message sends to stderr
 suppressMessages(message(aLongString)) # stderr is turned off
 message(aLongString) #stderr is turned on
