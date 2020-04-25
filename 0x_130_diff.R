@@ -12,7 +12,7 @@ diff(vector1, lag = 2)
 
 plot(vector1, type = "l", lwd = 5)
 lines(diff(vector1, lag = 2), col="Red", lwd = 5)
-?# n = 8
+# n = 8
 # lag = 2
 # n-lag = 6
 # Which is...
@@ -25,6 +25,8 @@ lines(diff(vector1, lag = 2), col="Red", lwd = 5)
 
 # the "difference" argument is how many recursions to perform
 diff(vector1, lag = 2, difference = 2)
+lines(diff(vector1, lag = 2, difference = 2), col="Green", lwd = 5)
+
 # using x[(1+lag):n] - x[1:(n-lag)]
 # which results in the above, and produces 1, 2, 2, 4, 4, 8
 # recursively, x[(1+lag):n] - x[1:(n-lag)]
@@ -43,6 +45,8 @@ diff(vector1, lag = 2, difference = 2)
 
 
 diff(vector1, lag = 2, difference = 3)
+lines(diff(vector1, lag = 2, difference = 3), col="Blue", lwd = 5)
+
 # 1st recursive = 1, 2, 2, 4, 4, 8
 # 2nd recursive = 1, 2, 2, 4
 # 3rd recursive...
