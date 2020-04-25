@@ -1,0 +1,174 @@
+backsolve() and forwardsolve()
+========================================================
+author: Mark Niemann-Ross
+date: 
+autosize: true
+
+backsolve()
+========================================================
+`backsolve()` solves a triangular system of linear equations. This can come  from a gaussian elimination (for example).
+
+Start with...
+$$\begin{align*}
+-3x_1 + 2x_2 - x_3 &= -1\\
+-2x_2 + 5x_3 &= -9\\
+-2x_3 &=2
+\end{align*}
+$$
+
+Upper Triangular Matrix
+========================================================
+
+$$\begin{align*}
+-3x_1 + 2x_2 - x_3 &= -1\\
+-2x_2 + 5x_3 &= -9\\
+-2x_3 &=2
+\end{align*}
+$$
+
+
+```r
+# r holds a matrix of coefficients for the system to be solved
+r <- matrix(c(-3, 2, -1,
+              0, -2,  5,
+              0,  0, -2),
+            nrow = 3, byrow = TRUE)
+
+r
+```
+
+```
+     [,1] [,2] [,3]
+[1,]   -3    2   -1
+[2,]    0   -2    5
+[3,]    0    0   -2
+```
+
+
+Solution Matrix
+========================================================
+
+$$\begin{align*}
+-3x_1 + 2x_2 - x_3 &= -1\\
+-2x_2 + 5x_3 &= -9\\
+-2x_3 &=2
+\end{align*}
+$$
+
+
+```r
+# x is a column matrix with the solutions
+x <- matrix(c(-1, -9, 2), ncol = 1)
+
+x
+```
+
+```
+     [,1]
+[1,]   -1
+[2,]   -9
+[3,]    2
+```
+
+Use backsolve() 
+========================================================
+$$\begin{align*}
+-3x_1 + 2x_2 - x_3 &= -1\\
+-2x_2 + 5x_3 &= -9\\
+-2x_3 &=2
+\end{align*}
+$$
+
+
+```r
+# backsolve produces the values of x.
+backsolve(r, x)
+```
+
+```
+     [,1]
+[1,]    2
+[2,]    2
+[3,]   -1
+```
+
+`backsolve()` produces a column matrix that looks like... $matrix(c(x_3, x_2, x_1), ncol = 1)$
+  
+forwardsolve()
+========================================================
+`forwardsolve()` uses the lower triangular matrix. (`backsolve()` uses the upper triangular matrix.) For example...
+
+$$\begin{align*}
+2 &= -2x_3\\
+-9 &= 5x_3 -2x_2 \\
+-1 &= -x_3+ 2x_2 -3x_1
+\end{align*}$$
+
+Lower Triangular Matrix
+========================================================
+$$\begin{align*}
+2 &= -2x_3\\
+-9 &= 5x_3 -2x_2 \\
+-1 &= -x_3+ 2x_2 -3x_1
+\end{align*}$$
+
+
+```r
+# r holds a matrix of coefficients for the system to be solved
+
+l <- matrix(c(-2,  0, 0,
+              5, -2, 0,
+              -1, 2, -3),
+            nrow = 3, byrow = TRUE)
+l
+```
+
+```
+     [,1] [,2] [,3]
+[1,]   -2    0    0
+[2,]    5   -2    0
+[3,]   -1    2   -3
+```
+
+solution column matrix
+========================================================
+$$\begin{align*}
+2 &= -2x_3\\
+-9 &= 5x_3 -2x_2 \\
+-1 &= -x_3+ 2x_2 -3x_1
+\end{align*}$$
+
+
+```r
+# x is a column matrix with the solutions
+x <- matrix(c(2, -9, -1), ncol = 1)
+x
+```
+
+```
+     [,1]
+[1,]    2
+[2,]   -9
+[3,]   -1
+```
+
+Use forwardsolve()
+========================================================
+$$\begin{align*}
+2 &= -2x_3\\
+-9 &= 5x_3 -2x_2 \\
+-1 &= -x_3+ 2x_2 -3x_1
+\end{align*}$$
+
+
+```r
+# forwardsolve produces the values of x.
+forwardsolve(l, x)
+```
+
+```
+     [,1]
+[1,]   -1
+[2,]    2
+[3,]    2
+```
