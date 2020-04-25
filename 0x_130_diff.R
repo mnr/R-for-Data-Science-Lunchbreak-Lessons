@@ -9,7 +9,10 @@ vector1 <- c(2, 4, 3, 6, 5, 10, 9, 18)
 # diff does this... x[(1+lag):n] - x[1:(n-lag)]
 
 diff(vector1, lag = 2)
-# n = 8
+
+plot(vector1, type = "l", lwd = 5)
+lines(diff(vector1, lag = 2), col="Red", lwd = 5)
+?# n = 8
 # lag = 2
 # n-lag = 6
 # Which is...
