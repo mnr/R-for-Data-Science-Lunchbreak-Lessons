@@ -21,6 +21,18 @@ Simple Slides with Rpres
 - Easy to include code snippets
 - Easy to show code results
 
+How to create .Rpres
+===
+1. Easiest to use Rstudio
+2. File -> New File -> R Presentation
+3. Edit
+4. Save produces preview
+4. Open Document Outline in Source Window
+5. Navigate with popup menu in preview window
+6. Edit (paper & pencil) to jump to the slide
+5. To present: preview window -> More -> Save as Web Page
+
+
 Slide With Code
 ========================================================
 
@@ -50,16 +62,6 @@ using `{r, eval=FALSE}` show code, hide result
 plot(cars)
 ```
 
-How to create .Rpres
-===
-1. Easiest to use Rstudio
-2. File -> New File -> R Presentation
-3. Edit
-4. Save produces preview
-4. Open Document Outline in Source Window
-5. Navigate with popup menu in preview window
-6. Edit (paper & pencil) to jump to the slide
-5. To present: preview window -> More -> Save as Web Page
 
 Images
 ===
