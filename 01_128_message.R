@@ -11,7 +11,6 @@ aLongString <- c("Twas Brillig and the slithey toves",
 print(aLongString)
 
 # then...what does cat() do?
-
 cat(aLongString)
 
 # cat also...
