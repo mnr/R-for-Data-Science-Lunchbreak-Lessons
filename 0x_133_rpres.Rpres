@@ -1,0 +1,87 @@
+Presentations with .rpres
+========================================================
+author: Mark Niemann-Ross
+date: 
+autosize: true
+
+
+Sometimes You Need A Presentation
+========================================================
+
+*...but does it have to be so difficult?*
+
+PowerPoint is overkill
+
+HTML/CSS/JS is fancy - but time consuming
+
+
+Simple Slides with Rpres
+===
+- Based on markdown
+- Easy to include code snippets
+- Easy to show code results
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Showing & Hiding Code
+===
+- `{r}` shows code and result
+- `{r, echo=FALSE}` hides code, shows result
+- `{r, eval=FALSE}` shows code, hides result
+
+Example: Slide With Plot
+========================================================
+using `{r, echo=FALSE}` hide code, show result
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Example: Slide With code
+========================================================
+using `{r, eval=FALSE}` show code, hide result
+
+```{r, eval=FALSE}
+plot(cars)
+```
+
+How to create .Rpres
+===
+1. Easiest to use Rstudio
+2. File -> New File -> R Presentation
+3. Edit
+4. Save produces preview
+4. Open Document Outline in Source Window
+5. Navigate with popup menu in preview window
+6. Edit (paper & pencil) to jump to the slide
+5. To present: preview window -> More -> Save as Web Page
+
+Images
+===
+Images can be local or via URL
+
+![Here's Mark](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
+***
+Images can be on left or right side
+
+![Image on the right side](https://i2.wp.com/niemannross.com/wp-content/uploads/2017/09/IMG_20160404_160715737_HDR.jpg)
+
+Writing Equations with Markdown
+===
+
+Inline math equation with $ 
+
+Like so... $A^{a1} + B^{b1}$ ...just like that.
+
+***
+
+Longer equations start and end with 2 x $
+
+$$ \huge
+\sum_{i=1}^{10} t_i
+$$
