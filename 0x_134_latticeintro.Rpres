@@ -1,0 +1,97 @@
+Introduction to lattice graphics
+========================================================
+author: Mark Niemann-Ross
+date: 
+autosize: true
+
+R has three graphics environments
+========================================================
+1. base R
+     + plot, barplot, boxplot, cdplot, coplot, dotchart, fourfoldplot, heatmap, hist(), matlines,matplot, mosaicplot, pie, spineplot, stemplot, stripchart, sunflowerplot
+
+2. ggplot
+     + an external package for grammar of graphics. VERY popular
+
+3. lattice
+     + included with R. Faster than ggplot, 
+     + better awareness of output device. 
+     + includes: barchart, bwplot, densityplot, dotplot, histogram, qqmath, stripplot, qq, xyplot, levelplot, contourplot, cloud, wireframe, splom, parallel, rfs, tmd
+
+
+lattice vs base graphics
+========================================================
+
+What is the average weight of a chick for each day?
+
+Here's sample data
+```{r}
+head(ChickWeight)
+```
+
+base R
+========================================================
+```{r}
+cw_mean <- aggregate(ChickWeight$weight, 
+                     by = list(ChickWeight$Time), 
+                     FUN = mean)
+
+plot(cw_mean$Group.1, cw_mean$x,
+     ylab = "Weight", xlab = "Days",
+     type = "l")
+```
+
+lattice
+========================================================
+Note the use of formula instead of "x =" and "y="
+
+```{r}
+
+library(lattice)
+
+xyplot( weight ~ Time , 
+        data = ChickWeight,
+        type = "a")
+```
+
+
+Conditioning part of formula allows for grid
+========================================================
+
+Conditioning must be factors
+
+```{r}
+xyplot( weight ~ Time | Diet , 
+        data = ChickWeight, 
+        type = "a")
+```
+
+Data subsetting
+========================================================
+```{r}
+xyplot( weight ~ Time | Diet , 
+        data = ChickWeight[ ChickWeight$Time > 12, ], 
+        type = "a")
+```
+
+Use trellis to control appearance
+========================================================
+
+`show.settings()` graphic of all settings for current output device
+
+`trellis.par.get()` list of all parameters
+
+`trellis.par.get("fontsize")` normal = 12
+
+`trellis.par.set("fontsize", value = list("text" = 20) )` now it's 14
+
+
+
+
+References
+========================================================
+
+reference: trellis user guide - http://www.stat.purdue.edu/~lshu/documents/R_helps/trellis.manual.pdf
+
+gallery: http://lmdvr.r-forge.r-project.org/figures/figures.html
+
+another explanation: https://www.stat.auckland.ac.nz/~ihaka/787/lectures-trellis.pdf
