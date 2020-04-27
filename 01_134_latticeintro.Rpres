@@ -6,13 +6,14 @@ autosize: true
 
 R has three graphics environments
 ========================================================
-1. base R
-     + plot, barplot, boxplot, cdplot, coplot, dotchart, fourfoldplot, heatmap, hist(), matlines,matplot, mosaicplot, pie, spineplot, stemplot, stripchart, sunflowerplot
+## 1. base R
+     plot, barplot, boxplot, cdplot, coplot, dotchart, fourfoldplot, heatmap, hist(), matlines,matplot, mosaicplot, pie, spineplot, stemplot, stripchart, sunflowerplot
+     
 
-2. ggplot
-     + an external package for grammar of graphics. VERY popular
+## 2. ggplot
+     an external package for grammar of graphics. VERY popular
 
-3. lattice
+## 3. lattice
      + included with R. Faster than ggplot, 
      + better awareness of output device. 
      + includes: barchart, bwplot, densityplot, dotplot, histogram, qqmath, stripplot, qq, xyplot, levelplot, contourplot, cloud, wireframe, splom, parallel, rfs, tmd
