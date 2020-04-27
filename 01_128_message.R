@@ -28,6 +28,13 @@ cat(aLongString, sep = "!!!") # separator between vectors
 # finally, message does this...
 message(aLongString)
 
+# how to use message
+someProcess <- function() {
+  message("message from someProcess")
+  print("print from someProcess")
+}
+
+someProcess()
+
 # message sends to stderr
-suppressMessages(message(aLongString)) # stderr is turned off
-message(aLongString) #stderr is turned on
+suppressMessages(someProcess()) # stderr is turned off
