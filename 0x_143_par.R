@@ -1,3 +1,7 @@
+# par - short for Graphical Parameters
+# set or get values controlling graphics
+
+
 # par for graph margins
 
 par(mar = c(5.1, 4.1, 4.1, 2.1)) # default values

@@ -1,0 +1,861 @@
+---
+title: "01_143_par"
+output: html_document
+---
+
+This document accompanies the [LinkedIn Learning Video](http://niemannross.com/link/mnratlil).
+
+par is short for "Graphical Parameters"
+They get or set parameters before the plot or are passed through the plot command to par.
+
+Here is a list of all the par commands and their effects.
+
+First, here's a normal baseline plot for comparison
+```{r}
+# devnull captures the unneeded return value from plot
+devnull <- plot(1:10)+
+title( main = "My Default Plot")
+```
+
+# Graph points
+
+## pch
+The character used to plot a point in a graph. Refer to "?points" for a lengthy discussion.
+
+
+
+# Text size and position
+
+## adj
+Text Justification. "0" is left, "0.5" is centered, 1 is right
+
+Affects ```text()```, ```mtext()```, and ```title( main = )```
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(adj = 1)
+
+devnull <- plot(1:10)+
+title( main = "adj == 1 creates justify right")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+## ps
+Point size of type. Varies from device to device, but probably multiples of 1/72 of an inch
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( ps = 25)
+
+devnull <- plot(1:10, main = "Large point size")
+
+par(oldParValues)
+```
+
+
+## cex
+Font size relative to default value of 1
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(cex = 2)
+
+devnull <- plot(1:10)+
+title( main = "cex == 2 doubles the font size")
+
+par(oldParValues)
+```
+
+## cex.axis
+Axis font size relative to cex
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(cex = 2, cex.axis = .5)
+
+devnull <- plot(1:10)+
+title( main = "axis font size = cex * cex.axis")
+
+par(oldParValues)
+```
+
+## cex.lab
+label font size relative to cex
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(cex = 2, cex.lab = .5)
+
+devnull <- plot(1:10)+
+title( main = "adj == 1 creates justify right")
+
+par(oldParValues)
+```
+
+## cex.main
+main title font size relative to cex
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(cex = 2, cex.main = .5)
+
+devnull <- plot(1:10)+
+title( main = "adj == 1 creates justify right")
+
+par(oldParValues)
+```
+
+## cex.sub
+sub-title font size relative to cex
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(cex = 2, cex.sub = .5)
+
+devnull <- plot(1:10)+
+title( main = "adj == 1 creates justify right",
+       sub = "This is a subtitle")
+
+par(oldParValues)
+```
+
+## cin
+Character size (width, height) in inches. Read only.
+```{r}
+par("cin")
+
+```
+
+## cra
+Character size (width, height) in pixels. Possibly 1/72 of an inch, depending on the device
+```{r}
+par("cra")
+```
+
+## csi
+Character height in inches
+```{r}
+par("csi")
+# aka...
+par("cin")[2]
+```
+
+
+## cxy
+Character size (width, height) in user coordinates
+```{r}
+par("cxy")
+```
+
+# Font
+
+## family
+font family by name. "" is default. Values include "serif", "sans", "mono", and Hershey fonts. Use "?hershey" for details on the hershey font family.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(family = "HersheySerif")
+
+devnull <- plot(1:10)+
+title( main = "This is Hershey Serif")
+
+par(oldParValues)
+```
+
+## font
+1 = plain
+2 = bold
+3 = italic
+4 = bold italic
+5 = symbol
+This is dicey, depending on the device and operating system.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( font = 5)
+
+devnull <- plot(1:10)+
+title( main = "This might be the symbol font")
+
+par(oldParValues)
+```
+
+
+## font.axis
+The font to be used for axis annotation. Dependent on the operating system
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( font.axis = 5)
+
+devnull <- plot(1:10)+
+title( main = "Axis might be the symbol font")
+
+par(oldParValues)
+```
+
+## font.lab
+The font to be used for x and y labels. Dependent on the operating system
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( font.lab = 5)
+
+plot(1:10, xlab = "This is the X axis", ylab = "This is the Y axis", main = "x and y labels might be the symbol font")
+
+par(oldParValues)
+```
+
+## font.main
+The font to be used for plot main titles.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( font.main = 5)
+
+devnull <- plot(1:10)+
+title( main = "main title might be the symbol font")
+
+par(oldParValues)
+```
+
+## font.sub
+The font to be used for plot sub-titles.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( font.sub = 5)
+
+devnull <- plot(1:10)+
+title( main = "sub title might be the symbol font",
+       sub = "Here is a sub-title")
+
+par(oldParValues)
+```
+
+# Text Rotation
+
+## crt
+Text Rotation in degrees. Probably only 90 degrees, depending on your device. Possibly not at all, depending on your device. Also see srt for string rotation
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(crt = 90)
+
+devnull <- plot(1:10)+
+title( main = "crt = 90 rotation")+
+text(x = 8, y = 2, labels = "Here's a long line of text")
+
+
+par(oldParValues)
+```
+
+## srt
+The string rotation in degrees. Only supported by text.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(srt = 90)
+
+devnull <- plot(1:10)+
+title( main = "srt = 90 rotation")+
+text(x = 8, y = 2, labels = "Here's a long line of text")
+
+
+par(oldParValues)
+```
+
+## las
+Axis label rotation. 0 = parallel (default), 1 = horizontal, 2 = perpendicular, 3 = vertical
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(las = 3)
+
+devnull <- plot(1:10)+
+title( main = "las = 3 is vertical. Notice change to x axis")
+
+par(oldParValues)
+```
+
+## Multi-line text
+## lheight
+Line of text height multiplier. Relative to character height. Default is 1.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( lheight = 4, adj = 0)
+
+devnull <- plot(1:10)+
+title( main = "The line of text is \ntwice as high") +
+text(x = 8, y = 2, labels = "Here's a long \nline of text")
+
+par(oldParValues)
+```
+
+
+# Decoration
+
+## ann
+annotation on or off. Defaults to on (TRUE)
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(ann = FALSE)
+
+devnull <- plot(1:10)+
+title( main = "Notice the missing titles")
+
+par(oldParValues)
+```
+
+## bty
+Box Type - the box surrounding the plot.
+o - default
+l - lines on left and bottom
+7 - lines on top and right
+c - lines on top, left, and right
+u - lines on left, bottom, and right
+] - lines on top, right, and bottom
+n - no box
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(bty = "n")
+
+devnull <- plot(1:10)+
+title( main = "'n' produces no box")
+
+par(bty = "]")
+
+devnull <- plot(1:10)+
+title( main = "']' produces lines on top, right, and bottom")
+
+par(oldParValues)
+```
+
+
+## lab
+Axis labels. x and y are tick marks. len is the label length. Default is c(5,5,7)
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+xTickMarks <- 10
+yTickMarks <- 20
+labLength <- 10
+
+par(lab = c(xTickMarks, yTickMarks, labLength))
+
+devnull <- plot(1:10)+
+title( main = paste(xTickMarks,"tick marks on horiz axis"),
+       sub = paste("lab = c(",xTickMarks,",",yTickMarks,",",labLength,")"))
+
+par(oldParValues)
+```
+
+## tck
+The length of tick marks as a fraction of the smaller of the width or height of the plotting region. If tck >= 0.5 it is interpreted as a fraction of the relevant side, so if tck = 1 grid lines are drawn. The default setting (tck = NA) is to use tcl = -0.5.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(tck = 1)
+
+devnull <- plot(1:10, main = "tck = 1")
+
+par(oldParValues)
+```
+
+## tcl
+The length of tick marks as a fraction of the height of a line of text. The default value is -0.5; setting tcl = NA sets tck = -0.01 which is S' default.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(tcl = 1)
+
+devnull <- plot(1:10, main = "tcl = 1")
+
+par(oldParValues)
+```
+
+
+
+
+# Color
+
+## bg
+background color
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(bg = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The background is red!")
+
+par(oldParValues)
+```
+
+
+## fg
+foreground color
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(fg = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The foreground is red!")
+
+par(oldParValues)
+```
+
+## col
+default plotting color
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(col = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The plot is red!")
+
+par(oldParValues)
+```
+
+
+## col.axis
+The color to be used for axis annotation. Defaults to "black".
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(col.axis = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The axis is red!")
+
+par(oldParValues)
+```
+
+
+## col.lab
+The color to be used for x and y labels. Defaults to "black".
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(col.lab = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The labels are red!")
+
+par(oldParValues)
+```
+
+## col.main
+The color to be used for plot main titles. Defaults to "black".
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(col.main = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The main title is red!")
+
+par(oldParValues)
+```
+
+## col.sub
+The color to be used for plot sub-titles. Defaults to "black".
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(col.sub = "Red")
+
+devnull <- plot(1:10)+
+title( main = "The sub-titles are red!",
+       sub = "This is a sub-title")
+
+par(oldParValues)
+```
+
+
+# Device information
+
+## din
+Width and height of device in inches. dev.size is similiar, but dynamic when window is resized.
+```{r}
+par("din")
+```
+
+
+# lines
+
+## lend
+The line end (line cap) style. 0 = round (default), 1 = butt, 2 = square.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(lend = 2)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lwd = "15")+
+title( main = "The line has a square end")
+
+par(oldParValues)
+```
+
+
+## ljoin
+The line join style. This can be specified as an integer or string. 0 and "round" = rounded line joins [default]. 1 and "mitre" = mitred. 2 and "bevel" = bevelled.
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(ljoin = 2)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lend = "square", lwd = "15")+
+title( main = "The line join is bevelled")
+
+par(oldParValues)
+```
+
+
+## lmitre
+The line mitre limit. This controls when mitred line joins are automatically converted into bevelled line joins. The value must be larger than 1 and the default is 10. Not all devices will honour this setting.
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(lmitre = 40)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lend = "square", lwd = "15")+
+title( main = "mitre vs bevel")
+
+par(oldParValues)
+```
+
+## lty
+The line type, specified as integer/string. 0/blank, 1/solid (default), 2/dashed, 3/dotted, 4/dotdash, 5/longdash, 6/twodash
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lty = "dotdash")+
+title( main = "Line Type")
+
+par(oldParValues)
+```
+
+or...do it yourself by specifying up to 8 characters - 1:9, or A:F
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lty = "1946", lwd = "6")+
+title( main = "custom Line Type")
+
+par(oldParValues)
+```
+
+
+## lwd
+The line width. Default = 1
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+devnull <- plot(c(1,5,3,6,7), type = "l", lwd = "2")+
+title( main = "Line width")+
+  abline(c(3,.5), lwd = 10)
+
+par(oldParValues)
+```
+
+
+# Layout
+
+## mai
+margin (in inches). Format is c(bottom, left, top, right)
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("mai") # what is the default margin size in inches?
+
+par(mai = c(2,1,.2,3))
+
+devnull <- plot(1:10)+
+title( main = "mai is margin in inches")
+
+par(oldParValues) # this resets par to default values
+```
+
+## mar
+margin (in lines)
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("mar") # what is the default margin size in lines?
+
+par(mar = c(2,1,.2,3))
+
+devnull <- plot(1:10)+
+title( main = "mar is margin in lines")
+
+par(oldParValues) # this resets par to default values
+```
+
+## oma
+The outer margin in lines of text.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("oma") # what is the default outer margin size in lines?
+
+par(oma = c(2,1,.2,3))
+
+devnull <- plot(1:10, main = "oma is outer margin in lines")
+
+par(oldParValues) # this resets par to default values
+```
+
+## omd
+The region inside outer margins of a plot, relative to device region. The values are c(x1, x2, y1, y2). So the bottom left is (x1,y1). Top right is (x2, y2)
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("omd") 
+
+par(omd = c(.5,1,.5,1))
+devnull <- plot(1:10, main = "omd ")
+
+par(oldParValues) # this resets par to default values
+
+```
+
+## omi
+A vector of the form c(bottom, left, top, right) giving the size of the outer margins in inches.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("omi") # what is the default outer margin size in lines?
+
+par(omi = c(2,1,.2,3))
+
+devnull <- plot(1:10, main = "omi is outer margin in lines")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+## plt
+A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("plt") 
+
+par(plt = c(.5,1,.5,1))
+devnull <- plot(1:10, main = "plt ")
+
+par(oldParValues) # this resets par to default values
+
+```
+
+
+## usr
+A vector of the form c(x1, x2, y1, y2) giving the extremes of the user coordinates of the plotting region. When a logarithmic scale is in use (i.e., par("xlog") is true, see below), then the x-limits will be 10 ^ par("usr")[1:2]. Similarly for the y-axis.
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("usr")
+
+par(plt = c(.5,1,.5,1))
+
+devnull <- plot(1:10, main = "par(plt = c(.5,1,.5,1))")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+## pin
+The current plot dimensions, (width, height), in inches.
+```{r}
+par("pin")
+```
+
+
+## mfcol, mfrow
+Causes plots to be drawn on a grid. Grid size is specified as c(rows,columns). Set mfcol to draw columns first. Set mfrow to draw rows first. Also look at the functions "layout" and "split.screen".
+
+
+For example: fill the columns first, then the rows
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(mfcol = c(2,2))
+
+devnull <- plot(1:10, main = "First")
+devnull <- plot(15:20, main = "Second")
+devnull <- plot(10:2, main = "Third")
+devnull <- plot(30:2, main = "Fourth")
+
+par(oldParValues) # this resets par to default values
+```
+
+Second, fill the rows first, then columns
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(mfrow = c(2,2))
+
+devnull <- plot(1:10, main = "First")
+devnull <- plot(15:20, main = "Second")
+devnull <- plot(10:2, main = "Third")
+devnull <- plot(30:2, main = "Fourth")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+
+## mgp
+Margins in mex units for axis title, axis label, and axis line. Default is c(3,1,0)
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(mgp = c(1,4,4))
+
+devnull <- plot(1:10, main = "Effect of MGP")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+## new
+Prevents cleaning the frame of an output device between plot commands.
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+devnull <- plot(1:10)
+par(new = TRUE)
+devnull <- plot(15:3)
+
+par(oldParValues) # this resets par to default values
+```
+
+## page
+Indicates if the next plot is on a new page. Read only.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("page")
+devnull <- plot(1:10)
+par(new = TRUE)
+par("page")
+devnull <- plot(15:3)
+
+par(oldParValues) # this resets par to default values
+```
+
+## pty
+A character specifying the type of plot region to be used; "s" generates a square plotting region and "m" generates the maximal plotting region.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(pty = "s")
+
+devnull <- plot(1:10, main = "pty = s")
+
+par(oldParValues) # this resets par to default values
+```
+
+
+# These don't seem to work
+
+xaxs
+The style of axis interval calculation to be used for the x-axis. Possible values are "r", "i", "e", "s", "d". The styles are generally controlled by the range of data or xlim, if given.
+Style "r" (regular) first extends the data range by 4 percent at each end and then finds an axis with pretty labels that fits within the extended range.
+Style "i" (internal) just finds an axis with pretty labels that fits within the original data range.
+Style "s" (standard) finds an axis with pretty labels within which the original data range fits.
+Style "e" (extended) is like style "s", except that it is also ensures that there is room for plotting symbols within the bounding box.
+Style "d" (direct) specifies that the current axis should be used on subsequent plots.
+(Only "r" and "i" styles have been implemented in R.)
+
+xaxt
+A character which specifies the x axis type. Specifying "n" suppresses plotting of the axis. The standard value is "s": for compatibility with S values "l" and "t" are accepted but are equivalent to "s": any value other than "n" implies plotting.
+
+xlog
+A logical value (see log in plot.default). If TRUE, a logarithmic scale is in use (e.g., after plot(*, log = "x")). For a new device, it defaults to FALSE, i.e., linear scale.
+
+xpd
+A logical value or NA. If FALSE, all plotting is clipped to the plot region, if TRUE, all plotting is clipped to the figure region, and if NA, all plotting is clipped to the device region. See also clip.
+
+yaxp
+A vector of the form c(y1, y2, n) giving the coordinates of the extreme tick marks and the number of intervals between tick-marks unless for log coordinates, see xaxp above.
+
+yaxs
+The style of axis interval calculation to be used for the y-axis. See xaxs above.
+
+yaxt
+A character which specifies the y axis type. Specifying "n" suppresses plotting.
+
+ylbias
+A positive real value used in the positioning of text in the margins by axis and mtext. The default is in principle device-specific, but currently 0.2 for all of R's own devices. Set this to 0.2 for compatibility with R < 2.14.0 on x11 and windows() devices.
+
+ylog
+A logical value; see xlog above.
+
+fig
+A numerical vector of the form c(x1, x2, y1, y2) which gives the (NDC) coordinates of the figure region in the display region of the device. If you set this, unlike S, you start a new plot, so to add to an existing plot use new = TRUE as well.
+
+fin
+The figure region dimensions, (width, height), in inches. If you set this, unlike S, you start a new plot.
+
+
+## mex
+mex is only used with plots that change shape.
+
+
+## mfg
+A numerical vector of the form c(i, j) where i and j indicate which figure in an array of figures is to be drawn next (if setting) or is being drawn (if enquiring). The array must already have been set by mfcol or mfrow.
+
+For compatibility with S, the form c(i, j, nr, nc) is also accepted, when nr and nc should be the current number of rows and number of columns. Mismatches will be ignored, with a warning.
+
+
+## xaxp
+Coordinates c(x,y,n) of extreme tick marks and number of intervals between tick marks when par("xlog") == FALSE.
+
+If par("xlog") == TRUE then for c(x,y,n), x & y are lowest and highest power of 10. If n=1 tick marks at 10^j for integer j; n = 2 gives marks k 10^j with k in {1,5}; n = 3
+gives marks k 10^j with k in {1,2,5}.
+
+See axTicks() for a pure R implementation of this.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("xaxp")
+
+devnull <- plot(1:10000, log = "x")
+par("xlog")
+par(oldParValues)
+
+```
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(xaxp = c(20,20,2))
+devnull <- plot(1:10000, log = "x")
+par("xlog")
+
+par(oldParValues)
+```
+

@@ -2,7 +2,10 @@
 
 # learnr is a tool for creating R lessons
 # similar to swirl - which we discussed earlier
-# but easier - based on Rmd (r markdown)
+# but easier - based on Rmd (r markdown) 
+# runs under shiny. 
+# See Creating interactive presentations with shiny and R
+# author: Charlie Joey Hadley
 
 install.packages("learnr")
 
