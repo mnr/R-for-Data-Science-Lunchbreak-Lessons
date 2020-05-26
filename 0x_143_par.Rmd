@@ -1,6 +1,9 @@
 ---
-title: "01_143_par"
-output: html_document
+title: "par exercises"
+output:
+  html_document:
+    df_print: paged
+    toc: true
 ---
 
 This document accompanies the [LinkedIn Learning Video](http://niemannross.com/link/mnratlil).
@@ -17,30 +20,7 @@ devnull <- plot(1:10)+
 title( main = "My Default Plot")
 ```
 
-# Graph points
-
-## pch
-The character used to plot a point in a graph. Refer to "?points" for a lengthy discussion.
-
-
-
-# Text size and position
-
-## adj
-Text Justification. "0" is left, "0.5" is centered, 1 is right
-
-Affects ```text()```, ```mtext()```, and ```title( main = )```
-```{r}
-oldParValues <- par(no.readonly = TRUE)
-
-par(adj = 1)
-
-devnull <- plot(1:10)+
-title( main = "adj == 1 creates justify right")
-
-par(oldParValues) # this resets par to default values
-```
-
+# Text - size
 
 ## ps
 Point size of type. Varies from device to device, but probably multiples of 1/72 of an inch
@@ -53,7 +33,6 @@ devnull <- plot(1:10, main = "Large point size")
 
 par(oldParValues)
 ```
-
 
 ## cex
 Font size relative to default value of 1
@@ -238,7 +217,22 @@ title( main = "sub title might be the symbol font",
 par(oldParValues)
 ```
 
-# Text Rotation
+# Text justification & rotation
+
+## adj
+Text Justification. "0" is left, "0.5" is centered, 1 is right
+
+Affects ```text()```, ```mtext()```, and ```title( main = )```
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(adj = 1)
+
+devnull <- plot(1:10)+
+title( main = "adj == 1 creates justify right")
+
+par(oldParValues) # this resets par to default values
+```
 
 ## crt
 Text Rotation in degrees. Probably only 90 degrees, depending on your device. Possibly not at all, depending on your device. Also see srt for string rotation
@@ -283,63 +277,13 @@ title( main = "las = 3 is vertical. Notice change to x axis")
 par(oldParValues)
 ```
 
-## Multi-line text
-## lheight
-Line of text height multiplier. Relative to character height. Default is 1.
-```{r}
-oldParValues <- par(no.readonly = TRUE)
+# Axis control
 
-par( lheight = 4, adj = 0)
+## xaxt & yaxt
+"n" suppresses plotting of the x or y axis. 
 
-devnull <- plot(1:10)+
-title( main = "The line of text is \ntwice as high") +
-text(x = 8, y = 2, labels = "Here's a long \nline of text")
-
-par(oldParValues)
-```
-
-
-# Decoration
-
-## ann
-annotation on or off. Defaults to on (TRUE)
-```{r}
-oldParValues <- par(no.readonly = TRUE)
-
-par(ann = FALSE)
-
-devnull <- plot(1:10)+
-title( main = "Notice the missing titles")
-
-par(oldParValues)
-```
-
-## bty
-Box Type - the box surrounding the plot.
-o - default
-l - lines on left and bottom
-7 - lines on top and right
-c - lines on top, left, and right
-u - lines on left, bottom, and right
-] - lines on top, right, and bottom
-n - no box
-
-```{r}
-oldParValues <- par(no.readonly = TRUE)
-
-par(bty = "n")
-
-devnull <- plot(1:10)+
-title( main = "'n' produces no box")
-
-par(bty = "]")
-
-devnull <- plot(1:10)+
-title( main = "']' produces lines on top, right, and bottom")
-
-par(oldParValues)
-```
-
+## xlog & ylog
+If TRUE, a logarithmic scale is in use (e.g., after plot(*, log = "x")). For a new device, it defaults to FALSE, i.e., linear scale.
 
 ## lab
 Axis labels. x and y are tick marks. len is the label length. Default is c(5,5,7)
@@ -383,6 +327,50 @@ devnull <- plot(1:10, main = "tcl = 1")
 par(oldParValues)
 ```
 
+
+# Decoration
+
+## pch
+The character used to plot a point in a graph. Refer to "?points" for a lengthy discussion.
+
+## ann
+annotation on or off. Defaults to on (TRUE)
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(ann = FALSE)
+
+devnull <- plot(1:10)+
+title( main = "Notice the missing titles")
+
+par(oldParValues)
+```
+
+## bty
+Box Type - the box surrounding the plot.
+o - default
+l - lines on left and bottom
+7 - lines on top and right
+c - lines on top, left, and right
+u - lines on left, bottom, and right
+] - lines on top, right, and bottom
+n - no box
+
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par(bty = "n")
+
+devnull <- plot(1:10)+
+title( main = "'n' produces no box")
+
+par(bty = "]")
+
+devnull <- plot(1:10)+
+title( main = "']' produces lines on top, right, and bottom")
+
+par(oldParValues)
+```
 
 
 
@@ -781,43 +769,23 @@ par(oldParValues) # this resets par to default values
 
 # These don't seem to work
 
-xaxs
-The style of axis interval calculation to be used for the x-axis. Possible values are "r", "i", "e", "s", "d". The styles are generally controlled by the range of data or xlim, if given.
+## xaxs & yaxs
+The style of axis interval calculation to be used for the x-axis. Only "r" and "i" styles have been implemented in R.
 Style "r" (regular) first extends the data range by 4 percent at each end and then finds an axis with pretty labels that fits within the extended range.
 Style "i" (internal) just finds an axis with pretty labels that fits within the original data range.
-Style "s" (standard) finds an axis with pretty labels within which the original data range fits.
-Style "e" (extended) is like style "s", except that it is also ensures that there is room for plotting symbols within the bounding box.
-Style "d" (direct) specifies that the current axis should be used on subsequent plots.
-(Only "r" and "i" styles have been implemented in R.)
 
-xaxt
-A character which specifies the x axis type. Specifying "n" suppresses plotting of the axis. The standard value is "s": for compatibility with S values "l" and "t" are accepted but are equivalent to "s": any value other than "n" implies plotting.
 
-xlog
-A logical value (see log in plot.default). If TRUE, a logarithmic scale is in use (e.g., after plot(*, log = "x")). For a new device, it defaults to FALSE, i.e., linear scale.
-
-xpd
+## xpd
 A logical value or NA. If FALSE, all plotting is clipped to the plot region, if TRUE, all plotting is clipped to the figure region, and if NA, all plotting is clipped to the device region. See also clip.
 
-yaxp
-A vector of the form c(y1, y2, n) giving the coordinates of the extreme tick marks and the number of intervals between tick-marks unless for log coordinates, see xaxp above.
-
-yaxs
-The style of axis interval calculation to be used for the y-axis. See xaxs above.
-
-yaxt
-A character which specifies the y axis type. Specifying "n" suppresses plotting.
-
-ylbias
+## ylbias
 A positive real value used in the positioning of text in the margins by axis and mtext. The default is in principle device-specific, but currently 0.2 for all of R's own devices. Set this to 0.2 for compatibility with R < 2.14.0 on x11 and windows() devices.
 
-ylog
-A logical value; see xlog above.
 
-fig
+## fig
 A numerical vector of the form c(x1, x2, y1, y2) which gives the (NDC) coordinates of the figure region in the display region of the device. If you set this, unlike S, you start a new plot, so to add to an existing plot use new = TRUE as well.
 
-fin
+## fin
 The figure region dimensions, (width, height), in inches. If you set this, unlike S, you start a new plot.
 
 
@@ -831,7 +799,7 @@ A numerical vector of the form c(i, j) where i and j indicate which figure in an
 For compatibility with S, the form c(i, j, nr, nc) is also accepted, when nr and nc should be the current number of rows and number of columns. Mismatches will be ignored, with a warning.
 
 
-## xaxp
+## xaxp & yaxp
 Coordinates c(x,y,n) of extreme tick marks and number of intervals between tick marks when par("xlog") == FALSE.
 
 If par("xlog") == TRUE then for c(x,y,n), x & y are lowest and highest power of 10. If n=1 tick marks at 10^j for integer j; n = 2 gives marks k 10^j with k in {1,5}; n = 3
@@ -855,6 +823,20 @@ oldParValues <- par(no.readonly = TRUE)
 par(xaxp = c(20,20,2))
 devnull <- plot(1:10000, log = "x")
 par("xlog")
+
+par(oldParValues)
+```
+
+## lheight
+Line of text height multiplier. Relative to character height. Default is 1.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( lheight = 4, adj = 0)
+
+devnull <- plot(1:10)+
+title( main = "The line of text is \ntwice as high") +
+text(x = 8, y = 2, labels = "Here's a long \nline of text")
 
 par(oldParValues)
 ```
