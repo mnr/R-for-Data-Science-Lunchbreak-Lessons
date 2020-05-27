@@ -22,17 +22,6 @@ title( main = "My Default Plot")
 
 # Text - size
 
-## ps
-Point size of type. Varies from device to device, but probably multiples of 1/72 of an inch
-```{r}
-oldParValues <- par(no.readonly = TRUE)
-
-par( ps = 25)
-
-devnull <- plot(1:10, main = "Large point size")
-
-par(oldParValues)
-```
 
 ## cex
 Font size relative to default value of 1
@@ -103,6 +92,18 @@ title( main = "adj == 1 creates justify right",
 par(oldParValues)
 ```
 
+## ps
+Character size in points. Varies from device to device, but probably multiples of 1/72 of an inch
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par( ps = 25)
+
+devnull <- plot(1:10, main = "Large point size")
+
+par(oldParValues)
+```
+
 ## cin
 Character size (width, height) in inches. Read only.
 ```{r}
@@ -111,13 +112,13 @@ par("cin")
 ```
 
 ## cra
-Character size (width, height) in pixels. Possibly 1/72 of an inch, depending on the device
+Character size (width, height) in pixels. Possibly 1/72 of an inch, depending on the device. read only
 ```{r}
 par("cra")
 ```
 
 ## csi
-Character height in inches
+Character height in inches. read only
 ```{r}
 par("csi")
 # aka...
@@ -126,12 +127,12 @@ par("cin")[2]
 
 
 ## cxy
-Character size (width, height) in user coordinates
+Character size (width, height) in user coordinates. read only
 ```{r}
 par("cxy")
 ```
 
-# Font
+# Text - Font
 
 ## family
 font family by name. "" is default. Values include "serif", "sans", "mono", and Hershey fonts. Use "?hershey" for details on the hershey font family.
@@ -217,7 +218,7 @@ title( main = "sub title might be the symbol font",
 par(oldParValues)
 ```
 
-# Text justification & rotation
+# Text - justification & rotation
 
 ## adj
 Text Justification. "0" is left, "0.5" is centered, 1 is right
@@ -641,20 +642,6 @@ par(oldParValues) # this resets par to default values
 ```
 
 
-## plt
-A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.
-```{r}
-oldParValues <- par(no.readonly = TRUE)
-
-par("plt") 
-
-par(plt = c(.5,1,.5,1))
-devnull <- plot(1:10, main = "plt ")
-
-par(oldParValues) # this resets par to default values
-
-```
-
 
 ## usr
 A vector of the form c(x1, x2, y1, y2) giving the extremes of the user coordinates of the plotting region. When a logarithmic scale is in use (i.e., par("xlog") is true, see below), then the x-limits will be 10 ^ par("usr")[1:2]. Similarly for the y-axis.
@@ -671,12 +658,6 @@ devnull <- plot(1:10, main = "par(plt = c(.5,1,.5,1))")
 par(oldParValues) # this resets par to default values
 ```
 
-
-## pin
-The current plot dimensions, (width, height), in inches.
-```{r}
-par("pin")
-```
 
 
 ## mfcol, mfrow
@@ -711,6 +692,10 @@ devnull <- plot(30:2, main = "Fourth")
 par(oldParValues) # this resets par to default values
 ```
 
+## mfg
+A numerical vector of the form c(i, j) where i and j indicate which figure in an array of figures is to be drawn next (if setting) or is being drawn (if enquiring). The array must already have been set by mfcol or mfrow.
+
+For compatibility with S, the form c(i, j, nr, nc) is also accepted, when nr and nc should be the current number of rows and number of columns. Mismatches will be ignored, with a warning.
 
 
 ## mgp
@@ -754,7 +739,22 @@ devnull <- plot(15:3)
 par(oldParValues) # this resets par to default values
 ```
 
-## pty
+
+# Regions
+
+## xpd
+A logical value or NA. If FALSE, all plotting is clipped to the plot region, if TRUE, all plotting is clipped to the figure region, and if NA, all plotting is clipped to the device region. See also clip.
+
+
+## Plot Region
+
+### pin
+The current plot dimensions, (width, height), in inches.
+```{r}
+par("pin")
+```
+
+### pty
 A character specifying the type of plot region to be used; "s" generates a square plotting region and "m" generates the maximal plotting region.
 ```{r}
 oldParValues <- par(no.readonly = TRUE)
@@ -767,6 +767,31 @@ par(oldParValues) # this resets par to default values
 ```
 
 
+### plt
+A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region.
+```{r}
+oldParValues <- par(no.readonly = TRUE)
+
+par("plt") 
+
+par(plt = c(.5,1,.5,1))
+devnull <- plot(1:10, main = "plt ")
+
+par(oldParValues) # this resets par to default values
+
+```
+
+
+## Figure Region
+
+### fig
+A numerical vector of the form c(x1, x2, y1, y2) which gives the (NDC) coordinates of the figure region in the display region of the device. If you set this, unlike S, you start a new plot, so to add to an existing plot use new = TRUE as well.
+
+### fin
+The figure region dimensions, (width, height), in inches. If you set this, unlike S, you start a new plot.
+
+
+
 # These don't seem to work
 
 ## xaxs & yaxs
@@ -774,30 +799,11 @@ The style of axis interval calculation to be used for the x-axis. Only "r" and "
 Style "r" (regular) first extends the data range by 4 percent at each end and then finds an axis with pretty labels that fits within the extended range.
 Style "i" (internal) just finds an axis with pretty labels that fits within the original data range.
 
-
-## xpd
-A logical value or NA. If FALSE, all plotting is clipped to the plot region, if TRUE, all plotting is clipped to the figure region, and if NA, all plotting is clipped to the device region. See also clip.
-
 ## ylbias
 A positive real value used in the positioning of text in the margins by axis and mtext. The default is in principle device-specific, but currently 0.2 for all of R's own devices. Set this to 0.2 for compatibility with R < 2.14.0 on x11 and windows() devices.
 
-
-## fig
-A numerical vector of the form c(x1, x2, y1, y2) which gives the (NDC) coordinates of the figure region in the display region of the device. If you set this, unlike S, you start a new plot, so to add to an existing plot use new = TRUE as well.
-
-## fin
-The figure region dimensions, (width, height), in inches. If you set this, unlike S, you start a new plot.
-
-
 ## mex
 mex is only used with plots that change shape.
-
-
-## mfg
-A numerical vector of the form c(i, j) where i and j indicate which figure in an array of figures is to be drawn next (if setting) or is being drawn (if enquiring). The array must already have been set by mfcol or mfrow.
-
-For compatibility with S, the form c(i, j, nr, nc) is also accepted, when nr and nc should be the current number of rows and number of columns. Mismatches will be ignored, with a warning.
-
 
 ## xaxp & yaxp
 Coordinates c(x,y,n) of extreme tick marks and number of intervals between tick marks when par("xlog") == FALSE.
@@ -828,7 +834,7 @@ par(oldParValues)
 ```
 
 ## lheight
-Line of text height multiplier. Relative to character height. Default is 1.
+Line of text height multiplier. Relative to character height. Default is 1. (The same inter-line spacing multiplied by lheight is used for multi-line strings in text and strheight.)
 ```{r}
 oldParValues <- par(no.readonly = TRUE)
 
