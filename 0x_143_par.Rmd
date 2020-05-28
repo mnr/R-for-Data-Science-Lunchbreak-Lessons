@@ -529,7 +529,7 @@ par(oldParValues)
 ```
 
 ## lty
-The line type, specified as integer/string. 0/blank, 1/solid (default), 2/dashed, 3/dotted, 4/dotdash, 5/longdash, 6/twodash
+The line type, specified as integer/string (choose one). 0/blank, 1/solid (default), 2/dashed, 3/dotted, 4/dotdash, 5/longdash, 6/twodash
 ```{r}
 oldParValues <- par(no.readonly = TRUE)
 
