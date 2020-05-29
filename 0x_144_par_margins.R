@@ -14,29 +14,36 @@ makeAPlot <- function(showThis = "labels") {
     #box(which = "figure", col = "blue")+
     box(which = "plot", col = "yellow")
   if (showThis == "labels") {
-    mainText = "Show Labels"
+    mainText = ""
     mtext("The red line is the edge of the device region", side = 3, line = 3, outer = TRUE)
     mtext("This area is the outer margin", side = 3, line = 1, outer = TRUE)
     mtext("The green line is the figure region", side = 3, line = 3)
     mtext("This area is the figure/inner region", side = 3, line = 1)
-    mtext("The yellow box is the edge of the plot")
+    mtext("The yellow box is the edge of the plot", side = 1, line = 0)
   } else if (showThis == "functions") {
     mainText = ""
+    
+  # din - device size
     mtext(paste('par("din")[1] =', prettyNum(par("din")[1], digits = 3)), 
           line = 1, outer = TRUE, adj = 1 )
     mtext(paste('par("din")[2] =', prettyNum(par("din")[2], digits = 3)), 
           line = 1, outer = TRUE, adj = 1, side = 1 )
+    
+    # pin - plot size
+    mtext(paste('par("pin")[1] =', prettyNum(par("pin")[1], digits = 3)), 
+          line = 0, adj = 0, side = 1 )
+    mtext(paste('par("pin")[2] =', prettyNum(par("pin")[2], digits = 3)), 
+          line = 0, adj = 0, side = 4 )
+    
     for (theIndex in 1:4) {
       mtext(paste0('par("omi")[',theIndex,'] =', prettyNum(par("omi")[theIndex], digits = 3) ),
-            line = 3, adj = 0, side = theIndex)
+            line = 1, adj = 0, outer = TRUE, side = theIndex)
       mtext(paste0('par("mai")[',theIndex,'] =', prettyNum(par("mai")[theIndex], digits = 3) ),
-            line = 0, adj = 0, side = theIndex)
+            line = 1, adj = 0, side = theIndex)
 
     }
     
-  } else if (showThis == "values") {
-    
-  }
+  } 
   title(main = mainText)
 
 }
@@ -48,7 +55,6 @@ makeAPlot(showThis = "labels")
 par("oma") # lines of text: bottom, left, top, right
 par("omi") # inches
 
-# lets start from the outside of the plot and move in
 # regarding the device region / outer margins ---------------------------------------------
 # din - Width and height of device in inches. 
 # dev.size is similiar, but dynamic when window is resized.
@@ -90,7 +96,4 @@ makeAPlot()
 par(oldParValues) # reset par
 
 # regarding the plot region -------------------------
-# size of plot region - x1, x2, y1, y2
-par("usr")
-par(usr = c(1,15,1,12))
-makeAPlot()
+
