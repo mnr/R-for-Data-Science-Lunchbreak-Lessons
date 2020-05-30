@@ -2,6 +2,9 @@
 # set or get values controlling the look of graphics and plots
 # There is a LOT of things going on - so breaking it up into three sessions
 
+# I've included a file that exercises most of the par() options.
+# use it as reference
+
 # need to save current status of par
 oldParValues <- par(no.readonly = TRUE)
 
