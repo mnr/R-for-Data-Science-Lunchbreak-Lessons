@@ -3,7 +3,9 @@ title: "par exercises"
 output:
   html_document:
     df_print: paged
-    toc: true
+    toc: yes
+  word_document:
+    toc: yes
 ---
 
 This document accompanies the [LinkedIn Learning Video](http://niemannross.com/link/mnratlil).
@@ -634,7 +636,7 @@ oldParValues <- par(no.readonly = TRUE)
 
 par("omi") # what is the default outer margin size in lines?
 
-par(omi = c(2,1,.2,3))
+par(omi = c(1,.5,.2,1))
 
 devnull <- plot(1:10, main = "omi is outer margin in lines")
 
