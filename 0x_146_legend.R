@@ -21,15 +21,15 @@ newGraph()
 # position can be pair of x/y - bottom left, top right
 # x = c(3,7), y = c(5,10)
 
+# points ------------------
+# pch = c(3,10,20)
+
 # color of points
 # col = c("red","green", "blue")
 
 # fill -------------
 # place colored boxes in legend
 # fill = c("red","green", "blue")
-
-# points ------------------
-# pch = c(3,10,20)
 
 # columns -------------
 #ncol = 3
