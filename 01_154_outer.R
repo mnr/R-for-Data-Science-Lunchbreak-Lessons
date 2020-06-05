@@ -6,9 +6,9 @@
 vec1 <- c(1:5)
 vec2 <- c(6:10)
   
-# These three versions produce the same result...
+# These two versions produce the same result...
 
-vec1 %*% t(vec2) # the actual formula 
+vec1 %*% t(vec2) # the actual formula for vectors
 outer(vec1, vec2) # the R function (assume FUN = "*")
 vec1 %o% vec2 # %o% is a wrapper for outer()
 
@@ -27,6 +27,8 @@ A * B[2,1]
 # ...and so on
 
 outer(A,B) 
+#...or
+A %o% B
 
 
 
