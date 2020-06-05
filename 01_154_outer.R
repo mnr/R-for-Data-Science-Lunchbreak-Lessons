@@ -17,7 +17,6 @@ vec1 %o% vec2 # %o% is a wrapper for outer()
 A <- matrix( c(1:9), nrow = 3)
 B <- matrix( c(11:19), nrow = 3)
 
-# Here's the outer product. 
 # This multiplies the first matrix by 
 # individual values from the second matrix.
 
