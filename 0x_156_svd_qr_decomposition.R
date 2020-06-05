@@ -1,14 +1,24 @@
 # svd and QR decomposition
 
-# this is a placeholder
+A <- matrix( c(1:9), nrow = 3)
+
+A <- matrix( c(1,1,0,1,0,1,0,1,1),
+             nrow = 3)
 
 # Singular Value Decomposition
-```{r}
+
 svd(A)
-```
+
+# svd(A)$d is the singular values of x. Diagonal matrix
+# svd(A)$u is left singular vectors. Unitary matrix
+# svd(A)$v is the right singular vectors. Unitary matrix
+
 
 # QR Decomposition
-Useful for solving $Ax = b$ ($A$ being a matrix, $b$ being a vector)
-```{r}
+
 qr(A)
-```
+qrPacked <- qr(A)$qr
+
+R <- qrPacked[upper.tri(qrPacked)]
+
+Q <- qrPacked[lower.tri(qrPacked)]
