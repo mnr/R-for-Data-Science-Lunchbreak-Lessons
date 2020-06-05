@@ -1,5 +1,3 @@
-# determinant of a matrix
-
 # The determinant of a matrix
 
 # create a sample matrix
