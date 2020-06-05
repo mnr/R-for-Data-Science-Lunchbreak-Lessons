@@ -1,16 +1,15 @@
 # eigen values and vectors
 
-# placeholder - needs scripting
 
-# eigen values, eigen vectors
-```eigen()``` returns both eigen values and eigen vectors
+aMatrix <- matrix( c(1,1,0,1,0,1,0,1,1),
+             nrow = 3)
+aMatrix
 
-Here's a matrix...
-```{r}
-A
-```
+# Here's the eigen value and vector
 
-Here's the eigen value and vector
-```{r}
-eigen(A)
-```
+eigen(aMatrix)
+
+
+
+# produce a diagonal matrix of the eigenvalues
+diag(eigen(aMatrix)$values)
