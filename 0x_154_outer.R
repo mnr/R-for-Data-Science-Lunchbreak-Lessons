@@ -1,34 +1,33 @@
 # outer product of two matrices
 
-# needs clarification - this is mostly just notes for the final presentation
-
 # Outer product of two vectors
-Transpose the second vector ... $vec1\ \ vec2^T$
+# Transpose the second vector 
+
+vec1 <- c(1:5)
+vec2 <- c(6:10)
   
-  These three versions produce the same result...
-```{r}
+# These three versions produce the same result...
 
 vec1 %*% t(vec2) # the actual formula 
-outer(vec1, vec2) # the R function 
+outer(vec1, vec2) # the R function (assume FUN = "*")
 vec1 %o% vec2 # %o% is a wrapper for outer()
-```
+
 
 # Outer product of two matrices
-First...a reminder of the contents of matrix A and B
-```{r}
-A
-B
-```
+A <- matrix( c(1:9), nrow = 3)
+B <- matrix( c(11:19), nrow = 3)
 
-Then...here's the outer product. This multiplies the first matrix by individual values from the second matrix.
+# Here's the outer product. 
+# This multiplies the first matrix by 
+# individual values from the second matrix.
 
-Think of this as...
+# Think of this as...
 
-```A * B[1,1]```
+A * B[1,1]
+A * B[2,1]
+# ...and so on
 
-```A * B[2,1]```
+outer(A,B) 
 
-...and so on
-```{r}
-outer(A,B) # ... A %o% B will produce the same result, assuming fun=*
-```
+
+
