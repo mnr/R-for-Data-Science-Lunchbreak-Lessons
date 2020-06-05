@@ -1,7 +1,5 @@
 # svd and QR decomposition
 
-A <- matrix( c(1:9), nrow = 3)
-
 A <- matrix( c(1,1,0,1,0,1,0,1,1),
              nrow = 3)
 
