@@ -2,6 +2,7 @@
 
 # install.packages("jpeg")
 library(jpeg)
+# check working directory
 myImage <- as.raster(readJPEG("0301771_small.jpg"))
 plot(1:10)
 rasterImage(myImage, 
@@ -16,7 +17,6 @@ locator(10)
 dev.capabilities("locator")
 
 # connector type. default = n (none). p= points, l=lines, o=both, 
-locator(10, type = "o")
 # or add other par() values
 locator(10, type = "o", col = "yellow", lwd = 3)
 
