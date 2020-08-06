@@ -3,8 +3,8 @@
 install.packages("jpeg")
 library(jpeg)
 
-download.file("https://photojournal.jpl.nasa.gov/jpeg/PIA17811.jpg", 
-              "starrySky.jpg",
+download.file(url = "https://photojournal.jpl.nasa.gov/jpeg/PIA17811.jpg", 
+              destfile = "starrySky.jpg",
               mode = "wb")
 myImage <- as.raster(readJPEG("starrySky.jpg"))
 
