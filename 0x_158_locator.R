@@ -1,9 +1,13 @@
 # interactive plotting
 
-# install.packages("jpeg")
+install.packages("jpeg")
 library(jpeg)
-# check working directory
-myImage <- as.raster(readJPEG("0301771_small.jpg"))
+
+download.file("https://photojournal.jpl.nasa.gov/jpeg/PIA17811.jpg", 
+              "starrySky.jpg",
+              mode = "wb")
+myImage <- as.raster(readJPEG("starrySky.jpg"))
+
 plot(1:10)
 rasterImage(myImage, 
             xleft = 0,
