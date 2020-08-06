@@ -3,10 +3,14 @@
 install.packages("jpeg")
 library(jpeg)
 
-download.file(url = "https://photojournal.jpl.nasa.gov/jpeg/PIA17811.jpg", 
+
+download.file(url = "https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17811-800x600.jpg",
               destfile = "starrySky.jpg",
               mode = "wb")
+# larger files may cause locator to freeze
+
 myImage <- as.raster(readJPEG("starrySky.jpg"))
+
 
 plot(1:10)
 rasterImage(myImage, 
@@ -14,7 +18,7 @@ rasterImage(myImage,
             ybottom = 0,
             xright = 100,
             ytop = 100)
-# now that I've drawn the raster image, I can count stars
+# now that I've drawn the raster image, I can find the location of stars
 locator(10)
 
 # does this work on your system?
