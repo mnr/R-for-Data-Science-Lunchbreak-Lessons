@@ -29,7 +29,7 @@ myChickWeight <- ChickWeight %>%
 # for example...
 
 myChickWeight <- ChickWeight %>%
-  add_column(randomNumber = rnorm(nrow(myChickWeight))) %>%
+  add_column(randomNumber = rnorm(nrow(myChickWeight)))
 
 myChickWeight$bucket <- cut(myChickWeight$randomNumber, breaks = 3, labels = c("low", "med", "high"))
 
