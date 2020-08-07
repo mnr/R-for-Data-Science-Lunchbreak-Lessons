@@ -20,6 +20,7 @@ rasterImage(myImage,
             ytop = 100)
 # now that I've drawn the raster image, I can find the location of stars
 locator(10)
+locator() # allows clicks until finish
 
 # does this work on your system?
 dev.capabilities("locator")
