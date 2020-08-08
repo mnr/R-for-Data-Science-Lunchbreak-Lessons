@@ -18,7 +18,7 @@ for (dwnldIndex in 1:nrow(RT_works)) {
   oneDF <- gutenberg_download(RT_works[dwnldIndex,"gutenberg_id"])
   
   saveHere <- file.path(downloadHere, make.names(RT_works[dwnldIndex,"title"]))
-  write.table(oneDF, saveHere)
+  write.table(oneDF$text, saveHere, row.names = FALSE)
 }
 
 # remove punctuation ------------------------
@@ -29,6 +29,16 @@ install.packages("tm")
 library(tm)
 
 RT_corpus <- SimpleCorpus(DirSource(downloadHere))
-RT_corpus <- tm_map(RT_corpus, removePunctuation) # remove punctuation
+
+# remove punctuation
+inspect(removePunctuation(RT_corpus[[1]])) # inspect the action
+RT_corpus <- tm_map(RT_corpus, removePunctuation) 
+RT_corpus <- tm_map(RT_corpus, stripWhitespace) 
+RT_corpus <- tm_map(RT_corpus, removeNumbers) 
 RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") )# remove stopwords
-RT_corpus_token <- Boost_tokenizer(RT_corpus)
+RT_corpus_token <- MC_tokenizer(RT_corpus)
+# or... RT_corpus_token <- Boost_tokenizer(RT_corpus)
+# or... RT_corpus_token <- scan_tokenizer(RT_corpus)
+
+
+RT_corpus_token[1:100] # what is the result?
