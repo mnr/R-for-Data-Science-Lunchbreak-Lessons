@@ -1,6 +1,5 @@
 # NLP: remove punctuation, tokenization, remove stop words
 
-
 # Download the works of Rabindranath Tagore -------------------------------
 install.packages("tidyr")
 install.packages("gutenbergr")
@@ -22,7 +21,8 @@ for (dwnldIndex in 1:nrow(RT_works)) {
 }
 
 # remove punctuation ------------------------
-## gsub("[[punct:]]", "", RT_corpus) # but this will take FOREVER
+## gsub("[[punct:]]", "", RT_corpus) 
+# but this will take FOREVER
 
 # instead, use the tm package ------------------------
 install.packages("tm")
@@ -30,12 +30,19 @@ library(tm)
 
 RT_corpus <- SimpleCorpus(DirSource(downloadHere))
 
-# remove punctuation
+# remove punctuation and other trash
 inspect(removePunctuation(RT_corpus[[1]])) # inspect the action
 RT_corpus <- tm_map(RT_corpus, removePunctuation) 
 RT_corpus <- tm_map(RT_corpus, stripWhitespace) 
 RT_corpus <- tm_map(RT_corpus, removeNumbers) 
+
+# remove stopwords. 
+stopwords(kind = "en") # produces a list of stopwords
+stopwords("SMART")
+stopwords("german")
 RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") )# remove stopwords
+
+# then tokenize
 RT_corpus_token <- MC_tokenizer(RT_corpus)
 # or... RT_corpus_token <- Boost_tokenizer(RT_corpus)
 # or... RT_corpus_token <- scan_tokenizer(RT_corpus)
