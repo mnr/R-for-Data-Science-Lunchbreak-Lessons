@@ -40,7 +40,7 @@ RT_corpus <- tm_map(RT_corpus, removeNumbers)
 stopwords(kind = "en") # produces a list of stopwords
 stopwords("SMART")
 stopwords("german")
-RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") )# remove stopwords
+RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") ) # remove stopwords
 
 # stemming --------------------------
 # reduce words to their stems
