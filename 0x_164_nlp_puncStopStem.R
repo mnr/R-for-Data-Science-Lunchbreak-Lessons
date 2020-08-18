@@ -30,22 +30,25 @@ library(tm)
 
 RT_corpus <- SimpleCorpus(DirSource(downloadHere))
 
-# remove punctuation and other trash
+# remove punctuation and other trash ----------------------
 inspect(removePunctuation(RT_corpus[[1]])) # inspect the action
 RT_corpus <- tm_map(RT_corpus, removePunctuation) 
 RT_corpus <- tm_map(RT_corpus, stripWhitespace) 
 RT_corpus <- tm_map(RT_corpus, removeNumbers) 
 
-# remove stopwords. 
+# remove stopwords --------------------
 stopwords(kind = "en") # produces a list of stopwords
 stopwords("SMART")
 stopwords("german")
 RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") )# remove stopwords
 
-# then tokenize
-RT_corpus_token <- MC_tokenizer(RT_corpus)
-# or... RT_corpus_token <- Boost_tokenizer(RT_corpus)
-# or... RT_corpus_token <- scan_tokenizer(RT_corpus)
+# stemming --------------------------
+# reduce words to their stems
+# does some strange things to words - i.e. Februari
+# look up "Porter Stemming algorithm" for details
+RT_corpus <- tm_map(RT_corpus, stemDocument)
 
+inspect(RT_corpus[[1]])
 
-RT_corpus_token[1:100] # what is the result?
+# save for future sessions ------------------------------------------------
+save(RT_corpus, file = "Rabindranath_corpus.rdata")
