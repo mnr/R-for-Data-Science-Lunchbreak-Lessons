@@ -20,33 +20,41 @@ for (dwnldIndex in 1:nrow(RT_works)) {
   write.table(oneDF$text, saveHere, row.names = FALSE)
 }
 
+
+# use the tm package ------------------------
+install.packages("tm")
+library(tm)
+
+# RT_corpus <- SimpleCorpus(DirSource(downloadHere)) # doesn't allow changes to meta
+
+RT_corpus <- VCorpus(DirSource(downloadHere))
+# take a look at the corpus. It's a list. Each entry has content and meta data
+content(RT_corpus[[1]]) # content of first document in corpus
+meta(RT_corpus[[1]]) # metadata of first document in corpus
+meta(RT_corpus[[1]], tag = "datetimestamp")
+meta(RT_corpus[[1]], tag = "author") <- "Rabindranath Tagore"
+
+# fix author in all documents in corpus
+fixAuthor <- function(eachDoc) {
+  PlainTextDocument(content(eachDoc),
+                    author = "Rabindranath Tagore",
+                    datetimestamp = as.POSIXlt(meta(eachDoc, tag = "datetimestamp")),
+                    id = meta(eachDoc, tag = "id"),
+                    language = "english")
+}
+RT_corpus <- tm_map(RT_corpus, fixAuthor)
+# note: Anything you don't explicitly set is cleared
+
+# remove punctuation and other trash ----------------------
+
 # remove punctuation ------------------------
 ## gsub("[[punct:]]", "", RT_corpus) 
 # but this will take FOREVER
 
-# instead, use the tm package ------------------------
-install.packages("tm")
-library(tm)
-
-RT_corpus <- SimpleCorpus(DirSource(downloadHere))
-
-# remove punctuation and other trash ----------------------
 inspect(removePunctuation(RT_corpus[[1]])) # inspect the action
 RT_corpus <- tm_map(RT_corpus, removePunctuation) 
 RT_corpus <- tm_map(RT_corpus, stripWhitespace) 
 RT_corpus <- tm_map(RT_corpus, removeNumbers) 
-
-# remove stopwords --------------------
-stopwords(kind = "en") # produces a list of stopwords
-stopwords("SMART")
-stopwords("german")
-RT_corpus <- tm_map(RT_corpus, removeWords, stopwords("english") ) # remove stopwords
-
-# stemming --------------------------
-# reduce words to their stems
-# does some strange things to words - i.e. Februari
-# look up "Porter Stemming algorithm" for details
-RT_corpus <- tm_map(RT_corpus, stemDocument)
 
 inspect(RT_corpus[[1]])
 
