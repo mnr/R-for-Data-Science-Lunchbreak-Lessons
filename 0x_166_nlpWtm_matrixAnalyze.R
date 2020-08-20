@@ -46,9 +46,20 @@ BiocManager::install("Rgraphviz")
 
 # then plot
 plot(RT_TDmatrix, 
-     terms = sample(Terms(RT_TDmatrix), 10),
-     corThreshold = .5,
+     terms = sample(Terms(RT_TDmatrix), 20),
+     corThreshold = .8,
      weighting = TRUE)
+
+# get the most frequent terms of The Fugitive
+RT_frequent <- findMostFreqTerms(RT_DTmatrix, n = 15)
+names(RT_frequent$The.Fugitive)
+
+# Is there correlation between those terms?
+plot(RT_TDmatrix, 
+     terms = names(RT_frequent$The.Fugitive),
+     corThreshold = .75,
+     weighting = TRUE)
+
 
 # be sure to check out the Natural Language Processing task
 # https://cran.r-project.org/web/views/NaturalLanguageProcessing.html
