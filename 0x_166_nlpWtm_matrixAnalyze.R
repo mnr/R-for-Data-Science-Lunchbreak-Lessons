@@ -12,7 +12,11 @@ load(file = "Rabindranath_corpus.rdata")
 # Term Document Matrix ----------------------------------------------------
 # Term Document is terms on rows.
 # Document Term is documents on rows
-RT_TDmatrix <- TermDocumentMatrix(RT_corpus)
+RT_TDmatrix <- TermDocumentMatrix(RT_corpus, control = list(stopwords = TRUE, 
+                                                          removePunctuation = TRUE,
+                                                          removeNumbers = TRUE,
+                                                          stemming = TRUE))
+
 # this tokenizes and places terms across top. Inspect dimnames of RT_TDmatrix
 
 RT_DTmatrix <- DocumentTermMatrix(RT_corpus, control = list(stopwords = TRUE, 
@@ -31,4 +35,21 @@ inspect(RT_DTmatrix[  , c("heart", "eye", "sad")]) # all rows, multiple columns
 findFreqTerms(RT_DTmatrix, 1000) # find terms that appear > 1000 times
 findMostFreqTerms(RT_DTmatrix, n = 10) # find most frequent terms in each document
 
+# find associated words. Simple - this is not "sentiment"
+# note use of term-document, NOT document-term
+findAssocs(RT_TDmatrix, c("happi","sad"), c(.8, .7))
+
+# plot relationships
+# requires Rgraphviz from bioconductor
+install.packages("BiocManager")
+BiocManager::install("Rgraphviz")
+
+# then plot
+plot(RT_TDmatrix, 
+     terms = sample(Terms(RT_TDmatrix), 10),
+     corThreshold = .5,
+     weighting = TRUE)
+
+# be sure to check out the Natural Language Processing task
+# https://cran.r-project.org/web/views/NaturalLanguageProcessing.html
 
