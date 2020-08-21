@@ -60,3 +60,6 @@ inspect(RT_corpus[[1]])
 
 # save for future sessions ------------------------------------------------
 save(RT_corpus, file = "Rabindranath_corpus.rdata")
+
+# be sure to check out ""Text Analytics and Predictions with R"
+# https://www.linkedin.com/learning/text-analytics-and-predictions-with-r-essential-training
