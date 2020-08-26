@@ -22,7 +22,7 @@ for (dwnldIndex in 1:nrow(RT_works)) {
 
 
 # use the tm package ------------------------
-install.packages("tm")
+# install.packages("tm")
 library(tm)
 
 # RT_corpus <- SimpleCorpus(DirSource(downloadHere)) # doesn't allow changes to meta
