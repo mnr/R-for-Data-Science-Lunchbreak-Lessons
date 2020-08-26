@@ -16,11 +16,17 @@ myGI <- loadDictionaryGI() # inspect the dictionary
 # LM = Loughran - McDonald. Finance. ?DictionaryLM
 # QDAP = Qualitative Data Analysis Program. www.umass.edu/qdap
 
+summary(myGI)
+compareDictionaries(myGI, loadDictionaryHE())
+extractWords(myGI)[1:100]
+
 # use your own word list
 myWords <- SentimentDictionary(c("bird", "free", "flight","wing"))
 summary(myWords)
-# words in myWords appearing in corpus / total words
-# using ruleRatio. There are other rules for use, with different requirements of dictionary type
+# ruleRatio = words in myWords appearing in corpus / total words
+# There are other rules for use, with different requirements of dictionary type.
+?ruleWordCount # for example
+
 myWordsSentiment <- analyzeSentiment(RT_corpus, 
                                      rules = list("mywords"=list(ruleRatio,myWords)))
 # note that object 14 == .007
