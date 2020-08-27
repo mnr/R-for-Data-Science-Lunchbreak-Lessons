@@ -6,8 +6,6 @@
 # install.packages("installr")
 library(installr)
 
-
-
 # there are ## categories in installr
 
 # install.etc -------------------------------------------------------------
