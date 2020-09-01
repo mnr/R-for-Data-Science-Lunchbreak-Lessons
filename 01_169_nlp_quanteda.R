@@ -1,6 +1,6 @@
 # NLP with quanteda
 
-install.packages("quanteda")
+# install.packages("quanteda")
 library(quanteda)
 
 # quanteda can import several types of corpus.
