@@ -1,6 +1,6 @@
 # interactive plotting
 
-install.packages("jpeg")
+# install.packages("jpeg")
 library(jpeg)
 
 

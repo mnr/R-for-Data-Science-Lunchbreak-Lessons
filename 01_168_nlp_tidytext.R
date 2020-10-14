@@ -5,9 +5,12 @@
 # one token per row, instead of Document-Term or Term-Document
 
 
-install.packages("tidytext")
+# install.packages("tidytext")
+# install.packages("gutenbergr")
+
 library(tidytext)
 library(dplyr)
+library(gutenbergr)
 
 # We need a document. How about Rabindranath Tagore - Stray Birds
 RT_strayBirds <- gutenberg_download(6524, 
