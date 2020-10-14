@@ -1,13 +1,43 @@
 ---
-title: "300 lessons later: What I've learned about R from teaching R"
+title: "Greater Boston UseR"
 author: "Mark Niemann-Ross"
 date: "10/13/2020"
-output: ioslides_presentation
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+ 
+## 300 lessons later | What I've learned about R ... from teaching R
+
+
+## Snappy Quote
+
+Robert Heinlein said 
+"When one teaches, two learn" 
+
+and I'm proof! 
+
+## stuff
+
+I started learning R in 2014, taught my first R course in 2015. I started with a casual knowledge of data science, statistics, and matrix math. Since then, have taught more than 300 sessions to nearly 60,000 learners. I've covered matrices, NLP, linear models, program flow and other details of the R language. 
+
+ But enough about me - how about you? Let's discuss the objections I've heard about passing on your knowledge to the next generation. 
+
+I'll cover the imposter syndrome, lack of venue, and "I'm a researcher, not an educator." 
+
+In thirty minutes, you'll have your confidence restored and your awesomeness confirmed. 
+
+## About Mark
+Mark Niemann-Ross is an author & educator. 
+
+He teaches for LinkedIn Learning, focused on the R programming language and Raspberry Pi. 
+
+He is the author of "Stupid Machine" - a science fiction murder mystery solved by a refrigerator.
+
 
 ## R Markdown
 
@@ -32,17 +62,3 @@ summary(cars)
 ```{r pressure}
 plot(pressure)
 ```
-
-## Snappy Quote
-
-Robert Heinlein said "When one teaches, two learn" - and I'm proof! 
-
-I started learning R in 2014, taught my first R course in 2015. I started with a casual knowledge of data science, statistics, and matrix math. Since then, have taught more than 300 sessions to nearly 60,000 learners. I've covered matrices, NLP, linear models, program flow and other details of the R language. 
-
- But enough about me - how about you? Let's discuss the objections I've heard about passing on your knowledge to the next generation. 
-
-I'll cover the imposter syndrome, lack of venue, and "I'm a researcher, not an educator." 
-
-In thirty minutes, you'll have your confidence restored and your awesomeness confirmed. 
-
-Mark Niemann-Ross is an author & educator. He teaches for LinkedIn Learning, focused on the R programming language and Raspberry Pi. He is the author of "Stupid Machine" - a science fiction murder mystery solved by a refrigerator.
