@@ -1,5 +1,5 @@
 ---
-title: "Presentation to Greater Boston useR"
+title: "300 lessons later: What I've learned about R from teaching R"
 author: "Mark Niemann-Ross"
 date: "10/13/2020"
 output: ioslides_presentation
@@ -33,8 +33,7 @@ summary(cars)
 plot(pressure)
 ```
 
-300 lessons later: What I've learned about R from teaching R 
-Presented by Mark Niemann-Ross 
+## Snappy Quote
 
 Robert Heinlein said "When one teaches, two learn" - and I'm proof! 
 
