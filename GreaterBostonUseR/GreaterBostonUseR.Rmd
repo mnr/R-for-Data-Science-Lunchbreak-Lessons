@@ -17,9 +17,29 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Snappy Quote
 
 Robert Heinlein said 
+
 "When one teaches, two learn" 
 
+
 and I'm proof! 
+ 
+## Who I am
+
+![Mark Niemann-Ross](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
+
+[Mark Niemann-Ross](https://www.linkedin.com/in/markniemannross/)
+
+Mark Niemann-Ross is an author & educator. 
+
+He teaches for LinkedIn Learning, focused on the R programming language and Raspberry Pi. 
+
+He is the author of "Stupid Machine" - a science fiction murder mystery solved by a refrigerator.
+
+**...but you don't care**
+
+## Imposter Syndrome
+
+## Unpacking Knowledge 
 
 ## stuff
 
@@ -31,12 +51,6 @@ I'll cover the imposter syndrome, lack of venue, and "I'm a researcher, not an e
 
 In thirty minutes, you'll have your confidence restored and your awesomeness confirmed. 
 
-## About Mark
-Mark Niemann-Ross is an author & educator. 
-
-He teaches for LinkedIn Learning, focused on the R programming language and Raspberry Pi. 
-
-He is the author of "Stupid Machine" - a science fiction murder mystery solved by a refrigerator.
 
 
 ## R Markdown
