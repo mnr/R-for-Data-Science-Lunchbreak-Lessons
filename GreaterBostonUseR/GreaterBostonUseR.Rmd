@@ -25,23 +25,11 @@ Robert Heinlein said
 and I'm proof! 
  
 ## Who I am
-
-![Mark Niemann-Ross](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
+![](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
 
 [Mark Niemann-Ross](https://www.linkedin.com/in/markniemannross/)
 
-[This presentation on github]()
-
-```{r}
-qrcode_gen("https://www.linkedin.com/in/markniemannross/")
-```
-
-
-Mark Niemann-Ross is an author & educator. 
-
-He teaches for LinkedIn Learning, focused on the R programming language and Raspberry Pi. 
-
-He is the author of "Stupid Machine" - a science fiction murder mystery solved by a refrigerator.
+[This presentation on github](https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons/tree/master/GreaterBostonUseR)
 
 **...but you don't care**
 
@@ -49,16 +37,15 @@ He is the author of "Stupid Machine" - a science fiction murder mystery solved b
 
 ## Unpacking Knowledge 
 
-## stuff
+## Lack of Venue
 
-I started learning R in 2014, taught my first R course in 2015. I started with a casual knowledge of data science, statistics, and matrix math. Since then, have taught more than 300 sessions to nearly 60,000 learners. I've covered matrices, NLP, linear models, program flow and other details of the R language. 
+## Research vs Education
 
- But enough about me - how about you? Let's discuss the objections I've heard about passing on your knowledge to the next generation. 
+## Q & A
 
-I'll cover the imposter syndrome, lack of venue, and "I'm a researcher, not an educator." 
-
-In thirty minutes, you'll have your confidence restored and your awesomeness confirmed. 
-
+```{r}
+qrcode_gen("https://www.linkedin.com/in/markniemannross/")
+```
 
 
 ## R Markdown
