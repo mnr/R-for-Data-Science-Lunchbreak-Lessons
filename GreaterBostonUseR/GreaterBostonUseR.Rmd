@@ -9,6 +9,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(qrcode)
 ```
  
 ## 300 lessons later | What I've learned about R ... from teaching R
@@ -28,6 +29,13 @@ and I'm proof!
 ![Mark Niemann-Ross](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
 
 [Mark Niemann-Ross](https://www.linkedin.com/in/markniemannross/)
+
+[This presentation on github]()
+
+```{r}
+qrcode_gen("https://www.linkedin.com/in/markniemannross/")
+```
+
 
 Mark Niemann-Ross is an author & educator. 
 
