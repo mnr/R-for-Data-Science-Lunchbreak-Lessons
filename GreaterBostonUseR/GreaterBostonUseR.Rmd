@@ -35,6 +35,10 @@ and I'm proof!
 
 ## Imposter Syndrome
 
+## There are a lot of R you may not know exists
+
+## Tidyverse is great - but don't overlook base r
+
 ## Unpacking Knowledge 
 
 ## Five Minutes is All You Get
