@@ -1,7 +1,7 @@
 ---
 title: "Greater Boston UseR"
 author: "Mark Niemann-Ross"
-date: "10/13/2020"
+date: "November 2020"
 output:
   ioslides_presentation: default
   slidy_presentation: default
@@ -10,12 +10,13 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(qrcode)
+
+# define two matrices
+A <- matrix( c(1:9), nrow = 3)
+B <- matrix( c(11:19), nrow = 3)
 ```
  
 ## 300 lessons later | What I've learned about R ... from teaching R
-
-
-## Snappy Quote
 
 Robert Heinlein said 
 
@@ -24,20 +25,96 @@ Robert Heinlein said
 
 and I'm proof! 
  
-## Who I am
+## I am
 ![](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
 
 [Mark Niemann-Ross](https://www.linkedin.com/in/markniemannross/)
 
-[This presentation on github](https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons/tree/master/GreaterBostonUseR)
 
-**...but you don't care**
+I've taught about 300 session on the R language 
 
-## Imposter Syndrome
+for LinkedIn Learning 
 
-## There are a lot of R you may not know exists
+(formerly Lynda.com)
 
-## Tidyverse is great - but don't overlook base r
+## How are we alike? 
+How are we different?
+
+## Your Journey With R {.build}
+
+A mandate to learn and use
+
+You grumbled, but complied
+
+A Branch:
+
+- Those who didn't need it anymore (not here today)
+- Those who did (This is you!)
+
+You learned as much R as necessary
+
+You also have domain and statistical expertise
+
+## My Journey with R {.build}
+
+An interest in programming languages
+
+(That's it!)
+
+No domain or statistical expertise
+
+I've gone **really** deep on the language
+
+## Our Priorities Differ {.build}
+<div class="columns-2">
+
+**You**
+
+Interpret data
+
+.
+
+**Me**
+
+Mess around with code
+
+...and share it with you
+
+</div>
+
+## For Example...
+
+![](lil_rweek.png)
+
+## For Example: Matrix Math Review
+<div class="columns-2">
+
+```{r, echo=TRUE}
+
+A + B
+
+A - B
+
+A * B # simple multiplication
+
+A %*% B # Dot Product 
+
+```
+</div>
+
+## Lesson: R is deep
+
+There is a lot of R you may not know exists
+
+There is a lot of R you will never use
+
+There is a bit of R that will change your world and make you a rock star
+
+## Lesson: Imposter Syndrome
+
+## Lesson: Tidyverse and Base R
+
+Tidyverse is great - but don't overlook base r
 
 ## Unpacking Knowledge 
 
@@ -48,6 +125,8 @@ and I'm proof!
 ## Research vs Education
 
 ## Q & A
+
+[This presentation on github](https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons/tree/master/GreaterBostonUseR)
 
 ```{r}
 qrcode_gen("https://www.linkedin.com/in/markniemannross/")
