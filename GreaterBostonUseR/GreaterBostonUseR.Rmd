@@ -110,11 +110,51 @@ There is a lot of R you will never use
 
 There is a bit of R that will change your world and make you a rock star
 
-## Lesson: Imposter Syndrome
+## Example: Three Graphics Environments
+**1. base R**
+
+plot, barplot, boxplot, cdplot, coplot, dotchart, fourfoldplot, 
+heatmap, hist, matlines,matplot, mosaicplot, pie, spineplot, 
+stemplot, stripchart, sunflowerplot
+
+**2. ggplot**
+
+an external package for grammar of graphics. VERY popular
+
+**3. lattice**
+
++ included with R. Faster than ggplot, 
++ better awareness of output device. 
++ barchart, bwplot, densityplot, dotplot, histogram, qqmath, stripplot, qq, xyplot, levelplot, contourplot, cloud, wireframe, splom, parallel, rfs, tmd
+
+## Example: Lattice
+
+```{r, echo=TRUE, fig.height=3}
+
+library(lattice)
+
+xyplot( weight ~ Time, data = ChickWeight, type = "a")
+```
+
+Note the use of formula instead of "x =" and "y="
 
 ## Lesson: Tidyverse and Base R
 
-Tidyverse is great - but don't overlook base r
+Tidyverse is great, but ...
+
+**Familiarity**
+
++ Tidyverse is one more damn thing to learn
++ What is the shop standard tool?
+
+**Alternatives**
+
++ [Base R Packages](https://cran.r-project.org/web/packages) and [Tasks](https://cran.r-project.org/web/views/)
++ [Bioconductor](https://www.bioconductor.org/) (Specialized Genomics - and [more](https://www.bioconductor.org/packages/release/bioc/html/EBImage.html))
++ [Microsoft R Open](https://mran.microsoft.com/open) (with built-in package management)
+
+
+## Lesson: Imposter Syndrome
 
 ## Unpacking Knowledge 
 
