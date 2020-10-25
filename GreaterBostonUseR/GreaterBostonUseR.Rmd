@@ -64,7 +64,7 @@ There is a lot of R you will never use
 There is a bit of R that will change your world and make you a rock star
 
 ## Example: Three Graphics Environments
-**1. base R**
+**1. Base R**
 
 plot, barplot, boxplot, cdplot, coplot, dotchart, fourfoldplot, 
 heatmap, hist, matlines,matplot, mosaicplot, pie, spineplot, 
@@ -72,7 +72,7 @@ stemplot, stripchart, sunflowerplot
 
 **2. ggplot**
 
-an external package for grammar of graphics. VERY popular
+Tidyverse package for grammar of graphics. VERY popular
 
 **3. lattice**
 
