@@ -3,7 +3,8 @@ title: "Greater Boston UseR"
 author: "Mark Niemann-Ross"
 date: "November 2020"
 output:
-  ioslides_presentation: default
+  ioslides_presentation: 
+    widescreen: true
   slidy_presentation: default
 ---
 
@@ -18,73 +19,24 @@ B <- matrix( c(11:19), nrow = 3)
  
 ## 300 lessons later | What I've learned about R ... from teaching R
 
-Robert Heinlein said 
+<div class="columns-2">
 
-"When one teaches, two learn" 
-
-
-and I'm proof! 
- 
-## I am
-![](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/cropped-mnr-in-japan-smaller.jpg)
+![](https://i2.wp.com/niemannross.com/wp-content/uploads/2018/08/mnr-in-japan-smaller.jpg){ width=70% }
 
 [Mark Niemann-Ross](https://www.linkedin.com/in/markniemannross/)
 
 
-I've taught about 300 session on the R language 
+I've taught about 300 sessions on the R language 
 
 for LinkedIn Learning 
 
 (formerly Lynda.com)
-
-## How are we alike? 
-How are we different?
-
-## Your Journey With R {.build}
-
-A mandate to learn and use
-
-You grumbled, but complied
-
-A Branch:
-
-- Those who didn't need it anymore (not here today)
-- Those who did (This is you!)
-
-You learned as much R as necessary
-
-You also have domain and statistical expertise
-
-## My Journey with R {.build}
-
-An interest in programming languages
-
-(That's it!)
-
-No domain or statistical expertise
-
-I've gone **really** deep on the language
-
-## Our Priorities Differ {.build}
-<div class="columns-2">
-
-**You**
-
-Interpret data
-
-.
-
-**Me**
-
-Mess around with code
-
-...and share it with you
-
 </div>
+
 
 ## For Example...
 
-![](lil_rweek.png)
+![](lil_rweek.png){ width=90% }
 
 ## For Example: Matrix Math Review
 <div class="columns-2">
@@ -101,6 +53,7 @@ A %*% B # Dot Product
 
 ```
 </div>
+*extra credit: what is A? what is B?
 
 ## Lesson: R is deep
 
@@ -153,8 +106,78 @@ Tidyverse is great, but ...
 + [Bioconductor](https://www.bioconductor.org/) (Specialized Genomics - and [more](https://www.bioconductor.org/packages/release/bioc/html/EBImage.html))
 + [Microsoft R Open](https://mran.microsoft.com/open) (with built-in package management)
 
+## Lesson: Dates and Times Hurt
+
+**Realize there are three main Base R date structures**
+
+- Date *(only stores dates)*
+- POSIXct *(stores dates AND times as seconds)*
+- POSIXlt *(stores dates AND times as list)*
+
+**plus...**
+
+- chron
+- difftime
+
+... and yes, there is [lubridate](https://lubridate.tidyverse.org/)
+
+## Example: Dates and Times
+
+```{r, echo=TRUE}
+HAL_online <- as.Date("1992-01-12")
+
+as.numeric(HAL_online) # produces DAYS, not SECONDS
+```
+
+```{r, echo=TRUE}
+myPOSIXct <- as.POSIXct("March 14, 2015 at 9:26", format = "%B %d, %Y at %H:%M")
+
+as.integer(myPOSIXct) # Number of seconds between January 1, 1970 midnight and March 14, 2015 at 9:26 am
+```
+
+```{r, echo=TRUE}
+myPOSIXlt <- as.POSIXlt("March 14, 2015 at 9:26", format = "%B %d, %Y at %H:%M")
+
+myPOSIXlt[1, "year"] # POSIXlt is a list. Here is years since 1900
+```
+
 
 ## Lesson: Imposter Syndrome
+<div class="centered">
+**Don't doubt your skills - You're not a fraud**
+</div>
+
+<div class="columns-2">
+
+**You**
+
+Domain and statistical expertise
+
+A mandate to learn and use R
+
+You grumbled, but complied
+
+A Branch:
+
+- Those who didn't need it anymore (not here today)
+- Those who did (This is you!)
+
+**Me**
+
+No domain or statistical expertise
+
+An interest in programming languages
+
+I've gone **really** deep on the language
+
+*Robert Heinlein said *
+
+*"When one teaches, two learn"*
+
+.
+
+</div>
+
 
 ## Unpacking Knowledge 
 
@@ -172,27 +195,12 @@ Tidyverse is great, but ...
 qrcode_gen("https://www.linkedin.com/in/markniemannross/")
 ```
 
+## A and B
+```{r, echo=TRUE}
+A <- matrix( c(1:9), nrow = 3)
+A
+B <- matrix( c(11:19), nrow = 3)
+B
 
-## R Markdown
-
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
 ```
 
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
