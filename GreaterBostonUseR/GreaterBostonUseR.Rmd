@@ -97,8 +97,9 @@ Tidyverse is great, but ...
 
 **Familiarity**
 
-+ Tidyverse is one more damn thing to learn
++ Tidyverse is one more thing to learn
 + What is the shop standard tool?
++ Tidyverse is not a universal standard.
 
 **Alternatives**
 
@@ -108,13 +109,13 @@ Tidyverse is great, but ...
 
 ## Lesson: Dates and Times Hurt
 
-**Realize there are three main Base R date structures**
+**There are three main Base R date structures**
 
 - Date *(only stores dates)*
 - POSIXct *(stores dates AND times as seconds)*
 - POSIXlt *(stores dates AND times as list)*
 
-**plus...**
+**and two more...**
 
 - chron
 - difftime
@@ -132,7 +133,7 @@ as.numeric(HAL_online) # produces DAYS, not SECONDS
 ```{r, echo=TRUE}
 myPOSIXct <- as.POSIXct("March 14, 2015 at 9:26", format = "%B %d, %Y at %H:%M")
 
-as.integer(myPOSIXct) # Number of seconds between January 1, 1970 midnight and March 14, 2015 at 9:26 am
+as.integer(myPOSIXct) # Seconds between midnight 1-Jan-1970 and 14-Mar-2015 at 9:26 am
 ```
 
 ```{r, echo=TRUE}
@@ -179,9 +180,29 @@ I've gone **really** deep on the language
 </div>
 
 
-## Unpacking Knowledge 
+## Lesson: Unpacking Knowledge 
 
-## Five Minutes is All You Get
+Data Science is **telling stories** and **visualizing numbers**
+
+
+<div class="columns-2">
+What is your point?
+
+Why should anyone care?
+
+Use less to tell more
+
+Don't be impressed with everything you know
+
+Bury the backstory
+
+ ![](https://www.edwardtufte.com/tufte/graphics/vdqi_bookcover.gif) 
+ </div>
+
+## Example: Unpacking Knowledge
+
+![](https://s3-prod.adage.com/s3fs-public/ViewerEngagementGraphic.jpg)
+
 
 ## Lack of Venue
 
