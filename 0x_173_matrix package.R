@@ -7,8 +7,8 @@ library(Matrix) # notice Capital M
 
 # understanding sparse matrices
 
-matrixRows <- 100
-matrixCols <- 100
+matrixRows <- 10000
+matrixCols <- 10000
 randomOnesZeros <- sample(c(0,0,0,1), matrixRows * matrixCols, replace = TRUE)
 
 matrix_notSparse <- matrix(randomOnesZeros, nrow = matrixRows)
@@ -22,3 +22,12 @@ matrix_Sparse
 object.size(matrix_notSparse)
 object.size(matrix_Sparse)
 
+# speed comparison
+
+library(microbenchmark)
+
+microbenchmark(
+  sum(matrix_notSparse),
+  sum(matrix_Sparse),
+  times = 1000
+)
