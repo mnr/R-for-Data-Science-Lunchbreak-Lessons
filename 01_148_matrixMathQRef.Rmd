@@ -389,6 +389,6 @@ chol(symmetricalMatrix)
 
 # finally - look at package::matrix
 ```{r}
-install.packages("Matrix")
+#install.packages("Matrix")
 library(Matrix)
 ```
