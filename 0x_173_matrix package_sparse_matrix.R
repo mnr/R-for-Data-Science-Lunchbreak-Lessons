@@ -1,11 +1,11 @@
 # matrix package
+# understanding sparse matrices
 
 # one of the recommended packages
 installed.packages(priority = "recommended")
 
 library(Matrix) # notice Capital M
 
-# understanding sparse matrices
 
 matrixRows <- 10000
 matrixCols <- 10000
