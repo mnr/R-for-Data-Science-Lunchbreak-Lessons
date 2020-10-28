@@ -203,10 +203,19 @@ Bury the backstory
 
 ![](https://s3-prod.adage.com/s3fs-public/ViewerEngagementGraphic.jpg)
 
+## Research vs Education
+Teaching R is different than Using R
+
+Using R (or any topic)
+
+Do it in a way you best understand
+
+Teaching R
+
+Do it in the most straightforward manner
 
 ## Lack of Venue
 
-## Research vs Education
 
 ## Q & A
 
