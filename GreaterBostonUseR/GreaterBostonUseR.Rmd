@@ -59,7 +59,7 @@ A %*% B # Dot Product
 
 ## Lesson: R is deep
 
-There is a lot of R you may not know exists
+There is a [lot of R](https://cran.r-project.org/doc/manuals/r-release/fullrefman.pdf) you may not know exists
 
 *~ 1,500 functions in Base R*
 
