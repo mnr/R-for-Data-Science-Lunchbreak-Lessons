@@ -31,7 +31,9 @@ I've taught about 300 sessions on the R language
 for LinkedIn Learning 
 
 (formerly Lynda.com)
+
 </div>
+
 
 
 ## For Example...
@@ -59,9 +61,12 @@ A %*% B # Dot Product
 
 There is a lot of R you may not know exists
 
+*~ 1,500 functions in Base R*
+
 There is a lot of R you will never use
 
 There is a bit of R that will change your world and make you a rock star
+
 
 ## Example: Three Graphics Environments
 **1. Base R**
@@ -213,8 +218,6 @@ Do it in a way you best understand
 Teaching R
 
 Do it in the most straightforward manner
-
-## Lack of Venue
 
 
 ## Q & A
