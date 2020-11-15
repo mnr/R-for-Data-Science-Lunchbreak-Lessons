@@ -15,6 +15,12 @@ library(qrcode)
 # define two matrices
 A <- matrix( c(1:9), nrow = 3)
 B <- matrix( c(11:19), nrow = 3)
+
+# silly functions
+tookLinearAlgebra <- function(a){a}
+paidAttention <- function(a){a}
+understoodIt <- function(a){a}
+
 ```
  
 ## 300 lessons later | What I've learned about R ... from teaching R
@@ -57,9 +63,72 @@ A %*% B # Dot Product
 </div>
 *extra credit: what is A? what is B?
 
+## What I've learned
+
+- R is strange
+- R is deep
+- Tidyverse and Base R
+- Dates and Times Hurt
+- Imposter Syndrome
+- Unpacking Knowledge
+- Research vs Education
+- R vs Python
+- The R community is AWESOME
+
+
+## Lesson: R is strange
+
+
+```{r, echo=TRUE}
+if (tookLinearAlgebra(TRUE) & paidAttention(TRUE) & understoodIt(TRUE) ) {
+  "R makes sense"
+}
+```
+
+
+## Lesson: R is strange
+*...BUT...*
+
+for the rest of us, R is just wrong.
+
+Terms in Every Other Language | Terms in R
+---|----
+Variable | 1D Vector (**WAT??**)
+Array | Vector
+2D Array | Matrix
+3D Array (or more) | Array
+List | List
+Spreadsheet | Data.frame or tibble
+
+## Lesson: R is strange
+
+...And what about...
+
+`apply()`, `lapply()`, `tapply()`, `mapply()`, `sapply()`, `vapply()`, `rapply()`
+
+...instead of...
+
+`for (variable in vector) {}`
+
+...and what about **vectorization** ?
+
+
+## Lesson: R is strange
+Because of these terms and data structures\
+learning R requires you to relearn programming.
+\
+\
+It's a *crappy* beginner language...
+\
+\
+...and it's a *crappy* second language.
+\
+\
+...but it's a *great* language.
+
 ## Lesson: R is deep
 
-There is a [lot of R](https://cran.r-project.org/doc/manuals/r-release/fullrefman.pdf) you may not know exists
+There is a [lot of R](https://cran.r-project.org/doc/manuals/r-release/fullrefman.pdf) you may not know about
 
 *~ 1,500 functions in Base R*
 
@@ -81,7 +150,7 @@ Tidyverse package for grammar of graphics. VERY popular
 
 **3. lattice**
 
-+ included with R. Faster than ggplot, 
++ included with R. *recommended package*. Faster than ggplot, 
 + better awareness of output device. 
 + barchart, bwplot, densityplot, dotplot, histogram, qqmath, stripplot, qq, xyplot, levelplot, contourplot, cloud, wireframe, splom, parallel, rfs, tmd
 
@@ -149,40 +218,17 @@ myPOSIXlt[1, "year"] # POSIXlt is a list. Here is years since 1900
 
 
 ## Lesson: Imposter Syndrome
-<div class="centered">
 **Don't doubt your skills - You're not a fraud**
-</div>
 
-<div class="columns-2">
 
-**You**
+You | Me |
+----|----|
+Domain and statistical expertise | No domain or statistical expertise
+A mandate to learn and use R | An interest in programming languages
+You grumbled, but complied | I've gone **really** deep on the language
+A Branch:<br>- Those who didn't need it anymore (not here today)<br>- Those who did (This is you!) | 
 
-Domain and statistical expertise
 
-A mandate to learn and use R
-
-You grumbled, but complied
-
-A Branch:
-
-- Those who didn't need it anymore (not here today)
-- Those who did (This is you!)
-
-**Me**
-
-No domain or statistical expertise
-
-An interest in programming languages
-
-I've gone **really** deep on the language
-
-*Robert Heinlein said *
-
-*"When one teaches, two learn"*
-
-.
-
-</div>
 
 
 ## Lesson: Unpacking Knowledge 
@@ -208,17 +254,29 @@ Bury the backstory
 
 ![](https://s3-prod.adage.com/s3fs-public/ViewerEngagementGraphic.jpg)
 
-## Research vs Education
+## Lesson: Research vs Education
 Teaching R is different than Using R
 
-Using R (or any topic)
+Using  | Teaching
+---|---
+Do it in a way you best understand | Do it in the most straightforward manner
 
-Do it in a way you best understand
+## Lesson: R vs Python
 
-Teaching R
+*who*
+\
+\
+*cares?*
+\
+\
+\
+(Your shop cares)
 
-Do it in the most straightforward manner
+## Lesson: The R community is AWESOME
 
+- Boston useR
+- [RLadies](https://rladies.org/)
+- [R Consortium](https://www.r-consortium.org/)
 
 ## Q & A
 
