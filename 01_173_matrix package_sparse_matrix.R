@@ -15,8 +15,8 @@ matrix_notSparse <- matrix(randomOnesZeros, nrow = matrixRows)
 matrix_Sparse <- Matrix(randomOnesZeros, nrow = matrixRows, sparse = TRUE)
 
 # what these look like
-matrix_notSparse
-matrix_Sparse
+matrix_notSparse[1:10,1:10]
+matrix_Sparse[1:10,1:10]
 
 # size comparison
 object.size(matrix_notSparse)
