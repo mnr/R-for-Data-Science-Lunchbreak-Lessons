@@ -218,16 +218,24 @@ myPOSIXlt[1, "year"] # POSIXlt is a list. Here is years since 1900
 
 
 ## Lesson: Imposter Syndrome
+
 **Don't doubt your skills - You're not a fraud**
 
+![Here's a story](https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/stem_grc.jpg){ width=50% }
 
-You | Me |
-----|----|
-Domain and statistical expertise | No domain or statistical expertise
-A mandate to learn and use R | An interest in programming languages
-You grumbled, but complied | I've gone **really** deep on the language
-A Branch:<br>- Those who didn't need it anymore (not here today)<br>- Those who did (This is you!) | 
 
+## Lesson: Imposter Syndrome
+
+![I'm Not Qualified](https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/dsc_0197.jpg){ width=70% }
+
+## Lesson: Imposter Syndrome
+
+She was a PhD in Computer Science. She **couldn't be** any more qualified!
+\
+\
+Perhaps she didn't feel supported. Which is something we need to change.
+\
+\
 
 
 
@@ -254,12 +262,19 @@ Bury the backstory
 
 ![](https://s3-prod.adage.com/s3fs-public/ViewerEngagementGraphic.jpg)
 
-## Lesson: Research vs Education
-Teaching R is different than Using R
+## Lesson: Teaching R is different than Using R
 
-Using  | Teaching
----|---
-Do it in a way you best understand | Do it in the most straightforward manner
+```{r, echo=TRUE}
+plot(unlist(lapply(split(ChickWeight[,1], ChickWeight[,3]), median)))
+```
+
+## Lesson: Teaching R is different than Using R
+
+```{r, echo=TRUE}
+mySplit <- split(ChickWeight$weight, ChickWeight$Chick)
+myMedian <- lapply(mySplit, median)
+plot(unlist(myMedian), xlab = "Chick", ylab = "Median Weight")
+```
 
 ## Lesson: R vs Python
 
