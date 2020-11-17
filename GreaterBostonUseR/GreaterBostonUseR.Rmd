@@ -68,12 +68,12 @@ A %*% B # Dot Product
 - R is strange
 - R is deep
 - Tidyverse and Base R
+- R vs Python
 - Dates and Times Hurt
 - R Trends
 - Imposter Syndrome
 - Unpacking Knowledge
 - Teaching R is different than Using R
-- R vs Python
 - The R community is AWESOME
 
 
@@ -182,6 +182,40 @@ Tidyverse is great, but ...
 + [Bioconductor](https://www.bioconductor.org/) (Specialized Genomics - and [more](https://www.bioconductor.org/packages/release/bioc/html/EBImage.html))
 + [Microsoft R Open](https://mran.microsoft.com/open) (with built-in package management)
 
+## Lesson: R vs Python
+
+### R programmers behave differently than Python programmers
+\
+\
+<div class="columns-2">
+![Python programmers love to code](https://www.python.org/static/img/python-logo@2x.png)
+
+![R programmers want results](https://www.r-project.org/Rlogo.png)
+</div>
+\
+\
+
+## Lesson: R vs Python
+
+### You see this in:
+
+**Documentation**
+
+- Python is spacious and written in "programmerese"
+- R looks to be written by PhD candidates
+
+**Style Guides**
+
+- Python: PEP 8, Google, "pythonic"
+- R: Hadley and the Tidyverse (Google R is a fork of tidyverse)
+
+**Playfulness**
+
+- Python is named after Monty Python
+- R is ... well ... 
+
+
+
 ## Lesson: Dates and Times Hurt
 
 **There are three main Base R date structures**
@@ -287,38 +321,6 @@ mySplit <- split(ChickWeight$weight, ChickWeight$Chick)
 myMedian <- lapply(mySplit, median)
 plot(unlist(myMedian), xlab = "Chick", ylab = "Median Weight")
 ```
-
-## Lesson: R vs Python
-
-### R programmers behave differently than Python programmers
-\
-\
-<div class="columns-2">
-![Python programmers love to code](https://www.python.org/static/img/python-logo@2x.png)
-
-![R programmers want results](https://www.r-project.org/Rlogo.png)
-</div>
-\
-\
-
-## Lesson: R vs Python
-
-### You see this in:
-
-**Documentation**
-
-- Python is spacious and written in "programmerese"
-- R looks to be written by PhD candidates
-
-**Style Guides**
-
-- Python: PEP 8, Google, "pythonic"
-- R: Hadley and the Tidyverse (Google R is a fork of tidyverse)
-
-**Playfulness**
-
-- Python is named after Monty Python
-- R is ... well ... 
 
 ## Lesson: The R community is AWESOME
 
