@@ -69,9 +69,10 @@ A %*% B # Dot Product
 - R is deep
 - Tidyverse and Base R
 - Dates and Times Hurt
+- R Trends
 - Imposter Syndrome
 - Unpacking Knowledge
-- Research vs Education
+- Teaching R is different than Using R
 - R vs Python
 - The R community is AWESOME
 
@@ -217,6 +218,17 @@ myPOSIXlt[1, "year"] # POSIXlt is a list. Here is years since 1900
 ```
 
 
+## R Trends
+
+### Short function courses are more popular than long concept courses
+
+- R users want *tools* rather than programming theory
+- *If it works, it's done*
+- I suspect very little R code is groomed or maintained
+
+
+
+
 ## Lesson: Imposter Syndrome
 
 **Don't doubt your skills - You're not a fraud**
@@ -278,14 +290,35 @@ plot(unlist(myMedian), xlab = "Chick", ylab = "Median Weight")
 
 ## Lesson: R vs Python
 
-*who*
+### R programmers behave differently than Python programmers
 \
 \
-*cares?*
+<div class="columns-2">
+![Python programmers love to code](https://www.python.org/static/img/python-logo@2x.png)
+
+![R programmers want results](https://www.r-project.org/Rlogo.png)
+</div>
 \
 \
-\
-(Your shop cares)
+
+## Lesson: R vs Python
+
+### You see this in:
+
+**Documentation**
+
+- Python is spacious and written in "programmerese"
+- R looks to be written by PhD candidates
+
+**Style Guides**
+
+- Python: PEP 8, Google, "pythonic"
+- R: Hadley and the Tidyverse (Google R is a fork of tidyverse)
+
+**Playfulness**
+
+- Python is named after Monty Python
+- R is ... well ... 
 
 ## Lesson: The R community is AWESOME
 
