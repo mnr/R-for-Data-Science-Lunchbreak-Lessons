@@ -73,7 +73,6 @@ A %*% B # Dot Product
 - R Trends
 - Imposter Syndrome
 - Unpacking Knowledge
-- Teaching R is different than Using R
 - The R community is AWESOME
 
 
@@ -117,15 +116,13 @@ Spreadsheet | Data.frame or tibble
 ## Lesson: R is strange
 Because of these terms and data structures\
 learning R requires you to relearn programming.
-\
-\
-It's a *crappy* beginner language...
-\
-\
-...and it's a *crappy* second language.
-\
-\
-...but it's a *great* language.
+
+
+*I learned:* 
+
+- Don't assume your audience is fluent. 
+- Many of us are beginners. 
+- Many of us have gaps in our knowledge.
 
 ## Lesson: R is deep
 
@@ -173,8 +170,22 @@ Tidyverse is great, but ...
 **Familiarity**
 
 + Tidyverse is one more thing to learn
-+ What is the shop standard tool?
 + Tidyverse is not a universal standard.
++ What is the shop standard tool?
+
+
+
+## Lesson: Tidyverse and Base R
+
+What I know:
+
+Tidyverse courses don't sell
+
+
+Learners are confused about Tidyverse. 
+
+- Is it R?
+- Is it Tidyverse?
 
 **Alternatives**
 
@@ -197,23 +208,15 @@ Tidyverse is great, but ...
 
 ## Lesson: R vs Python
 
-### You see this in:
-
 **Documentation**
 
 - Python is spacious and written in "programmerese"
 - R looks to be written by PhD candidates
 
-**Style Guides**
-
-- Python: PEP 8, Google, "pythonic"
-- R: Hadley and the Tidyverse (Google R is a fork of tidyverse)
-
 **Playfulness**
 
 - Python is named after Monty Python
-- R is ... well ... 
-
+- R is ... well ... (cowsay?)
 
 
 ## Lesson: Dates and Times Hurt
@@ -224,10 +227,11 @@ Tidyverse is great, but ...
 - POSIXct *(stores dates AND times as seconds)*
 - POSIXlt *(stores dates AND times as list)*
 
-**and two more...**
+**and three more...**
 
 - chron
 - difftime
+- time series
 
 ... and yes, there is [lubridate](https://lubridate.tidyverse.org/)
 
@@ -251,6 +255,20 @@ myPOSIXlt <- as.POSIXlt("March 14, 2015 at 9:26", format = "%B %d, %Y at %H:%M")
 myPOSIXlt[1, "year"] # POSIXlt is a list. Here is years since 1900
 ```
 
+## Lesson: Dates and Times
+
+### What I've Learned
+
+The **first** lesson is...
+
+### Dates and Times are fluid
+
+*How long is a month*
+
+After that lesson, all the rest falls into place.
+
+
+How you code it is *almost* secondary
 
 ## R Trends
 
@@ -308,13 +326,13 @@ Bury the backstory
 
 ![](https://s3-prod.adage.com/s3fs-public/ViewerEngagementGraphic.jpg)
 
-## Lesson: Teaching R is different than Using R
+## Example: Unpacking Knowledge
 
 ```{r, echo=TRUE}
 plot(unlist(lapply(split(ChickWeight[,1], ChickWeight[,3]), median)))
 ```
 
-## Lesson: Teaching R is different than Using R
+## Example: Unpacking Knowledge
 
 ```{r, echo=TRUE}
 mySplit <- split(ChickWeight$weight, ChickWeight$Chick)
