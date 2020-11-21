@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(Matrix)
 ```
 
-This Quick Reference is supplemental to courses on LinkedIn Learning
+This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions). 
 
 An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
 
