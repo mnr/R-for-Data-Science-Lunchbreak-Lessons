@@ -2,10 +2,10 @@
 title: "Matrix Math Quick Reference"
 author: "Mark Niemann-Ross"
 output:
-  github_document:
-    toc: yes
   html_document:
     df_print: paged
+    toc: yes
+  github_document:
     toc: yes
 ---
 
