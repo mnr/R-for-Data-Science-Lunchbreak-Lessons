@@ -13,10 +13,21 @@
 # install gui
 # Rstudio not available for Raspberry Pi (available for amd64, but not amdhf)
 # Rgui not available for linux
+# unable to install rcommander or rattle
 
+# geany works
+# wiki.geany.org/howtos/using_geany_with_r
+# wiki.geany.org/howtos/configurebuildmenu
 
-# install Rcommander
-# https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr
-# start R as sudo - THIS IS IMPORTANT
-# sudo R
-install.packages("Rcmdr")
+# this runs the R file in the geany terminal
+# edit/preferences/terminal...[] execute programs in VTE
+# build -> set build commands...execute: Rscript ./%f 
+
+# this runs the R file as a batch command, output saved to .Rout in /home/pi or next to input file
+# build -> set build commands...R CMD BATCH: R CMD BATCH ./%f
+
+# Geany terminal can be used to run R
+# also install packages
+# install.packages("cowsay")
+library(cowsay)
+say("Hello world")
