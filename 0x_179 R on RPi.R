@@ -20,6 +20,7 @@
 # wiki.geany.org/howtos/configurebuildmenu
 
 # this runs the R file in the geany terminal
+# NOTE: file names cannot have spaces
 # edit/preferences/terminal...[] execute programs in VTE
 # build -> set build commands...execute: Rscript ./%f 
 
