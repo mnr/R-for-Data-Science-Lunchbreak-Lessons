@@ -224,6 +224,8 @@ outer(A,B) # ... A %o% B will produce the same result
 ```
 
 # Solve a system of equations
+
+[Instructional Video about solve()](https://linkedin-learning.pxf.io/rweeklysolvematrix)
 As an example, start with this system of equations:
 
 $$
