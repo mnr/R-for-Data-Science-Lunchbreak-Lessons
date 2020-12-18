@@ -16,6 +16,8 @@ library(Matrix)
 
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions). 
 
+The latest version of this quick reference is found [here](http://niemannross.com/link/rmatrixqref)
+
 An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
 
 [The Matrix package](https://cran.r-project.org/web/packages/Matrix/index.html) is recommended for advanced operations.
@@ -264,6 +266,9 @@ solve(coef_A, RHS_system)
 
 
 # Inverse matrix
+
+[Instructional Video about solving for an inverse matrix](https://linkedin-learning.pxf.io/rweeklymatrixsolveinverse)
+
 $AA^-1 == I$ ... -1 is the inverse of a matrix. I is the identity matrix
 
 ```{r}
@@ -283,6 +288,9 @@ factorial(n) # provides the number of permutations
 BaseR doesn't have a function to generate all possible permutations, but there are packages that will do this.
 
 # backsolve
+
+[Instructional Video about forward and backward solve for a matrix](linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+
 Backsolve solves a triangular system of linear equations. This can come  from a gaussian elimination (for example).
 
 Start with...
@@ -308,6 +316,9 @@ backsolve(r, x)
 Backsolve produces a column matrix where $matrix(c(x_3, x_2, x_1), ncol = 1)$
 
 # forwardsolve
+
+[Instructional Video about forward and backward solve for a matrix](linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+
 `forwardsolve` uses the lower triangular matrix. (`backsolve()` uses the upper triangular matrix.) For example...
 
 \begin{align*}
