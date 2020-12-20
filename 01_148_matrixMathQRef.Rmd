@@ -1,5 +1,5 @@
 ---
-title: "Matrix Math Quick Reference"
+title: "R Matrix Math Quick Reference"
 author: "Mark Niemann-Ross"
 output:
   html_document:
@@ -13,6 +13,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(Matrix)
 ```
+
+# Quick Reference to Matrix Math Functions for the R programming language
 
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions). 
 
