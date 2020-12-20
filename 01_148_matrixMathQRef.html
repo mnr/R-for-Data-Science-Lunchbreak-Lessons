@@ -12,7 +12,7 @@
 <meta name="author" content="Mark Niemann-Ross" />
 
 
-<title>Matrix Math Quick Reference</title>
+<title>R Matrix Math Quick Reference</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1646,13 +1646,14 @@ summary {
 
 
 
-<h1 class="title toc-ignore">Matrix Math Quick Reference</h1>
+<h1 class="title toc-ignore">R Matrix Math Quick Reference</h1>
 <h4 class="author">Mark Niemann-Ross</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
+<li><a href="#quick-reference-to-matrix-math-functions-for-the-r-programming-language">Quick Reference to Matrix Math Functions for the R programming language</a></li>
 <li><a href="#create-a-matrix">Create a matrix</a></li>
 <li><a href="#addition">Addition</a></li>
 <li><a href="#subtraction">Subtraction</a></li>
@@ -1692,9 +1693,13 @@ summary {
 </ul>
 </div>
 
+<div id="quick-reference-to-matrix-math-functions-for-the-r-programming-language" class="section level1">
+<h1>Quick Reference to Matrix Math Functions for the R programming language</h1>
 <p>This Quick Reference is supplemental to courses on <a href="https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions">LinkedIn Learning</a>.</p>
+<p>The latest version of this quick reference is found <a href="http://niemannross.com/link/rmatrixqref">here</a></p>
 <p>An index to all R functions covered at LinkedIn Learning is found <a href="http://niemannross.com/link/rindex">here</a></p>
 <p><a href="https://cran.r-project.org/web/packages/Matrix/index.html">The Matrix package</a> is recommended for advanced operations.</p>
+</div>
 <div id="create-a-matrix" class="section level1">
 <h1>Create a matrix</h1>
 <p><a href="https://linkedin-learning.pxf.io/rweekly_matrix">Instructional Video about Matrix</a></p>
@@ -2041,7 +2046,8 @@ vec1 # what do these look like?</code></pre>
 </div>
 <div id="solve-a-system-of-equations" class="section level1">
 <h1>Solve a system of equations</h1>
-<p><a href="https://linkedin-learning.pxf.io/rweeklysolvematrix">Instructional Video about solve()</a> As an example, start with this system of equations:</p>
+<p><a href="https://linkedin-learning.pxf.io/rweeklysolvematrix">Instructional Video about solve()</a></p>
+<p>As an example, start with this system of equations:</p>
 <p><span class="math display">\[
 2x_1 - 3x_2 - 1x_3 = 2\\
 1x_1 + 2x_2 + 3x_3 = 15\\
@@ -2076,6 +2082,7 @@ solve(coef_A, RHS_system)</code></pre>
 </div>
 <div id="inverse-matrix" class="section level1">
 <h1>Inverse matrix</h1>
+<p><a href="https://linkedin-learning.pxf.io/rweeklymatrixsolveinverse">Instructional Video about solving for an inverse matrix</a></p>
 <p><span class="math inline">\(AA^-1 == I\)</span> … -1 is the inverse of a matrix. I is the identity matrix</p>
 <pre class="r"><code>solve(partiallyA) # solve() finds the inverse of a matrix</code></pre>
 <pre><code>##            [,1]       [,2]        [,3]
@@ -2094,6 +2101,7 @@ factorial(n) # provides the number of permutations</code></pre>
 </div>
 <div id="backsolve" class="section level1">
 <h1>backsolve</h1>
+<p><a href="linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve">Instructional Video about forward and backward solve for a matrix</a></p>
 <p>Backsolve solves a triangular system of linear equations. This can come from a gaussian elimination (for example).</p>
 <p>Start with… <span class="math display">\[\begin{align*}
 -3x_1 + 2x_2 - x_3 &amp;= -1\\
@@ -2119,6 +2127,7 @@ backsolve(r, x)</code></pre>
 </div>
 <div id="forwardsolve" class="section level1">
 <h1>forwardsolve</h1>
+<p><a href="linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve">Instructional Video about forward and backward solve for a matrix</a></p>
 <p><code>forwardsolve</code> uses the lower triangular matrix. (<code>backsolve()</code> uses the upper triangular matrix.) For example…</p>
 <p><span class="math display">\[\begin{align*}
 2 &amp;= -2x_3\\
