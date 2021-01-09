@@ -69,6 +69,9 @@ $AX = B$  is solved for X with $X = A^{-1}B$
 
 
 # The determinant of a matrix
+
+[Instructional video on det() and determinant()](https://linkedin-learning.pxf.io/rweeklydeterminant)
+
 The determinant of $\begin{pmatrix}
 a & b\\
 c & d
@@ -176,7 +179,9 @@ A - t(A)
 ```
 
 # Test for symmetric matrix
+
 [Instructional video on isSymmetric()](https://linkedin-learning.pxf.io/rweekly_issymetric)
+
 ```{r}
 isSymmetric(A) # not symmetric
 isSymmetric(A + t(A)) # symmetric
@@ -197,6 +202,9 @@ t(vec1) %*% vec2 # inner product
 
 
 # Outer product of two vectors
+
+[Instructional video on outer() and %o%](https://linkedin-learning.pxf.io/rweeklyouter)
+
 Transpose the second vector ... $vec1\ \ vec2^T$
 
 These three versions produce the same result...
