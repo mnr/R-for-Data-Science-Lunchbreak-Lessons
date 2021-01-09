@@ -87,6 +87,9 @@ sampleMatrix[1,1]*sampleMatrix[2,2] - sampleMatrix[1,2] * sampleMatrix[2,1]
 ```
 
 # determinant vs det
+
+[Instructional video on det() and determinant()](https://linkedin-learning.pxf.io/rweeklydeterminant)
+
 ```determinant()``` produces a list with $modulus and $sign
 
 ```{r}
