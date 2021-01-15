@@ -303,7 +303,7 @@ BaseR doesn't have a function to generate all possible permutations, but there a
 
 # backsolve
 
-[Instructional Video about forward and backward solve for a matrix](linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+[Instructional Video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
 
 Backsolve solves a triangular system of linear equations. This can come  from a gaussian elimination (for example).
 
@@ -331,7 +331,7 @@ Backsolve produces a column matrix where $matrix(c(x_3, x_2, x_1), ncol = 1)$
 
 # forwardsolve
 
-[Instructional Video about forward and backward solve for a matrix](linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+[Instructional Video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
 
 `forwardsolve` uses the lower triangular matrix. (`backsolve()` uses the upper triangular matrix.) For example...
 
@@ -370,6 +370,9 @@ qr(A)
 
 
 # crossproduct
+
+[Instructional Video about crossproduct()](https://linkedin-learning.pxf.io/rweeklycrossproduct)
+
 Not to be confused with a dot product (which is done with %*%). Regarding when to use ```crossprod()``` vs ```t(A) %*% B``` ... one may be faster than another based on the matrix being sparse. But this will only make a difference on massive matrices.
 
 ```{r}
