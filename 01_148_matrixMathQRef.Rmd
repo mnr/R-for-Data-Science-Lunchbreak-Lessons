@@ -16,7 +16,7 @@ library(Matrix)
 
 # Quick Reference to Matrix Math Functions for the R programming language
 
-This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions). 
+This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/matrix-math-overview-of-functions).
 
 The latest version of this quick reference is found [here](http://niemannross.com/link/rmatrixqref)
 
@@ -26,13 +26,14 @@ An index to all R functions covered at LinkedIn Learning is found [here](http://
 
 # Create a matrix
 
-[Instructional Video about Matrix](https://linkedin-learning.pxf.io/rweekly_matrix)
+[Instructional video about Matrix](https://linkedin-learning.pxf.io/rweekly_matrix)
 
 ```{r}
 matrix( c(1:9), nrow = 3)
 ```
 
 # Addition
+
 ```{r}
 A <- matrix( c(1:9), nrow = 3)
 B <- matrix( c(11:19), nrow = 3)
@@ -49,39 +50,41 @@ B - A
 ```
 
 # Multiplication - simple
+
 ```{r}
 A * B
 ```
 
 # Multiplication - "dot product"
-[Instructional video about %*%](https://linkedin-learning.pxf.io/rweeklyCrossprod)
+
+[Instructional video about %\*%](https://linkedin-learning.pxf.io/rweeklyCrossprod)
+
 ```{r}
 A %*% B
 ```
 
 # Division
 
-**HA - just kidding**. There is no matrix division. Instead, use the inverse. 
+**HA - just kidding**. There is no matrix division. Instead, use the inverse.
 
-$AX = B$  is solved for X with $X = A^{-1}B$
+$AX = B$ is solved for X with $X = A^{-1}B$
 
 ...lots more on inverse below...
-
 
 # The determinant of a matrix
 
 [Instructional video on det() and determinant()](https://linkedin-learning.pxf.io/rweeklydeterminant)
 
-The determinant of $\begin{pmatrix}
-a & b\\
-c & d
-\end{pmatrix}$ is $ad - bc$
+The determinant of $\\begin{pmatrix} a & b\\ c & d \\end{pmatrix}$ is $ad - bc$
+
 ```{r}
 sampleMatrix <- matrix(c(10,12,5,30), nrow = 2)
 sampleMatrix
 det(sampleMatrix)
 ```
+
 ...which is equivalent to $ad - bc$ ... which is written as...
+
 ```{r}
 sampleMatrix[1,1]*sampleMatrix[2,2] - sampleMatrix[1,2] * sampleMatrix[2,1]
 ```
@@ -90,15 +93,15 @@ sampleMatrix[1,1]*sampleMatrix[2,2] - sampleMatrix[1,2] * sampleMatrix[2,1]
 
 [Instructional video on det() and determinant()](https://linkedin-learning.pxf.io/rweeklydeterminant)
 
-```determinant()``` produces a list with $modulus and $sign
+`determinant()` produces a list with $modulus and $sign
 
 ```{r}
 determinant(sampleMatrix)
 determinant(sampleMatrix, logarithm = FALSE)
 ```
 
-
 # Zero Matrix
+
 ```{r}
 matrix(0, nrow = 3, ncol = 3)
 ```
@@ -119,6 +122,7 @@ I
 ```{r}
 diag(5, nrow = 3)
 ```
+
 ```{r}
 myMatrix <- A
 diag(myMatrix) <- 8
@@ -134,6 +138,7 @@ upper.tri(A)
 upper.tri(A, diag = TRUE)
 lower.tri(A)
 ```
+
 ```{r}
 myMatrix <- A
 myMatrix[upper.tri(myMatrix)] <- NA
@@ -141,22 +146,27 @@ myMatrix
 ```
 
 # Matrix Comparison
+
 There are two ways to compare matrices. First, create two matrices for example comparison.
+
 ```{r}
 partiallyA <- A
 partiallyA[upper.tri(partiallyA)] <- 1 # upper triangle becomes different
 ```
 
 ## simple matrice comparison, using equality
+
 ```{r}
 
 A == partiallyA # returns logical value for each element
 ```
 
 ## object comparison for exact equality
+
 ```{r}
 identical(partiallyA, A) # returns logical value for entire matrice comparison
 ```
+
 ```{r}
 identical(A,A) # compare two identical objects
 ```
@@ -172,11 +182,15 @@ t(NonSymmetricMatrix) # t() for transpose...show what transpose looks like
 ```
 
 # Build a symmetric matrix
+
 There is a package for matrix tools. Here's how to do it with baseR
+
 ```{r}
 A + t(A)
 ```
+
 # Build a skew-symmetrix matrix
+
 ```{r}
 A - t(A)
 ```
@@ -191,9 +205,10 @@ isSymmetric(A + t(A)) # symmetric
 isSymmetric(A - t(A)) # skew symmetric
 ```
 
-
 # Inner product of two vectors
-Simple dot-product ...aka $vec1^T\ \ vec2$
+
+Simple dot-product ...aka $vec1^T  vec2$
+
 ```{r}
 vec1 <- c(1:3)
 vec2 <- c(1:3)
@@ -203,14 +218,14 @@ t(vec1) %*% vec2 # inner product
 
 ```
 
-
 # Outer product of two vectors
 
 [Instructional video on outer() and %o%](https://linkedin-learning.pxf.io/rweeklyouter)
 
-Transpose the second vector ... $vec1\ \ vec2^T$
+Transpose the second vector ... $vec1  vec2^T$
 
 These three versions produce the same result...
+
 ```{r}
 
 vec1 %*% t(vec2) # the actual formula 
@@ -219,7 +234,9 @@ vec1 %o% vec2 # %o% is a wrapper for outer()
 ```
 
 # Outer product of two matrices
+
 First...a reminder of the contents of matrix A and B
+
 ```{r}
 A
 B
@@ -229,47 +246,30 @@ Then...here's the outer product. This multiplies the first matrix by individual 
 
 Think of this as...
 
-```A * B[1,1]```
+`A * B[1,1]`
 
-```A * B[2,1]```
+`A * B[2,1]`
 
 ...and so on
+
 ```{r}
 outer(A,B) # ... A %o% B will produce the same result
 ```
 
 # Solve a system of equations
 
-[Instructional Video about solve()](https://linkedin-learning.pxf.io/rweeklysolvematrix)
+[Instructional video about solve()](https://linkedin-learning.pxf.io/rweeklysolvematrix)
 
 As an example, start with this system of equations:
 
-$$
-2x_1 - 3x_2 - 1x_3 = 2\\
-1x_1 + 2x_2 + 3x_3 = 15\\
-5x_1 + 1x_2 - 1x_3 = 4\\
-$$
+$$ 2x_1 - 3x_2 - 1x_3 = 2\\ 1x_1 + 2x_2 + 3x_3 = 15\\ 5x_1 + 1x_2 - 1x_3 = 4\\ $$
 
 ...when converted to a matrix...
 
-$$\begin{pmatrix}
-2 & -3 & -1\\
-1 & 2 & 3\\
-5 & 1 & -1\\
-\end{pmatrix}
-\begin{pmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{pmatrix}
-=
-\begin{pmatrix}
-2\\
-15\\
-4\\
-\end{pmatrix}$$
+$$\\begin{pmatrix} 2 & -3 & -1\\ 1 & 2 & 3\\ 5 & 1 & -1\\ \\end{pmatrix} \\begin{pmatrix} x_1\\ x_2\\ x_3\\ \\end{pmatrix} = \\begin{pmatrix} 2\\ 15\\ 4\\ \\end{pmatrix}$$
 
 ...then, to solve with R...
+
 ```{r}
 
 coef_A <- matrix(c(2,1,5,-3,2,1,-1,3,-1), nrow = 3)
@@ -278,10 +278,9 @@ RHS_system <- matrix(c(2,15,4), nrow = 3)
 solve(coef_A, RHS_system)
 ```
 
-
 # Inverse matrix
 
-[Instructional Video about solving for an inverse matrix](https://linkedin-learning.pxf.io/rweeklymatrixsolveinverse)
+[Instructional video about solving for an inverse matrix](https://linkedin-learning.pxf.io/rweeklymatrixsolveinverse)
 
 $AA^-1 == I$ ... -1 is the inverse of a matrix. I is the identity matrix
 
@@ -289,30 +288,28 @@ $AA^-1 == I$ ... -1 is the inverse of a matrix. I is the identity matrix
 
 solve(partiallyA) # solve() finds the inverse of a matrix
 ```
+
 Note: Some matrices return and error of `Lapack routine dgesv: system is exactly singular: U[3,3] = 0`
 
 Also note: `solve()` can be used in other ways. Refer to documentation.
 
 # Permutations
+
 ```{r}
 n <- 3 # for an n x n matrix
 factorial(n) # provides the number of permutations
 
 ```
+
 BaseR doesn't have a function to generate all possible permutations, but there are packages that will do this.
 
 # backsolve
 
-[Instructional Video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+[Instructional video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
 
-Backsolve solves a triangular system of linear equations. This can come  from a gaussian elimination (for example).
+Backsolve solves a triangular system of linear equations. This can come from a gaussian elimination (for example).
 
-Start with...
-\begin{align*}
--3x_1 + 2x_2 - x_3 &= -1\\
--2x_2 + 5x_3 &= -9\\
--2x_3 &= 2
-\end{align*}
+Start with... \\begin{align*} -3x_1 + 2x_2 - x_3 &= -1\\ -2x_2 + 5x_3 &= -9\\ -2x_3 &= 2 \\end{align*}
 
 ```{r}
 # r holds a matrix of coefficients for the system to be solved
@@ -327,19 +324,16 @@ x <- matrix(c(-1, -9, 2), ncol = 1)
 # backsolve produces the values of x.
 backsolve(r, x)
 ```
+
 Backsolve produces a column matrix where $matrix(c(x_3, x_2, x_1), ncol = 1)$
 
 # forwardsolve
 
-[Instructional Video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
+[Instructional video about forward and backward solve for a matrix](https://linkedin-learning.pxf.io/rweeklymatrixforewardbacksolve)
 
 `forwardsolve` uses the lower triangular matrix. (`backsolve()` uses the upper triangular matrix.) For example...
 
-\begin{align*}
-2 &= -2x_3\\
--9 &= 5x_3 -2x_2 \\
--1 &= -x_3+ 2x_2 -3x_1
-\end{align*}
+\\begin{align*} 2 &= -2x_3\\ -9 &= 5x_3 -2x_2 \\ -1 &= -x_3+ 2x_2 -3x_1 \\end{align*}
 
 ```{r}
 # r holds a matrix of coefficients for the system to be solved
@@ -357,56 +351,69 @@ forwardsolve(l, x)
 ```
 
 # Singular Value Decomposition
+
+[Instructional video about SVD and QR decomposition](https://linkedin-learning.pxf.io/rweeklysvdqrdecomp)
+
 ```{r}
 svd(A)
 ```
 
 # QR Decomposition
+
+[Instructional video about SVD and QR decomposition](https://linkedin-learning.pxf.io/rweeklysvdqrdecomp)
+
 Useful for solving $Ax = b$ ($A$ being a matrix, $b$ being a vector)
+
 ```{r}
 qr(A)
 ```
 
-
-
 # crossproduct
 
-[Instructional Video about crossproduct()](https://linkedin-learning.pxf.io/rweeklycrossproduct)
+[Instructional video about crossproduct()](https://linkedin-learning.pxf.io/rweeklycrossproduct)
 
-Not to be confused with a dot product (which is done with %*%). Regarding when to use ```crossprod()``` vs ```t(A) %*% B``` ... one may be faster than another based on the matrix being sparse. But this will only make a difference on massive matrices.
+Not to be confused with a dot product (which is done with %\*%). Regarding when to use `crossprod()` vs `t(A) %*% B` ... one may be faster than another based on the matrix being sparse. But this will only make a difference on massive matrices.
 
 ```{r}
 crossprod(A,B)
 ```
+
 ...which is equivalent to...
+
 ```{r}
 t(A) %*% B
 ```
 
 # tcrossproduct
+
 ```{r}
 tcrossprod(A,B)
 ```
+
 ...which is equivalent to...
+
 ```{r}
 A %*% t(B)
 ```
 
-
 # eigen values, eigen vectors
-```eigen()``` returns both eigen values and eigen vectors
+
+`eigen()` returns both eigen values and eigen vectors
 
 Here's a matrix...
+
 ```{r}
 A
 ```
 
 Here's the eigen value and vector
+
 ```{r}
 eigen(A)
 ```
 
 # Choleski Decomposition
+
 ```{r}
 
 symmetricalMatrix <- matrix(c(20,12,5,
@@ -418,8 +425,8 @@ isSymmetric(symmetricalMatrix)
 chol(symmetricalMatrix)
 ```
 
-
 # finally - look at package::matrix
+
 ```{r}
 #install.packages("Matrix")
 library(Matrix)
