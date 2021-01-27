@@ -8,7 +8,10 @@
 # R appears in the Graphic Menu. To move it to the programming menu
 # RPi menu -> Preferences -> main menu editor
 # programming -> new item: Name=R, Command=R, Launch in terminal. OK
-# Fix Icon: Rpi menu -> right click on R. Choose Properties. Click on Icon to bring up chooser
+# Fix Icon: Rpi menu -> right click on R. 
+#     Choose Properties. 
+#     Click on Icon to bring up chooser. 
+#     R logo is in system icons
 
 # install gui
 # Rstudio not available for Raspberry Pi (available for amd64, but not amdhf)
@@ -28,6 +31,7 @@
 # build -> set build commands...R CMD BATCH: R CMD BATCH ./%f
 
 # Geany terminal can be used to run R
+# enter Geany terminal, then type R to start R
 # also install packages
 # install.packages("cowsay")
 
