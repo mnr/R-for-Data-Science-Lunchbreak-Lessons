@@ -53,9 +53,9 @@ btnGamma <- 14
 
 
 while (doExampleOne) {
-  getGPIOcmd <- paste("gpioget gpiochip0", btnAlpha)
+  getGPIOcmd <- paste("gpioget -l gpiochip0", btnAlpha)
   if (system(getGPIOcmd, intern = TRUE) == 0) print("Alpha")
-  getGPIOcmd <- paste("gpioget gpiochip0", btnGamma)
+  getGPIOcmd <- paste("gpioget -l gpiochip0", btnGamma)
   if (system(getGPIOcmd, intern = TRUE) == 0) print("Gamma")
   
 }
