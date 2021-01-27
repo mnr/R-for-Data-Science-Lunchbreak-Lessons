@@ -11,6 +11,10 @@ newSparseMatrix <- sparseMatrix(i = valueInRow,
                                 x = c(1:(matrixRows*2))
 )
 
+# let's examine the layout just created
+valueInRow
+valueInCol
+1:(matrixRows*2)
 newSparseMatrix
 # graphic representation of a sparse matrix
 image(newSparseMatrix)
