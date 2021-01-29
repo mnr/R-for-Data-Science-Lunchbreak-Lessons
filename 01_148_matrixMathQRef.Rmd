@@ -396,7 +396,10 @@ tcrossprod(A,B)
 A %*% t(B)
 ```
 
-# eigen values, eigen vectors
+# eigenvalues, eigenvectors
+
+[Instructional video about Eigenvalues and Eigenvectors()](https://linkedin-learning.pxf.io/rweeklyeigen)
+
 
 `eigen()` returns both eigen values and eigen vectors
 
