@@ -1,5 +1,5 @@
 ---
-title: "0x_184 ClusteringQRef"
+title: "Clustering Quick Reference"
 author: "Mark Niemann-Ross"
 date: "2/6/2021"
 
@@ -17,7 +17,6 @@ library(cluster)
 
 ```
 
-# Quick Reference to Cluster Functions for the R programming language
 
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/).
 
