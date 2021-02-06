@@ -1,0 +1,76 @@
+---
+title: "0x_184 ClusteringQRef"
+author: "Mark Niemann-Ross"
+date: "2/6/2021"
+
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  github_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(cluster)
+
+```
+
+# Quick Reference to Cluster Functions for the R programming language
+
+This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/).
+
+The latest version of this quick reference is found [here](http://niemannross.com/link/????????????????)
+
+An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
+
+[The cluster package](https://cran.r-project.org/web/packages/cluster/index.html) is recommended for advanced operations. The cluster package is based on [Finding Groups in Data](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316801) 
+
+# Partitioning methods
+Divide dataset into k clusters. (k is defined by researcher)
+
+```{r, echo=TRUE}
+pam(agriculture, k=2)
+```
+
+
+```{r, echo=TRUE}
+plot(pam(agriculture, k=2))
+```
+
+## *kmeans* :
+## *pam* : Partitioning Around Medoids
+## *clara* : Clustering Large Applications
+## *fanny* : Fuzzy Analysis Clustering
+
+
+# Hierarchical methods
+Start with cluster of one item, then build larger clusters (or the opposite)
+
+```{r, echo=TRUE}
+agnes(agriculture)
+```
+
+
+```{r, echo=TRUE}
+plot(agnes(agriculture), which.plots = 2)
+```
+
+## *hclust* : 
+## *agnes* : Agglomerative Nesting
+## *diana* : DIvisive ANAlysis Clustering
+## *mona* : MONothetic Analysis Clustering of Binary Variables
+
+# Dissimilarity
+
+daisy creates a dissimilarity matrix
+```{r, echo=TRUE}
+daisy(head(agriculture))
+```
+
+## *daisy* : Dissimilarity Matrix Calculation
+
+
+
+
