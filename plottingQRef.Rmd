@@ -1,0 +1,648 @@
+---
+title: "Plotting Quick Reference"
+author: "Mark Niemann-Ross"
+date: "2/6/2021"
+
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  github_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(cluster)
+
+```
+
+This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/).
+
+The latest version of this quick reference is found [here](http://niemannross.com/link/????????????????)
+
+An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
+
+# plot
+
+idx_affiliate <- "" # affiliate link to the video
+idx_video <- "plot" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- c("plot()","lines()") 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
+# main idea: a quick overview of plotting in R
+
+data("ChickWeight")
+
+# the simplest of all plots
+plot(ChickWeight$Time,ChickWeight$weight)
+
+# change the appearance of the plotted points
+plot(ChickWeight$Time,ChickWeight$weight,type = "l")
+
+# setting the titles and labels
+plot(ChickWeight$Time,ChickWeight$weight,
+     type = "l",
+     main = "Plot for R Example",
+     sub = "We are learning a little at a time",
+     xlab="number of days since birth",
+     ylab="grams of body weight")
+
+# adding another line to a plot
+plot(ChickWeight$Time,ChickWeight$weight,
+     type = "l",
+     main = "Plot for R Example",
+     sub = "We are learning a little at a time",
+     xlab="number of days since birth",
+     ylab="grams of body weight")
+lines(c(1,20),c(350,50)) # lines(c(x1-value,x2-value),c(y1-value,y2-value))
+
+# change the appearance of the graph
+?lines
+?par
+lines(c(1,20),c(350,50), type="o", pch=22, lty=2, col="red")
+
+# You can also use functions as x and y arguments
+some.values <- function(my.something) { 
+  return(seq(from=1, to=100,length.out = length(my.something))^2)
+  }
+plot(mtcars$mpg,some.values(mtcars$mpg))
+
+# clever trick - put a plot in a function
+plotThis <- function(lineX,lineY) {plot(mtcars$mpg,
+     type = "b",
+     main = "Plot for R Example",
+     sub = "We are learning a little at a time",
+     xlab="mpg is Miles Per Gallon",
+     ylab="Look at the pretty bumps")
+lines(lineX,lineY)
+}
+plotThis(c(5,30),c(15,30))
+plotThis(c(15,30),c(15,40))
+
+
+
+# conditional density plot
+
+# create some data to work with
+data("ChickWeight")
+
+# given a certain amount of time, how much should a chick weigh?
+
+# because conditional density plots require a factor
+ThreeWeights <- cut(ChickWeight$weight, 3, labels = c(34, 148, 260))
+
+cdplot(ChickWeight$Time, ThreeWeights)
+
+cdplot(ChickWeight$Time, ThreeWeights,
+       main = "How much should a chick weigh?",
+       ylab = "Probable Weight",
+       xlab = "Days"
+)
+
+cdplot(factor(weight) ~ Time, data = ChickWeight)
+
+cdplot(factor(cut(weight, 6, labels = 1:6 * 62)) ~ Time, 
+       data = ChickWeight,
+       main = "How much should a chick weigh?",
+       ylab = "Weight",
+       xlab = "Days"
+       )
+
+# boxplot
+
+boxplot(mtcars$mpg)
+boxplot(mpg ~ cyl, data = mtcars, col = "lightgray", varwidth = TRUE, 
+        main = "mpg vs cylinders",
+        ylab = "mpg",xlab = "cylinders")
+fivenum(mtcars$mpg) # the numbers used to create the boxplot
+
+# histogram
+
+hist(ChickWeight$weight)
+
+hist(ChickWeight$weight, density = 30)
+
+hist(ChickWeight$weight, density = 30, breaks = c(0,100,200,max(ChickWeight$weight)))
+
+hist(ChickWeight$weight, breaks = fivenum(ChickWeight$weight))
+
+# coplot
+
+coplot(ChickWeight$weight ~ ChickWeight$Time | ChickWeight$Diet)
+
+coplot(weight ~ Time | Diet, data = ChickWeight)
+
+coplot(weight ~ Time | Diet, data = ChickWeight, columns = 4)
+
+coplot(weight ~ Time | Diet, data = ChickWeight, 
+       panel = function(x,y,...) { abline(lm(y ~ x)) })
+
+# further explanations:
+# http://geog.uoregon.edu/GeogR/topics/coplots.html
+
+# barplot
+
+fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
+
+barplot(fiveValues) # the simplest of bar plots
+
+barplot(height = fiveValues,
+        names.arg = fivenum(ChickWeight$weight),
+        horiz = TRUE,
+        col = fiveValues,
+        main = "Range for Chick Weights"
+        )
+
+# piechart
+
+# simple example of a pie chart
+pie(table(ChickWeight$Diet))
+
+# same pie chart with labeled segments
+pie(table(ChickWeight$Diet),labels = c("horsebean","linseed","soybean", "sunflower"))
+
+# same pie chart, labeled and with gradients instead of colors
+pie(table(ChickWeight$Diet),
+    labels = c("horsebean","linseed","soybean", "sunflower"),
+    density = 10*1:4,
+    angle = 100*1:4)
+
+# spineplot
+
+idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_spineplot" # affiliate link to the video
+idx_video <- "" # just the name of the video - used for lookup to the URL
+idx_task <- "" # optional: This video beongs to this group
+# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
+idx_topics <- "spineplot()" 
+idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+
+# main idea: creating spineplots
+# width of bars = frequency of X
+# height of bars = frequency of y
+
+# Y must be a factor and is the dependent variable
+spineplot(ChickWeight$weight, ChickWeight$Diet) # spineplot(x,y)
+
+# interesting observations
+# Height of bars indicates obs per diet. Diet 1 has more obs
+# Width of bars indicates obs per weight. More chicks are weighed between 50 and 100
+
+# or...
+
+spineplot(Diet ~ weight, data = ChickWeight) # spineplot(y ~ x)
+
+# bells and whistles
+
+spineplot(Diet ~ weight, 
+          data = ChickWeight,
+          breaks = fivenum(ChickWeight$weight),
+          col = c(5:8),
+          xlab = "Chicken Weight",
+          ylab = "Chicken Diet")
+
+# The above is actually a spinogram - like a histogram
+# example of a true spine plot. Both x and y must be factors
+spineplot(Diet ~ factor(weight), 
+          data = ChickWeight, 
+          col = c(5:8))
+
+spineplot(factor(weight) ~ Diet, 
+          data = ChickWeight,
+          col = c(1:nlevels(factor(ChickWeight$weight))))
+
+# subset of data
+# use the 1st half of data. Would make sense to have a more sophisticated selection
+spineplot(Diet ~ factor(weight), 
+          data = ChickWeight, 
+          subset = c(1:(578/2)),
+          drop.unused.levels = TRUE,
+          col = c(4:7)
+)
+
+
+# dotchart
+
+# dotchart works with matrix or vector (not dataframe)
+# Dotplot for vectors ----
+vectorToPlot <- c(1:6)
+
+names(vectorToPlot) <- c(LETTERS[1:6])
+
+dotchart(vectorToPlot, cex = .7)
+
+myGroup <- factor(c("group1","group3","group2","group1","group3","group2"))
+
+dotchart(vectorToPlot, groups = myGroup)
+
+dotchart(vectorToPlot,
+         gcolor = "red", groups = myGroup, 
+         gdata = c(median(vectorToPlot[myGroup == "group1"]),
+                   median(vectorToPlot[myGroup == "group2"]),
+                   median(vectorToPlot[myGroup == "group3"])),
+         cex = .7,
+         main = "Groups of Things", xlab = "Things")
+
+# dotplot for matrix ----
+
+View(WorldPhones)
+
+str(WorldPhones) # worldphones is a matrix - not a dataframe
+# Major labels (Groups) are matrix columns. Minor labels are matrix rows
+
+dotchart(WorldPhones) # works, but it's messy
+
+dotchart(WorldPhones, gcolor = "Blue", cex = .5,
+         gdata = colMeans(WorldPhones), gpch = 15,
+         main = "World Phones by Country") 
+
+# fourfoldplot
+
+# Basic Idea ----
+matrixOfData <- matrix(c(2,4,8,32), nrow = 2, ncol = 2, 
+                     dimnames = list(c("Chickens","Fish"), c("Big","Small")))
+
+fourfoldplot(matrixOfData)
+fourfoldplot(matrixOfData, conf.level = .5, space = .25)
+
+# Compare more than a matrix ----
+arrayOfData <- array(seq(from = 1, by = 134, length.out = 12), 
+                     dim = c(2,2,3), 
+                     dimnames = list(c("Chickens","Fish"), c("Big","Small")))
+
+fourfoldplot(arrayOfData, conf.level = .95, color = c("red","green"),
+             std = "all.max",
+             main = "Chicken vs Fish",
+             mfrow = c(1,3))
+# matplot
+
+# first create some sample matrix
+matrix1 <- matrix(c(1:8,1:8), nrow = 8, ncol = 2 )
+matrix2 <- matrix(sample(1:16, 16), nrow = 8, ncol = 2)
+
+devAskNewPage(ask = FALSE) # turns off interactive
+
+# then plot. Plots 1st column of 1st matrix against 2nd column of 2nd matrix
+matplot(matrix1, matrix2)
+matplot(matrix1, matrix2, type = "l")
+matplot(matrix1, matrix2, type = "ls") # other types: p, o, b, h, s
+matplot(matrix1, matrix2, type = "ls", 
+        lty = c(5,6), lwd = c(3,10), lend = c(.1,.3))
+
+#adding a second line
+matplot(matrix1, matrix2)
+matlines(matrix(c(1:16), nrow = 8, ncol = 2),
+         matrix(c(15:0), nrow = 8, ncol = 2))
+
+# mosaicplot
+
+# build an array for demonstration
+sample1 <- as.integer(runif(10, min = 1, max = 30))
+sample2 <- c(10:1)
+sample3 <- sample(1:30, 10)
+
+AnimalPlanet <- array(c(sample1, sample2, sample3), 
+                 dim = c(2,5,3),
+                 dimnames = list(
+                   "Planet" = c("Earth", "Mars"),
+                   "weight" = c("Featherweight", "Light", "Normal", "Medium", "Heavy" ),
+                   "animals" = c("Chickens", "Fish", "Pigs")
+                   )
+                 )
+
+mosaicplot(AnimalPlanet)
+
+# playin with options
+mosaicplot(AnimalPlanet, shade = TRUE)
+mosaicplot(AnimalPlanet, shade = fivenum(AnimalPlanet))
+
+mosaicplot(AnimalPlanet, shade = TRUE, sort = c(3,2,1))
+mosaicplot(AnimalPlanet, shade = TRUE, off = c(20,15,20))
+mosaicplot(AnimalPlanet, shade = TRUE, dir = c("h","v","h"))
+mosaicplot(AnimalPlanet, color = TRUE)
+mosaicplot(AnimalPlanet, color = c("red","green","blue"))
+mosaicplot(AnimalPlanet, cex.axis = .5)
+mosaicplot(AnimalPlanet, las = 1) # 0, 1, 2, 3
+mosaicplot(AnimalPlanet, type = "f")
+
+# also uses ~ for formula substitution
+
+# stemplot
+
+sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
+
+sample1 # difficult to parse this data
+
+plot(sample1) # doesn't clearly indicate anything
+
+stem(sample1) # demonstrates a normal curve
+
+stem(sample1, scale = 2)
+stem(sample1, atom = 1e-)
+
+# stripchart
+
+sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
+
+stripchart(sample1)
+
+# labeled multiple strip charts
+sample2 <- c(10:1)
+sample3 <- sample(1:30, 10)
+
+stripchart(list("Apples" = sample1, "Bananas" = sample2, "Coconuts" = sample3) )
+
+# using the "~" formula
+groupFactor <- factor(rep(c("Red", "Blue", "Yellow", "Red"), 25)) # set up a factor
+
+stripchart(sample1 ~ groupFactor)
+stripchart(sample1 ~ groupFactor, group.names = c("R", "B", "Y"))
+
+# other
+stripchart(sample1, method = "jitter", jitter = 1)
+stripchart(sample1, vertical = TRUE)
+
+# sunflower
+
+xpos <- c(1,2,3,3,1,2,3,1,2,3,4,5,6) # 13 xy points
+ypos <- c(1,1,1,1,1,1,1,1,1,1,1,1,1)
+
+# but only 6 points are plotted
+plot(xpos, ypos)
+
+# sunflowerplot will show duplicates and the extent they are duplicated
+# use xyTable to calculate overlapping points
+xyTbl <- xyTable(xpos, ypos)
+# then use sunflowerplot to show the overlap at each point
+sunflowerplot(xyTbl)
+
+# lattice xyplot
+
+library(lattice)
+
+# xyplot is an important place to start - all attributes are defined in this help file.
+
+# so easy to set up plots once you understand formulas
+xyplot(weight ~ Time, data = ChickWeight)
+xyplot(weight*3 ~ Time, data = ChickWeight)
+xyplot(weight ~ Time | Diet, data = ChickWeight)
+
+# what if you want to add two variables instead of combine graphs?
+ChickWeight$anotherVar <- 1:nrow(ChickWeight) # add a variable
+
+# not what we want
+xyplot(weight ~ Time + anotherVar, type = "l", data = ChickWeight)
+# use I() (inhibit interpretation) to get desired result
+xyplot(weight ~ I(Time + anotherVar), type = "l", data = ChickWeight)
+
+
+# lots of options for creating keys/legends
+xyplot(weight ~ Time | Diet, 
+       data = ChickWeight,
+       type = "a", # lines = average
+       groups = Diet, # necessary for auto.key,
+       auto.key = list(columns = 2, 
+                       points = FALSE,
+                       rectangles = TRUE,
+                       space = "bottom"))
+
+# or just use autokey
+xyplot( weight ~ Time, 
+        groups = Diet,
+        data = ChickWeight, 
+        type = "l",
+        auto.key = TRUE)
+
+
+
+
+# lattice cloud and wireframe
+
+library(lattice)
+
+# clouds and wireframes "look" the same...but
+
+# I need a third numeric variable
+ChickWeight$ascend <- 1:nrow(ChickWeight)
+names(ChickWeight) # review names of columns
+
+cloud( weight ~ Time * ascend, data = ChickWeight)
+
+# labeling axis
+cloud( weight ~ Time * Diet, 
+       data = ChickWeight,
+       scales = list(arrows = FALSE))
+
+# wireframe focused on comparing two variables against a third
+wireframe( weight ~ Time * Diet, data = ChickWeight)
+
+# also can be done with a matrix
+
+mymatrix <- matrix(1:10000, nrow = 100)
+wireframe(mymatrix)
+
+# ooh - fancy!
+wireframe(mymatrix,
+          shade = TRUE,
+          light.source = c(10,0,10),
+          drape = TRUE
+)
+
+
+# more parameters in xyplot and wireframe documentation
+
+# lattice level and contour
+
+library(lattice)
+
+names(ChickWeight) # review names of columns
+
+# using exact same setup as cloud and wireframe
+levelplot( weight ~ Time * Diet, data = ChickWeight)
+levelplot( weight ~ Time * Diet, data = ChickWeight, contour=TRUE) # adds lines
+levelplot( weight ~ Time * Diet, data = ChickWeight, cuts=7) # default cuts = 15
+
+contourplot( weight ~ Time * Diet, data = ChickWeight)
+contourplot( weight ~ Time * Diet, data = ChickWeight, region=TRUE) # adds levels
+contourplot( weight ~ Time * Diet, data = ChickWeight, labels = FALSE) # removes labels from lines
+contourplot( weight ~ Time * Diet, data = ChickWeight, cuts=30) 
+
+
+# lattice barchart
+
+library(lattice)
+
+
+# barchart ----------------------------------------------------------------
+# barchart using standard formula setup
+
+barchart( weight ~ Time + Diet, data = ChickWeight)
+
+barchart( Diet ~ weight, data = ChickWeight) # these plots make more sense with a factor 
+# With barchart options
+?barchart # refers to xyplot
+?panel.barchart # provides barchart specific options
+barchart( weight ~ Time + Diet, data = ChickWeight)
+barchart( weight ~ Time + Diet, data = ChickWeight, box.ratio = 10)
+barchart( weight ~ Time + Diet, data = ChickWeight, horizontal = TRUE) # note the axis stay the same
+
+
+# bwplot ------------------------------------------------------------------
+
+bwplot( Diet ~ Time, data = ChickWeight)
+
+
+# with bwplot options
+? panel.bwplot
+bwplot( Diet ~ Time, data = ChickWeight, box.ratio = 10)
+bwplot( Diet ~ Time, data = ChickWeight,
+        notch = TRUE, varwidth = TRUE
+)
+
+# changing axis label
+levels(ChickWeight$Diet) <- c("Apples","Bananas","Steak","Potatoes")
+bwplot( Diet ~ Time, data = ChickWeight)
+
+
+
+
+# lattice splom
+
+# SPLOM == Scatter PLot Matrices
+
+library(lattice)
+
+splom(ChickWeight)
+
+splom(ChickWeight[1:2]) # plots weight & time
+
+splom(~ChickWeight[1:2], 
+      groups = Diet, 
+      data = ChickWeight)
+
+# smooths out the scatter plot
+splom(~ChickWeight[1:2], 
+      groups = Diet, 
+      data = ChickWeight,
+      panel = panel.smoothScatter )
+
+
+# colorful - but is it useful?
+parallelplot(~ChickWeight[1:2], 
+      groups = Diet, 
+      data = ChickWeight) 
+
+#lattice panels
+
+# changing graph to smoothscatter plot
+splom(~ChickWeight[1:2], 
+      groups = Diet, 
+      data = ChickWeight,
+      panel = panel.smoothScatter)
+
+# other panel options
+splom(~ChickWeight[1:2], 
+      data = ChickWeight,
+      panel = panel.loess)
+
+splom(~ChickWeight[1:2], 
+      data = ChickWeight,
+      panel = panel.spline)
+
+# change bwplot to a violin plot
+bwplot( Diet ~ Time, data = ChickWeight, 
+        panel = function(..., box.ratio) {
+          panel.violin(..., col = "transparent",
+                       varwidth = TRUE, box.ratio = box.ratio)
+          panel.bwplot(..., fill = NULL, box.ratio = .1)
+          }
+          )
+
+# combine panels
+
+someColors <- colorRampPalette(c("yellow","blue"))
+
+# create a function to be used with panels
+# look up ?panel for more options
+myPanelFunc <- function(x,y,..){
+  panel.smoothScatter(x,y, lwd = 1, colramp = someColors)
+  panel.loess(x,y, lwd = 2, col = "red")
+}
+
+#...then set panel = to the panel plotting function
+splom(~ChickWeight[1:2], 
+      groups = Diet, 
+      data = ChickWeight,
+      panel = myPanelFunc
+)
+
+# list of plot types and possible panels
+
+# barchart: panel.barchart
+# bwplot: panel.bwplot, panel.violin
+# cloud : panel.cloud, panel.3dscatter, panel.3dwire, panel.wireframe
+# contourplot: panel.contourplot, panel.levelplot, panel.levelplot.raster
+# densityplot: panel.densityplot
+# dotplot: panel.dotplot
+# generics: panel.abline, panel.arrows, panel.average, panel.axis, panel.curve, 
+#           panel.fill, panel.functions, panel.grid, panel.linejoin, panel.lines
+#           panel.lmline, panel.loess, panel.mathdensity, panel.points, panel.polygon,
+#           panel.refline, panel.rug, panel.smoothscatter, panel.violin
+# histogram: panel.histogram
+# levelplot: panel.contourplot, panel.levelplot, panel.levelplot.raster
+# parallel: panel.parallel
+# qqmath: panel.qqmath, panel.qqmathline
+# stripplot: panel.stripplot
+# xyplot: panel.xyplot, panel.qq, panel.splom
+
+# lattice strip plot
+
+library(lattice)
+
+# simple plot. Pay attention to formula factor~numeric
+stripplot( Diet ~ weight , data = ChickWeight)
+
+# with panel.stripplot options
+# note these can be passed without using panel.stripplot()
+
+# jitter
+stripplot( Diet ~ weight , data = ChickWeight,
+           jitter.data = TRUE
+           )
+
+stripplot( Diet ~ weight , data = ChickWeight,
+           jitter.data = TRUE,
+           factor = 1
+)
+
+stripplot( Diet ~ weight , data = ChickWeight,
+           jitter.data = TRUE,
+           factor = .5
+)
+
+stripplot( Diet ~ weight , data = ChickWeight,
+           jitter.data = TRUE,
+           amount = .2 # similar to factor
+)
+
+
+# groups
+stripplot( Diet ~ weight , data = ChickWeight,
+           jitter.data = TRUE,
+           factor = 1,
+           groups = Diet
+)
+
+# vertical plot
+
+# not what we want
+stripplot( Diet ~ weight , data = ChickWeight,
+           horizontal = FALSE
+)
+
+# Need to also change the formula
+stripplot( weight ~ Diet , data = ChickWeight,
+           horizontal = FALSE
+)
