@@ -20,7 +20,7 @@ library(cluster)
 
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/).
 
-The latest version of this quick reference is found [here](http://niemannross.com/link/????????????????)
+The latest version of this quick reference is found [here](http://niemannross.com/link/rclusterqref)
 
 An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
 
