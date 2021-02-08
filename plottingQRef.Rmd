@@ -26,6 +26,8 @@ An index to all R functions covered at LinkedIn Learning is found [here](http://
 
 # plot
 
+[Instructional video on plot()](https://linkedin-learning.pxf.io/plot)
+
 The simplest of all plots
 
 ```{r, echo=TRUE}
@@ -63,7 +65,6 @@ plot(ChickWeight$Time,ChickWeight$weight,
 lines(c(1,20),c(350,50))
 
 ```
-
 
 
 change the appearance of the graph
@@ -113,6 +114,8 @@ plotThis(c(15,30),c(25,5))
 
 # conditional density plot
 
+[Instructional video on cdplot()](https://linkedin-learning.pxf.io/rweekly_cdplot)
+
 Suppose you are doing research: given a certain amount of time, how much should a chick weigh?
 
 ```{r echo=TRUE}
@@ -142,6 +145,9 @@ cdplot(factor(cut(weight, 6, labels = 1:6 * 62)) ~ Time,
 ```
 
 # boxplot
+
+[Instructional video on boxplot()](https://linkedin-learning.pxf.io/rweekly_boxplot)
+
 ```{r, echo=TRUE}
 boxplot(mtcars$mpg)
 boxplot(mpg ~ cyl, data = mtcars, col = "lightgray", varwidth = TRUE, 
@@ -155,6 +161,9 @@ fivenum(mtcars$mpg)
 
 
 # Histogram
+
+[Instructional video on hist()](https://linkedin-learning.pxf.io/rweekly_histogram)
+
 ```{r, echo=TRUE}
 
 
@@ -169,6 +178,9 @@ hist(ChickWeight$weight, breaks = fivenum(ChickWeight$weight))
 ```
 
 # coplot
+
+[Instructional video on coplot()](https://linkedin-learning.pxf.io/rweekly_coplot)
+
 ```{r, echo=TRUE}
 coplot(ChickWeight$weight ~ ChickWeight$Time | ChickWeight$Diet)
 
@@ -186,6 +198,9 @@ coplot(weight ~ Time | Diet, data = ChickWeight,
 
 
 # barplot
+
+[Instructional video on barplot()](https://linkedin-learning.pxf.io/rweekly_barplot)
+
 ```{r, echo=TRUE}
 
 fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
@@ -202,6 +217,9 @@ barplot(height = fiveValues,
 ```
 
 # piechart
+
+[Instructional video on pie()](https://linkedin-learning.pxf.io/rweekly_piechart)
+
 ```{r, echo=TRUE}
 # simple example of a pie chart
 pie(table(ChickWeight$Diet))
@@ -219,6 +237,9 @@ pie(table(ChickWeight$Diet),
 ```
 
 # spineplot
+
+[Instructional video on spineplot()](https://linkedin-learning.pxf.io/rweekly_spineplot)
+
 ```{r, echo=TRUE}
 # width of bars = frequency of X
 # height of bars = frequency of y
@@ -267,6 +288,9 @@ spineplot(Diet ~ factor(weight),
 
 
 # dotchart
+
+[Instructional video on dotchart()](https://linkedin-learning.pxf.io/rweeklydotchart)
+
 ```{r, echo=TRUE}
 # dotchart works with matrix or vector (not dataframe)
 # Dotplot for vectors ----
@@ -303,6 +327,9 @@ dotchart(WorldPhones, gcolor = "Blue", cex = .5,
 
 
 # fourfoldplot
+
+[Instructional video on fourfoldplot()](https://linkedin-learning.pxf.io/rweekly_fourfoldplot)
+
 ```{r, echo=TRUE}
 # Basic Idea ----
 matrixOfData <- matrix(c(2,4,8,32), nrow = 2, ncol = 2, 
@@ -324,6 +351,9 @@ fourfoldplot(arrayOfData, conf.level = .95, color = c("red","green"),
 ```
 
 # matplot
+
+[Instructional video on matplot()](https://linkedin-learning.pxf.io/rweek_matplot)
+
 ```{r, echo=TRUE}
 # first create some sample matrix
 matrix1 <- matrix(c(1:8,1:8), nrow = 8, ncol = 2 )
@@ -347,6 +377,9 @@ matlines(matrix(c(1:16), nrow = 8, ncol = 2),
 
 
 # mosaicplot
+
+[Instructional video on mosaicplot()](https://linkedin-learning.pxf.io/rweekly_mosaicplot)
+
 ```{r, echo=TRUE}
 # build an array for demonstration
 sample1 <- as.integer(runif(10, min = 1, max = 30))
@@ -384,6 +417,9 @@ mosaicplot(AnimalPlanet, type = "f")
 
 
 # stemplot
+
+[Instructional video on stem()](https://linkedin-learning.pxf.io/rweekly_stemplot)
+
 ```{r, echo=TRUE}
 
 sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
@@ -400,6 +436,9 @@ stem(sample1, scale = 2)
 ```
 
 # stripchart
+
+[Instructional video on stripchart()](https://linkedin-learning.pxf.io/rweekly_stripchart)
+
 ```{r, echo=TRUE}
 sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
 
@@ -425,6 +464,9 @@ stripchart(sample1, vertical = TRUE)
 
 
 # sunflower
+
+[Instructional video on sunflowerplot()](https://linkedin-learning.pxf.io/rweekly_sunflower)
+
 ```{r, echo=TRUE}
 
 xpos <- c(1,2,3,3,1,2,3,1,2,3,4,5,6) # 13 xy points
@@ -442,6 +484,8 @@ sunflowerplot(xyTbl)
 ```
 
 # xyplot
+
+[Instructional video on xyplot()](https://linkedin-learning.pxf.io/rweeklatticexyplot)
 
 Part of the lattice package
 
@@ -486,6 +530,8 @@ xyplot( weight ~ Time,
 
 # cloud and wireframe
 
+[Instructional video on cloud()](https://linkedin-learning.pxf.io/rweeklycloudplot)
+
 Part of the lattice package
 
 ```{r, echo=TRUE}
@@ -525,6 +571,8 @@ wireframe(mymatrix,
 
 # level and contour
 
+[Instructional video on levelplot() and contourplot()](https://linkedin-learning.pxf.io/rweeklycontourplot)
+
 Part of the lattice package
 
 ```{r, echo=TRUE}
@@ -546,6 +594,8 @@ contourplot( weight ~ Time * Diet, data = ChickWeight, cuts=30)
 
 # barchart
 
+[Instructional video on barchart()](https://linkedin-learning.pxf.io/rweeklybarchart)
+
 Part of the lattice package
 
 ```{r, echo=TRUE}
@@ -565,8 +615,10 @@ barchart( weight ~ Time + Diet, data = ChickWeight, horizontal = TRUE) # note th
 ```
 
 
-
 # bwplot
+
+[Instructional video on bwplot()](https://linkedin-learning.pxf.io/rweeklybarchart)
+
 ```{r, echo=TRUE}
 bwplot( Diet ~ Time, data = ChickWeight)
 
@@ -585,6 +637,8 @@ bwplot( Diet ~ Time, data = ChickWeight)
 
 
 # splom
+
+[Instructional video on splom()](https://linkedin-learning.pxf.io/rweeklysplom)
 
 Part of the lattice package
 
@@ -615,6 +669,8 @@ parallelplot(~ChickWeight[1:2],
 
 
 # panels
+
+[Instructional video on lattice panels](https://linkedin-learning.pxf.io/rweekpanels)
 
 Part of the lattice package
 
@@ -684,6 +740,8 @@ splom(~ChickWeight[1:2],
 ```
 
 # strip plot
+
+[Instructional video on stripplot()](https://linkedin-learning.pxf.io/rweekstripplot)
 
 Part of the lattice package
 
