@@ -13,7 +13,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(cluster)
+library(lattice)
+data("ChickWeight")
 
 ```
 
@@ -25,24 +26,33 @@ An index to all R functions covered at LinkedIn Learning is found [here](http://
 
 # plot
 
-idx_affiliate <- "" # affiliate link to the video
-idx_video <- "plot" # just the name of the video - used for lookup to the URL
-idx_task <- "" # optional: This video beongs to this group
-# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
-idx_topics <- c("plot()","lines()") 
-idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
+The simplest of all plots
 
-# main idea: a quick overview of plotting in R
-
-data("ChickWeight")
-
-# the simplest of all plots
+```{r, echo=TRUE}
 plot(ChickWeight$Time,ChickWeight$weight)
+```
 
-# change the appearance of the plotted points
+
+Change the appearance of the plotted points
+```{r, echo=TRUE}
 plot(ChickWeight$Time,ChickWeight$weight,type = "l")
+```
 
-# setting the titles and labels
+setting the titles and labels
+
+```{r, echo=TRUE}
+plot(ChickWeight$Time,ChickWeight$weight,
+     type = "l",
+     main = "Plot for R Example",
+     sub = "We are learning a little at a time",
+     xlab="number of days since birth",
+     ylab="grams of body weight")
+```
+
+
+
+add another line to a plot
+```{r, echo=TRUE}
 plot(ChickWeight$Time,ChickWeight$weight,
      type = "l",
      main = "Plot for R Example",
@@ -50,27 +60,40 @@ plot(ChickWeight$Time,ChickWeight$weight,
      xlab="number of days since birth",
      ylab="grams of body weight")
 
-# adding another line to a plot
+lines(c(1,20),c(350,50))
+
+```
+
+
+
+change the appearance of the graph
+```{r, echo=TRUE}
+
 plot(ChickWeight$Time,ChickWeight$weight,
      type = "l",
      main = "Plot for R Example",
      sub = "We are learning a little at a time",
      xlab="number of days since birth",
      ylab="grams of body weight")
-lines(c(1,20),c(350,50)) # lines(c(x1-value,x2-value),c(y1-value,y2-value))
-
-# change the appearance of the graph
-?lines
-?par
 lines(c(1,20),c(350,50), type="o", pch=22, lty=2, col="red")
 
-# You can also use functions as x and y arguments
+```
+
+
+You can also use functions as x and y arguments
+
+```{r, echo=TRUE}
 some.values <- function(my.something) { 
   return(seq(from=1, to=100,length.out = length(my.something))^2)
   }
 plot(mtcars$mpg,some.values(mtcars$mpg))
 
-# clever trick - put a plot in a function
+```
+
+
+Here's a clever trick - put a plot in a function
+```{r, echo=TRUE}
+
 plotThis <- function(lineX,lineY) {plot(mtcars$mpg,
      type = "b",
      main = "Plot for R Example",
@@ -80,16 +103,19 @@ plotThis <- function(lineX,lineY) {plot(mtcars$mpg,
 lines(lineX,lineY)
 }
 plotThis(c(5,30),c(15,30))
-plotThis(c(15,30),c(15,40))
+
+plotThis(c(15,30),c(25,5))
+
+```
+
 
 
 
 # conditional density plot
 
-# create some data to work with
-data("ChickWeight")
+Suppose you are doing research: given a certain amount of time, how much should a chick weigh?
 
-# given a certain amount of time, how much should a chick weigh?
+```{r echo=TRUE}
 
 # because conditional density plots require a factor
 ThreeWeights <- cut(ChickWeight$weight, 3, labels = c(34, 148, 260))
@@ -102,8 +128,10 @@ cdplot(ChickWeight$Time, ThreeWeights,
        xlab = "Days"
 )
 
+# can you say "overplotting"
 cdplot(factor(weight) ~ Time, data = ChickWeight)
 
+# let's fix the overplot with cut()
 cdplot(factor(cut(weight, 6, labels = 1:6 * 62)) ~ Time, 
        data = ChickWeight,
        main = "How much should a chick weigh?",
@@ -111,15 +139,24 @@ cdplot(factor(cut(weight, 6, labels = 1:6 * 62)) ~ Time,
        xlab = "Days"
        )
 
-# boxplot
+```
 
+# boxplot
+```{r, echo=TRUE}
 boxplot(mtcars$mpg)
 boxplot(mpg ~ cyl, data = mtcars, col = "lightgray", varwidth = TRUE, 
         main = "mpg vs cylinders",
         ylab = "mpg",xlab = "cylinders")
-fivenum(mtcars$mpg) # the numbers used to create the boxplot
 
-# histogram
+# Here are the numbers used to create the boxplot
+fivenum(mtcars$mpg) 
+
+```
+
+
+# Histogram
+```{r, echo=TRUE}
+
 
 hist(ChickWeight$weight)
 
@@ -129,8 +166,10 @@ hist(ChickWeight$weight, density = 30, breaks = c(0,100,200,max(ChickWeight$weig
 
 hist(ChickWeight$weight, breaks = fivenum(ChickWeight$weight))
 
-# coplot
+```
 
+# coplot
+```{r, echo=TRUE}
 coplot(ChickWeight$weight ~ ChickWeight$Time | ChickWeight$Diet)
 
 coplot(weight ~ Time | Diet, data = ChickWeight)
@@ -143,7 +182,11 @@ coplot(weight ~ Time | Diet, data = ChickWeight,
 # further explanations:
 # http://geog.uoregon.edu/GeogR/topics/coplots.html
 
+```
+
+
 # barplot
+```{r, echo=TRUE}
 
 fiveValues <- fivenum(ChickWeight$weight) # just to see what we're working with
 
@@ -156,8 +199,10 @@ barplot(height = fiveValues,
         main = "Range for Chick Weights"
         )
 
-# piechart
+```
 
+# piechart
+```{r, echo=TRUE}
 # simple example of a pie chart
 pie(table(ChickWeight$Diet))
 
@@ -170,16 +215,11 @@ pie(table(ChickWeight$Diet),
     density = 10*1:4,
     angle = 100*1:4)
 
+
+```
+
 # spineplot
-
-idx_affiliate <- "https://linkedin-learning.pxf.io/rweekly_spineplot" # affiliate link to the video
-idx_video <- "" # just the name of the video - used for lookup to the URL
-idx_task <- "" # optional: This video beongs to this group
-# Text for this link. Optional vector - c("main topic", "additional topic", "etc")
-idx_topics <- "spineplot()" 
-idx_build(idx_affiliate, idx_video, idx_task, idx_topics)
-
-# main idea: creating spineplots
+```{r, echo=TRUE}
 # width of bars = frequency of X
 # height of bars = frequency of y
 
@@ -223,8 +263,11 @@ spineplot(Diet ~ factor(weight),
 )
 
 
-# dotchart
+```
 
+
+# dotchart
+```{r, echo=TRUE}
 # dotchart works with matrix or vector (not dataframe)
 # Dotplot for vectors ----
 vectorToPlot <- c(1:6)
@@ -247,8 +290,6 @@ dotchart(vectorToPlot,
 
 # dotplot for matrix ----
 
-View(WorldPhones)
-
 str(WorldPhones) # worldphones is a matrix - not a dataframe
 # Major labels (Groups) are matrix columns. Minor labels are matrix rows
 
@@ -258,8 +299,11 @@ dotchart(WorldPhones, gcolor = "Blue", cex = .5,
          gdata = colMeans(WorldPhones), gpch = 15,
          main = "World Phones by Country") 
 
-# fourfoldplot
+```
 
+
+# fourfoldplot
+```{r, echo=TRUE}
 # Basic Idea ----
 matrixOfData <- matrix(c(2,4,8,32), nrow = 2, ncol = 2, 
                      dimnames = list(c("Chickens","Fish"), c("Big","Small")))
@@ -276,8 +320,11 @@ fourfoldplot(arrayOfData, conf.level = .95, color = c("red","green"),
              std = "all.max",
              main = "Chicken vs Fish",
              mfrow = c(1,3))
-# matplot
 
+```
+
+# matplot
+```{r, echo=TRUE}
 # first create some sample matrix
 matrix1 <- matrix(c(1:8,1:8), nrow = 8, ncol = 2 )
 matrix2 <- matrix(sample(1:16, 16), nrow = 8, ncol = 2)
@@ -296,8 +343,11 @@ matplot(matrix1, matrix2)
 matlines(matrix(c(1:16), nrow = 8, ncol = 2),
          matrix(c(15:0), nrow = 8, ncol = 2))
 
-# mosaicplot
+```
 
+
+# mosaicplot
+```{r, echo=TRUE}
 # build an array for demonstration
 sample1 <- as.integer(runif(10, min = 1, max = 30))
 sample2 <- c(10:1)
@@ -314,6 +364,7 @@ AnimalPlanet <- array(c(sample1, sample2, sample3),
 
 mosaicplot(AnimalPlanet)
 
+
 # playin with options
 mosaicplot(AnimalPlanet, shade = TRUE)
 mosaicplot(AnimalPlanet, shade = fivenum(AnimalPlanet))
@@ -329,21 +380,27 @@ mosaicplot(AnimalPlanet, type = "f")
 
 # also uses ~ for formula substitution
 
+```
+
+
 # stemplot
+```{r, echo=TRUE}
 
 sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
 
 sample1 # difficult to parse this data
 
-plot(sample1) # doesn't clearly indicate anything
+# doesn't clearly indicate anything
+plot(sample1) 
 
 stem(sample1) # demonstrates a normal curve
 
 stem(sample1, scale = 2)
-stem(sample1, atom = 1e-)
+
+```
 
 # stripchart
-
+```{r, echo=TRUE}
 sample1 <- rnorm(100, mean = 10, sd = 3) # creates a normal distribution (bell curve)
 
 stripchart(sample1)
@@ -364,7 +421,11 @@ stripchart(sample1 ~ groupFactor, group.names = c("R", "B", "Y"))
 stripchart(sample1, method = "jitter", jitter = 1)
 stripchart(sample1, vertical = TRUE)
 
+```
+
+
 # sunflower
+```{r, echo=TRUE}
 
 xpos <- c(1,2,3,3,1,2,3,1,2,3,4,5,6) # 13 xy points
 ypos <- c(1,1,1,1,1,1,1,1,1,1,1,1,1)
@@ -378,9 +439,13 @@ xyTbl <- xyTable(xpos, ypos)
 # then use sunflowerplot to show the overlap at each point
 sunflowerplot(xyTbl)
 
-# lattice xyplot
+```
 
-library(lattice)
+# xyplot
+
+Part of the lattice package
+
+```{r, echo=TRUE}
 
 # xyplot is an important place to start - all attributes are defined in this help file.
 
@@ -415,12 +480,15 @@ xyplot( weight ~ Time,
         type = "l",
         auto.key = TRUE)
 
+```
 
 
 
-# lattice cloud and wireframe
+# cloud and wireframe
 
-library(lattice)
+Part of the lattice package
+
+```{r, echo=TRUE}
 
 # clouds and wireframes "look" the same...but
 
@@ -453,9 +521,13 @@ wireframe(mymatrix,
 
 # more parameters in xyplot and wireframe documentation
 
-# lattice level and contour
+```
 
-library(lattice)
+# level and contour
+
+Part of the lattice package
+
+```{r, echo=TRUE}
 
 names(ChickWeight) # review names of columns
 
@@ -470,32 +542,36 @@ contourplot( weight ~ Time * Diet, data = ChickWeight, labels = FALSE) # removes
 contourplot( weight ~ Time * Diet, data = ChickWeight, cuts=30) 
 
 
-# lattice barchart
+```
 
-library(lattice)
+# barchart
 
+Part of the lattice package
 
-# barchart ----------------------------------------------------------------
+```{r, echo=TRUE}
+
 # barchart using standard formula setup
 
 barchart( weight ~ Time + Diet, data = ChickWeight)
 
 barchart( Diet ~ weight, data = ChickWeight) # these plots make more sense with a factor 
+
 # With barchart options
-?barchart # refers to xyplot
-?panel.barchart # provides barchart specific options
 barchart( weight ~ Time + Diet, data = ChickWeight)
 barchart( weight ~ Time + Diet, data = ChickWeight, box.ratio = 10)
 barchart( weight ~ Time + Diet, data = ChickWeight, horizontal = TRUE) # note the axis stay the same
 
 
-# bwplot ------------------------------------------------------------------
+```
 
+
+
+# bwplot
+```{r, echo=TRUE}
 bwplot( Diet ~ Time, data = ChickWeight)
 
 
 # with bwplot options
-? panel.bwplot
 bwplot( Diet ~ Time, data = ChickWeight, box.ratio = 10)
 bwplot( Diet ~ Time, data = ChickWeight,
         notch = TRUE, varwidth = TRUE
@@ -505,15 +581,16 @@ bwplot( Diet ~ Time, data = ChickWeight,
 levels(ChickWeight$Diet) <- c("Apples","Bananas","Steak","Potatoes")
 bwplot( Diet ~ Time, data = ChickWeight)
 
+```
 
 
+# splom
 
-# lattice splom
+Part of the lattice package
 
-# SPLOM == Scatter PLot Matrices
+SPLOM == Scatter PLot Matrices
 
-library(lattice)
-
+```{r, echo=TRUE}
 splom(ChickWeight)
 
 splom(ChickWeight[1:2]) # plots weight & time
@@ -534,8 +611,14 @@ parallelplot(~ChickWeight[1:2],
       groups = Diet, 
       data = ChickWeight) 
 
-#lattice panels
+```
 
+
+# panels
+
+Part of the lattice package
+
+```{r, echo=TRUE}
 # changing graph to smoothscatter plot
 splom(~ChickWeight[1:2], 
       groups = Diet, 
@@ -597,9 +680,14 @@ splom(~ChickWeight[1:2],
 # stripplot: panel.stripplot
 # xyplot: panel.xyplot, panel.qq, panel.splom
 
-# lattice strip plot
 
-library(lattice)
+```
+
+# strip plot
+
+Part of the lattice package
+
+```{r, echo=TRUE}
 
 # simple plot. Pay attention to formula factor~numeric
 stripplot( Diet ~ weight , data = ChickWeight)
@@ -635,8 +723,6 @@ stripplot( Diet ~ weight , data = ChickWeight,
            groups = Diet
 )
 
-# vertical plot
-
 # not what we want
 stripplot( Diet ~ weight , data = ChickWeight,
            horizontal = FALSE
@@ -646,3 +732,6 @@ stripplot( Diet ~ weight , data = ChickWeight,
 stripplot( weight ~ Diet , data = ChickWeight,
            horizontal = FALSE
 )
+
+```
+
