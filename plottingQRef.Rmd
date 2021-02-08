@@ -22,6 +22,10 @@ This Quick Reference is supplemental to courses on [LinkedIn Learning](https://w
 
 The latest version of this quick reference is found [here](http://niemannross.com/link/rplotqref)
 
+A quick reference to [matrix math functions in R is here](http://niemannross.com/link/rmatrixqref)
+
+A quick reference to [clustering functions in R is here](http://niemannross.com/link/rclusterqref)
+
 An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
 
 # plot

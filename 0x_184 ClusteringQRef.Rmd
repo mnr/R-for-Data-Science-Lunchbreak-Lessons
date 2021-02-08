@@ -1,5 +1,5 @@
 ---
-title: "Clustering Quick Reference"
+title: "Clustering in R Quick Reference"
 author: "Mark Niemann-Ross"
 date: "2/6/2021"
 
@@ -21,6 +21,10 @@ library(cluster)
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/).
 
 The latest version of this quick reference is found [here](http://niemannross.com/link/rclusterqref)
+
+A quick reference to [plotting functions in base R is here](http://niemannross.com/link/rplotqref)
+
+A quick reference to [matrix math functions in R is here](http://niemannross.com/link/rmatrixqref)
 
 An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex)
 
