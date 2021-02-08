@@ -29,6 +29,8 @@ An index to all R functions covered at LinkedIn Learning is found [here](http://
 # Partitioning methods
 Divide dataset into k clusters. (k is defined by researcher)
 
+## *pam* : Partitioning Around Medoids
+
 ```{r, echo=TRUE}
 pam(agriculture, k=2)
 ```
@@ -39,13 +41,14 @@ plot(pam(agriculture, k=2))
 ```
 
 ## *kmeans* :
-## *pam* : Partitioning Around Medoids
 ## *clara* : Clustering Large Applications
 ## *fanny* : Fuzzy Analysis Clustering
 
 
 # Hierarchical methods
 Start with cluster of one item, then build larger clusters (or the opposite)
+
+## *agnes* : Agglomerative Nesting
 
 ```{r, echo=TRUE}
 agnes(agriculture)
@@ -57,18 +60,18 @@ plot(agnes(agriculture), which.plots = 2)
 ```
 
 ## *hclust* : 
-## *agnes* : Agglomerative Nesting
 ## *diana* : DIvisive ANAlysis Clustering
 ## *mona* : MONothetic Analysis Clustering of Binary Variables
 
 # Dissimilarity
+
+## *daisy* : Dissimilarity Matrix Calculation
 
 daisy creates a dissimilarity matrix
 ```{r, echo=TRUE}
 daisy(head(agriculture))
 ```
 
-## *daisy* : Dissimilarity Matrix Calculation
 
 
 
