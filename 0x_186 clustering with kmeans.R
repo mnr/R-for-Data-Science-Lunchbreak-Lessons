@@ -1,1 +1,2 @@
 # Clustering: kmeans
+# Partitioning method

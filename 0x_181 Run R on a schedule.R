@@ -1,7 +1,12 @@
 # run an R script on a schedule
 
-# Windows ?
-https://cran.r-project.org/package=taskscheduleR
+# Windows
+# https://cran.r-project.org/package=taskscheduleR
+
+install.packages("taskscheduleR")
+install.packages("htmltools")
+install.packages("miniUI")
+# adds taskScheduleR to rstudio addins menu but requires miniUI - installation fails
 
 # Macintosh & Linux: Cron
 https://cran.r-project.org/package=cronR

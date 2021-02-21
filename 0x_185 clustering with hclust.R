@@ -1,1 +1,3 @@
 # clustering: hclust
+
+# Hierarchical method
