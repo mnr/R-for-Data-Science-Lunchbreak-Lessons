@@ -14,7 +14,8 @@ dir.create(downloadHere)
 
 for (dwnldIndex in 1:nrow(RT_works)) {
   print(RT_works[dwnldIndex, ])
-  oneDF <- gutenberg_download(RT_works[dwnldIndex,"gutenberg_id"])
+  oneDF <- gutenberg_download(RT_works[dwnldIndex,"gutenberg_id"], 
+                              mirror = "http://www.gutenberg.org/dirs/")
   
   saveHere <- file.path(downloadHere, make.names(RT_works[dwnldIndex,"title"]))
   write.table(oneDF$text, saveHere, row.names = FALSE)

@@ -20,10 +20,12 @@ RT_works <- gutenberg_works(author == "Tagore, Rabindranath")
 RT_gbID <- RT_works$gutenberg_id
 
 # download all files
-RT_corpus <- gutenberg_download(RT_gbID)
+RT_corpus <- gutenberg_download(RT_gbID, mirror = "http://www.gutenberg.org/dirs/")
 
 # strip headers and footer from the book (in prep for NLP)
 RT_corpus <- gutenberg_download(RT_gbID, 
                                 strip = TRUE,
-                                meta_fields = c("title", "language"))
+                                meta_fields = c("title", "language"), 
+                                mirror = "http://www.gutenberg.org/dirs/"
+                                )
 
