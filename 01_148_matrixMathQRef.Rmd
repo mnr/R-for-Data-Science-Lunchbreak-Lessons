@@ -1,6 +1,7 @@
 ---
 title: "R Matrix Math Quick Reference"
 author: "Mark Niemann-Ross"
+date: "`r Sys.Date()`"
 output:
   html_document:
     df_print: paged
