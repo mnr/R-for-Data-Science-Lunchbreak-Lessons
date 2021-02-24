@@ -37,13 +37,27 @@ Divide dataset into k clusters. (k is defined by researcher)
 ## *pam* : Partitioning Around Medoids
 
 ```{r, echo=TRUE}
-pam(agriculture, k=2)
-```
+simpleQuakes <- quakes[,c("long","lat")]
+mypam <- pam(simpleQuakes,2) # assuming 2 medoids
+
+# components of mypam - see pam.object
+# for example...
+mypam$medoids # coordinates of medoids
+mypam$id.med # indices of medoids (i.e. simpleQuakes[mypam$id.med,])
+
+# mypam$clustering # which points belong to which medoid
+# same as... pam(simpleQuakes, 4, cluster.only = TRUE)
 
 
-```{r, echo=TRUE}
-plot(pam(agriculture, k=2))
+# plotting PAM
+#plot(mypam)
+#plot(mypam, ask = TRUE) # menu for plots
+
+#map("worldHires","Fiji", xlim=c(160,190), ylim =c(-40,-15))
+plot(mypam, which.plots = 1)
+
 ```
+
 
 ## *kmeans* :
 ## *clara* : Clustering Large Applications

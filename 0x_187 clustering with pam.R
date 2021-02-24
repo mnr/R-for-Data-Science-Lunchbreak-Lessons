@@ -26,11 +26,18 @@ plot(mypam)
 
 plot(mypam, ask = TRUE) # menu for plots
 
-map("worldHires","Fiji", xlim=c(160,190), ylim =c(-40,-15))
 plot(mypam, which.plots = 1)
 
 
 # Presentation ENDS HERE
+
+install.packages("maps")
+install.packages("mapdata")
+library(maps)
+library(mapdata)
+map("worldHires","Fiji", xlim=c(160,190), ylim =c(-40,-15))
+points(quakes$long, quakes$lat)
+
 
 # PAM works by 
 # 1) select "k" rows as test medoids
