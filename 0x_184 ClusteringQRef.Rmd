@@ -26,6 +26,8 @@ This document provides brief explanations of the clustering functions available 
 ## Related Material
 [The cluster package](https://cran.r-project.org/web/packages/cluster/index.html) is recommended for advanced operations. The cluster package is based on [Finding Groups in Data](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316801) 
 
+An exhaustive discussion of clustering can be found at [Machine Learning and AI foundations:clustering and association](https://linkedin-learning.pxf.io/lilclustering)
+
 This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/). A quick reference to [matrix math functions in R is here](http://niemannross.com/link/rmatrixqref). A quick reference to [plotting functions in R is here](http://niemannross.com/link/rplotqref). An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex). The latest version of this quick reference is found [here](http://niemannross.com/link/rclusterqref). The source to this document is found on [github/mnr](https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons). This document is available as Free Software under the terms of the [Free Software Foundation’s](http://www.gnu.org/) [GNU General Public License](https://www.r-project.org/COPYING).
 
 ## About Mark Niemann-Ross
@@ -78,7 +80,29 @@ agnes(agriculture)
 plot(agnes(agriculture), which.plots = 2)
 ```
 
-## *hclust* : 
+## *hclust* : Hierarchical Clustering
+
+```{r, echo=TRUE}
+# builds a dendogram
+
+# what is a distance matrix? (distance between points)
+sampleQuakes <- quakes[sample(1:length(quakes$lat), 5),] # demonstrate a small set
+sampleQuakes # here's the data
+dist(sampleQuakes) # here's the distance matrix
+
+# now here's a hierarchical cluster
+hclust(dist(quakes)) # returns an hclust object
+
+plot(hclust(dist(quakes))) # overplot
+plot(hclust(dist(sampleQuakes))) # more approachable
+# starts with one cluster per element
+# Progressing up dendrogram produces larger clusters until one cluster at top
+# Labels are row numbers. 
+plot(hclust(dist(sampleQuakes)),
+     labels = c(LETTERS[1:length(sampleQuakes)])) # labeled points
+
+```
+
 ## *diana* : DIvisive ANAlysis Clustering
 ## *mona* : MONothetic Analysis Clustering of Binary Variables
 
