@@ -22,14 +22,21 @@ mypam$clustering # which points belong to which medoid
 
 
 # plotting PAM
-plot(mypam)
+plot(mypam) # steps through cluster plot and silhouette plot
+# note: silhouette plot overplots - bars are too thin to show
+# clara works better
 
 plot(mypam, ask = TRUE) # menu for plots
 
-plot(mypam, which.plots = 1)
+plot(mypam, which.plots = 1) # uses first plot
+
 
 
 # Presentation ENDS HERE
+
+# experimenting with silhouette plot
+plot(pam(quakes,2), which.plots = 2) # overplotting
+plot(clara(quakes,2), which.plots = 2) # clara downsamples
 
 install.packages("maps")
 install.packages("mapdata")
