@@ -1,0 +1,51 @@
+---
+title: "function Quick Reference"
+author: "Mark Niemann-Ross"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# About
+## About This Document
+
+This document provides brief explanations of the plotting functions available in Base R and the lattice package. It does not cover the [tidyverse or ggplot](https://rstudio.com/resources/cheatsheets/) - Rstudio does a great job of that without my help.
+
+## Related Material
+This Quick Reference is supplemental to courses on [LinkedIn Learning](https://www.linkedin.com/learning/r-for-data-science-lunchbreak-lessons/). A quick reference to [matrix math functions in R is here](http://niemannross.com/link/rmatrixqref). A quick reference to [clustering functions in R is here](http://niemannross.com/link/rclusterqref). An index to all R functions covered at LinkedIn Learning is found [here](http://niemannross.com/link/rindex). The latest version of this quick reference is found [here](http://niemannross.com/link/rplotqref). The source to this document is found on [github/mnr](https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons). This document is available as Free Software under the terms of the [Free Software Foundation’s](http://www.gnu.org/) [GNU General Public License](https://www.r-project.org/COPYING).
+
+## About Mark Niemann-Ross
+[Mark](https://niemannross.com/) is an author for LinkedIn Learning and writes Science Fiction.
+
+# Declare a function
+
+# return()
+
+# on.exit()
+
+# nargs()
+
+# args()
+
+# formals()
+
+# missing()
+
+# invisible()
+
+# debug()
+
+# debugonce()
+
+# undebug()
+
+# isdebugged()
+
+# debuggingState()
+
+# debugcall()
+
+# try
+
