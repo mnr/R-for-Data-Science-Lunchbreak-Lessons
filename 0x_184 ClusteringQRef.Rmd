@@ -104,6 +104,21 @@ plot(myclara, which.plots = 2) #silhoutte
 
 
 ## *fanny* : Fuzzy Analysis Clustering
+```{r, echo=TRUE}
+# downsample quakes for demonstration. from 500 to 25
+simpleQuakes <- quakes[sample(nrow(quakes),25),c("long","lat")]
+
+# create a fuzzy cluster with fanny
+fuzCluster <- fanny(x = simpleQuakes, k = 3) 
+fuzCluster
+
+# this produces 4 parts: object, membership, fuzzyness, other components of object
+fuzCluster$membership # percentage likelihood this point is part of this cluster. 
+fuzCluster$coeff # A low value of Dunn's coefficient indicates a very fuzzy clustering, whereas a value close to 1 indicates a near-crisp clustering
+fuzCluster$clustering # closest hard/crisp cluster
+
+```
+
 
 
 # Hierarchical methods
