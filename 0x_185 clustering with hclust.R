@@ -20,4 +20,15 @@ plot(hclust(dist(sampleQuakes))) # more approachable
 # Labels are row numbers. 
 plot(hclust(dist(sampleQuakes)),
      labels = c(LETTERS[1:length(sampleQuakes)])) # labeled points
+rect.hclust(hclust(dist(sampleQuakes)), k=2) # draw box around clusters
+rect.hclust(hclust(dist(sampleQuakes)), h=250)
+
+# cutree produces clusters from hclust objects
+cutree(hclust(dist(sampleQuakes)),k=2)
+
+# interactive cluster identification
+plot(hclust(dist(sampleQuakes)),
+     labels = c(LETTERS[1:length(sampleQuakes)])) # labeled points
+returnedPoints <- identify(hclust(dist(sampleQuakes)), n=2, MAXCLUSTER = 3)
+returnedPoints
 

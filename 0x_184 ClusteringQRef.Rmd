@@ -121,16 +121,6 @@ fuzCluster$clustering # closest hard/crisp cluster
 # Hierarchical methods
 Start with cluster of one item, then build larger clusters (or the opposite)
 
-## *agnes* : Agglomerative Nesting
-
-```{r, echo=TRUE}
-agnes(agriculture)
-```
-
-
-```{r, echo=TRUE}
-plot(agnes(agriculture), which.plots = 2)
-```
 
 ## *hclust* : Hierarchical Clustering
 
@@ -152,11 +142,26 @@ plot(hclust(dist(sampleQuakes))) # more approachable
 # Labels are row numbers. 
 plot(hclust(dist(sampleQuakes)),
      labels = c(LETTERS[1:length(sampleQuakes)])) # labeled points
+rect.hclust(hclust(dist(sampleQuakes)), k=2) # draw box around clusters
 
+
+
+```
+
+## *agnes* : Agglomerative Nesting
+
+```{r, echo=TRUE}
+agnes(agriculture)
+```
+
+
+```{r, echo=TRUE}
+plot(agnes(agriculture), which.plots = 2)
 ```
 
 ## *diana* : DIvisive ANAlysis Clustering
 ## *mona* : MONothetic Analysis Clustering of Binary Variables
+## cutree:
 
 # Dissimilarity
 
