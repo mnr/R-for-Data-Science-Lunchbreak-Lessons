@@ -1,4 +1,5 @@
 # clustering with fanny
+# Fuzzy Analysis Clustering
 # Partitioning method
 
 library(cluster)
