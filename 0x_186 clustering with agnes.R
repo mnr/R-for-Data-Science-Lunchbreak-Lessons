@@ -26,9 +26,6 @@ plot(agnes(simpleQuakes, method = "ward"), which.plots = 2)
 plot(agnes(simpleQuakes, method = "weighted"), which.plots = 2) 
 plot(agnes(simpleQuakes, method = "flexible", par.method = 4), which.plots = 2) 
 
-# agnes produces hclust objects, so hclust functions work
-cutree(agnes(simpleQuakes), k=2)
-
 # identify also works
 plot(agnes(simpleQuakes), which.plots = 2) # dendogram
 clustResults <- identify(as.hclust(agnes(simpleQuakes)))

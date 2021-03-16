@@ -144,9 +144,15 @@ plot(hclust(dist(sampleQuakes)),
      labels = c(LETTERS[1:length(sampleQuakes)])) # labeled points
 rect.hclust(hclust(dist(sampleQuakes)), k=2) # draw box around clusters
 
+```
 
+## cutree: produce cluster from hierarchical
+```{r, echo=TRUE}
+# cutree produces clusters from hclust objects
+cutree(hclust(dist(sampleQuakes)),k=2)
 
 ```
+
 
 ## *agnes* : Agglomerative Nesting
 
@@ -161,7 +167,7 @@ plot(agnes(agriculture), which.plots = 2)
 
 ## *diana* : DIvisive ANAlysis Clustering
 ## *mona* : MONothetic Analysis Clustering of Binary Variables
-## cutree:
+
 
 # Dissimilarity
 
