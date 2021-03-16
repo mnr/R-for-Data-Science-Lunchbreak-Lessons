@@ -10,6 +10,8 @@ library(cluster)
 simpleQuakes <- quakes[sample(nrow(quakes),25),c("long","lat")]
 
 diana(simpleQuakes)
+# compared to agglomerative object
+agnes(simpleQuakes)
 
 plot(diana(simpleQuakes), which.plots = 2)
 
