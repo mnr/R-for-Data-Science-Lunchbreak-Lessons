@@ -4,7 +4,7 @@ install.packages("wordcloud")
 library(wordcloud)
 
 # Load the tm package ---------------------------------
-install.packages("tm")
+# install.packages("tm")
 library(tm)
 
 # start with the corpus developed in previous session
