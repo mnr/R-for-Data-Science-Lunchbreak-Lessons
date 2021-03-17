@@ -12,6 +12,8 @@ simpleQuakes <- quakes[sample(nrow(quakes),25),c("long","lat")]
 diana(simpleQuakes)
 # compared to agglomerative object
 agnes(simpleQuakes)
+# dc = divisive coefficient
+# ac = agglomerative coefficient
 
 plot(diana(simpleQuakes), which.plots = 2)
 
