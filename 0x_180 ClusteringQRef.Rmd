@@ -156,17 +156,66 @@ cutree(hclust(dist(sampleQuakes)),k=2)
 
 ## *agnes* : Agglomerative Nesting
 
+Agnes is a heirarchical method. It's like hclust, but includes an agglomerative coefficient and banner plot. Agnes produces hclust objects and works with hclust functions. It sometimes requires as.hclust(). Unlike hclust, agnes doesn't require dist().
+
+agglomerative means start with clusers of n=1, then increase n
+
 ```{r, echo=TRUE}
-agnes(agriculture)
-```
+
+agnes(quakes)
+
+# downsample quakes for demonstration. from 500 to 25
+simpleQuakes <- quakes[sample(nrow(quakes),25),c("long","lat")]
+
+plot(agnes(simpleQuakes), which.plots = 1) # banner plot
+plot(agnes(simpleQuakes), which.plots = 2) # dendogram
+
+# methods provided by agnes
+plot(agnes(simpleQuakes, method = "average"), which.plots = 2) 
+plot(agnes(simpleQuakes, method = "single"), which.plots = 2) 
+plot(agnes(simpleQuakes, method = "complete"), which.plots = 2) 
+plot(agnes(simpleQuakes, method = "ward"), which.plots = 2) 
+plot(agnes(simpleQuakes, method = "weighted"), which.plots = 2) 
+plot(agnes(simpleQuakes, method = "flexible", par.method = 4), which.plots = 2) 
 
 
-```{r, echo=TRUE}
-plot(agnes(agriculture), which.plots = 2)
 ```
+
 
 ## *diana* : DIvisive ANAlysis Clustering
+
 ## *mona* : MONothetic Analysis Clustering of Binary Variables
+
+MONothetic analysis clustering of binary variables. Divisive (instead of Agglomerative). Focused on binary datasets
+
+```{r, echo=TRUE}
+
+# Titanic has three binary attributes
+
+# convert titanic dataset from array to data.frame
+#https://stackoverflow.com/questions/59447399/how-to-transform-the-titanic-data-set
+d1 <- as.data.frame(Titanic)
+Tita <- d1[rep(seq_len(nrow(d1)), d1$Freq),1:4]
+row.names(Tita) <- NULL
+
+# downsample for this example
+smallTitanic <- Tita[sample(nrow(Tita), 30),
+                     c("Sex","Age","Survived")]
+
+
+monaTitanic <- mona(smallTitanic)
+monaTitanic
+
+plot(monaTitanic) # only bannerplot is available
+
+# examine mona object
+data.frame("order"=monaTitanic$order,
+           "Row Number"=monaTitanic$order.lab,
+           "Split Variable"=c(monaTitanic$variable,"NULL"),
+           "Step Level"=c(monaTitanic$step,"0")
+)
+
+```
 
 
 # Dissimilarity
