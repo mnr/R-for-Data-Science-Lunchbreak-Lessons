@@ -1,0 +1,39 @@
+---
+title: "Parameterized Markdown"
+author: "Mark Niemann-Ross"
+date: "3/19/2021"
+output: html_document
+params:
+  FavoriteColor: red, blue, green
+  AnswerToLife: 42
+  Rabindranath: By plucking her petals, you do not gather the beauty of the flower.
+  rdate: !r Sys.Date()
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+
+Here's a quote - ``r params$Rabindranath`` - 
+
+```{r, echo=TRUE}
+print(params$Rabindranath)
+
+```
+
+```{r, echo=TRUE}
+for (acolor in params$FavoriteColor) {
+  print(acolor)
+}
+
+```
+
+```{r, echo=TRUE}
+str(params$AnswerToLife)
+str(params$FavoriteColor)
+
+```
+
