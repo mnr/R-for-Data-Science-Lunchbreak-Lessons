@@ -220,11 +220,39 @@ data.frame("order"=monaTitanic$order,
 
 # Dissimilarity
 
-## *daisy* : Dissimilarity Matrix Calculation
+## *daisy* and *dist* : Dissimilarity Matrix Calculation
 
-daisy creates a dissimilarity matrix
+daisy and dist create a dissimilarity matrix.
+
+daisy - dissimilarity on multiple data types - performs Dissimilarity Matrix Calculation. daisy returns a dissimilarity.object
+
+
+dist - dissimilarity on numeric variables - performs Distance Matrix calculation. dist returns a dist object
+
+
 ```{r, echo=TRUE}
-daisy(head(agriculture))
+
+# downsample quakes for demonstration. from 500 to 25
+simpleQuakes <- quakes[sample(nrow(quakes),5),]
+
+# all values are numeric, so these return the same values
+daisy(simpleQuakes)
+dist(simpleQuakes)
+
+# but...add a binary TRUE/FALSE column
+binaryVector <- sample(c(FALSE,TRUE), nrow(simpleQuakes), replace = TRUE) 
+mixedSimpQuake <- cbind(simpleQuakes, binaryVector)
+
+# now there are significant differences
+daisy(mixedSimpQuake) # includes TF column in calculation
+dist(mixedSimpQuake) # ignores the TF column, same values as above
+
+# daisy can be used in place of dist
+plot(hclust(dist(mixedSimpQuake)))
+plot(hclust(daisy(mixedSimpQuake)))
+
+plot(agnes(daisy(mixedSimpQuake)), which.plots = 2)
+
 ```
 
 # Graphics and Plots
