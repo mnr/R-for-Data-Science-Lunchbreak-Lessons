@@ -1,7 +1,7 @@
 # clustering with agnes - Agglomerative Nesting
 # Hierarchical method
 # like hclust but includes agglomerative coefficient & banner
-# agglomerative means start with clusers of n=1, then increase n
+# agglomerative means start with clusters of n=1, then increase n
 
 # agnes produces hclust objects, so works with hclust functions
 # sometimes requires as.hclust()
