@@ -1,19 +1,9 @@
-# clustering with agnes - Agglomerative Nesting
-# Hierarchical method
-# like hclust but includes agglomerative coefficient & banner
-# agglomerative means start with clusters of n=1, then increase n
-
-# agnes produces hclust objects, so works with hclust functions
-# sometimes requires as.hclust()
-
-# unlike hclust, agnes doesn't require dist()
-
 library(cluster)
-
-agnes(quakes)
 
 # downsample quakes for demonstration. from 500 to 25
 simpleQuakes <- quakes[sample(nrow(quakes),25),c("long","lat")]
+
+agnes(simpleQuakes)
 
 plot(agnes(simpleQuakes), which.plots = 1) # banner plot
 plot(agnes(simpleQuakes), which.plots = 2) # dendogram
