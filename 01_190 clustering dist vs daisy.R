@@ -15,16 +15,16 @@ simpleQuakes <- quakes[sample(nrow(quakes),5),]
 library(cluster)
 
 # all values are numeric, so these return the same values
-daisy(simpleQuakes)
 dist(simpleQuakes)
+daisy(simpleQuakes)
 
 # but...add a binary TRUE/FALSE column
 binaryVector <- sample(c(FALSE,TRUE), nrow(simpleQuakes), replace = TRUE) 
 mixedSimpQuake <- cbind(simpleQuakes, binaryVector)
 
 # now there are significant differences
-daisy(mixedSimpQuake) # includes TF column in calculation
 dist(mixedSimpQuake) # ignores the TF column, same values as above
+daisy(mixedSimpQuake) # includes TF column in calculation
 
 # more on dissimilarity.object
 # metric is mixed. See object definition for $Types
