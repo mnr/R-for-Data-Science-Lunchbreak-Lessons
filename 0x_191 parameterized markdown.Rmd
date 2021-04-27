@@ -2,9 +2,11 @@
 title: "Parameterized Markdown"
 author: "Mark Niemann-Ross"
 date: "3/19/2021"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 params:
-  FavoriteColor: red, blue, green
+  FavoriteColor: red blue green orange
   AnswerToLife: 42
   Rabindranath: By plucking her petals, you do not gather the beauty of the flower.
   rdate: !r Sys.Date()
@@ -15,25 +17,42 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
+Start with a simple example...
+```{r, echo=TRUE}
+params$AnswerToLife
+params$rdate
 
+```
 
-Here's a quote - ``r params$Rabindranath`` - 
+Here's an inline quote - ``r params$Rabindranath`` 
 
+Then the same thing, but in a code block
 ```{r, echo=TRUE}
 print(params$Rabindranath)
 
 ```
 
+Here are three colors. Note that parameters are passed as one item and you have to split them.
+
 ```{r, echo=TRUE}
-for (acolor in params$FavoriteColor) {
-  print(acolor)
+for (acolor in strsplit(params$FavoriteColor, split = " ") ) {
+  print(paste(acolor, "fish"))
 }
 
 ```
 
-```{r, echo=TRUE}
-str(params$AnswerToLife)
-str(params$FavoriteColor)
+You can customize plots as well...
+
+```{r, echo=FALSE}
+
+mylist <- strsplit(params$Rabindranath, split = " ")
+barplot(unlist(lapply(mylist, nchar)), 
+        names.arg = unlist(mylist),
+        las = 2,
+        ylab = "Word length",
+        col = unlist(strsplit(params$FavoriteColor, split = " ")))
 
 ```
+Notice there is only a plot - the code that produced it is not visible.
+
 
