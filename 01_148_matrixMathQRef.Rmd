@@ -198,6 +198,18 @@ NonSymmetricMatrix # show what it looks like
 t(NonSymmetricMatrix) # t() for transpose...show what transpose looks like
 ```
 
+# Distance between points
+
+Options to choose how distance is calculated, what type of matrix is produced. See the instructional video for details.
+
+```{r}
+mymatrix <- matrix( c(1:6), nrow = 3)
+mymatrix
+dist(mymatrix, method = "euclidean" )
+
+```
+
+
 # Build a symmetric matrix
 
 There is a package for matrix tools. Here's how to do it with baseR
