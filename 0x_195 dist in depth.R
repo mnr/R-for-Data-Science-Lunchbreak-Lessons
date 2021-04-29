@@ -45,9 +45,3 @@ mymatrix <- matrix(sample(0:1, 10, replace = TRUE), ncol = 2)
 mymatrix
 dist(mymatrix, method = "binary")
 
-# the dist object
-mymatrix <- matrix(c(1:6), nrow = 3)
-mymatrix
-dist(mymatrix, diag = TRUE)
-dist(mymatrix, upper = TRUE)
-
