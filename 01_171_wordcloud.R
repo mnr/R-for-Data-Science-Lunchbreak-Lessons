@@ -19,14 +19,17 @@ RT_TDmatrix <- TermDocumentMatrix(RT_corpus, control = list(stopwords = TRUE,
                                                             removeNumbers = TRUE,
                                                             stemming = TRUE))
 
-RT_frequent <- findMostFreqTerms(RT_DTmatrix, n = 80)
+RT_frequent <- findMostFreqTerms(RT_DTmatrix, n = 800)
 
 # plot words against frequency
+png("wordcloud_packages.png", width=12,height=8, units='in', res=300)
+par(mar = rep(0, 4))
 wordcloud(words = names(RT_frequent$The.Fugitive),
           freq = RT_frequent$The.Fugitive,
-          colors = c("red","blue","green"),
-          scale = c(3.5,0.25))
-
+          scale = c(6,0.25),
+          colors = brewer.pal(9, "Paired" ),
+          min.freq = 2)
+dev.off()
 # commonality cloud
 commonality.cloud(as.matrix(RT_TDmatrix), max.words = 80,
                   colors = c("red","blue","green"),
