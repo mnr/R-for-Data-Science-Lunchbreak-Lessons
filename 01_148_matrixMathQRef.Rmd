@@ -3,10 +3,14 @@ title: "R Matrix Math Quick Reference"
 author: "Mark Niemann-Ross"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    df_print: paged
+  word_document:
     toc: yes
   github_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
     toc: yes
 ---
 
