@@ -18,15 +18,22 @@ barplot(intermediateVar)
 
 # with magrittr
 myvar %>% 
-  fivenum() %>% 
-  barplot()
+  fivenum %>% 
+  barplot
+# note that () are optional, unless you need to specify other parameters
 
 # with new pipeline symbol in 4.1
+# first...error...
+myvar |>
+  fivenum |>
+  barplot
+
+# pipe operator requires a function call as RHS
 myvar |>
   fivenum() |>
   barplot()
 
 # note: |> does not require additional library. It's built-in and slightly faster
 # note: R studio may complain about this new symbol. Update is coming
-# note: |> assumes passed argument is first variable. See \lambda for solution
+# note: |> assumes passed argument is first variable. May have to declare function to move the x
 

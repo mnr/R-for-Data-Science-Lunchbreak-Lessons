@@ -3,7 +3,7 @@
 # used in clustering and machine learning
 # finds distance between data points
 
-mymatrix <- matrix(rep(1,3), nrow = 3)
+mymatrix <- matrix(c(1,1,1), nrow = 3)
 mymatrix
 dist(mymatrix)
 
@@ -12,7 +12,14 @@ mymatrix
 dist(mymatrix)
 
 mymatrix <- matrix(c(1:6), nrow = 3)
+colnames(mymatrix) <- c("Xpos","Ypos")
 mymatrix
+
+# a plot for reference
+plot(mymatrix, xlim = c(0,4), ylim = c(3,6))
+text(mymatrix, labels = c("row1", "row2", "row3"), pos = 4)
+
+# what does dist calculate?
 dist(mymatrix)
 
 # euclidian is the default method to calculate distance
