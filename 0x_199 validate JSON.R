@@ -1,8 +1,5 @@
 # validate JSON
 
-# https://mars.nasa.gov/insight/weather/
-# https://api.nasa.gov/assets/insight/InSight%20Weather%20API%20Documentation.pdf
-
 
 #install.packages("jsonlite")
 library(jsonlite)
