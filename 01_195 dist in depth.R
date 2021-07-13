@@ -3,10 +3,6 @@
 # used in clustering and machine learning
 # finds distance between data points
 
-mymatrix <- matrix(c(1,1,1), nrow = 3)
-mymatrix
-dist(mymatrix)
-
 mymatrix <- matrix(c(1:3), nrow = 3)
 mymatrix
 dist(mymatrix)

@@ -1,9 +1,6 @@
 # New pipeline in R 4.1
 # pipe-forward ... |>
 
-# https://michaelbarrowman.co.uk/post/the-new-base-pipe/
-# https://www.r-bloggers.com/2021/05/the-new-r-pipe/
-
 # the pipe command used to be %>%. Part of magrittr
 # See earlier R weekly for discussion on pipeline
 # also installed as part of tidyverse
