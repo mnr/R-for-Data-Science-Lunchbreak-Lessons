@@ -14,4 +14,5 @@ names(animals)
 say("futurama",by=sample(names(animals),1))
 say("dexter",by=sample(names(animals),1))
 # other wildcards: "arresteddevelopment", "doctorwho", "dexter", "futurama", "holygrail", "simpsons", "starwars", "loremipsum"
+say("loremipsum",by=sample(names(animals),1))
 
