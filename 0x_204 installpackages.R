@@ -6,7 +6,7 @@ install.packages("cowsay")
 #...or...
 installThese <- c("cowsay")
 install.packages(installThese)
-# so can install multiple packages
+# and can install multiple packages
 installThese <- c("cowsay", "fun")
 
 install.packages() # missing "pkgs=" brings up a list
