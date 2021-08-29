@@ -11,5 +11,7 @@ new.packages() # lists packages you don't have
 # lists information about packages you could have FOR THIS SYSTEM (version and OS)
 available.packages() 
 available.packages(filters = "OS_type")
+available.packages(filters = "license/FOSS")
+available.packages(filters = "license/restricts_use")
 
 remove.packages("cowsay") # does what you expect
