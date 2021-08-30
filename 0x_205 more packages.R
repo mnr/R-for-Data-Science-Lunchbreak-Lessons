@@ -1,5 +1,6 @@
 # old.packages, new.packages, and update.packages
 # available.packages, contrib.url, remove.packages
+# find.packages
 
 # the most important tool of this set
 update.packages() # offers to update old packages
