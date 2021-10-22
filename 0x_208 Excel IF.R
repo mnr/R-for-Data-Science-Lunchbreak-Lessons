@@ -19,10 +19,16 @@ if(Spreadsheet[1,1] > 1) {
 
 ltgt1 <- function(rowOfValues) {
   for (aValue in rowOfValues) {
-  if(aValue > 1) { 
-    print(paste(aValue,"is greater than one"))
-  } else {print(paste(aValue," is less than or equal to one"))}
-  }}
+    if (is.na(aValue)) {
+      print("This is NA")
+    }
+    else if (aValue > 1) {
+      print(paste(aValue, "is greater than one"))
+    } else {
+      print(paste(aValue, " is less than or equal to one"))
+    }
+  }
+}
 
 # equivalent of if() for each cell in spreadsheet
 apply(Spreadsheet, MARGIN = 2 ,FUN=ltgt1 )
