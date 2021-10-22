@@ -26,5 +26,5 @@ Spreadsheet[Spreadsheet[,1]==5, 2] # return values of column 2 if column 1 is tr
 lookup_array <- Spreadsheet[,1:3] # all rows, columns 1-3
 return_array <- Spreadsheet[,4:6] # all rows, columns 4-6
 
-return_array[lookup_array[] == 5] # =xlookup(5, lookup_array, return_array, 0)
-lookup_array[,] == 5 # break it down. elements of lookup_array == 5
+return_array[lookup_array == 5] # =xlookup(5, lookup_array, return_array, 0)
+lookup_array == 5 # break it down. elements of lookup_array == 5
