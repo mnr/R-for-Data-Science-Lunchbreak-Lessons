@@ -1,4 +1,3 @@
-# library()
 # sum returns the sum of all arguments
 
 # the R equivalent is sum()
