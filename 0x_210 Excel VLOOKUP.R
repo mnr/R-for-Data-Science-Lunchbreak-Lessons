@@ -3,7 +3,7 @@
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet="numbers"))
 
 # vlookup is easy in R
 Spreadsheet[Spreadsheet[,1] == 5,2]

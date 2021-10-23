@@ -11,7 +11,7 @@
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet="numbers"))
 
 # Example: Print contents of column B where contents of column A = 5
 # =LOOKUP(5,A1:A6,B1:B6)

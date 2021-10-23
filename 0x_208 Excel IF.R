@@ -4,7 +4,7 @@
 # R equivalent is if...then...else
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet="numbers"))
 
 #=IF(A1>1,"This is greater than one")
 if(Spreadsheet[1,1] > 1) { 
