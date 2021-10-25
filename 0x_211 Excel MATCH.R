@@ -13,3 +13,10 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FA
 # =MATCH(5,A1:A6) produces 4
 # The R version is a bit more forgiving - produces index of all matches
 which(Spreadsheet == 5) # =match()
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+MATCH(5, Spreadsheet[1,])

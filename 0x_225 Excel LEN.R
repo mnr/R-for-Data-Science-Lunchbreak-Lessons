@@ -1,4 +1,4 @@
-# concatenate()
+# len()
 
 library(readxl)
 
@@ -11,5 +11,4 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FA
 # install.packages("ExcelFunctionsR")
 library(ExcelFunctionsR)
 
-CONCATENATE("This","That","TheOther")
-CONCATENATE(Spreadsheet[1,]) # doesn't like ranges
+LEN("Test")

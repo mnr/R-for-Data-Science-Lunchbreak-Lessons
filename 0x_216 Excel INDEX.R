@@ -8,3 +8,10 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FA
 
 # R is exceedingly good at this...
 Spreadsheet[3,2]
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+INDEX(Spreadsheet,3,2)

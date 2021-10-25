@@ -1,15 +1,13 @@
-# concatenate()
+# left(), right()
 
 library(readxl)
 
 Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
-
-
 
 # or look at excelfunctionsR
 # https://cran.r-project.org/package=ExcelFunctionsR
 # install.packages("ExcelFunctionsR")
 library(ExcelFunctionsR)
 
-CONCATENATE("This","That","TheOther")
-CONCATENATE(Spreadsheet[1,]) # doesn't like ranges
+LEFT()
+RIGHT()

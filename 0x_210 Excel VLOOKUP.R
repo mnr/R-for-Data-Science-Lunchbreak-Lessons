@@ -12,3 +12,9 @@ Spreadsheet[Spreadsheet[,1] == 5,2]
 Spreadsheet[ ,1] # is the first column
 Spreadsheet[ ,1] == 5 # which values in column 1 are equal to 5?
 Spreadsheet[ Spreadsheet[ ,1] == 5, 2 ] # return the value of column 2 where row 1 is equal to five
+
+# or look at excelfunctionsR
+# only VLOOKUP, not XLOOKUP or LOOKUP
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)

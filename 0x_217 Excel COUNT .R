@@ -7,7 +7,15 @@ library(readxl)
 # as.matrix ensures this is all one type - in this case, numeric
 Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
 
+# 
 length(Spreadsheet) # = 36 - but includes NA
 is.na(Spreadsheet) #returns true/false on NA
 !is.na(Spreadsheet) # inverts T/F
 sum(!is.na(Spreadsheet)) # TRUE is = 1. sum(True, True, False) = 2
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+COUNT(Spreadsheet) # returns 32. oops!

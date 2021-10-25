@@ -17,3 +17,10 @@ date2 - date1
 
 # this gets complicated real fast. 
 # reference R for Data Science: Dates and Times in Linkedin Learning Library
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+DAYS(date1, date2)

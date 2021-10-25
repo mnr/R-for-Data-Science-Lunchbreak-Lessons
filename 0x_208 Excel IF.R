@@ -32,3 +32,11 @@ ltgt1 <- function(rowOfValues) {
 
 # equivalent of if() for each cell in spreadsheet
 apply(Spreadsheet, MARGIN = 2 ,FUN=ltgt1 )
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+IF( Spreadsheet[1,1] > 1, "This is greater than one", "This is less than or equal to one")
+  

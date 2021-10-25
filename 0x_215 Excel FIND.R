@@ -15,3 +15,10 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FA
 paste(Spreadsheet[1, ], collapse = " ") # produces one string
 
 str_locate(paste(Spreadsheet[1, ], collapse = " "), "slithey")
+
+# or look at excelfunctionsR
+# https://cran.r-project.org/package=ExcelFunctionsR
+# install.packages("ExcelFunctionsR")
+library(ExcelFunctionsR)
+
+FIND("slithey", paste(Spreadsheet[1, ], collapse = " ") )
