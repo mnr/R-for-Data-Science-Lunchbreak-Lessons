@@ -1,1 +1,18 @@
-# library()
+# average - the average (arithmetic mean) of the arguments.
+
+library(readxl)
+
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+
+Spreadsheet[1,] # first row of spreadsheet, all columns
+mean(Spreadsheet[1,]) # argument not numeric? - It's because it's a data.frame
+mean(as.numeric(Spreadsheet[1,])) # need to convert to numeric
+
+Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+
+mean(Spreadsheet[1,]) # this works because Spreadsheet is a matrix instead of data.frame
+
+# what about NA?
+Spreadsheet[2,] # this contains NA
+mean(Spreadsheet[2,]) # returns NA
+mean(Spreadsheet[2,], na.rm = TRUE) # NA removed, so now this works.
