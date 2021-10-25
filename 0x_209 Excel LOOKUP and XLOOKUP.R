@@ -28,3 +28,5 @@ return_array <- Spreadsheet[,4:6] # all rows, columns 4-6
 
 return_array[lookup_array == 5] # =xlookup(5, lookup_array, return_array, 0)
 lookup_array == 5 # break it down. elements of lookup_array == 5
+
+
