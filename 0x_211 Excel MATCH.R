@@ -11,8 +11,17 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FA
 
 # =MATCH(5,A1:F6) produces an Err:504 because MATCH is looking for a range of cells.
 # =MATCH(5,A1:A6) produces 4
+
+# if imported as data.frame, match gets upset
 # The R version is a bit more forgiving - produces index of all matches
 which(Spreadsheet == 5) # =match()
+
+# if imported as a matrix, then R's match() works as expected
+Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+
+match(5,Spreadsheet)
+# or...
+5 %in% Spreadsheet # true/false
 
 # or look at excelfunctionsR
 # https://cran.r-project.org/package=ExcelFunctionsR
