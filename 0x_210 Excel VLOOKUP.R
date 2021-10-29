@@ -13,6 +13,11 @@ Spreadsheet[ ,1] # is the first column
 Spreadsheet[ ,1] == 5 # which values in column 1 are equal to 5?
 Spreadsheet[ Spreadsheet[ ,1] == 5, 2 ] # return the value of column 2 where row 1 is equal to five
 
+# or with match
+Spreadsheet[ , 1 ] # first column
+match(5, Spreadsheet[,1]) # index to rows in first column == 5
+Spreadsheet[match(5, Spreadsheet[,1]),2] # index to values in column 2
+
 # or look at excelfunctionsR
 # only VLOOKUP, not XLOOKUP or LOOKUP
 # https://cran.r-project.org/package=ExcelFunctionsR
