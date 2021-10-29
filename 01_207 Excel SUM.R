@@ -4,7 +4,9 @@
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  
+                                        col_names = FALSE, 
+                                        sheet = "numbers"))
 
 sum(Spreadsheet[1,]) # =sum(A1:F1)
 sum(Spreadsheet[,1]) # =SUM(A1:A6)
