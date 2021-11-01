@@ -4,7 +4,8 @@
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "days"))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  
+                                        col_names = FALSE, sheet = "days"))
 
 # concatenate and convert to string
 paste0(Spreadsheet[1,2],"-",Spreadsheet[2,2],"-",Spreadsheet[3,2])
@@ -22,3 +23,6 @@ str(as.Date(paste0(Spreadsheet[1,2],"-",Spreadsheet[2,2],"-",Spreadsheet[3,2])))
 library(ExcelFunctionsR)
 
 DATE(Spreadsheet[1,2],Spreadsheet[2,2],Spreadsheet[3,2])
+
+# special bonus if you're reading the exercise files.
+# check out lubridate, part of the tidyverse
