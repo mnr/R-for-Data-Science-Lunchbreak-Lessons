@@ -10,7 +10,8 @@ library(readxl)
 # install.packages("stringr")
 library(stringr)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "text"))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  
+                                        col_names = FALSE, sheet = "text"))
 
 paste(Spreadsheet[1, ], collapse = " ") # produces one string
 
