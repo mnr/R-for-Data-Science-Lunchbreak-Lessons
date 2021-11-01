@@ -6,7 +6,8 @@
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "days"))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  
+                                        col_names = FALSE, sheet = "days"))
 
 # There are more elegant ways of doing this - but for the sake of instruction...
 date1 <- as.Date(paste0(Spreadsheet[1,2],"-",Spreadsheet[2,2],"-",Spreadsheet[3,2]))
@@ -24,3 +25,6 @@ date2 - date1
 library(ExcelFunctionsR)
 
 DAYS(date1, date2)
+
+# special bonus if you're reading the exercise files.
+# check out lubridate, part of the tidyverse
