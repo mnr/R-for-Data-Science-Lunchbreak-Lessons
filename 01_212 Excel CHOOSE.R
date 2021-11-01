@@ -12,7 +12,5 @@ Spreadsheet[5] #this works because matrix instead of dataframe
 Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet="numbers"))
 # then can specify a range of vectors like choose
 # =SUM(CHOOSE(3,A1:A6,B1:B6,C1:C6,D1:D6,E1:E6,F1:F6)) which equals 30 (=sum(c1:c6))
-sum(Spreadsheet[ , 3])
 
-# breaking this down
 Spreadsheet[ , 3] # is all rows of third column
