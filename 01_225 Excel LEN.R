@@ -25,5 +25,5 @@ length(Spreadsheet) # now this produces 28 - because there are 28 elements
 # install.packages("ExcelFunctionsR")
 library(ExcelFunctionsR)
 
-LEN("Test")
+LEN(Spreadsheet[1,1])
 LEN(Spreadsheet) # produces the length of each element in the matrix
