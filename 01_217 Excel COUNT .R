@@ -5,7 +5,8 @@
 library(readxl)
 
 # as.matrix ensures this is all one type - in this case, numeric
-Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  
+                                    col_names = FALSE, sheet = "numbers"))
 
 # 
 length(Spreadsheet) # = 36 - but includes NA
