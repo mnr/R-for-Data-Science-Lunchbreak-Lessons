@@ -1,12 +1,22 @@
-# countif()
+# countif Counts the number of cells within a range 
+# that meet the given criteria
+# =COUNTIF(Where do you want to look?, What do you want to look for?)
 
 library(readxl)
 
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",  
+                          col_names = FALSE, sheet = "text"))
 
-# or look at excelfunctionsR
-# https://cran.r-project.org/package=ExcelFunctionsR
-# install.packages("ExcelFunctionsR")
-library(ExcelFunctionsR)
+# =COUNTIF(A1:G4,"b*") # count words that begin with b
+# think "range" and "criteria"
+# range = Spreadsheet or a subset of spreadsheet
+# criteria = how to select (create true/false table)
+sum(startsWith(Spreadsheet,"b"), na.rm = TRUE)
 
-COUNTIF()
+# break it apart
+startsWith(Spreadsheet,"b")
+
+# what words start with b?
+Spreadsheet[startsWith(Spreadsheet,"b")]
+
+
