@@ -5,16 +5,28 @@
 library(readxl)
 Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
 
-# =COUNTA(D1:D7) is 6. 7 rows, 1 blank, 1 NA
-Spreadsheet[ 1:7 , 4] # R equivalent of D1:D7. missing values = NA
+# =COUNTA(D1:D7) is 6. 1 column, 7 rows, 1 blank, 1 NA
 
 # the problem: R doesn't have "empty" cells. 
+Spreadsheet[ 1:7 , 4] # R equivalent of D1:D7. 
+# missing values = NA
 
-### THINKING
-nrow(Spreadsheet) # 6 rows (btw, rows also = observations)
-ncol(Spreadsheet) # 6 columns (btw, columns also = variables)
+# empty cells can be NA, "" (empty string)
+notSoEmpty <- c(NA_character_,"",NaN) # type character
+notSoEmpty
 
-Spreadsheet[ 1:7 , 4] # equivalent of D1:D7. missing values = NA
-Spreadsheet[ 3, 4] <- ""
-length(Spreadsheet[ 1:7 , 4] ) # = 7
-is.na(Spreadsheet[ 1:7 , 4] ) # = 7
+notSoEmpty <- c(NA,NaN) # type numeric. NaN is Not a Number
+notSoEmpty
+is.na(notSoEmpty)
+
+# complete cases tests for "missing values" in each row
+# testing numbers page
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+Spreadsheet
+complete.cases(Spreadsheet)
+# testing text page
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "text"))
+Spreadsheet
+complete.cases(Spreadsheet)
+
+
