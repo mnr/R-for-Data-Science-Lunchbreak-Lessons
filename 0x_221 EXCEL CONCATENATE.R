@@ -7,6 +7,8 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",
 
 paste(Spreadsheet[1,], collapse = " ")
 
+paste(c("This is from Jabberwocky:", Spreadsheet[1,]), collapse = " ")
+
 # or look at excelfunctionsR
 # https://cran.r-project.org/package=ExcelFunctionsR
 # install.packages("ExcelFunctionsR")
