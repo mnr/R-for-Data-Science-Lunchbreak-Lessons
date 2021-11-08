@@ -8,6 +8,7 @@ Spreadsheet <- as.matrix(read_excel("SampleSpreadsheet.xls",
                           col_names = FALSE, sheet = "text"))
 
 # =COUNTIF(A1:G4,"b*") # count words that begin with b
+
 # think "range" and "criteria"
 # range = Spreadsheet or a subset of spreadsheet
 # criteria = how to select (create true/false table)
