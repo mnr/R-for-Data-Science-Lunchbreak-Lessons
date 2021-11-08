@@ -3,7 +3,8 @@
 #     including error values and empty text ("")
 
 library(readxl)
-Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  col_names = FALSE, sheet = "numbers"))
+Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",  
+                          col_names = FALSE, sheet = "numbers"))
 
 # =COUNTA(D1:D7) is 6. 1 column, 7 rows, 1 blank, 1 NA
 
@@ -12,12 +13,11 @@ Spreadsheet[ 1:7 , 4] # R equivalent of D1:D7.
 # missing values = NA
 
 # empty cells can be NA, "" (empty string)
-notSoEmpty <- c(NA_character_,"",NaN) # type character
-notSoEmpty
+Spreadsheet[7,] <- c(NA_character_,"",NaN, NULL) # Null doesn't show up
+length(Spreadsheet[7,])
 
-notSoEmpty <- c(NA,NaN) # type numeric. NaN is Not a Number
-notSoEmpty
-is.na(notSoEmpty)
+is.na(Spreadsheet[7,])
+is.null(Spreadsheet[7,])
 
 # complete cases tests for "missing values" in each row
 # testing numbers page
