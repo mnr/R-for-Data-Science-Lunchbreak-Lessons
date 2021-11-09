@@ -10,19 +10,22 @@ Spreadsheet <- as.data.frame(read_excel("SampleSpreadsheet.xls",
 
 # then in R
 # There are more elegant ways of doing this - but for the sake of instruction...
-date1 <- as.POSIXlt(paste(Spreadsheet[1:3,2], collapse = "-"))
-date2 <- as.POSIXlt(paste(Spreadsheet[1:3,3], collapse = "-"))
-
+date1 <- as.Date(paste(Spreadsheet[1:3,2], collapse = "-"))
+date2 <- as.Date(paste(Spreadsheet[1:3,3], collapse = "-"))
 
 # doesn't account for weekends or holidays
 date2 - date1
 
-install.packages("BusinessDuration")
-library(BusinessDuration)
+install.packages("bizdays")
+library(bizdays)
+create.calendar(name='WeekendsOnly', weekdays=c('sunday', 'saturday'))
+bizdays(from = date1,to = date2, 'WeekendsOnly')
 
-businessDuration(startdate = date1,
-                 enddate = date2,
-                 starttime =  "08:00:00",
-                 endtime =  "17:00:00",
-                 unit = "day"
-)
+
+# add in a holiday
+create.calendar(name='CalWithHoliday', 
+                start.date = date1,
+                end.date = date2,
+                weekdays=c('sunday', 'saturday'),
+                holidays = '2021-04-01')
+bizdays(from = date1,to = date2, 'CalWithHoliday')
