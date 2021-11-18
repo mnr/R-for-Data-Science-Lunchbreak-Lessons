@@ -39,3 +39,6 @@ create.calendar(name='CalWithHoliday',
                 holidays = '2021-04-01',
                 financial = FALSE)
 bizdays(from = date1, to = date2, 'CalWithHoliday')
+
+# cite the author of bizdays
+citation(package = "bizdays")
