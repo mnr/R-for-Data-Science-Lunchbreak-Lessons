@@ -1,0 +1,42 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: 'R for Data Science: Lunchbreak Lessons'
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name-particle: Mark
+    email: mark@niemannross.com
+    family-names: Niemann-Ross
+    orcid: 'https://orcid.org/0000-0002-3381-4604'
+identifiers:
+  - type: url
+    value: 'https://linkedin-learning.pxf.io/r_lunchbreak'
+    description: >-
+      Lunch Break Lessons teaches R in short lessons
+      that expand on what existing programmers
+      already know.
+url: 'https://linkedin-learning.pxf.io/r_lunchbreak'
+abstract: >-
+  Programming is learned in small bits. You build on
+  basic concepts. You transfer the knowledge you
+  already have to the next language. Lunch Break
+  Lessons teaches R—one of the most popular
+  programming languages for data analysis and
+  reporting—in short lessons that expand on what
+  existing programmers already know.
+
+
+  The five minutes you spend each week will provide
+  you with a building block you can use in the next
+  two hours at work. Review language basics, discover
+  methods to improve existing R code, explore new and
+  interesting features, and learn about useful
+  development tools and libraries that will make your
+  time programming with R that much more productive.
+keywords:
+  - R
+  - LinkedIn Learning
