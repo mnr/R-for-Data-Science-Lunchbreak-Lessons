@@ -25,3 +25,7 @@ myIfVect(c(1:3), c(1,5,7))
 
 # results are identical to mapply
 mapply(myIf, c(1:3), c(1,5,7))
+
+# ...actually, it uses mapply...
+Vectorize
+
