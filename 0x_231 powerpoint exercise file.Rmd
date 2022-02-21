@@ -4,7 +4,9 @@ author: "Mark Niemann-Ross"
 date: "`r Sys.Date()`"
 output:
   powerpoint_presentation:
-    reference_doc: my-styles.pptx
+    reference_doc: 01_231_slideTemplate.pptx
+    toc: true
+
 ---
 
 
@@ -12,37 +14,55 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## multiple columns
-{.columns}
-  {.column}
-Content of the left column.
 
+# Here's a picture
+![Griffon Vulture in France](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Gyps_fulvus_1_Luc_Viatour.jpg/1920px-Gyps_fulvus_1_Luc_Viatour.jpg)
 
-  {.column}
-Content of the right column.
+::: notes
 
+This photo was taken by [Luc Viatour](https://Lucnix.be)
 
-# R Markdown
+* It is a *Griffon Vulture*
+* It was taken in France (Pyrénées)
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+:::
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+# This slide has two columns
+:::::::::::::: {.columns}
+::: {.column width="40%"}
 
-## Slide with Bullets
+![Griffon Vulture in France](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Gyps_fulvus_1_Luc_Viatour.jpg/1920px-Gyps_fulvus_1_Luc_Viatour.jpg)
+:::
+::: {.column width="60%"}
+This photo was taken by [Luc Viatour](https://Lucnix.be)
+
+* It is a *Griffon Vulture*
+* It was taken in France (Pyrénées)
+
+:::
+::::::::::::::
+
+# Slide with Bullets
 
 - Bullet 1
 - Bullet 2
 - Bullet 3
 
-## Slide with R Output
+# Slide with R Output
 
 ```{r cars, echo = TRUE}
 summary(cars)
 ```
 
-## Slide with Plot
+# Slide with data.frame and kable
+```{r}
+knitr::kable(head(head(ChickWeight)))
+```
+
+# Slide with Plot
 
 ```{r pressure}
 plot(pressure)
 ```
+
 
