@@ -1,11 +1,13 @@
 # infix operators
+# functions that behave like an operator
+
 # https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Operators
 # https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Infix-and-prefix-operators
 
-'%mangle%' <- function(aString, bString) {
-  interString <- paste0(aString,bString)
-  mangledString <- sample(c(unlist(strsplit(interString, ""))), nchar(interString))
-  paste(mangledString, collapse = "")
+
+'%alphasum%' <- function(aString, bString) {
+  nchar(aString) + nchar(bString)
 }
 
-"this" %mangle% "anddthat"
+"this" %alphasum% "anddthat"
+
