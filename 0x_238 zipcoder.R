@@ -3,4 +3,5 @@
 
 # used in the OOPS data report to plot members by zip code
 
-#
+install.packages("zipcodeR")
+library(zipcodeR)
