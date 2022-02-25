@@ -6,9 +6,8 @@
 install.packages("COVID19")
 library(COVID19)
 
-# returns an SQLite database
+# all records
 CovidData <- covid19() 
-# refined calls return csv
 
 # download by country (country = )
 # iso is the 3-letter ISO code of the country
