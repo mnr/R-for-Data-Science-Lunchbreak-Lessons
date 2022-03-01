@@ -41,5 +41,12 @@ apex(data = ChickWeight,
 # "area-spline", "pie", "donut", "radialBar", "radar", "scatter", 
 # "heatmap", "treemap", "timeline"
 
-
+# downside - can't save to bitmap or pdf or svg
+svg(filename = "apexout.svg")
+apex(data = ChickWeight, 
+     mapping = aes(x = Time, y = weight, 
+                   group = Diet),
+     type = "treemap")
+dev.off()
+# possible to create Rmarkdown, but requires shiny
 
