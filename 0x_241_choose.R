@@ -1,5 +1,10 @@
 # choose
 
+# display in Rstudio viewer
+<font size="160">$$\binom{n}{k}$$</font>
+# command-shift-k
+# right-click to set up zoom
+
 # binomial coefficient
 # indexed by a pair of integers: n and k
 # n >= k >= 0
