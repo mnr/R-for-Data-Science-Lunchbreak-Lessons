@@ -1,9 +1,10 @@
 # choose
 
 # display in Rstudio viewer
+# copy this to a markdown document
 <font size="160">$$\binom{n}{k}$$</font>
 # command-shift-k
-# right-click to set up zoom
+# right-click to set up zoom at 250%
 
 # binomial coefficient
 # indexed by a pair of integers: n and k
