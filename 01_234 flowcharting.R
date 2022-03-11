@@ -24,6 +24,4 @@ flow_view(stuffToDo, truncate = 20)
 flow_run(stuffToDo(3,5))
 flow_run(stuffToDo(10,9))
 
-# can be done with source files
-flow_view("../R_code_challenge/04_01 rock paper scissors lizard spock SOLUTION.R")
 
