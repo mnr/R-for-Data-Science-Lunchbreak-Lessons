@@ -1,5 +1,6 @@
 # apexcharts
 # https://cran.r-project.org/package=apexcharter
+# https://apexcharts.com
 
 install.packages("apexcharter")
 library(apexcharter)
