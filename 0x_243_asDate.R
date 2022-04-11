@@ -1,16 +1,26 @@
-# factorial
+# as.Date
 
-# note: there are a selection of functions for
-# beta and gamma functions
-?Special
+# just a date. Date + Time will come later
 
-beta(a, b)
-lbeta(a, b)
+# convert a string to a "date" class
+as.Date("2022-03-23")
+str(as.Date("2022-03-23"))
 
-gamma(x)
-lgamma(x)
-psigamma(x, deriv = 0)
-digamma(x)
-trigamma(x)
+# add one day
+as.Date("2022-03-23") + 1 
 
+# use format for non-standard date strings
+as.Date("March 3, 2022")
+as.Date("March 3, 2022", format = "%B %e, %Y")
+
+# formats in strftime()
+?strftime
+
+# what about mixed formats?
+someDates <- c("March 3, 2022", "March 23, 2022" )
+as.Date(someDates) #fails
+as.Date(someDates, tryFormats = c("%B %e, %Y", "%Y-%m-%d", "%F"))
+
+someDates <- c("2022-03-23", "2022-04-23" )
+as.Date(someDates, tryFormats = c("%B %e, %Y", "%Y-%m-%d", "%F"))
 
