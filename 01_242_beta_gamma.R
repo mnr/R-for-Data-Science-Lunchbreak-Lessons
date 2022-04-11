@@ -1,5 +1,3 @@
-# factorial
-
 # A selection of functions for beta and gamma functions
 
 # start with beta
