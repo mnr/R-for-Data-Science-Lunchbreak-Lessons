@@ -1,16 +1,30 @@
-# factorial
+# as.POSIXct
 
-# note: there are a selection of functions for
-# beta and gamma functions
-?Special
+# Date is only date.
+# POSIXlt and POSIXct are date & time
+# POSIXlt and POSIXct are related
+# POSIXlt stores date/time as components (Years, Days, Months, Hours...)
+# POSIXct stores date/time as seconds since 1970-01-01 00:00:00 UTC
 
-beta(a, b)
-lbeta(a, b)
+as.POSIXct("2022-03-23")
+str(as.POSIXct("2022-03-23"))
 
-gamma(x)
-lgamma(x)
-psigamma(x, deriv = 0)
-digamma(x)
-trigamma(x)
+myDateTime <- as.POSIXct("2022-03-23 11:23:14")
+myDateTime <- as.POSIXlt("2022-03-23 11:23:14", tz = "US/Pacific")
+# I'll talk more about timezones in a later session
 
+as.numeric(myDateTime) # seconds since 1970-01-01 00:00:00 UTC
 
+as.POSIXct("March 3, 2022", format = "%B %e, %Y")
+
+# date math...
+# subtract seconds.
+myDateTime - (24 * 60 * 60) # what was yesterday?
+
+# need year, month, hour, etc...
+# convert to POSIXlt
+PltMyDateTime <- as.POSIXlt(myDateTime)
+PltMyDateTime$year + 1900
+
+# for more on dates and times in R...
+# https://linkedin-learning.pxf.io/r_dates

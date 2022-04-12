@@ -24,3 +24,5 @@ as.Date(someDates, tryFormats = c("%B %e, %Y", "%Y-%m-%d", "%F"))
 someDates <- c("2022-03-23", "2022-04-23" )
 as.Date(someDates, tryFormats = c("%B %e, %Y", "%Y-%m-%d", "%F"))
 
+# for more on dates and times in R...
+# https://linkedin-learning.pxf.io/r_dates
