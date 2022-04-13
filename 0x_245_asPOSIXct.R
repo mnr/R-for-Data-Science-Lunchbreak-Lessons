@@ -15,7 +15,7 @@ myDateTime <- as.POSIXlt("2022-03-23 11:23:14", tz = "US/Pacific")
 
 as.numeric(myDateTime) # seconds since 1970-01-01 00:00:00 UTC
 
-as.POSIXct("March 3, 2022", format = "%B %e, %Y")
+as.POSIXct("March 3, 2022  11:23:14", format = "%B %e, %Y %H:%M:%S")
 
 # date math...
 # subtract seconds.
