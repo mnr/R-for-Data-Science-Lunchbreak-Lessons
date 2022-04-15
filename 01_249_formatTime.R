@@ -10,6 +10,8 @@ format(myDateTime) # default format
 # strftime is essentially the same as format
 strftime(myDateTime, format = "%Y...%d")
 
+?strftime # contains a list of %x formatting characters
+
 # some built-in standards
 format(myDateTime, format = "%c") # "%a %b %e %H:%M:%S %Y"
 format(myDateTime, format = "%D") # %m/%d/%y

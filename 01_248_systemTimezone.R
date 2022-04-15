@@ -1,4 +1,6 @@
-# timezones and olsonnames
+# timezones and OlsonNames
+
+as.POSIXlt("2022-03-23 11:23:14", tz = "US/Pacific")
 
 # current system timezone
 Sys.timezone()
