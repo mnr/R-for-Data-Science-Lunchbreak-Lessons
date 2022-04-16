@@ -16,5 +16,11 @@ tripDate
 
 # also by week, quarter and year
 
+# also difftime -----
+tenDays <- as.difftime(10, units = "days")
+seq(from = Sys.Date(), by = tenDays, length.out = 3)
+
+
+
 # for more on dates and times in R...
 # https://linkedin-learning.pxf.io/r_dates
