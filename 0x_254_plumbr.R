@@ -1,16 +1,22 @@
-# factorial
+# plumbr
+# create an api with R
 
-# note: there are a selection of functions for
-# beta and gamma functions
-?Special
+# don't be confused with "plumbr"
+# install.packages("plumber")
+library(plumber)
 
-beta(a, b)
-lbeta(a, b)
+# plumber is an R6 function - Object-Oriented-Programming in R
 
-gamma(x)
-lgamma(x)
-psigamma(x, deriv = 0)
-digamma(x)
-trigamma(x)
+# implementation ----------
+simpleFunction <- function(this, that) {
+  paste(rev(this), nchar(that) )
+}
 
+simpleFunction("Mark", "Niemann-Ross")
 
+# saved as a plumber api in 01_254_SFplumber.R
+
+runthis <- pr(file = "01_254_SFplumber.R")
+pr_run(runthis) # opens api in a browser
+
+# cheat sheet at https://github.com/rstudio/cheatsheets/ - look for plumber
