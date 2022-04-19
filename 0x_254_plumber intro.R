@@ -9,7 +9,7 @@ library(plumber)
 
 # implementation ----------
 simpleFunction <- function(this, that) {
-  paste(rev(this), nchar(that) )
+  paste(toupper(this), nchar(that) )
 }
 
 simpleFunction("Mark", "Niemann-Ross")
@@ -19,4 +19,13 @@ simpleFunction("Mark", "Niemann-Ross")
 runthis <- pr(file = "01_254_SFplumber.R")
 pr_run(runthis) # opens api in a browser
 
+# from any browser
+# http://127.0.0.1:3811/changeStrings?this=mark&that=niemann-ross
+
+#' @Manual{,
+#'   title = {plumber: An API Generator for R},
+#'   author = {Barret Schloerke and Jeff Allen},
+#'   year = {2022},
+#'   note = {https://www.rplumber.io, https://github.com/rstudio/plumber},
+#' }
 # cheat sheet at https://github.com/rstudio/cheatsheets/ - look for plumber
