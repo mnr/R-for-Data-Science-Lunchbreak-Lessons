@@ -14,9 +14,9 @@ library(plumber)
 
 # saved as 01_254_SFplumber.r
 #* simple manipulation of input
-#* @param this a string to reverse
+#* @param this a string to UPPERCASE
 #* @param that a string to count
 #* @get /changeStrings
 simpleFunction <- function(this, that) {
-  paste(rev(this), nchar(that) )
+  paste(toupper(this), nchar(that) )
 }
