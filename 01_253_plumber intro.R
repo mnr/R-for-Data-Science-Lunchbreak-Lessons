@@ -1,4 +1,4 @@
-# plumbr
+# plumber
 # create an api with R
 
 # don't be confused with "plumbr"
@@ -14,13 +14,18 @@ simpleFunction <- function(this, that) {
 
 simpleFunction("Mark", "Niemann-Ross")
 
-# saved as a plumber api in 01_254_SFplumber.R
+# saved as a plumber api in SFplumber.R
 
-runthis <- pr(file = "01_254_SFplumber.R")
+runthis <- pr(file = "01_253_SFplumber.R")
 pr_run(runthis) # opens api in a browser
 
-# from any browser
-# http://127.0.0.1:3811/changeStrings?this=mark&that=niemann-ross
+# http://127.0.0.1:7470/changeStrings?this=hello&that=world
+
+
+
+
+
+
 
 #' @Manual{,
 #'   title = {plumber: An API Generator for R},
