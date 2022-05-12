@@ -1,10 +1,13 @@
 # choose
 
-# display in Rstudio viewer
-# copy this to a markdown document
+# to display the symbol in Rstudio viewer
+# 1) create a new markdown document (new file -> markdown file)
+# 2) copy the following line to the markdown document
 <font size="160">$$\binom{n}{k}$$</font>
-# command-shift-k
-# right-click to set up zoom at 250%
+# 3) save the markdown document
+# 4) Then, with the new document showing...command-shift-k
+# 5) to enlarge, right-click on symbol, math settings->zoom factor to set up zoom at 250%
+  
 
 # binomial coefficient
 # indexed by a pair of integers: n and k
@@ -20,5 +23,6 @@ combn(5,2)
 choose(6,3)
 combn(6,3)
 
-# lchoose is the log of choose (although it evaluates as false)
-lchoose(5,2) == log(choose(5,2))
+# lchoose is the log of choose
+lchoose(5,2)
+log(choose(5,2))

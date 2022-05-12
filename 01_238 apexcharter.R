@@ -1,6 +1,5 @@
 # apexcharts
 # https://cran.r-project.org/package=apexcharter
-# https://apexcharts.com
 
 install.packages("apexcharter")
 library(apexcharter)
@@ -50,4 +49,6 @@ apex(data = ChickWeight,
      type = "treemap")
 dev.off()
 # possible to create Rmarkdown, but requires shiny
+
+# see https://apexcharts.com for details on apex charts
 
