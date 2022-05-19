@@ -9,5 +9,5 @@
   nchar(aString) + nchar(bString)
 }
 
-"this" %alphasum% "anddthat"
+"this" %alphasum% "that"
 
