@@ -12,7 +12,7 @@ library(plumber)
 #* @apiTitle Simple plumber exercise file
 #* @apiDescription Provided as part of LinkedIn Learning: R for Data Science, lunchbreak lessons
 
-# saved as 01_254_SFplumber.r
+# saved as 01_253_SFplumber.r
 #* simple manipulation of input
 #* @param this a string to UPPERCASE
 #* @param that a string to count
