@@ -5,10 +5,12 @@ library(tidyverse)
 
 # make examples for comparison
 
-imaDataframe <- data.frame(months = month.abb, 
-                           alpha = letters[1:12],
-                           things = 1:12,
-                           nothings = -1:-12)
+imaDataframe <- data.frame(
+    months = month.abb,
+    alpha = letters[1:12],
+    things = 1:12,
+    nothings = -1:-12
+)
 imaTibble <- as_tibble(imaDataframe)
 
 # tibbles are like dataframes

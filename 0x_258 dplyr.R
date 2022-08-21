@@ -21,3 +21,5 @@ worldTemp <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dS
   rowwise() %>% 
   mutate(medianTemp = median(c_across())) %>% 
   arrange(medianTemp)
+
+worldTemp

@@ -13,11 +13,24 @@ head(worldTemp) # just to take a look at the columns
 # create a column named "thing" equal to twice January temperature
 
 # base R syntax
-newWorldTemp$thing <- worldTemp$Jan * 2 
+worldTemp$thing <- worldTemp$Jan * 2 
 
 # base R with mutate
-newWorldTemp <- mutate(worldTemp, thing = Jan * 2)
+worldTemp <- mutate(worldTemp, thing2 = Jan * 2)
 
 # mutate in tidyverse syntax
-newWorldTemp <- worldTemp %>% 
-  mutate(thing = Jan * 2)
+worldTemp <- worldTemp %>% 
+  mutate(thing3 = Jan * 2)
+
+# placement of column. Normally at end
+# .before & .after
+worldTemp <- worldTemp %>% 
+  mutate(thing3 = Jan * 2, .before = 1)
+
+worldTemp <- worldTemp %>% 
+  mutate(thing4 = Jan * 2, .after = "Apr")
+
+# transmutate is similar to mutate
+# but creates new and drops old
+worldTemp <- worldTemp %>% 
+  transmute(Jan_2 = Jan * 2)
