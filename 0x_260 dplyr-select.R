@@ -1,5 +1,3 @@
-# https://dplyr.tidyverse.org
-
 # select() picks variables based on their names.
 
 # install.packages("tidyverse")

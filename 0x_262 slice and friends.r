@@ -6,7 +6,6 @@
 # slice_min() and slice_max() select rows with highest or lowest values of a variable.
 
 
-
 # install.packages("tidyverse")
 library("tidyverse")
 
