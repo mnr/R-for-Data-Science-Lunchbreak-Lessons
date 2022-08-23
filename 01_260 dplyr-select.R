@@ -23,4 +23,4 @@ worldTemp <- read.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dS
 
 worldTemp <- read.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", 
     skip = 1) %>%
-    select(where())
+    select(where(is.numeric))
