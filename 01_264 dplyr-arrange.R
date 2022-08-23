@@ -6,3 +6,7 @@ library("tidyverse")
 read.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", 
                         skip = 1) %>%
                 arrange(Jan)
+
+read.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", 
+                        skip = 1) %>%
+                arrange(desc(Jan))
