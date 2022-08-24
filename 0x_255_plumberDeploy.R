@@ -2,14 +2,41 @@
 
 # https://www.rplumber.io/articles/hosting.html
 
-# I'm using a raspberry pi running pm2
+# create an account with https://www.digitalocean.com
+# https://github.com/meztez/plumberDeploy
+
+# install plumber deploy
+install.packages("plumberDeploy")
+remotes::install_github("rstudio/plumber")
+library(plumberDeploy)
+
+# connect to digital ocean
+analogsea::account() # validate
+
+# 
+plumbSSHKey <- analogsea::key_create("plumberSSH", readLines("~/.ssh/id_rsa.pub"))
+
+
+# this stuff doesn't work ------------------
+# I'm using an old laptop 
+
+# install R
+# sudo apt-get update
+# sudo apt-get install r-base
+
+# install plumber
+# R
+# install.packages("plumber")
+# check to make sure this will work
+
+# running pm2
 # sudo npm install -g pm2
 # pm2 --version
 
 # setup for pm2 auto-boot at rpi restart
 # pm2 startup 
 
-# create and copy these files to raspberry pi
+# create and copy these files to linux
 # 01_253_SFplumber.r
 # 01_255_runMyPlumberScript.R
 
