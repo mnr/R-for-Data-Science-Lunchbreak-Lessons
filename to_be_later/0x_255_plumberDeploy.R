@@ -5,6 +5,12 @@
 # create an account with https://www.digitalocean.com
 # https://github.com/meztez/plumberDeploy
 
+# add ssh key as described at https://cloud.digitalocean.com/ssh_keys
+# as per https://github.com/pachadotdev/analogsea
+
+install.packages("ssh")
+library(ssh)
+
 # install plumber deploy
 install.packages("plumberDeploy")
 remotes::install_github("rstudio/plumber")
@@ -14,7 +20,7 @@ library(plumberDeploy)
 analogsea::account() # validate
 
 # 
-plumbSSHKey <- analogsea::key_create("plumberSSH", readLines("~/.ssh/id_rsa.pub"))
+plumbSSHKey <- analogsea::key_create("MNR mbPro", readLines("~/.ssh/id_rsa.pub"))
 
 
 # this stuff doesn't work ------------------
