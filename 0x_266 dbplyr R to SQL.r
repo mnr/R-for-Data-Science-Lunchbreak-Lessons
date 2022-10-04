@@ -35,22 +35,6 @@ sqlValues <- tbl(sqlcon, "Invoice") %>%
   show_query()
 
 # Some R values or functions may not translate to SQL
-
-# for example, mean/avg produces different precision
-sqlValues <- tbl(sqlcon, "Invoice") %>% 
-  summarize(avg = mean(CustomerId, na.rm = TRUE) ) %>%
-  collect()
-
-sqlValues$avg
-
-# vs running the SQL directly in db browser
-sqlValues <- tbl(sqlcon, "Invoice") %>% 
-  summarize(avg = mean(CustomerId, na.rm = TRUE) ) %>%
-  show_query()
-
-# NOTE: run the resulting SQL in db browser. 
-# The precision is different
-
 # Scroll through the following for examples
 # https://dbplyr.tidyverse.org/articles/translation-function.html
 
