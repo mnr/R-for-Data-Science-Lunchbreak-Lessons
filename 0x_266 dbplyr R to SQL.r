@@ -8,16 +8,49 @@
 # automatically converting dplyr code into SQL.
 
 # install.packages("tidyverse")
+library(tidyverse)
+
 # Alternatively, install just dbplyr:
 # install.packages("dbplyr")
+# library(dplyr)
 
-library(dplyr)
+# library(dbplyr) isn't needed. 
+# dplyr autoloads dbplyr when using sql tables
 
-# library(dbplyr) isn't needed. dplyr autoloads dbplyr when
-# using sql tables
-
+# first, load in sample SQLite table
 library(RSQLite)
 sqlcon <- dbConnect(RSQLite::SQLite(), dbname="Chinook_Sqlite.sqlite")
 
-show_query()
+# check the SQL connection by displaying the "Artist" table
+tbl(sqlcon, "Invoice")
+
+# create an R query
+sqlValues <- tbl(sqlcon, "Invoice") %>% 
+  filter(Total > 10) %>%
+  collect() # collect shows the result
+
+# what does the SQL look like?
+sqlValues <- tbl(sqlcon, "Invoice") %>% 
+  filter(Total > 10) %>%
+  show_query()
+
+# Some R values or functions may not translate to SQL
+
+# for example, mean/avg produces different precision
+sqlValues <- tbl(sqlcon, "Invoice") %>% 
+  summarize(avg = mean(CustomerId, na.rm = TRUE) ) %>%
+  collect()
+
+sqlValues$avg
+
+# vs running the SQL directly in db browser
+sqlValues <- tbl(sqlcon, "Invoice") %>% 
+  summarize(avg = mean(CustomerId, na.rm = TRUE) ) %>%
+  show_query()
+
+# NOTE: run the resulting SQL in db browser. 
+# The precision is different
+
+# Scroll through the following for examples
+# https://dbplyr.tidyverse.org/articles/translation-function.html
 
