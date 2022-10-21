@@ -3,6 +3,7 @@ title: "0x_260 quartoDemo"
 author: "Mark Niemann-Ross"
 format: html
 editor: visual
+freeze: true
 ---
 
 ## Quarto
@@ -69,3 +70,25 @@ The `echo: false` option disables the printing of code (only output is displayed
 https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/
 
 https://quarto.org/docs/get-started/hello/rstudio.html
+
+## notes from R pdx
+
+-   https://laderast.github.io/qmd_rmd/
+
+-   based on pandoc
+
+-   One format, many outputs
+
+-   decoupled from Rstudio ide. also available for vscode and jupyter
+
+-   R, python, julia, observable. moves between languages using apache arrow
+
+-   code output freezing. By default code is not recompiled.
+
+-   ::: is shorthand for a div
+
+-   better control over layout
+
+-   Code highlighting in slides
+
+-   look at rstudio::file::new project::new directory::quarto...
