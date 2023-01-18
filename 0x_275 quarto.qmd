@@ -92,3 +92,5 @@ https://quarto.org/docs/get-started/hello/rstudio.html
 -   Code highlighting in slides
 
 -   look at rstudio::file::new project::new directory::quarto...
+
+-   awesome quarto - https://github.com/???
