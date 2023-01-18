@@ -1,5 +1,6 @@
 # R7 OOP structures
 # https://github.com/RConsortium/OOP-WG
+# https://rconsortium.github.io/OOP-WG/articles/R7.html
 # classes and properties
 
 
@@ -10,25 +11,7 @@ library(R7)
 # demonstration of:
 # base_classes
 # new_property
-planet = new_class(
-  name = "planet",
-  properties = list(
-    name = class_character,
-    distance_au = class_numeric,
-    specialDay = class_Date, # use class_date
-    timeNow = new_property( # updated at access
-      getter = function(self) # getter is dynamic
-        Sys.time()
-    )
-  ),
-  validator = function(self) {
-    if (self@distance_au > 31) {
-      "@distance_au is farther than Neptune"
-    } else if (self@distance_au < .3) {
-      "@distance_au is less than Mercury"
-    }
-  }
-)
+source("01_271 class planet.R")
 
 # how it works
 Mars = planet(name = "Mars",
@@ -41,7 +24,11 @@ Mars = planet(
   specialDay = as.Date("2023-01-05")
 ) # Now it does
 
+# getter/setter
 Mars@timeNow
+# set a getter/setter
+Mars@timeNow <- Sys.time()
+Mars
 
 # Create a class from a parent class
 baseClass <- new_class(

@@ -6,18 +6,7 @@ remotes::install_github("rconsortium/OOP-WG")
 library(R7)
 
 # create a class
-planet = new_class(
-  name = "planet",
-  properties = list(name = class_character,
-                    distance_au = class_numeric),
-  validator = function(self) {
-    if (self@distance_au > 31) {
-      "@distance_au is farther than Neptune"
-    } else if (self@distance_au < .3) {
-      "@distance_au is less than Mercury"
-    }
-  }
-)
+source("01_271 class planet.R")
 
 # Create an instance
 Mars = planet(name = "Mars",
@@ -32,3 +21,4 @@ Mars@distance_au
 Mercury = planet(name = 5) # nope
 Mercury = planet(distance_au = "2440.53") # nope
 Mercury = planet(distance_au = 35)
+
