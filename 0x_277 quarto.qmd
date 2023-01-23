@@ -24,8 +24,8 @@ Now **Quarto**. (filename.qmd). Next generation RMD. [Everything about Quarto](h
 
 ### Features of a document:
 
-Quarto editor vs Rmd editor (RStudio :: new file)
+> Quarto editor vs Rmd editor (RStudio :: new file)
 
 ### Features of a project:
 
-Quarto projects (RStudio :: new project...)
+> Quarto projects (RStudio :: new project...)
