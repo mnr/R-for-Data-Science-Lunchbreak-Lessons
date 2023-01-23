@@ -1,0 +1,31 @@
+---
+title: "Why quarto?"
+author: "Mark Niemann-Ross"
+format: 
+  html:
+    default
+  docx:
+    default
+  asciidoc:
+    default
+editor: visual
+freeze: true
+---
+
+## What Is Quarto?
+
+First there was **markdown** (filename.md). It is a lightweight markup language.
+
+Then **R-Markdown** (filename.rmd). Markdown with the ability to include code and results. Originally just for R, then included python, SQL, and other languages. Considered a notebook similar to jupyter, IPython. [Everything about rmd](https://rmarkdown.rstudio.com)
+
+Now **Quarto**. (filename.qmd). Next generation RMD. [Everything about Quarto](https://quarto.org/)
+
+## Why Quarto?
+
+### Features of a document:
+
+Quarto editor vs Rmd editor (RStudio :: new file)
+
+### Features of a project:
+
+Quarto projects (RStudio :: new project...)
