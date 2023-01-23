@@ -6,7 +6,7 @@ library(gistr)
 # create and save a personal access token
 # https://help.github.com/articles/creating-an-access-token-for-command-line-use
 # save the token
-Sys.setenv(GITHUB_PAT = "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")
+Sys.setenv(GITHUB_PAT = "get one from above url")
 
 # open a gist session
 gist_auth()
