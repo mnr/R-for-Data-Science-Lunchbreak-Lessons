@@ -1,7 +1,7 @@
 # R7 OOP structures
 # https://github.com/RConsortium/OOP-WG
 # https://rconsortium.github.io/OOP-WG/articles/R7.html
-# base classes
+# base classes for inheritance
 
 # install.packages("remotes")
 # remotes::install_github("rconsortium/OOP-WG")
