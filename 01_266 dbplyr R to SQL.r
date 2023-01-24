@@ -21,7 +21,7 @@ library(tidyverse)
 library(RSQLite)
 sqlcon <- dbConnect(RSQLite::SQLite(), dbname="Chinook_Sqlite.sqlite")
 
-# check the SQL connection by displaying the "Artist" table
+# check the SQL connection by displaying the "Invoice" table
 tbl(sqlcon, "Invoice")
 
 # create an R query

@@ -6,7 +6,7 @@
 library(R7)
 
 # First - create a class ----
-source("01_271 class planet.R")
+source("01_269 class planet.R")
 
 # second - create a generic method ----
 changeDistance <- new_generic(name = "changeDistance",

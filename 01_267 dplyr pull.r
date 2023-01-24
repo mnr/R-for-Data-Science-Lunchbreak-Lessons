@@ -1,5 +1,7 @@
 # dplyr pull
 
+# Pull is similar to $ addressing but looks nicer in pipes
+
 # install.packages("tidyverse")
 library("tidyverse")
 
@@ -8,9 +10,8 @@ worldTemp <- read.csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dS
                       skip = 1)
 head(worldTemp) # just to take a look at the columns
 
-# Pull is similar to $ addressing but looks nicer in pipes
-
-worldTemp %>% .$Jan # which is a bit weird
+# $ addressing is awkward when used in pipes
+worldTemp %>% .$Jan
 # instead
 worldTemp %>%
   pull(Jan)

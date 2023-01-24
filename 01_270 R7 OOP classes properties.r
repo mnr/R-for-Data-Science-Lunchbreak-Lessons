@@ -11,14 +11,14 @@ library(R7)
 # demonstration of:
 # base_classes
 # new_property
-source("01_271 class planet.R")
+source("01_269 class planet.R")
 
 # how it works
-Mars = planet(name = "Mars",
+Mars <- planet(name = "Mars",
               distance_au = 1.52366231,
               specialDay = "2023-01-05") # date doesn't work
 
-Mars = planet(
+Mars <- planet(
   name = "Mars",
   distance_au = 1.52366231,
   specialDay = as.Date("2023-01-05")

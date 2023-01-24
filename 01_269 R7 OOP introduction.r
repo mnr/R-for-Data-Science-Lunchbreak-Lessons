@@ -6,7 +6,7 @@ remotes::install_github("rconsortium/OOP-WG")
 library(R7)
 
 # create a class
-source("01_271 class planet.R")
+source("01_269 class planet.R")
 
 # Create an instance
 Mars = planet(name = "Mars",
