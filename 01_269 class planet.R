@@ -1,6 +1,6 @@
 # definition for class planet ----
 
-planet = new_class(
+planet <- new_class(
   name = "planet",
   properties = list(
     name = class_character,
