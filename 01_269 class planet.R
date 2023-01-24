@@ -10,13 +10,14 @@ planet <- new_class(
                                default = 0),
     timeNow = new_property(
       class = class_POSIXct,
-      getter = function(self)
+      getter = function(self) {
         # getter is updated at access
-        Sys.time(),
+        Sys.time()
+        },
       setter = function(self, value) {
         self@timeNow <- value
         self
-      }
+        }
     )
   ),
   # validator checks for valid constructor values
