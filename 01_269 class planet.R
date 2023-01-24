@@ -11,7 +11,7 @@ planet <- new_class(
     timeNow = new_property(
       class = class_POSIXct,
       getter = function(self)
-        # getter is set at instantiation
+        # getter is updated at access
         Sys.time(),
       setter = function(self, value) {
         self@timeNow <- value
