@@ -1,4 +1,4 @@
-# sample corpus
+# sample corpus ---------
 library(tm)
 
 emotions_df <- data.frame(
@@ -33,49 +33,20 @@ A letter or character is made up of eight bits."),
 emotions_corpus <- Corpus(DataframeSource(emotions_df))
 
 summary(emotions_corpus)
-# Quanteda ----------
+# miniconda --------
 
-# Tidytext ----------
+# sentiment.ai -------
+# requires miniconda and python 3.8.10
+install.packages("sentiment.ai")
+library(sentiment.ai)
 
-# texter ----------
-# works with tidyverse & tidytext to provide easy sentiment analysis
-# focused on nrc dictionary
-install.packages("texter")
-library(texter)
+init_sentiment.ai() # init miniconda
+install_sentiment.ai()
+sentiment_score(poetCorpus$content[1])
 
-counter(emotions_df[1,"text"], c("love", "sad"))
-top_Sentiments(emotions_df[2,"text"], plot = TRUE)
-sentimentAnalyzer(emotions_df[1:3,"text"], details = TRUE)
-top_bigrams(emotions_df[3,"text"], bigram_size = 10)
-
-# meanr ----------
-# focused on HuLiu dictionary
-# one function: "score"
-install.packages("meanr")
-library(meanr)
-
-score(emotions_df[,"text"]) # wc = word count
+# transforEmotion ---------
+# uses miniconda, reticulate, and python
+install.packages("transforEmotion")
+library(transforEmotion)
 
 
-
-
-# syuzhet ------------
-# quick and easy sentiment analysis
-install.packages("syuzhet")
-library(syuzhet)
-get_sentiment(emotions_corpus)
-plot(get_sentiment(emotions_corpus))
-
-# tardis -----------
-# Text Analysis with Rules and Dictionaries for Inferring Sentiment
-# simple to use
-install.packages("tardis")
-library(tardis)
-tardis(emotions_df[,"text"]) # best to get sentences
-
-# vader ------------
-# tuned to social media
-# Valence Aware Dictionary and sEntiment Reasoner
-install.packages("vader")
-library(vader)
-get_vader(emotions_df[1,"text"])
