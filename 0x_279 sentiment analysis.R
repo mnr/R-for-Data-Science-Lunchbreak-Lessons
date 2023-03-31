@@ -36,29 +36,43 @@ summary(emotions_corpus)
 
 # meanr ----------
 # focused on HuLiu dictionary
-# one function: "score"
-install.packages("meanr")
+# package contains one function: "score"
+# "score" column is "positive" - "negative"
+# install.packages("meanr")
 library(meanr)
 
 score(emotions_df[,"text"]) # wc = word count
 
 # syuzhet ------------
 # quick and easy sentiment analysis
-install.packages("syuzhet")
+# based on fiction novels. only latin characters
+# install.packages("syuzhet")
 library(syuzhet)
 get_sentiment(emotions_corpus)
-plot(get_sentiment(emotions_corpus))
+
+# methods:  "syuzhet", "bing", "afinn", "nrc" and "stanford"
+get_sentiment(emotions_corpus, method = "bing")
 
 # tardis -----------
-# Text Analysis with Rules and Dictionaries for Inferring Sentiment
-# simple to use
-install.packages("tardis")
+# Text Analysis with Rules and Dictionaries 
+#      for Inferring Sentiment
+# simple to use. Calculation on sentences
+# multiple sentences return mean, stdDev, & range
+# install.packages("tardis")
 library(tardis)
-tardis(emotions_df[,"text"]) # best to get sentences
+tardis(emotions_df,
+       text_column = "text") 
+
+tardis(emotions_df,
+       text_column = "text",
+       simple_count = TRUE) 
 
 # vader ------------
 # tuned to social media
 # Valence Aware Dictionary and sEntiment Reasoner
-install.packages("vader")
+# install.packages("vader")
 library(vader)
-get_vader(emotions_df[1,"text"])
+vader_df <- vader_df(emotions_df[ , "text"])
+get_vader(emotions_df[3,"text"])
+
+vader_df

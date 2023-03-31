@@ -47,3 +47,5 @@ counter(emotions_df[1,"text"], c("love", "sad"))
 top_Sentiments(emotions_df[2,"text"], plot = TRUE)
 sentimentAnalyzer(emotions_df[1:3,"text"], details = TRUE)
 top_bigrams(emotions_df[3,"text"], bigram_size = 10)
+
+# also...TARDIS will work with tidyverse. See session 279
