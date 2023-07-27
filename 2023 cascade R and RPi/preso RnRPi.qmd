@@ -14,21 +14,39 @@ sudo apt-get install r-base r-base-core
 
 ## Fix the App Menu
 
-R appears in the Graphic Menu. To move it to the programming menu
+![Image showing how to fix the app location in Raspbian](fixtheapp.png)
+
+::: {.notes}
+
+R appears in the Graphic Menu.
+
+To move it to the programming menu
 
 -   RPi menu -\> Preferences -\> main menu editor
 
 -   programming -\> new item: Name=R, Command=R, Launch in terminal. OK
 
--   Fix Icon: Rpi menu -\> right click on R.
+:::
+
+## Fix the Icon
+
+![Image showing how to fix the icon for R](fixtheicon.png)
+
+::: {.notes}
+
+-   Rpi menu -\> right click on R.
 
 -   Choose Properties.
 
 -   Click on Icon to bring up chooser.
 
--   R logo is in system icons
+-   System Theme::rlogo.icon
+
+:::
 
 ## Which gui
+
+::: {.notes}
 
 -   Rstudio is not available for Raspberry Pi (available for amd64, but not amdhf)
 
@@ -37,6 +55,8 @@ R appears in the Graphic Menu. To move it to the programming menu
 -   unable to install rcommander or rattle
 
 -   **geany works**
+
+:::
 
 ## Install and Setup geany
 
