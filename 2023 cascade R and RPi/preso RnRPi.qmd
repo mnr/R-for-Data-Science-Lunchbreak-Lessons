@@ -1,5 +1,5 @@
 ---
-title: "Install R on a Raspberry Pi"
+title: "R on a Raspberry Pi"
 author: "Mark Niemann-Ross"
 format: revealjs
 editor: visual
@@ -16,8 +16,7 @@ sudo apt-get install r-base r-base-core
 
 ![Image showing how to fix the app location in Raspbian](fixtheapp.png)
 
-::: {.notes}
-
+::: notes
 R appears in the Graphic Menu.
 
 To move it to the programming menu
@@ -25,15 +24,13 @@ To move it to the programming menu
 -   RPi menu -\> Preferences -\> main menu editor
 
 -   programming -\> new item: Name=R, Command=R, Launch in terminal. OK
-
 :::
 
 ## Fix the Icon
 
 ![Image showing how to fix the icon for R](fixtheicon.png)
 
-::: {.notes}
-
+::: notes
 -   Rpi menu -\> right click on R.
 
 -   Choose Properties.
@@ -41,13 +38,17 @@ To move it to the programming menu
 -   Click on Icon to bring up chooser.
 
 -   System Theme::rlogo.icon
-
 :::
 
-## Which gui
+## Install a gui
 
-::: {.notes}
++:-----------------------------------------:+:-----------------------------------------------:+
+| ![Rgui](Screenshot_Rgui.png){width="302"} | ![Rstudio](Screenshot_rstudio.png){width="345"} |
++-------------------------------------------+-------------------------------------------------+
+| ![Geany](screenshot_geany.png)            |                                                 |
++-------------------------------------------+-------------------------------------------------+
 
+::: notes
 -   Rstudio is not available for Raspberry Pi (available for amd64, but not amdhf)
 
 -   Rgui not available for linux
@@ -55,26 +56,28 @@ To move it to the programming menu
 -   unable to install rcommander or rattle
 
 -   **geany works**
-
 :::
 
-## Install and Setup geany
+## Setup geany
 
-+---------------------------------+---------------------------------------------------------+
-| Command                         | What it does                                            |
-+=================================+=========================================================+
-| edit/preferences/terminal...    | This runs an R file in the geany terminal               |
-|                                 |                                                         |
-| \[\] execute programs in VTE    |                                                         |
-+---------------------------------+---------------------------------------------------------+
-| build -\> set build commands... | this runs the R file as a batch command                 |
-|                                 |                                                         |
-| execute: `Rscript ./%f`         | output saved to .Rout in /home/pi or next to input file |
-+---------------------------------+---------------------------------------------------------+
-| build -\> set build commands... |                                                         |
-|                                 |                                                         |
-| `R CMD BATCH: R CMD BATCH ./%f` |                                                         |
-+---------------------------------+---------------------------------------------------------+
+![Configuring geany for R](geany_config.png)
+
+::: notes
++-----------------------------------+---------------------------------------------------------+
+| Command                           | What it does                                            |
++===================================+=========================================================+
+| edit/preferences/terminal...      | This runs an R file in the geany terminal               |
+|                                   |                                                         |
+| check - *execute programs in VTE* |                                                         |
++-----------------------------------+---------------------------------------------------------+
+| build -\> set build commands...   | this runs the R file as a batch command                 |
+|                                   |                                                         |
+| execute: `Rscript ./%f`           | output saved to .Rout in /home/pi or next to input file |
++-----------------------------------+---------------------------------------------------------+
+| build -\> set build commands...   |                                                         |
+|                                   |                                                         |
+| `R CMD BATCH: R CMD BATCH ./%f`   |                                                         |
++-----------------------------------+---------------------------------------------------------+
 
 ::: notes
 <div>
@@ -87,14 +90,9 @@ https://wiki.geany.org/howtos/configurebuildmenu
 
 </div>
 :::
+:::
 
 ## Run R
-
-Geany terminal can be used to run R
-
-enter Geany terminal, then type R to start R
-
-also install packages
 
 ``` r
 install.packages("cowsay")
@@ -106,11 +104,35 @@ say("Hello world")
 plot(x = 1:10, y = 10:1)
 ```
 
-## Simple Demo
+::: notes
+Geany terminal can be used to run R
 
-``` r
-myDir <- system("pwd", intern=TRUE) 
-print(paste("here i am", myDir))
+enter Geany terminal, then type R to start R
+
+also install packages
+:::
+
+## Install libgpiod
+
+::: notes
+Other libraries:
+
+-   [wiringpi](http://wiringpi.com)
+
+-   [gpio](https://www.raspberrypi.com/documentation/computers/config_txt.html#gpio-control)
+
+-   [libgpiod](https://www.ics.com/blog/gpio-programming-exploring-libgpiod-library)
+
+-   [raspi-gpio](https://github.com/nebrius/raspi-gpio)
+:::
+
+One of many libraries for GPIO access
+
+```         
+sudo apt-get install libgpiod-dev gpiod
+
+or use
+raspi-gpio get/set/funcs/raw
 ```
 
 ## Read the GPIO
