@@ -5,6 +5,18 @@ format: revealjs
 editor: visual
 ---
 
+## Raspberry Pi
+
+![Raspberry Pi Model 4](raspberry-pi-4-model-b%20crop.jpg){fig-alt="An image showing the Raspberry Pi Model 4" fig-align="left" width="393"}
+
+-   Linux / Python
+
+-   \~ \$45 USD (depending on model)
+
+-   consumes \~3-6 watts
+
+-   USB, HDMI, Ethernet, GPIO, camera port, display port, audio
+
 ## Install R
 
 ``` r
@@ -14,7 +26,7 @@ sudo apt-get install r-base r-base-core
 
 ## Fix the App Menu
 
-![Image showing how to fix the app location in Raspbian](fixtheapp.png)
+![](fixtheapp.png){fig-alt="Image showing how to fix the app location in Raspbian"}
 
 ::: notes
 R appears in the Graphic Menu.
@@ -28,7 +40,7 @@ To move it to the programming menu
 
 ## Fix the Icon
 
-![Image showing how to fix the icon for R](fixtheicon.png)
+![](fixtheicon.png){fig-alt="Image showing how to fix the icon for R"}
 
 ::: notes
 -   Rpi menu -\> right click on R.
@@ -42,11 +54,11 @@ To move it to the programming menu
 
 ## Install a gui
 
-+:-----------------------------------------:+:-----------------------------------------------:+
-| ![Rgui](Screenshot_Rgui.png){width="302"} | ![Rstudio](Screenshot_rstudio.png){width="345"} |
-+-------------------------------------------+-------------------------------------------------+
-| ![Geany](screenshot_geany.png)            |                                                 |
-+-------------------------------------------+-------------------------------------------------+
++:--------------------------------------------------------------------------------------:+:--------------------------------------------------------------------------------------------------------------:+
+| ![Rgui](Screenshot_Rgui.png){fig-alt="An image showing the Rgui console." width="302"} | ![Rstudio](Screenshot_rstudio.png){fig-alt="An image showing a screen capture of the Rstudio IDE" width="345"} |
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| ![Geany](screenshot_geany.png){fig-alt="An image showing the Geany IDE"}               |                                                                                                                |
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 ::: notes
 -   Rstudio is not available for Raspberry Pi (available for amd64, but not amdhf)
@@ -60,7 +72,7 @@ To move it to the programming menu
 
 ## Setup geany
 
-![Configuring geany for R](geany_config.png)
+![Configuring geany for R](geany_config.png){fig-alt="An image showing how to configure Geany to run the R programming language"}
 
 ::: notes
 +-----------------------------------+---------------------------------------------------------+
@@ -95,7 +107,7 @@ https://wiki.geany.org/howtos/configurebuildmenu
 ## Run R
 
 ``` r
-install.packages("cowsay")
+# install.packages("cowsay")
 
 library(cowsay)
 
@@ -130,9 +142,6 @@ One of many libraries for GPIO access
 
 ```         
 sudo apt-get install libgpiod-dev gpiod
-
-or use
-raspi-gpio get/set/funcs/raw
 ```
 
 ## Read the GPIO
