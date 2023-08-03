@@ -108,6 +108,8 @@ https://wiki.geany.org/howtos/configurebuildmenu
 
 ## Run R
 
+Saved as "hello_world.R"
+
 ``` r
 # install.packages("cowsay")
 
@@ -119,11 +121,13 @@ plot(x = 1:10, y = 10:1)
 ```
 
 ::: notes
+opens terminal. Plot is created as PDF next to program
+
 Geany terminal can be used to run R
 
 enter Geany terminal, then type R to start R
 
-also install packages
+sudo to install packages
 :::
 
 ## Install libgpiod
@@ -148,40 +152,44 @@ sudo apt-get install libgpiod-dev gpiod
 
 ## Read the GPIO
 
+![](hello_gpio_bb.png){fig-alt="Schematic showing how to connect a pushbutton to Raspberry pi" width="296"}
+
+## Read the GPIO
+
+Saved as "hello_gpio.R"
+
 ``` r
 # assign buttons 
-btnAlpha <- 15 # BCM numbering scheme 
-btnGamma <- 14
+TRYME_btn <- 21 # BCM numbering scheme 
 
 while (TRUE) { 
-   getGPIOcmd <- paste("gpioget -l gpiochip0", btnAlpha) 
-   if (system(getGPIOcmd, intern = TRUE) == 0) print("Alpha") 
-   getGPIOcmd <- paste("gpioget -l gpiochip0", btnGamma)
-   if (system(getGPIOcmd, intern = TRUE) == 0) print("Gamma")
-
+   getGPIOcmd <- paste("gpioget -l gpiochip0", TRYME_btn) 
+   if (system(getGPIOcmd, intern = TRUE) == 0) print("Try Me!") 
 } # control-Z stops the loop
 ```
 
 ## Control the GPIO
 
+![](hello_gpio_control_bb.png){fig-alt="schematic to control light bulb with Raspberry Pi"}
+
+## Control the GPIO
+
+Saved as "hello_gpio_control.R"
+
 ``` r
-# Assign Buttons as a Vector
-allBtns <- c(15,14)
+# assign buttons (use BCM - not board)
+getGPIOcmd <- "gpioget gpiochip0 21"
 
-while (TRUE) { 
-  getGPIOcmd <- paste("gpioget \--active-low gpiochip0", 
-                      paste(allBtns, collapse = " ")
-                      ) 
-  whatIsThis <- system(getGPIOcmd, intern = TRUE) 
-  whatIsThis
+# assign control pin (use BCM)
+setGPIOcmd_on <- "gpioset gpiochip0 9=1"
+setGPIOcmd_off <- "gpioset gpiochip0 9=0"
+
+while (TRUE) {
+  if (system(getGPIOcmd, intern=TRUE) == 1) print ("Try Me!")
   
-  pinState <- system(getGPIOcmd, intern = TRUE) 
-  gpioPins <- as.integer(unlist(strsplit(pinState," "))) 
-  if (any(gpioPins)) { 
-    print(paste("a=",gpioPins[1]," b=",gpioPins[2])) } 
-  if (all(gpioPins)) { 
-    print("all buttons are pressed") } 
-  if (!any(gpioPins)) { print("no buttons are pressed") }
-
+  system(setGPIOcmd_on)
+  Sys.sleep(1)
+  system(setGPIOcmd_off)
+  Sys.sleep(3)
 }
 ```
