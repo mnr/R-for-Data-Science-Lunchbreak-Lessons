@@ -57,11 +57,13 @@ To move it to the programming menu
 +:--------------------------------------------------------------------------------------:+:--------------------------------------------------------------------------------------------------------------:+
 | ![Rgui](Screenshot_Rgui.png){fig-alt="An image showing the Rgui console." width="302"} | ![Rstudio](Screenshot_rstudio.png){fig-alt="An image showing a screen capture of the Rstudio IDE" width="345"} |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| ![Geany](screenshot_geany.png){fig-alt="An image showing the Geany IDE"}               |                                                                                                                |
+| ![Geany](screenshot_geany.png){fig-alt="An image showing the Geany IDE"}               | ![posit Cloud](Screenshot_cloud.png){width="331"}                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 ::: notes
 -   Rstudio is not available for Raspberry Pi (available for amd64, but not amdhf)
+
+-   posit cloud isn't local - can't access GPIO
 
 -   Rgui not available for linux
 
