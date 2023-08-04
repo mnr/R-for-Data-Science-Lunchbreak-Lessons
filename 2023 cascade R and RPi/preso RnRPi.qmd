@@ -193,3 +193,19 @@ while (TRUE) {
   Sys.sleep(3)
 }
 ```
+
+## Device Drivers
+
+**Problem:** Drivers for circuits are written in other languages.
+
+-   [gpiozero](https://gpiozero.readthedocs.io/en/stable/) is written in python
+
+-   [WiringPi](http://wiringpi.com) is written in C
+
+-   [pigpio](http://abyz.me.uk/rpi/pigpio/index.html) is written in C with python libraries
+
+**Solution**: R works with other languages
+
+-   [rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html) for C
+
+-   [reticulate](https://cran.r-project.org/web/packages/reticulate/index.html) for python
