@@ -5,6 +5,26 @@ format: revealjs
 editor: visual
 ---
 
+## R on a Raspberry Pi
+
+Mark Niemann-Ross \* mark\@niemannross.com
+
+-   \|\>
+
+-   `R*aspberry[pi]`
+
+-   !!
+
+``` python
+def fib(n):
+     a, b = 0, 1
+     while a < n:
+         print(a, end=' ')
+         a, b = b, a+b
+     print()
+ fib(1000)
+```
+
 ## Raspberry Pi
 
 ![Raspberry Pi Model 4](raspberry-pi-4-model-b%20crop.jpg){fig-alt="An image showing the Raspberry Pi Model 4" fig-align="left" width="393"}
@@ -150,13 +170,21 @@ One of many libraries for GPIO access
 sudo apt-get install libgpiod-dev gpiod
 ```
 
+### Other libraries:
+
+-   [wiringpi](http://wiringpi.com)
+
+-   [gpio](https://www.raspberrypi.com/documentation/computers/config_txt.html#gpio-control)
+
+-   [libgpiod](https://www.ics.com/blog/gpio-programming-exploring-libgpiod-library)
+
+-   [raspi-gpio](https://github.com/nebrius/raspi-gpio)
+
 ## Read the GPIO
 
 ![](hello_gpio_bb.png){fig-alt="Schematic showing how to connect a pushbutton to Raspberry pi" width="296"}
 
 ## Read the GPIO
-
-Saved as "hello_gpio.R"
 
 ``` r
 # assign buttons 
@@ -168,13 +196,15 @@ while (TRUE) {
 } # control-Z stops the loop
 ```
 
+[^1] Available on github as `hello_gpio.r`
+
+[^1]: https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons/blob/7b7ce391ac36db029b6820847c9102579fc48682/2023%20cascade%20R%20and%20RPi/hello_gpio.R
+
 ## Control the GPIO
 
 ![](hello_gpio_control_bb.png){fig-alt="schematic to control light bulb with Raspberry Pi"}
 
 ## Control the GPIO
-
-Saved as "hello_gpio_control.R"
 
 ``` r
 # assign buttons (use BCM - not board)
@@ -193,6 +223,10 @@ while (TRUE) {
   Sys.sleep(3)
 }
 ```
+
+[^2] Saved as `hello_gpio_control.R`
+
+[^2]: https://github.com/mnr/R-for-Data-Science-Lunchbreak-Lessons/blob/7b7ce391ac36db029b6820847c9102579fc48682/2023%20cascade%20R%20and%20RPi/hello_gpio_control.R
 
 ## Device Drivers
 
